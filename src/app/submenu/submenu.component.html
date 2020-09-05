@@ -1,5 +1,8 @@
+<div class="row back-container m-3 p-3">
+    <mat-icon class="back-button" (click)="location.back()">arrow_back</mat-icon>
+</div>
 <div class="row m-3">
-    <div class="col category m-3 p-3 justify-content-center border rounded-lg"
+    <div class="col item m-3 p-3 justify-content-center border rounded-lg"
          *ngFor="let item of menuService.selectedCategory.items"
          (click)="menuService.selectedCategory = item"
          [routerLink]="['/submenu']">

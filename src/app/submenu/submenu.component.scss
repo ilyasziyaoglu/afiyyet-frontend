@@ -1,7 +1,14 @@
+.back-container {
+  color: black;
+}
+
+.back-button {
+  cursor: pointer;
+}
+
 .item {
   cursor: pointer;
   width: 250px;
-  height: 200px;
 }
 
 .item-img {
