@@ -1,0 +1,18 @@
+.item {
+  cursor: pointer;
+  width: 250px;
+  height: 200px;
+}
+
+.item-img {
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  width: 250px;
+  height: 200px;
+}
+
+.item-name {
+  font-weight: bolder;
+  text-align: center;
+}
