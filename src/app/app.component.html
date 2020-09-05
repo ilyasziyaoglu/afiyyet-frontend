@@ -1,0 +1,18 @@
+<div class="header">
+  <img class="logo-img" src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="Angular">
+  <div class="header-right">
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-youtube"></i>
+  </div>
+</div>
+
+
+<div class="row m-3">
+  <div class="col category m-3"
+  *ngFor="let category of menu.content">
+    <img class="category-img" src="{{category.mainmedia}}" alt="">
+    <p class="category-name">{{category.name}}</p>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.header {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+
+.header-right {
+  float: right;
+  margin: 10px;
+}
+
+.logo-img {
+  margin: 10px;
+  height: 30px;
+}
+
+.category {
+  cursor: pointer;
+  width: 250px;
+  height: 250px;
+}
+
+.category-img {
+  border-radius: 10px;
+  max-width: 250px;
+  height: 200px;
+}
+
+.category-name {
+  position: absolute;
+  text-align: center;
+}
