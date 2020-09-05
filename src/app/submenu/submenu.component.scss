@@ -27,3 +27,11 @@
 .description {
   text-align: center;
 }
+
+.favorite mat-icon {
+  position: absolute;
+  font-size: 2em;
+  top: 15px;
+  right: 20px;
+  z-index: 999;
+}
