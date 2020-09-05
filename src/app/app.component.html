@@ -7,14 +7,4 @@
     <i class="fab fa-youtube"></i>
   </div>
 </div>
-
-
-<div class="row m-3">
-  <div class="col category m-3 justify-content-center"
-  *ngFor="let category of menu.content">
-    <img class="category-img" src="{{category.mainmedia}}" alt="">
-    <div class="name-container">
-      <p class="category-name">{{category.name}}</p>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>

@@ -14,26 +14,3 @@
   margin: 10px;
   height: 30px;
 }
-
-.category {
-  cursor: pointer;
-  width: 250px;
-  height: 200px;
-}
-
-.category-img {
-  filter: brightness(50%);
-  position: relative;
-  border-radius: 10px;
-  width: 250px;
-  height: 200px;
-}
-
-.category-name {
-  width: 250px;
-  position: absolute;
-  top: 95px;
-  color: white;
-  font-weight: bolder;
-  text-align: center;
-}

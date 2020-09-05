@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SubmenuComponent } from './submenu/submenu.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubmenuComponent
+    SubmenuComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
