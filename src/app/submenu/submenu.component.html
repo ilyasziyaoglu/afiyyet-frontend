@@ -4,8 +4,8 @@
 <div class="row m-3">
     <div class="col item m-3 p-3 justify-content-center border rounded-lg"
          *ngFor="let item of menuService.selectedCategory.items"
-         (click)="menuService.selectedCategory = item"
-         [routerLink]="['/submenu']">
+         (click)="menuService.selectedItem = item"
+         [routerLink]="['/item']">
         <img class="item-img" src="{{item.image}}" alt="">
         <p class="item-name">{{item.name + " " + item.price + " TL"}}</p>
         <p class="description">{{item.content}}</p>

@@ -7,12 +7,14 @@ import { SubmenuComponent } from './submenu/submenu.component';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubmenuComponent,
-    MenuComponent
+    MenuComponent,
+    ItemComponent
   ],
     imports: [
         BrowserModule,

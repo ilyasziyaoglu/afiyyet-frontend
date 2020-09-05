@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class MenuServiceService {
   selectedCategory: any;
+  selectedItem: any;
 
   constructor() { }
 }

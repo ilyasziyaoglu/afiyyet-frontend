@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {SubmenuComponent} from './submenu/submenu.component';
+import {ItemComponent} from './item/item.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'submenu',
     component: SubmenuComponent
+  },
+  {
+    path: 'item',
+    component: ItemComponent
   }
 ];
 
