@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuServiceService} from '../services/menu-service.service';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-item',
@@ -10,8 +10,8 @@ export class ItemComponent implements OnInit {
 
   item: any;
 
-  constructor(private menuService: MenuServiceService) {
-    this.item = menuService.selectedItem;
+  constructor(private storageService: StorageService) {
+    this.item = storageService.getItem('item');
   }
 
   ngOnInit(): void {

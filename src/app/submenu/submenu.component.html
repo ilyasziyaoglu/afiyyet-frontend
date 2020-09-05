@@ -3,8 +3,8 @@
 </div>
 <div class="row m-3">
     <div class="col item m-3 p-3 border rounded-lg"
-         *ngFor="let item of menuService.selectedCategory.items"
-         (click)="menuService.selectedItem = item"
+         *ngFor="let item of storageService.getItem('category').items"
+         (click)="storageService.setItem('item', item)"
          [routerLink]="['/item']">
         <img class="item-img" src="{{item.image}}" alt="">
         <p class="item-name">{{item.name + " " + item.price + " TL"}}</p>

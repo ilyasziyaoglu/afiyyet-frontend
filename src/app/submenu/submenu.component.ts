@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuServiceService} from '../services/menu-service.service';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-submenu',
@@ -9,7 +9,7 @@ import {MenuServiceService} from '../services/menu-service.service';
 export class SubmenuComponent implements OnInit {
 
   constructor(
-      private menuService: MenuServiceService,
+      private storageService: StorageService,
   ) { }
 
   ngOnInit(): void {
