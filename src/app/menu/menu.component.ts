@@ -50,4 +50,11 @@ export class MenuComponent implements OnInit {
     }
     return favorites;
   }
+
+  removeFavorite(item: any) {
+    // @ts-ignore
+    const index = this.storageService.favorites.indexOf(item.id);
+    this.storageService.favorites.splice(index, 1);
+    this.storageService.updateItem('favorites');
+  }
 }
