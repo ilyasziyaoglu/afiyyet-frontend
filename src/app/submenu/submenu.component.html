@@ -14,10 +14,12 @@
                 <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
             </div>
 
+            <div class="invisible-div"></div>
+
             <div class="item-texts">
                 <p class="item-name">{{item.name}}</p>
+                <p class="description">Sut kahve cikolata kopuk yaninda lokum</p>
                 <p class="item-price">{{item.price + " TL"}}</p>
-                <p class="description">{{item.content}}</p>
             </div>
         </div>
     </div>

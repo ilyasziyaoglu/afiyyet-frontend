@@ -19,12 +19,16 @@
   font-weight: bolder;
   text-align: center;
   margin: 5px;
-
+  padding-right: 2rem;
 }
 
 .item-price {
-  text-align: center;
   margin: 2px;
+  width: 100%;
+  background-color: red;
+  text-align: right;
+  bottom: 0;
+  position: relative;
 }
 
 .description {
@@ -34,10 +38,20 @@
   font-style: italic;
 }
 
+.invisible-div {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  background-color: red;
+  top: 0;
+  left: 0;
+  position: sticky;
+}
+
 .favorite {
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: 1px;
   right: 10px;
   color: aliceblue;
 }
@@ -52,7 +66,7 @@
   width: 100px;
   height: 100px;
   position: relative;
-  margin-bottom: -70px;
+  margin-bottom: -80px;
   z-index: 10;
 }
 
@@ -63,8 +77,6 @@
   background-color: #424242;
   margin-left: 20px;
   min-height: 110px;
-  justify-content: center;
-  align-items: center;
   display: flex;
 }
 
