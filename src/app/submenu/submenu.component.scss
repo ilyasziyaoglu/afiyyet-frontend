@@ -1,15 +1,6 @@
-.back-container {
-  color: black;
-  position: relative;
-}
-
-.back-button {
-  position: absolute;
-  cursor: pointer;
-}
-
 .category-name {
   width: 100%;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -40,6 +31,7 @@
   font-weight: bolder;
   text-align: center;
   margin: 5px;
+
 }
 
 .item-price {

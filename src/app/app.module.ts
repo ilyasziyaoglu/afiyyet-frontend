@@ -11,21 +11,21 @@ import { ItemComponent } from './item/item.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SubmenuComponent,
-    MenuComponent,
-    ItemComponent
-  ],
+    declarations: [
+        AppComponent,
+        SubmenuComponent,
+        MenuComponent,
+        ItemComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         MatIconModule,
     ],
-  providers: [
-    {provide : LocationStrategy , useClass: HashLocationStrategy}
-  ],
-  bootstrap: [AppComponent]
+    providers: [
+        {provide : LocationStrategy , useClass: HashLocationStrategy}
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
