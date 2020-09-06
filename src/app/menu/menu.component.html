@@ -1,6 +1,6 @@
 <h3 class="m-3 mt-3" style="text-align: center">Favorilerim</h3>
-<div class="row m-3 p-0 myfavorites justify-content-center">
-    <div class="col item m-1 p-0 border border-dark"
+<div class="m-1 p-0 myfavorites justify-content-center">
+    <div class="item m-1 p-0 border border-dark"
          *ngFor="let item of favoriteService.getFavorites()"
          (click)="storageService.setItem('item', item)"
          [routerLink]="['/item']">
@@ -10,7 +10,6 @@
         <img class="item-img" src="{{item.image}}" alt="">
         <p class="item-name">{{item.name}}</p>
         <p class="item-price">{{item.price + " TL"}}</p>
-        <p class="description">{{item.content}}</p>
     </div>
 </div>
 <hr>
