@@ -10,7 +10,7 @@ export class ItemComponent implements OnInit {
 
   item: any;
 
-  constructor(private storageService: StorageService) {
+  constructor(public storageService: StorageService) {
     this.item = storageService.getItem('item');
   }
 
@@ -18,16 +18,18 @@ export class ItemComponent implements OnInit {
   }
 
   removeFavorite(item: any) {
-    // @ts-ignore
     const index = this.storageService.favorites.indexOf(item.id);
     this.storageService.favorites.splice(index, 1);
     this.storageService.updateItem('favorites');
   }
 
   addFavorite(item: any) {
-    // @ts-ignore
     this.storageService.favorites.push(item.id);
     this.storageService.updateItem('favorites');
+  }
+
+  isFavorite(id) {
+    return this.storageService.favorites.includes((id));
   }
 
 }

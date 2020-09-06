@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root',
 })
 export class StorageService {
-  favorites: [];
+  favorites: string [];
 
   constructor() {
     const keys = Object.keys(localStorage);

@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
     content: []
   };
 
-  constructor(private storageService: StorageService) { }
+  constructor(public storageService: StorageService) { }
 
   ngOnInit(): void {
     for (let i = 0; i < 20; i ++) {
@@ -42,8 +42,7 @@ export class MenuComponent implements OnInit {
     const favorites = [];
     for ( const category of this.menu.content ) {
       for ( const item of category.items ) {
-        // @ts-ignore
-        if (this.storageService.favorites.includes(item.id)) {
+        if (this.isFavorite(item.id)) {
           favorites.push(item);
         }
       }
@@ -52,9 +51,12 @@ export class MenuComponent implements OnInit {
   }
 
   removeFavorite(item: any) {
-    // @ts-ignore
     const index = this.storageService.favorites.indexOf(item.id);
     this.storageService.favorites.splice(index, 1);
     this.storageService.updateItem('favorites');
+  }
+
+  isFavorite(id) {
+    return this.storageService.favorites.includes((id));
   }
 }
