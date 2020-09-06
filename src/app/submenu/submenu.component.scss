@@ -8,15 +8,16 @@
 
 .item {
   cursor: pointer;
-  width: 250px;
+  max-width: 250px;
+  border-radius: 10px;
 }
 
 .item-img {
-  display: block;
-  margin: auto;
   border-radius: 10px;
-  width: 250px;
-  height: 200px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 248px;
+  max-height: 200px;
 }
 
 .item-name {
@@ -28,10 +29,14 @@
   text-align: center;
 }
 
-.favorite mat-icon {
+.favorite {
   position: absolute;
+  cursor: pointer;
+  top: 0px;
+  right: 10px;
+}
+
+.favorite mat-icon {
   font-size: 2em;
-  top: 15px;
-  right: 20px;
   z-index: 999;
 }

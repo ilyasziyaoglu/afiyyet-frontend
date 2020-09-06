@@ -2,9 +2,14 @@
   cursor: pointer;
 }
 
-.item-img {
+.image-container {
+  position: relative;
   display: block;
   margin: auto;
+}
+
+.item-img {
+  border-radius: 10px;
   max-height: 400px;
 }
 
@@ -14,4 +19,16 @@
 
 .item-description {
   text-align: center;
+}
+
+.favorite {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.favorite mat-icon {
+  cursor: pointer;
+  font-size: 2em;
+  z-index: 999;
 }

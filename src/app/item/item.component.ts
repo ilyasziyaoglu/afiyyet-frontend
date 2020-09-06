@@ -17,4 +17,15 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  removeFavorite(item: any) {
+    const index = this.storageService.favorites.indexOf(item.id);
+    this.storageService.favorites.splice(index, 1);
+    this.storageService.updateItem('favorites');
+  }
+
+  addFavorite(item: any) {
+    this.storageService.favorites.push(item.id);
+    this.storageService.updateItem('favorites');
+  }
+
 }

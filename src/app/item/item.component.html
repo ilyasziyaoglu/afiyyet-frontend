@@ -1,10 +1,16 @@
-<div class="row back-container m-3 p-3">
+<div class="row w-100 back-container m-3 p-3">
     <mat-icon class="back-button" [routerLink]="['/submenu']">arrow_back</mat-icon>
 </div>
 <div class="row">
-    <img class="item-img" src="{{item.image}}" alt="{{item.name}}">
+    <div class="image-container">
+        <img class="item-img" src="{{item.image}}" alt="{{item.name}}">
+        <div class="favorite">
+            <mat-icon *ngIf="storageService.favorites.includes(item.id)" (click)="removeFavorite(item)">favorite</mat-icon>
+            <mat-icon *ngIf="!storageService.favorites.includes(item.id)" (click)="addFavorite(item)">favorite_border</mat-icon>
+        </div>
+    </div>
 </div>
 <br>
-<h3 class="item-name">{{item.name + ' ' + item.price + ' TL'}}</h3>
-<br>
+<h3 class="item-name">{{item.name}}</h3>
+<p class="item-name">{{item.price + ' TL'}}</p>
 <p class="item-description">{{item.content}}</p>

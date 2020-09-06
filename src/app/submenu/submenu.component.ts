@@ -16,7 +16,7 @@ export class SubmenuComponent implements OnInit {
   }
 
   removeFavorite(item: any) {
-    let index = this.storageService.favorites.indexOf(item.id);
+    const index = this.storageService.favorites.indexOf(item.id);
     this.storageService.favorites.splice(index, 1);
     this.storageService.updateItem('favorites');
   }

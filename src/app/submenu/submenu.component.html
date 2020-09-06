@@ -2,7 +2,7 @@
     <mat-icon class="back-button" [routerLink]="['/menu']">arrow_back</mat-icon>
 </div>
 <div class="row m-3">
-    <div class="col item m-3 p-3 border rounded-lg"
+    <div class="col item m-3 p-0 border"
          *ngFor="let item of storageService.getItem('category').items"
          (click)="storageService.setItem('item', item)"
          [routerLink]="['/item']">
@@ -11,7 +11,8 @@
             <mat-icon *ngIf="!storageService.favorites.includes(item.id)" (click)="addFavorite(item)">favorite_border</mat-icon>
         </div>
         <img class="item-img" src="{{item.image}}" alt="">
-        <p class="item-name">{{item.name + " " + item.price + " TL"}}</p>
+        <p class="item-name">{{item.name}}</p>
+        <p class="description">{{item.price + " TL"}}</p>
         <p class="description">{{item.content}}</p>
     </div>
 </div>
