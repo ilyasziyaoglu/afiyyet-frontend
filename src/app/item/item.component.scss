@@ -4,17 +4,14 @@
 
 .image-container {
   position: relative;
-  display: block;
-  margin: auto;
+  width: 90%;
 }
 
 .item-img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   max-height: 400px;
-}
-
-.item-name {
-  text-align: center;
 }
 
 .item-description {
@@ -26,11 +23,28 @@
 .favorite {
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 10px;
 }
 
 .favorite mat-icon {
   cursor: pointer;
   font-size: 2em;
   z-index: 999;
+}
+
+h3, p {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1366px) {
+
+  .image-container {
+    width: fit-content;
+    max-width: 600px;
+    max-height: 400px;
+  }
+
+  .favorite {
+    right: 20px;
+  }
 }
