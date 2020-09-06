@@ -18,6 +18,15 @@
   max-height: 400px;
 }
 
+.flex-container * {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.like-icon {
+  font-size: 1.1rem;
+}
+
 .item-description {
   text-align: center;
   font-family: "Merriweather", serif;
@@ -36,7 +45,7 @@
   z-index: 999;
 }
 
-h1, p {
+h1, .item-description {
   text-align: center;
 }
 

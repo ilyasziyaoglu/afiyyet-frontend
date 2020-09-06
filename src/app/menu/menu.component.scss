@@ -82,6 +82,11 @@
   font-style: italic;
 }
 
+.flex-container * {
+  margin: 0 5px;
+  text-align: center;
+}
+
 .favorite {
   position: absolute;
   cursor: pointer;
