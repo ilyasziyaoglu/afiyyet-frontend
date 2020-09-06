@@ -7,8 +7,8 @@
          (click)="storageService.setItem('item', item)"
          [routerLink]="['/item']">
         <div class="favorite">
-            <mat-icon *ngIf="isFavorite(item.id)" (click)="removeFavorite(item)">favorite</mat-icon>
-            <mat-icon *ngIf="!isFavorite(item.id)" (click)="addFavorite(item)">favorite_border</mat-icon>
+            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
+            <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
         </div>
         <img class="item-img" src="{{item.image}}" alt="">
         <p class="item-name">{{item.name}}</p>

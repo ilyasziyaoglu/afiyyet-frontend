@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../services/storage.service';
+import {FavoriteService} from '../services/favorite.service';
 
 @Component({
   selector: 'app-item',
@@ -10,26 +11,14 @@ export class ItemComponent implements OnInit {
 
   item: any;
 
-  constructor(public storageService: StorageService) {
+  constructor(
+      public storageService: StorageService,
+      public favoriteService: FavoriteService
+  ) {
     this.item = storageService.getItem('item');
   }
 
   ngOnInit(): void {
-  }
-
-  removeFavorite(item: any) {
-    const index = this.storageService.favorites.indexOf(item.id);
-    this.storageService.favorites.splice(index, 1);
-    this.storageService.updateItem('favorites');
-  }
-
-  addFavorite(item: any) {
-    this.storageService.favorites.push(item.id);
-    this.storageService.updateItem('favorites');
-  }
-
-  isFavorite(id) {
-    return this.storageService.favorites.includes((id));
   }
 
 }

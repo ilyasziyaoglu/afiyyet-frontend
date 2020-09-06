@@ -5,8 +5,8 @@
     <div class="image-container">
         <img class="item-img" src="{{item.image}}" alt="{{item.name}}">
         <div class="favorite">
-            <mat-icon *ngIf="isFavorite(item.id)" (click)="removeFavorite(item)">favorite</mat-icon>
-            <mat-icon *ngIf="!isFavorite(item.id)" (click)="addFavorite(item)">favorite_border</mat-icon>
+            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
+            <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
         </div>
     </div>
 </div>

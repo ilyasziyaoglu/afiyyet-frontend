@@ -1,11 +1,11 @@
 <h3 class="ml-5 mt-3">My Favorites</h3>
 <div class="row ml-5 p-0 myfavorites justify-content-center">
     <div class="col item m-1 p-0 border border-dark"
-         *ngFor="let item of getFavorites()"
+         *ngFor="let item of favoriteService.getFavorites()"
          (click)="storageService.setItem('item', item)"
          [routerLink]="['/item']">
         <div class="favorite">
-            <mat-icon *ngIf="isFavorite(item.id)" (click)="removeFavorite(item)">close</mat-icon>
+            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
         </div>
         <img class="item-img" src="{{item.image}}" alt="">
         <p class="item-name">{{item.name}}</p>
