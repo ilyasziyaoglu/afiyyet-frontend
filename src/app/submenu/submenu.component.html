@@ -1,7 +1,5 @@
-<div class="row back-container m-2 p-2">
-    <mat-icon class="back-button" [routerLink]="['/menu']">arrow_back</mat-icon>
-    <h3 class="category-name">{{storageService.category.name}}</h3>
-</div>
+<br>
+<h1 class="category-name">{{storageService.category.name}}</h1>
 <div class="row m-1 justify-content-center">
     <div class="col-12 m-1 p-0 item-container"
          *ngFor="let item of storageService.getItem('category').items"

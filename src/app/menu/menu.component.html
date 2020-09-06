@@ -1,20 +1,19 @@
-<div *ngIf="storageService.favorites.length">
-    <h3 class="m-3 mt-3" style="text-align: center">Favorilerim</h3>
-    <div class="m-1 p-0 myfavorites justify-content-center">
-        <div class="item m-1 p-0 border border-dark"
-             *ngFor="let item of favoriteService.getFavorites()"
-             (click)="storageService.setItem('item', item)"
-             [routerLink]="['/item']">
-            <div class="favorite">
-                <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
-            </div>
-            <img class="item-img" src="{{item.image}}" alt="">
-            <p class="item-name">{{item.name}}</p>
-            <p class="item-price">{{item.price + " TL"}}</p>
+<h3 class="m-3 mt-3" style="text-align: center">Favorilerim</h3>
+<p *ngIf="storageService.favorites.length === 0">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
+<div class="m-1 p-0 myfavorites justify-content-center">
+    <div class="item m-1 p-0 border border-dark"
+         *ngFor="let item of favoriteService.getFavorites()"
+         (click)="storageService.setItem('item', item)"
+         [routerLink]="['/item']">
+        <div class="favorite">
+            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
         </div>
+        <img class="item-img" src="{{item.image}}" alt="">
+        <p class="item-name">{{item.name}}</p>
+        <p class="item-price">{{item.price + " TL"}}</p>
     </div>
-    <hr>
 </div>
+<hr>
 <h3 class="m-3 mt-3" style="text-align: center">Menü</h3>
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
