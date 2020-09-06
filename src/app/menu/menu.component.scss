@@ -86,11 +86,11 @@
   position: absolute;
   cursor: pointer;
   top: 0;
-  right: 5px;
+  right: 0;
 }
 
 .favorite mat-icon {
-  font-size: 2em;
+  font-size: 1.7em;
   z-index: 999;
 }
 
@@ -122,6 +122,10 @@
 
   .favorite {
     right: 10px;
+  }
+
+  .favorite mat-icon {
+    font-size: 2em;
   }
 }
 
