@@ -1,6 +1,6 @@
 <br>
 <h1 class="item-name">{{item.name}}</h1>
-<div class="row W-100 m-0 p-0 justify-content-center">
+<div class="row W-100 m-0 p-0 justify-content-center align-items-center">
     <div class="image-container">
         <img class="item-img" src="{{item.image}}" alt="{{item.name}}">
         <div class="favorite">
@@ -9,6 +9,18 @@
         </div>
     </div>
 </div>
-<br>
-<p class="item-price">{{item.price + ' TL'}}</p>
+<div class="m-3 flex-container d-flex justify-content-center">
+    <div class="border rounded-lg pl-1 pr-1">
+        <p>{{item.price}}</p>
+        <p>TL</p>
+    </div>
+    <div class="border rounded-lg">
+        <p>{{item.rate}}</p>
+        <mat-icon class="like-icon">grade</mat-icon>
+    </div>
+    <div class="border rounded-lg">
+        <p>{{item.likes}}</p>
+        <mat-icon class="like-icon">thumb_up</mat-icon>
+    </div>
+</div>
 <p class="item-description">{{item.content}}</p>

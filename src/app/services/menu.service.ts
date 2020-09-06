@@ -20,7 +20,8 @@ export class MenuService {
       for (let j = 0; j < 10; j ++) {
         const item = {
           id: i.toString() + j.toString(),
-          rate: Math.round(Math.random() * 5),
+          rate: 3 + Math.round(Math.random() * 2),
+          likes: Math.round(Math.random() * 300),
           name: 'Latte Machiatto',
           image: 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg',
           price: 20.00,
