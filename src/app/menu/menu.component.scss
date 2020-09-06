@@ -1,3 +1,8 @@
+.myfavorites {
+  overflow: scroll;
+  max-height: 300px;
+}
+
 .category {
   cursor: pointer;
   max-width: 250px;
@@ -27,4 +32,58 @@
   color: white;
   font-weight: bolder;
   text-align: center;
+}
+
+
+.item {
+  cursor: pointer;
+  max-width: 250px;
+  border-radius: 10px;
+}
+@keyframes item-hover {
+  from {top: 0;} to {top: -2px;}
+  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
+}
+
+.item:hover {
+  animation-name: item-hover;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+.item-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 248px;
+  max-height: 200px;
+}
+
+.item-name {
+  font-weight: bolder;
+  text-align: center;
+  margin: 5px;
+}
+
+.item-price {
+  text-align: center;
+  margin: 2px;
+}
+
+.description {
+  text-align: center;
+  margin: 5px;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+}
+
+.favorite {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 10px;
+}
+
+.favorite mat-icon {
+  font-size: 2em;
+  z-index: 999;
 }
