@@ -18,12 +18,14 @@ export class ItemComponent implements OnInit {
   }
 
   removeFavorite(item: any) {
+    // @ts-ignore
     const index = this.storageService.favorites.indexOf(item.id);
     this.storageService.favorites.splice(index, 1);
     this.storageService.updateItem('favorites');
   }
 
   addFavorite(item: any) {
+    // @ts-ignore
     this.storageService.favorites.push(item.id);
     this.storageService.updateItem('favorites');
   }

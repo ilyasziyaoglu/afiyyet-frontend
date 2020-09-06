@@ -37,4 +37,17 @@ export class MenuComponent implements OnInit {
       this.menu.content.push(category);
     }
   }
+
+  getFavorites() {
+    const favorites = [];
+    for ( const category of this.menu.content ) {
+      for ( const item of category.items ) {
+        // @ts-ignore
+        if (this.storageService.favorites.includes(item.id)) {
+          favorites.push(item);
+        }
+      }
+    }
+    return favorites;
+  }
 }
