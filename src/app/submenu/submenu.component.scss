@@ -13,9 +13,8 @@
 }
 
 .item-img {
-  border-radius: 10px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   width: 248px;
   max-height: 200px;
 }
@@ -23,10 +22,19 @@
 .item-name {
   font-weight: bolder;
   text-align: center;
+  margin: 5px;
+}
+
+.item-price {
+  text-align: center;
+  margin: 2px;
 }
 
 .description {
   text-align: center;
+  margin: 5px;
+  font-family: "Merriweather", serif;
+  font-style: italic;
 }
 
 .favorite {
