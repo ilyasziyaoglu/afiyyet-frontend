@@ -5,10 +5,7 @@ import {Injectable} from '@angular/core';
 })
 export class StorageService {
   favorites: string[] = [];
-<<<<<<< Updated upstream
   category: any;
-=======
->>>>>>> Stashed changes
 
   constructor() {
     const keys = Object.keys(localStorage);
