@@ -1,9 +1,16 @@
 .back-container {
   color: black;
+  position: relative;
 }
 
 .back-button {
+  position: absolute;
   cursor: pointer;
+}
+
+.category-name {
+  width: 100%;
+  text-align: center;
 }
 
 .item {

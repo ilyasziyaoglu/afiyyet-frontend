@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../services/storage.service';
 import {FavoriteService} from '../services/favorite.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-item',
@@ -13,7 +14,8 @@ export class ItemComponent implements OnInit {
 
   constructor(
       public storageService: StorageService,
-      public favoriteService: FavoriteService
+      public favoriteService: FavoriteService,
+      public location: Location
   ) {
     this.item = storageService.getItem('item');
   }
