@@ -1,5 +1,5 @@
-<h3 class="ml-5 mt-3">My Favorites</h3>
-<div class="row ml-5 p-0 myfavorites justify-content-center">
+<h3 class="m-3 mt-3" style="text-align: center">Favorilerim</h3>
+<div class="row m-3 p-0 myfavorites justify-content-center">
     <div class="col item m-1 p-0 border border-dark"
          *ngFor="let item of favoriteService.getFavorites()"
          (click)="storageService.setItem('item', item)"
@@ -14,8 +14,9 @@
     </div>
 </div>
 <hr>
+<h3 class="m-3 mt-3" style="text-align: center">Menü</h3>
 <div class="row m-3 justify-content-center">
-    <div class="col category m-1"
+    <div class="col m-1 p-0 category"
          *ngFor="let category of menu.content"
          (click)="storageService.setItem('category', category)"
         [routerLink]="['/submenu']">

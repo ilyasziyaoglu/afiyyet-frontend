@@ -1,89 +1,97 @@
-.myfavorites {
-  overflow: scroll;
-  max-height: 300px;
-}
-
 .category {
   cursor: pointer;
-  max-width: 250px;
+  max-width: 48%;
   height: 200px;
 }
 
-.category-img {
-  filter: brightness(50%);
-  position: relative;
-  border-radius: 10px;
-  width: 250px;
-  height: 200px;
-}
+@media only screen and (min-width: 1366px) {
 
-.category-img:hover {
+  .myfavorites {
+    overflow: scroll;
+    max-height: 300px;
+  }
+
+  .category {
+    max-width: 250px;
+  }
+
+  .category-img {
+    filter: brightness(50%);
+    position: relative;
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+  }
+
+  .category-img:hover {
     filter: brightness(100%);
+  }
+
+  .category-img:hover + .category-name {
+    display: none;
+  }
+
+  .category-name {
+    width: 250px;
+    position: absolute;
+    top: 90px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+
+  .item {
+    cursor: pointer;
+    max-width: 250px;
+    border-radius: 10px;
+  }
+  @keyframes item-hover {
+    from {top: 0;} to {top: -2px;}
+    from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
+  }
+
+  .item:hover {
+    animation-name: item-hover;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+  }
+
+  .item-img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 248px;
+    max-height: 200px;
+  }
+
+  .item-name {
+    font-weight: bolder;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .item-price {
+    text-align: center;
+    margin: 2px;
+  }
+
+  .description {
+    text-align: center;
+    margin: 5px;
+    font-family: "Merriweather", serif;
+    font-style: italic;
+  }
+
+  .favorite {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 10px;
+  }
+
+  .favorite mat-icon {
+    font-size: 2em;
+    z-index: 999;
+  }
 }
 
-.category-img:hover + .category-name {
-  display: none;
-}
-
-.category-name {
-  width: 250px;
-  position: absolute;
-  top: 90px;
-  color: white;
-  font-weight: bolder;
-  text-align: center;
-}
-
-
-.item {
-  cursor: pointer;
-  max-width: 250px;
-  border-radius: 10px;
-}
-@keyframes item-hover {
-  from {top: 0;} to {top: -2px;}
-  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
-}
-
-.item:hover {
-  animation-name: item-hover;
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
-}
-
-.item-img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 248px;
-  max-height: 200px;
-}
-
-.item-name {
-  font-weight: bolder;
-  text-align: center;
-  margin: 5px;
-}
-
-.item-price {
-  text-align: center;
-  margin: 2px;
-}
-
-.description {
-  text-align: center;
-  margin: 5px;
-  font-family: "Merriweather", serif;
-  font-style: italic;
-}
-
-.favorite {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  right: 10px;
-}
-
-.favorite mat-icon {
-  font-size: 2em;
-  z-index: 999;
-}
