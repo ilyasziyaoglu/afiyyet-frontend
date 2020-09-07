@@ -22,10 +22,10 @@ export class MenuService {
           id: i.toString() + j.toString(),
           rate: 3 + Math.round(Math.random() * 2),
           likes: Math.round(Math.random() * 300),
-          name: 'Latte Machiatto',
+          name: 'Latte Machiatto Latte Machiatto',
           image: 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg',
           price: 20.00,
-          content: 'Sut, Kahve, Cikolata, Kopuk, Yaninda lokum, Sut, Kahve, Cikolata, Kopuk, Yaninda lokum, Sut, Kahve, Cikolata, Kopuk, Yaninda lokum, Sut, Kahve, Cikolata, Kopuk, Yaninda lokum, Sut, Kahve, Cikolata, Kopuk, Yaninda lokum'
+          content: ''
         };
         category.items.push(item);
       }
