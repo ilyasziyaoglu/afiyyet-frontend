@@ -25,7 +25,7 @@ export class MenuService {
           name: 'Latte Machiatto Latte Machiatto',
           image: 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg',
           price: 20.00,
-          content: ''
+          content: 'Sut, Kahve, Cikolata, Kopuk, Yaninda lokum'
         };
         category.items.push(item);
       }
