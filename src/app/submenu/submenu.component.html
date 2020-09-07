@@ -1,26 +1,19 @@
 <br>
 <h1 class="category-name">{{storageService.category.name}}</h1>
 <div class="row m-1 justify-content-center">
-    <div class="col-12 m-1 p-0 item-container"
+    <div class="col p-2 item"
          *ngFor="let item of storageService.getItem('category').items"
          (click)="storageService.setItem('item', item)"
          [routerLink]="['/item']">
 
-        <img class="item-img" src="{{item.image}}" alt="">
-
-        <div class="item">
-            <div class="favorite">
-                <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
-                <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
-            </div>
-
-            <div class="invisible-div"></div>
-
-            <div class="item-texts">
-                <p class="item-name">{{item.name}}</p>
-                <p class="description">Sut kahve cikolata kopuk yaninda lokum</p>
-                <p class="item-price">{{item.price + " TL"}}</p>
-            </div>
+        <img class="item-img" src="{{item.image}}" alt="{{item.name}}">
+        <div class="row item-name d-flex justify-content-between">
+            <p>{{item.name}}</p>
+            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
+            <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
         </div>
+        <hr class="item-line">
+        <p class="description">{{item.content}}</p>
+        <p class="item-price">{{item.price + " TL"}}</p>
     </div>
 </div>
