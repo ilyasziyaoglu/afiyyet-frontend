@@ -8,7 +8,7 @@
 
         <img class="item-img" src="{{item.image}}" alt="{{item.name}}">
         <div class="row item-name d-flex justify-content-between">
-            <p>{{item.name}}</p>
+            <h3>{{item.name}}</h3>
             <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
             <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
         </div>
