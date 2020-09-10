@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 import {Injectable} from '@angular/core';
+=======
+import { Injectable } from '@angular/core';
+import {Category, Item} from '../model/models';
+>>>>>>> Stashed changes
 
 @Injectable({
     providedIn: 'root',
@@ -2409,6 +2414,30 @@ export class MenuService {
         },
     ];
 
+<<<<<<< Updated upstream
+=======
+  constructor() {
+    for (let i = 0; i < 10; i ++) {
+      let category = new Category();
+      category.name = 'SOGUK ICECEKLER' + i;
+      category.mainmedia = 'https://www.cardinalmarkt.com/class/INNOVAEditor/assets/soguk.jpg';
+      category.items = [];
+      category.order = i;
+
+      for (let j = 0; j < 10; j ++) {
+        let item = new Item();
+        item.id = i.toString() + j.toString();
+        item.rate = 3 + Math.round(Math.random() * 2);
+        item.likes = Math.round(Math.random() * 300);
+        item.name = 'Latte Machiatto Latte Machiatto';
+        item.image = 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg';
+        item.price = 20.00;
+        item.content = '';
+        item.order = j;
+
+        category.items.push(item);
+      }
+>>>>>>> Stashed changes
 
     menu = {
         currency: 'TL',
@@ -2426,4 +2455,13 @@ export class MenuService {
             return category;
         });
     }
+<<<<<<< Updated upstream
+=======
+  }
+
+  getCategories() {
+    return this.menu.content;
+  }
+
+>>>>>>> Stashed changes
 }

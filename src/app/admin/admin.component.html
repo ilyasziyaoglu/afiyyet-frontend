@@ -1,0 +1,9 @@
+<div class="">
+    <div class="row">
+        <div cdkDropList (cdkDropListDropped)="drop($event)">
+            <div cdkDrag *ngFor="let category of categories">
+                <button>{{category.name}}</button>
+            </div>
+        </div>
+    </div>
+</div>
