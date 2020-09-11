@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
 import {Injectable} from '@angular/core';
-=======
-import { Injectable } from '@angular/core';
 import {Category, Item} from '../model/models';
->>>>>>> Stashed changes
 
 @Injectable({
     providedIn: 'root',
@@ -2414,54 +2410,48 @@ export class MenuService {
         },
     ];
 
-<<<<<<< Updated upstream
-=======
   constructor() {
-    for (let i = 0; i < 10; i ++) {
-      let category = new Category();
-      category.name = 'SOGUK ICECEKLER' + i;
-      category.mainmedia = 'https://www.cardinalmarkt.com/class/INNOVAEditor/assets/soguk.jpg';
-      category.items = [];
-      category.order = i;
+      for (let i = 0; i < 10; i++) {
+          let category = new Category();
+          category.name = 'SOGUK ICECEKLER' + i;
+          category.mainmedia = 'https://www.cardinalmarkt.com/class/INNOVAEditor/assets/soguk.jpg';
+          category.items = [];
+          category.order = i;
 
-      for (let j = 0; j < 10; j ++) {
-        let item = new Item();
-        item.id = i.toString() + j.toString();
-        item.rate = 3 + Math.round(Math.random() * 2);
-        item.likes = Math.round(Math.random() * 300);
-        item.name = 'Latte Machiatto Latte Machiatto';
-        item.image = 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg';
-        item.price = 20.00;
-        item.content = '';
-        item.order = j;
+          for (let j = 0; j < 10; j++) {
+              let item = new Item();
+              item.id = i.toString() + j.toString();
+              item.rate = 3 + Math.round(Math.random() * 2);
+              item.likes = Math.round(Math.random() * 300);
+              item.name = 'Latte Machiatto Latte Machiatto';
+              item.image = 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg';
+              item.price = 20.00;
+              item.content = '';
+              item.order = j;
 
-        category.items.push(item);
+              category.items.push(item);
+          }
       }
->>>>>>> Stashed changes
+  }
 
     menu = {
         currency: 'TL',
         categories: [],
     };
 
-    constructor() {
-        this.menu.categories = this.categories.sort((a, b) => a.position - b.position);
-        this.menu.categories = this.menu.categories.map(category => {
-            category.items = this.products.filter(item => item.category === category.id).map(item => {
-                item.content = item.content || 'Описание отсутствует';
-                item.image = item.image || 'https://www.fitleziz.com/upload/hedefinizi_belirleyin.png';
-                return item;
-            }).sort((a, b) => a.position - b.position);
-            return category;
-        });
+    // constructor() {
+    //     this.menu.categories = this.categories.sort((a, b) => a.position - b.position);
+    //     this.menu.categories = this.menu.categories.map(category => {
+    //         category.items = this.products.filter(item => item.category === category.id).map(item => {
+    //             item.content = item.content || 'Описание отсутствует';
+    //             item.image = item.image || 'https://www.fitleziz.com/upload/hedefinizi_belirleyin.png';
+    //             return item;
+    //         }).sort((a, b) => a.position - b.position);
+    //         return category;
+    //     });
+    // }
+    getCategories() {
+        return this.menu.categories;
     }
-<<<<<<< Updated upstream
-=======
-  }
-
-  getCategories() {
-    return this.menu.content;
-  }
-
->>>>>>> Stashed changes
 }
+
