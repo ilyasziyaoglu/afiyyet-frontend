@@ -24,7 +24,7 @@ export class MenuService {
         item.id = i.toString() + j.toString();
         item.rate = 3 + Math.round(Math.random() * 2);
         item.likes = Math.round(Math.random() * 300);
-        item.name = 'Latte Machiatto Latte Machiatto';
+        item.name = 'Latte Machiatto Latte Machiatto' + i + j;
         item.image = 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg';
         item.price = 20.00;
         item.content = '';

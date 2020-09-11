@@ -1,8 +1,18 @@
-<div class="">
-    <div class="row">
-        <div cdkDropList (cdkDropListDropped)="drop($event)">
-            <div cdkDrag *ngFor="let category of categories">
-                <button>{{category.name}}</button>
+<div class="container-fluid">
+    <div class="row my-3">
+        <div style="background-color: white" class="col-2 py-2">
+            <button class="btn btn-dark w-100 my-1" (click)="menuClick(0)">Menü Düzenle</button>
+            <button class="btn btn-dark w-100 my-1" (click)="menuClick(1)">Raporlar</button>
+            <button class="btn btn-dark w-100 my-1" (click)="menuClick(2)">QR Kodum</button>
+        </div>
+        <div style="background-color: lightgrey" class="col-9 px-0 py-2 rounded">
+            <div *ngIf="openIndex === 0" cdkDropList (cdkDropListDropped)="drop($event)" class="col-3">
+                <div cdkDrag *ngFor="let category of categories">
+                    <div style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">
+                        <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
+                        <span>{{category.name}}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -10,12 +10,18 @@ import {Category} from '../model/models';
 })
 export class AdminComponent implements OnInit {
 
+  openIndex = 0;
+
   categories: any[];
   constructor(private menuService: MenuService) {
     this.categories = menuService.getCategories();
   }
 
   ngOnInit(): void {
+  }
+
+  menuClick(index) {
+    this.openIndex = index;
   }
 
   drop(event: CdkDragDrop<Category>) {
