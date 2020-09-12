@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StorageService} from '../services/storage.service';
 
 @Component({
   selector: 'app-item-edit',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemEditComponent implements OnInit {
 
-  constructor() { }
+  item: any;
+
+  constructor(public storageService: StorageService) {
+    this.item = storageService.getEditItemSession();
+  }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,20 @@
-<p>item-edit works!</p>
+<div class="row my-2 mx-1 item px-2 py-3">
+    <img class="item-img h-100 col-3" src="{{item.image}}" alt="{{item.name}}">
+    <div class="col-8">
+        <div class="form-group mb-2 row">
+            <label for="name" class="col-2 col-form-label bg-dark input_label">Başlık</label>
+            <input id="name" class="form-control col-10" value="{{item.name}}" />
+        </div>
+        <div class="form-group mb-2 row">
+            <label for="description" class="col-2 col-form-label bg-dark input_label">İçerik</label>
+            <textarea id="description" class="description form-control col-10">{{item.content}}</textarea>
+        </div>
+        <div class="form-group row">
+            <label for="price" class="col-2 col-form-label bg-dark input_label">Fiyat</label>
+            <input id="price" value="{{item.price}}" class="item-price form-control col-10">
+        </div>
+    </div>
+</div>
+<div class="my-3" style="display: flex; justify-content: center">
+    <button style="background-color: #00796B; color: white; padding: 20px 90px" class="btn">Kaydet</button>
+</div>

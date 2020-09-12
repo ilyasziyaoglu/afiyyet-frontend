@@ -42,8 +42,10 @@
                             <input value="{{item.price}}" class="item-price form-control">
                         </div>
                         <div class="col-1">
+                            <mat-icon (click)="editItem(selectedCategoryIndex, i)"
+                                      style="font-size: 30px;">edit</mat-icon>
                             <mat-icon (click)="deleteItem(selectedCategoryIndex, i)"
-                                      style="font-size: 30px; color: #F4511E">delete</mat-icon>
+                            style="font-size: 30px; color: #F4511E">delete</mat-icon>
                         </div>
                     </div>
 

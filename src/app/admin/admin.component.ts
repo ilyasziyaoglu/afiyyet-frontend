@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MenuService} from '../services/menu.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Category, Item} from '../model/models';
+import {StorageService} from '../services/storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -15,7 +17,10 @@ export class AdminComponent implements OnInit {
   hasToSave = false;
 
   categories: any[];
-  constructor(private menuService: MenuService) {
+  constructor(
+      private menuService: MenuService, private storageService: StorageService,
+      private router: Router
+  ) {
     this.categories = menuService.getCategories();
   }
 
@@ -43,5 +48,11 @@ export class AdminComponent implements OnInit {
     this.hasToSave = true;
     this.categories[categoryIdx].items.splice(itemIdx, 1);
   }
+
+  editItem(categoryIdx: number, itemIdx: number) {
+    this.storageService.setEditItemSession(this.categories[categoryIdx].items[itemIdx]);
+    this.router.navigateByUrl('item-edit').then();
+  }
+
 
 }
