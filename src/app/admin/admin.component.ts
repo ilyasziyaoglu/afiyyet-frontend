@@ -11,6 +11,7 @@ import {Category} from '../model/models';
 export class AdminComponent implements OnInit {
 
   openIndex = 0;
+  selectedCategoryIndex = 0;
 
   categories: any[];
   constructor(private menuService: MenuService) {
@@ -28,6 +29,8 @@ export class AdminComponent implements OnInit {
     moveItemInArray(this.categories, event.previousIndex, event.currentIndex);
   }
 
-
+  categoryClick(i: number) {
+    this.selectedCategoryIndex = i;
+  }
 
 }

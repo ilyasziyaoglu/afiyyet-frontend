@@ -27,7 +27,7 @@ export class MenuService {
         item.name = 'Latte Machiatto Latte Machiatto' + i + j;
         item.image = 'https://www.645kk.com/wp-content/uploads/2017/07/CAFE-LATTE.jpg';
         item.price = 20.00;
-        item.content = '';
+        item.content = 'Deneme Deneme Deneme' + i + j;
         item.order = j;
 
         category.items.push(item);
