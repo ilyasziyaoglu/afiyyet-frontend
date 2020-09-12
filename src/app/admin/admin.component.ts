@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuService} from '../services/menu.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {Category} from '../model/models';
+import {Category, Item} from '../model/models';
 
 @Component({
   selector: 'app-admin',
@@ -12,6 +12,7 @@ export class AdminComponent implements OnInit {
 
   openIndex = 0;
   selectedCategoryIndex = 0;
+  hasToSave = false;
 
   categories: any[];
   constructor(private menuService: MenuService) {
@@ -31,6 +32,16 @@ export class AdminComponent implements OnInit {
 
   categoryClick(i: number) {
     this.selectedCategoryIndex = i;
+  }
+
+  addItem(index: number) {
+    this.hasToSave = true;
+    this.categories[index].items = [new Item()].concat(this.categories[index].items);
+  }
+
+  deleteItem(categoryIdx: number, itemIdx: number) {
+    this.hasToSave = true;
+    this.categories[categoryIdx].items.splice(itemIdx, 1);
   }
 
 }

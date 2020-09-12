@@ -11,6 +11,7 @@ import { ItemComponent } from './item/item.component';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { ItemEditComponent } from './item-edit/item-edit.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         SubmenuComponent,
         MenuComponent,
         ItemComponent,
-        AdminComponent
+        AdminComponent,
+        ItemEditComponent
     ],
     imports: [
         BrowserModule,
