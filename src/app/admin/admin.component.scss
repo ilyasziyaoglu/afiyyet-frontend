@@ -1,0 +1,40 @@
+.category-name {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.item {
+  color: aliceblue;
+  margin: 35px 5px 5px 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #343A40;
+  align-items: center;
+}
+
+.item_desc {
+  color: white;
+  background-color: #00796B;
+  margin-right: 5px;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.item-img {
+}
+
+.item-name {
+}
+
+.description {
+}
+
+.item-price {
+}

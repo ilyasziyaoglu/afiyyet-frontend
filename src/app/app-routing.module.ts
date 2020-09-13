@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {MenuComponent} from './menu/menu.component';
 import {SubmenuComponent} from './submenu/submenu.component';
 import {ItemComponent} from './item/item.component';
+import {AdminComponent} from './admin/admin.component';
+import {ItemEditComponent} from './item-edit/item-edit.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'item',
     component: ItemComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
+  },
+  {
+    path: 'item-edit',
+    component: ItemEditComponent
   }
 ];
 

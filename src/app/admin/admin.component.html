@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row my-3">
+        <div style="background-color: white" class="col-2 py-2">
+            <button class="btn btn-dark w-100 my-1" (click)="menuClick(0)">Menü Düzenle</button>
+            <button class="btn btn-dark w-100 my-1" (click)="menuClick(1)">Raporlar</button>
+            <button class="btn btn-dark w-100 my-1" (click)="menuClick(2)">QR Kodum</button>
+        </div>
+        <div style="background-color: lightgrey" class="col-9 px-0 py-2 rounded"> <!-- DashBoard Alanı -->
+
+            <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
+
+                <div cdkDropList (cdkDropListDropped)="drop($event)" class="col-3">
+                    <div cdkDrag *ngFor="let category of categories; let i = index">
+                        <div (click)="categoryClick(i)" style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">
+                            <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
+                            <span>{{category.name}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-9" *ngIf="selectedCategoryIndex >= 0">
+
+                    <div class="row mx-1 p-0 justify-content-between">
+                        <div class="col-9 bg-dark rounded category-name">{{categories[selectedCategoryIndex].name}}
+                            <mat-icon style="cursor: pointer" (click)="editCategoryName(selectedCategoryIndex)">edit</mat-icon>
+                        </div>
+
+                        <button *ngIf="!hasToSave" class="col-2 btn btn-secondary">Kaydet</button>
+                        <button *ngIf="hasToSave" class="col-2 btn btn-success">Kaydet</button>
+                    </div>
+
+                    <div class="row m-1 p-2 justify-content-center">
+                        <button (click)="addItem(selectedCategoryIndex)"
+                                class="btn btn-outline-dark py-3 px-5">Kategoriye Ürün Ekle</button>
+                    </div>
+
+                    <div class="row my-2 mx-1 item px-2 py-3"
+                         *ngFor="let item of categories[selectedCategoryIndex].items; let i = index">
+                        <img class="item-img col-3" src="{{item.image}}" alt="{{item.name}}">
+                        <div class="col-8">
+                            <div class="row">
+                                <p class="item_desc">Başlık</p><h3 class="mb-2 align-self-center font-weight-bold">{{item.name}}</h3>
+                            </div>
+                            <div class="row">
+                                <p class="item_desc">İçerik</p><p class="description mb-2 font-italic align-self-center">{{item.content}}</p>
+                            </div>
+                            <div class="row">
+                                <p class="item_desc">Fiyat</p><p class="item-price align-self-center">{{item.price}}</p>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <mat-icon (click)="editItem(selectedCategoryIndex, i)"
+                                      style="font-size: 30px;">edit</mat-icon>
+                            <mat-icon (click)="deleteItem(selectedCategoryIndex, i)"
+                            style="font-size: 30px; color: #F4511E">delete</mat-icon>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

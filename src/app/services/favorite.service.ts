@@ -14,7 +14,7 @@ export class FavoriteService {
 
   getFavorites() {
     const favorites = [];
-    for ( const category of this.menuService.menu.categories ) {
+    for ( const category of this.menuService.menu.content ) {
       for ( const item of category.items ) {
         if (this.isFavorite(item.id)) {
           favorites.push(item);

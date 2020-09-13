@@ -36,4 +36,17 @@ export class StorageService {
   updateItem(key) {
     this.setItem(key, this[key]);
   }
+
+  setEditItemSession(value) {
+    sessionStorage.setItem('edit-item', JSON.stringify(value));
+    console.log("deneme");
+  }
+
+  deleteEditItemSession() {
+    sessionStorage.removeItem('edit-item');
+  }
+
+  getEditItemSession() {
+    return JSON.parse(sessionStorage.getItem('edit-item'));
+  }
 }
