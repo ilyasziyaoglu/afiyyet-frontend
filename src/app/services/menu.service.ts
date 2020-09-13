@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Category, Item} from '../model/models';
+import {Category} from '../model/models';
 
 @Injectable({
     providedIn: 'root',
@@ -8,12 +8,14 @@ export class MenuService {
 
     menu = {
         currency: 'TL',
-        categories: Category = [{
+        categories: [{
             name: 'KAHVALTILAR & SERPME LEZZETLER',
             id: '903',
             image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B5903.jpg',
             href: 'https://egekahvecisi.qrmenue.com/tr/menu/kahvaltilar-serpme-lezzetler-903',
-            items: Item = [{
+            order: 1,
+            items: [{
+                order: 1,
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/kahvaltilar-serpme-lezzetler-903/sinide-serpme-ege-koy-kahvaltisi-5032',
                 id: 0,
                 name: 'SİNİDE SERPME EGE KÖY KAHVALTISI',
@@ -79,7 +81,9 @@ export class MenuService {
                 id: '905',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_D1588.png',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/omletler-905',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/omletler-905/sade-omlet-5038',
                     id: 6,
                     name: 'SADE OMLET',
@@ -135,7 +139,9 @@ export class MenuService {
                 id: '906',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F8924.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/sahanda-lezzetler-menemenler-906',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/sahanda-lezzetler-menemenler-906/sahanda-koy-yumurtasi-5043',
                     id: 11,
                     name: 'SAHANDA KÖY YUMURTASI ',
@@ -231,7 +237,9 @@ export class MenuService {
                 id: '908',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F2589.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/gozlemeler-908',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/gozlemeler-908/ege-otlu-peynirli-gozleme-5052',
                     id: 20,
                     name: 'EGE OTLU PEYNİRLİ GÖZLEME',
@@ -277,7 +285,9 @@ export class MenuService {
                 id: '909',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_C3223.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/tostlar-bazlamali-tostlar-909',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/tostlar-bazlamali-tostlar-909/kasarli-tost-5056',
                     id: 24,
                     name: 'KAŞARLI TOST',
@@ -373,7 +383,9 @@ export class MenuService {
                 id: '910',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_A7590.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/baslangiclar-910',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/baslangiclar-910/gunun-corbasi-5065',
                     id: 33,
                     name: 'GÜNÜN ÇORBASI',
@@ -449,7 +461,9 @@ export class MenuService {
                 id: '911',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B2189.png',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/burgerler-911',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/burgerler-911/klasik-hamburger-5072',
                     id: 40,
                     name: 'KLASİK HAMBURGER',
@@ -515,7 +529,9 @@ export class MenuService {
                 id: '912',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F76.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/makarnalar-912',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/makarnalar-912/penne-arabiatta-5078',
                     id: 46,
                     name: 'PENNE ARABIATTA',
@@ -611,7 +627,9 @@ export class MenuService {
                 id: '913',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_D7704.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/beyaz-etler-913',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/beyaz-etler-913/tavuklu-cokertme-kebabi-5087',
                     id: 55,
                     name: 'TAVUKLU ÇÖKERTME KEBABI',
@@ -687,7 +705,9 @@ export class MenuService {
                 id: '914',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B9890.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/kirmizi-etler-914',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/kirmizi-etler-914/izgara-kasap-kofte-5094',
                     id: 62,
                     name: 'IZGARA KASAP KÖFTE',
@@ -743,7 +763,9 @@ export class MenuService {
                 id: '915',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_A2478.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/salatalar-915',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/salatalar-915/akdeniz-salata-5099',
                     id: 67,
                     name: 'AKDENİZ SALATA',
@@ -829,7 +851,9 @@ export class MenuService {
                 id: '916',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B5329.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/sutlu-tatlilar-916',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/sutlu-tatlilar-916/sutlac-5109',
                     id: 75,
                     name: 'SÜTLAÇ',
@@ -875,7 +899,9 @@ export class MenuService {
                 id: '917',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_C8006.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/adet-pastalar-917',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/adet-pastalar-917/fistik-ruyasi-5120',
                     id: 79,
                     name: 'FISTIK RÜYASI',
@@ -1011,7 +1037,9 @@ export class MenuService {
                 id: '918',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_C7909.png',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/waffle-cesitleri-918',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/waffle-cesitleri-918/klasik-meyveli-waffle-5130',
                     id: 92,
                     name: 'KLASİK MEYVELİ WAFFLE',
@@ -1037,14 +1065,16 @@ export class MenuService {
                 id: '919',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F3236.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/dondurmalar-919',
-                items: Item = [],
+                items: [],
             },
             {
                 name: 'SICAK İÇECEKLER',
                 id: '920',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_C8643.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/sicak-icecekler-920',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/sicak-icecekler-920/bardak-cay-5139',
                     id: 94,
                     name: 'BARDAK ÇAY',
@@ -1130,7 +1160,9 @@ export class MenuService {
                 id: '921',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_D265.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/kahve-klasikleri-921',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/kahve-klasikleri-921/espresso-5147',
                     id: 102,
                     name: 'ESPRESSO',
@@ -1256,7 +1288,9 @@ export class MenuService {
                 id: '922',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F4566.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/3-nesil-kahveler-922',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/3-nesil-kahveler-922/cold-brew-5158',
                     id: 114,
                     name: 'COLD BREW',
@@ -1302,7 +1336,9 @@ export class MenuService {
                 id: '923',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B4425.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/turk-kahveleri-923',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/turk-kahveleri-923/klasik-turk-kahvesi-5162',
                     id: 118,
                     name: 'KLASİK TÜRK KAHVESİ',
@@ -1358,7 +1394,9 @@ export class MenuService {
                 id: '924',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B8944.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/soguk-kahveler-924',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/soguk-kahveler-924/ice-americano-5167',
                     id: 123,
                     name: 'ICE AMERICANO',
@@ -1434,7 +1472,9 @@ export class MenuService {
                 id: '925',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_B870.png',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/soguk-icecekler-925',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/soguk-icecekler-925/cam-sise-su-330-ml-5171',
                     id: 130,
                     name: 'CAM ŞİŞE SU (330 ml)',
@@ -1550,7 +1590,9 @@ export class MenuService {
                 id: '926',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_A5857.png',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/memleket-nostalji-gazozlari-926',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/memleket-nostalji-gazozlari-926/zafer-gazozlari-5181',
                     id: 141,
                     name: 'ZAFER GAZOZLARI ',
@@ -1606,7 +1648,9 @@ export class MenuService {
                 id: '927',
                 image: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F1982.jpg',
                 href: 'https://egekahvecisi.qrmenue.com/tr/menu/alkolsuz-kokteyller-927',
-                items: Item = [{
+                order: 1,
+                items: [{
+                    order: 1,
                     href: 'https://egekahvecisi.qrmenue.com/tr/menu/alkolsuz-kokteyller-927/bodrum-gunesi-5190',
                     id: 146,
                     name: 'BODRUM GÜNEŞİ',
@@ -1643,11 +1687,8 @@ export class MenuService {
 
     constructor() {
     }
-}
 
-getCategories();
-{
-    return this.menu.content;
-}
-
+    getCategories() {
+        return this.menu.categories;
+    }
 }

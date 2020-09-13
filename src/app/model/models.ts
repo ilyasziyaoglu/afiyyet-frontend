@@ -1,17 +1,20 @@
 export class Item {
     id: string;
-    rate: number;
-    likes: number;
     name: string;
     image: string;
     price: number;
     content: string;
     order: number;
+    rate: number;
+    likes: number;
+    href: string;
 }
 
 export class Category {
     name: string;
-    mainmedia: string;
-    items: any[];
-    order: number
+    id: string;
+    image: string;
+    href: string;
+    order: number;
+    items: Item[];
 }

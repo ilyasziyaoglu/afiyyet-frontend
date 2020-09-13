@@ -48,7 +48,7 @@ export class AdminComponent implements OnInit {
   }
 
   editCategoryName(index: number) {
-    this.dialog.open(DialogCategoryNameComponent, {data: {categoryName: this.categories[index].name, index: index}});
+    this.dialog.open(DialogCategoryNameComponent, {data: {categoryName: this.categories[index].name, index}});
   }
 
   deleteItem(categoryIdx: number, itemIdx: number) {

@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
 
   menu = {
     currency: 'TL',
-    content: []
+    categories: []
   };
 
   constructor(
