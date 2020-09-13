@@ -1,4 +1,10 @@
 .category-name {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
 }
 
 .item {
@@ -10,10 +16,18 @@
   align-items: center;
 }
 
+.item_desc {
+  color: white;
+  background-color: #00796B;
+  margin-right: 5px;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
 .item-img {
-  position: relative;
-  float: left;
-  border-radius: 6px;
 }
 
 .item-name {

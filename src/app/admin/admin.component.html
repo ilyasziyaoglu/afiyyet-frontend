@@ -20,9 +20,10 @@
 
                 <div class="col-9" *ngIf="selectedCategoryIndex >= 0">
 
-                    <div class="row mx-1 justify-content-between">
-                        <input style="text-align: center" type="text"
-                               class="form-control col-9" value="{{categories[selectedCategoryIndex].name}}"/>
+                    <div class="row mx-1 p-0 justify-content-between">
+                        <div class="col-9 bg-dark rounded category-name">{{categories[selectedCategoryIndex].name}}
+                            <mat-icon style="cursor: pointer" (click)="editCategoryName(selectedCategoryIndex)">edit</mat-icon>
+                        </div>
 
                         <button *ngIf="!hasToSave" class="col-2 btn btn-secondary">Kaydet</button>
                         <button *ngIf="hasToSave" class="col-2 btn btn-success">Kaydet</button>
@@ -35,11 +36,17 @@
 
                     <div class="row my-2 mx-1 item px-2 py-3"
                          *ngFor="let item of categories[selectedCategoryIndex].items; let i = index">
-                        <img class="item-img h-100 col-3" src="{{item.image}}" alt="{{item.name}}">
+                        <img class="item-img col-3" src="{{item.image}}" alt="{{item.name}}">
                         <div class="col-8">
-                            <input class="form-control mb-2" value="{{item.name}}" />
-                            <textarea class="description form-control mb-2">{{item.content}}</textarea>
-                            <input value="{{item.price}}" class="item-price form-control">
+                            <div class="row">
+                                <p class="item_desc">Başlık</p><h3 class="mb-2 align-self-center font-weight-bold">{{item.name}}</h3>
+                            </div>
+                            <div class="row">
+                                <p class="item_desc">İçerik</p><p class="description mb-2 font-italic align-self-center">{{item.content}}</p>
+                            </div>
+                            <div class="row">
+                                <p class="item_desc">Fiyat</p><p class="item-price align-self-center">{{item.price}}</p>
+                            </div>
                         </div>
                         <div class="col-1">
                             <mat-icon (click)="editItem(selectedCategoryIndex, i)"

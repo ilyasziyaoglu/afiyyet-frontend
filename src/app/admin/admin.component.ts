@@ -4,6 +4,8 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {Category, Item} from '../model/models';
 import {StorageService} from '../services/storage.service';
 import {Router} from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogCategoryNameComponent} from '../dialog-category-name/dialog-category-name.component';
 
 @Component({
   selector: 'app-admin',
@@ -19,7 +21,8 @@ export class AdminComponent implements OnInit {
   categories: any[];
   constructor(
       private menuService: MenuService, private storageService: StorageService,
-      private router: Router
+      private router: Router,
+      private dialog: MatDialog
   ) {
     this.categories = menuService.getCategories();
   }
@@ -42,6 +45,10 @@ export class AdminComponent implements OnInit {
   addItem(index: number) {
     this.hasToSave = true;
     this.categories[index].items = [new Item()].concat(this.categories[index].items);
+  }
+
+  editCategoryName(index: number) {
+    this.dialog.open(DialogCategoryNameComponent, {data: {categoryName: this.categories[index].name, index: index}});
   }
 
   deleteItem(categoryIdx: number, itemIdx: number) {

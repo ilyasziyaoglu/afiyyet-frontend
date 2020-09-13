@@ -12,6 +12,8 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ItemEditComponent } from './item-edit/item-edit.component';
+import { DialogCategoryNameComponent } from './dialog-category-name/dialog-category-name.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,8 @@ import { ItemEditComponent } from './item-edit/item-edit.component';
         MenuComponent,
         ItemComponent,
         AdminComponent,
-        ItemEditComponent
+        ItemEditComponent,
+        DialogCategoryNameComponent
     ],
     imports: [
         BrowserModule,
@@ -28,6 +31,7 @@ import { ItemEditComponent } from './item-edit/item-edit.component';
         BrowserAnimationsModule,
         MatIconModule,
         DragDropModule,
+        MatDialogModule
     ],
     providers: [
         {provide : LocationStrategy , useClass: HashLocationStrategy}
