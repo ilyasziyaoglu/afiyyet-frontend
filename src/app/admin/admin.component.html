@@ -13,7 +13,7 @@
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(i)" style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">
                             <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
-                            <span>{{category.name}}</span>
+                            <span style="text-align: left">{{category.name}}</span>
                         </div>
                     </div>
                 </div>
