@@ -3,18 +3,21 @@
     <div class="col-6">
         <div class="form-group mb-2 row">
             <label for="name" class="col-2 col-form-label bg-dark input_label">Başlık</label>
-            <input id="name" class="form-control col-10" value="{{item.name}}" />
+            <input id="name" [(ngModel)]="item.name"
+                   class="form-control col-10" value="{{item.name}}" />
         </div>
         <div class="form-group mb-2 row">
             <label for="description" class="col-2 col-form-label bg-dark input_label">İçerik</label>
-            <textarea id="description" class="description form-control col-10">{{item.content}}</textarea>
+            <textarea id="description" [(ngModel)]="item.content"
+                      class="description form-control col-10">{{item.content}}</textarea>
         </div>
         <div class="form-group row">
             <label for="price" class="col-2 col-form-label bg-dark input_label">Fiyat</label>
-            <input id="price" value="{{item.price}}" class="item-price form-control col-10">
+            <input id="price" [(ngModel)]="item.price" value="{{item.price}}" class="item-price form-control col-10">
         </div>
     </div>
 </div>
 <div class="my-3" style="display: flex; justify-content: center">
-    <button style="background-color: #00796B; color: white; padding: 20px 90px" class="btn">Kaydet</button>
+    <button (click)="saveClick()"
+            style="background-color: #00796B; color: white; padding: 20px 90px" class="btn">Kaydet</button>
 </div>

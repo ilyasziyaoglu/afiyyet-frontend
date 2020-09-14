@@ -12,6 +12,7 @@ import {DialogCategoryNameComponent} from '../dialog-category-name/dialog-catego
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
+
 export class AdminComponent implements OnInit {
 
   openIndex = 0;
@@ -44,9 +45,9 @@ export class AdminComponent implements OnInit {
     this.selectedCategoryIndex = i;
   }
 
-  addItem(index: number) {
-    this.itemSave = true;
-    this.categories[index].items = [new Item()].concat(this.categories[index].items);
+  addItem(categoryId: number) {
+    this.router.navigateByUrl('item-edit',
+        {state: {status: 'insert', data: {categoryId, itemId: null, item: null}}}).then();
   }
 
   editCategoryName(index: number) {
@@ -58,9 +59,9 @@ export class AdminComponent implements OnInit {
     this.categories[categoryIdx].items.splice(itemIdx, 1);
   }
 
-  editItem(categoryIdx: number, itemIdx: number) {
-    this.storageService.setEditItemSession(this.categories[categoryIdx].items[itemIdx]);
-    this.router.navigateByUrl('item-edit').then();
+  editItem(item) {
+    this.router.navigateByUrl('item-edit',
+        {state: {status: 'update', data: {categoryId: null, itemId: item.id, item}}}).then();
   }
 
 

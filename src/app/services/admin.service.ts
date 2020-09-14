@@ -11,9 +11,13 @@ export class AdminService {
 
   deleteItem(itemId: any) {}
 
-  insertItem(categoryId: any, item: Item) {}
+  insertItem(categoryId: any, item: Item) {
+    console.log("insert", {categoryId, item});
+  }
 
-  updateItem(itemId: any, item: Item) {}
+  updateItem(itemId: any, item: Item) {
+    console.log("update", {itemId, item});
+  }
 
   arrangeItemOrders(categoryId: any, idOrderPairs: any) {}
 

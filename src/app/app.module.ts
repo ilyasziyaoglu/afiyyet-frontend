@@ -14,6 +14,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { ItemEditComponent } from './item-edit/item-edit.component';
 import { DialogCategoryNameComponent } from './dialog-category-name/dialog-category-name.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import {MatDialogModule} from '@angular/material/dialog';
         BrowserAnimationsModule,
         MatIconModule,
         DragDropModule,
-        MatDialogModule
+        MatDialogModule,
+        FormsModule
     ],
     providers: [
         {provide : LocationStrategy , useClass: HashLocationStrategy}
