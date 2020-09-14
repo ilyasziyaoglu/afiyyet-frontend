@@ -16,7 +16,8 @@ export class AdminComponent implements OnInit {
 
   openIndex = 0;
   selectedCategoryIndex = 0;
-  hasToSave = false;
+  itemSave = false;
+  categorySave = false;
 
   categories: any[];
   constructor(
@@ -35,6 +36,7 @@ export class AdminComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<Category>) {
+    this.categorySave = true;
     moveItemInArray(this.categories, event.previousIndex, event.currentIndex);
   }
 
@@ -43,7 +45,7 @@ export class AdminComponent implements OnInit {
   }
 
   addItem(index: number) {
-    this.hasToSave = true;
+    this.itemSave = true;
     this.categories[index].items = [new Item()].concat(this.categories[index].items);
   }
 
@@ -52,7 +54,7 @@ export class AdminComponent implements OnInit {
   }
 
   deleteItem(categoryIdx: number, itemIdx: number) {
-    this.hasToSave = true;
+    this.itemSave = true;
     this.categories[categoryIdx].items.splice(itemIdx, 1);
   }
 

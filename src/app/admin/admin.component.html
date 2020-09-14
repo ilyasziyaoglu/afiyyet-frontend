@@ -10,6 +10,10 @@
             <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
 
                 <div cdkDropList (cdkDropListDropped)="drop($event)" class="col-3">
+
+                    <button *ngIf="!categorySave" class="col-12 btn btn-secondary mb-3">Sıralamayı Kaydet</button>
+                    <button *ngIf="categorySave" class="col-12 btn btn-success mb-3">Sıralamayı Kaydet</button>
+
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(i)" style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">
                             <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
@@ -25,8 +29,8 @@
                             <mat-icon style="cursor: pointer" (click)="editCategoryName(selectedCategoryIndex)">edit</mat-icon>
                         </div>
 
-                        <button *ngIf="!hasToSave" class="col-2 btn btn-secondary">Kaydet</button>
-                        <button *ngIf="hasToSave" class="col-2 btn btn-success">Kaydet</button>
+                        <button *ngIf="!itemSave" class="col-2 btn btn-secondary">Kaydet</button>
+                        <button *ngIf="itemSave" class="col-2 btn btn-success">Kaydet</button>
                     </div>
 
                     <div class="row m-1 p-2 justify-content-center">
