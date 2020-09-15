@@ -31,7 +31,9 @@ export class AdminService {
     console.log({categoryId, name});
   }
 
-  arrangeCateogoryOrders(idOrderPairs: any) {}
+  arrangeCateogoryOrders(idOrderPairs: any) {
+    console.log({idOrderPairs});
+  }
 
   getCategoryItems(categoryId: any) {}
 

@@ -9,10 +9,10 @@
 
             <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
 
-                <div cdkDropList (cdkDropListDropped)="drop($event)" class="col-3">
+                <div cdkDropList (cdkDropListDropped)="dropCategory($event)" class="col-3">
 
-                    <button *ngIf="!categorySave" class="col-12 btn btn-secondary mb-3">Sıralamayı Kaydet</button>
-                    <button *ngIf="categorySave" class="col-12 btn btn-success mb-3">Sıralamayı Kaydet</button>
+                    <button *ngIf="!categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-secondary mb-3">Sıralamayı Kaydet</button>
+                    <button *ngIf="categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-success mb-3">Sıralamayı Kaydet</button>
 
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(i)" style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">

@@ -7,7 +7,6 @@ import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogCategoryNameComponent} from '../dialog-category-name/dialog-category-name.component';
 import {AdminService} from '../services/admin.service';
-import {menu} from '../model/data';
 
 @Component({
   selector: 'app-admin',
@@ -30,14 +29,6 @@ export class AdminComponent implements OnInit {
       private adminService: AdminService
   ) {
     this.categories = menuService.getCategories();
-    let yeniMenu = menu.categories.map((elem, i) => {
-      // @ts-ignore
-      let myItems = elem.items.map((item, i) => {
-        return { ...item, order: i }
-      });
-      return {...elem, items: myItems, order: i};
-    });
-    console.log("yeni", yeniMenu);
   }
 
   ngOnInit(): void {
@@ -47,9 +38,23 @@ export class AdminComponent implements OnInit {
     this.openIndex = index;
   }
 
-  drop(event: CdkDragDrop<Category>) {
+  categoryArrangeSave() {
+    let pairs = [];
+    this.categories.forEach(category => {
+      pairs.push({id: category.id, order: category.order});
+    });
+    this.adminService.arrangeCateogoryOrders(pairs);
+  }
+
+  dropCategory(event: CdkDragDrop<Category>) {
     this.categorySave = true;
-    moveItemInArray(this.categories, event.previousIndex, event.currentIndex);
+    this.categories = this.moveItemOrderInArray(this.categories, event.previousIndex, event.currentIndex);
+  }
+
+  moveItemOrderInArray(arr, prevIndex, nextIndex) {
+    arr.splice(nextIndex, 0, arr.splice(prevIndex, 1)[0]);
+    arr = arr.map((item, i) => ({...item, order: i}));
+    return arr;
   }
 
   categoryClick(i: number) {
