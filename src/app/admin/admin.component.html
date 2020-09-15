@@ -26,7 +26,7 @@
 
                     <div class="row mx-1 p-0 justify-content-between">
                         <div class="col-9 bg-dark rounded category-name">{{categories[selectedCategoryIndex].name}}
-                            <mat-icon style="cursor: pointer" (click)="editCategoryName(selectedCategoryIndex)">edit</mat-icon>
+                            <mat-icon style="cursor: pointer" (click)="editCategoryName(categories[selectedCategoryIndex])">edit</mat-icon>
                         </div>
 
                         <button *ngIf="!itemSave" class="col-2 btn btn-secondary">Kaydet</button>
@@ -55,7 +55,7 @@
                         <div class="col-1">
                             <mat-icon (click)="editItem(item)"
                                       style="font-size: 30px;">edit</mat-icon>
-                            <mat-icon (click)="deleteItem(selectedCategoryIndex, i)"
+                            <mat-icon (click)="deleteItem(item.id)"
                             style="font-size: 30px; color: #F4511E">delete</mat-icon>
                         </div>
                     </div>

@@ -9,25 +9,29 @@ export class AdminService {
   constructor() { }
 
 
-  deleteItem(itemId: any) {}
+  deleteItem(itemId: any) {
+    console.log("delete", itemId);
+  }
 
   insertItem(categoryId: any, item: Item) {
     console.log("insert", {categoryId, item});
   }
 
-  updateItem(itemId: any, item: Item) {
-    console.log("update", {itemId, item});
+  updateItem(item: Item) {
+    console.log("update", {item});
   }
 
-  arrangeItemOrders(categoryId: any, idOrderPairs: any) {}
+  arrangeItemOrders(idOrderPairs: any) {}
 
-  insertCategory(companyId: any, category: Category) {}
+  insertCategory(category: Category) {}
 
   deleteCategory(categoryId: any) {}
 
-  updateCategoryName(categoryId: any, name: string) {}
+  updateCategoryName(categoryId: any, name: string) {
+    console.log({categoryId, name});
+  }
 
-  arrangeCateogoryOrders(companyId: any, idOrderPairs: any) {}
+  arrangeCateogoryOrders(idOrderPairs: any) {}
 
   getCategoryItems(categoryId: any) {}
 

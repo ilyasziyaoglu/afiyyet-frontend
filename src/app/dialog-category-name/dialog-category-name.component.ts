@@ -8,18 +8,22 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 })
 export class DialogCategoryNameComponent implements OnInit {
 
+  categoryName;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
-              private dialog: MatDialogRef<DialogCategoryNameComponent>) { }
+              private dialog: MatDialogRef<DialogCategoryNameComponent>) {
+    this.categoryName = data.categoryName;
+  }
 
   ngOnInit(): void {
   }
 
   saveClick() {
-    this.dialog.close();
+    this.dialog.close({text: this.categoryName});
   }
 
   cancelClick() {
-    this.dialog.close();
+    this.dialog.close({});
   }
 
 }
