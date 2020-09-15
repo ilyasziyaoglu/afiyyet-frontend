@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogCategoryNameComponent} from '../dialog-category-name/dialog-category-name.component';
 import {AdminService} from '../services/admin.service';
+import {menu} from '../model/data';
 
 @Component({
   selector: 'app-admin',
@@ -29,6 +30,14 @@ export class AdminComponent implements OnInit {
       private adminService: AdminService
   ) {
     this.categories = menuService.getCategories();
+    let yeniMenu = menu.categories.map((elem, i) => {
+      // @ts-ignore
+      let myItems = elem.items.map((item, i) => {
+        return { ...item, order: i }
+      });
+      return {...elem, items: myItems, order: i};
+    });
+    console.log("yeni", yeniMenu);
   }
 
   ngOnInit(): void {
