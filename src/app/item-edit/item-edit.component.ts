@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {AdminService} from '../services/admin.service';
+import {ProductService} from '../services/product.service';
 
 @Component({
   selector: 'app-item-edit',
@@ -16,7 +16,7 @@ export class ItemEditComponent implements OnInit {
 
   constructor(
       private router: Router,
-      private adminService: AdminService
+      private productService: ProductService
   ) {
 
     this.status = this.router.getCurrentNavigation().extras.state.status;
@@ -27,9 +27,9 @@ export class ItemEditComponent implements OnInit {
 
   saveClick() {
     if (this.status === 'update') {
-      this.adminService.updateItem(this.itemId, this.item);
+      this.productService.updateProduct(this.item);
     } else if (this.status === 'insert') {
-      this.adminService.insertItem(this.categoryId, this.item);
+      this.productService.insetProduct(this.categoryId, this.item);
     }
   }
 

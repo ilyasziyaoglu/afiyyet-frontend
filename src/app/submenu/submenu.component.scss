@@ -12,7 +12,6 @@
 
 mat-icon {
   position: absolute;
-  right: -12px;
   font-size: 1.5em;
   z-index: 999;
 }
@@ -58,7 +57,7 @@ mat-icon {
   position: relative;
   margin-top: -10px;
   margin-left: 20px;
-  top: -30px;
+  top: -20px;
   left: -10px;
   text-align: justify;
   font-family: "Merriweather", serif;
@@ -68,7 +67,7 @@ mat-icon {
 .item-price {
   position: relative;
   left: -2px;
-  margin: -40px 2px 2px;
+  margin: 2px 2px 2px;
   width: 100%;
   text-align: right;
   float: bottom;
@@ -77,6 +76,15 @@ mat-icon {
 .item-line {
   position: relative;
   margin-left: 88px;
-  top: -30px;
+  top: -20px;
   background-color: white;
+}
+//
+//.item-footer {
+//  position: relative;
+//  //top: -15px;
+//}
+
+.active {
+  color: dodgerblue;
 }

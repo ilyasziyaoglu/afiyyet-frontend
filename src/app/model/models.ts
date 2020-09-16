@@ -1,20 +1,28 @@
 export class Item {
     id: string;
     name: string;
-    image: string;
+    imgUrl: string;
     price: number;
-    content: string;
+    description: string;
     order: number;
-    rate: number;
     likes: number;
-    href: string;
+    status: string;
+    category: any;
 }
 
 export class Category {
-    name: string;
     id: string;
-    image: string;
-    href: string;
+    name: string;
+    imgUrl: string;
     order: number;
+    status: string;
+    brand: Brand;
     items: Item[];
+}
+
+export class Brand {
+    id: number;
+    name: string;
+    logoImgUrl: string;
+    status: string;
 }

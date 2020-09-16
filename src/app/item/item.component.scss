@@ -2,7 +2,7 @@
   cursor: pointer;
 }
 
-.image-container {
+.imgUrl-container {
   position: relative;
   width: 90%;
 }
@@ -16,6 +16,10 @@
   height: auto;
   border-radius: 10px;
   max-height: 400px;
+}
+
+.active {
+  color: dodgerblue;
 }
 
 .flex-container * {
@@ -51,7 +55,7 @@ h1, .item-description {
 
 @media only screen and (min-width: 1366px) {
 
-  .image-container {
+  .imgUrl-container {
     width: fit-content;
     max-width: 600px;
     max-height: 400px;

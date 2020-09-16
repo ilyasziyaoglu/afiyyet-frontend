@@ -3,28 +3,22 @@
 <div class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 border border-dark"
          *ngFor="let item of favoriteService.getFavorites()"
-         (click)="storageService.setItem('item', item)"
-         [routerLink]="['/item']">
+         (click)="storageService.setItem('item', item)">
         <div class="favorite">
             <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
         </div>
-        <img class="item-img" src="{{item.image}}" alt="">
-        <p class="item-name">{{item.name}}</p>
+        <img [routerLink]="['/item']" class="item-img" src="{{item.imgUrl}}" alt="">
+        <p [routerLink]="['/item']" class="item-name">{{item.name}}</p>
         <div class="m-3 flex-container d-flex justify-content-center">
             <div class="border rounded-lg pl-1 pr-1">
                 <p>{{item.price}}</p>
                 <p>TL</p>
             </div>
-            <div class="border rounded-lg">
-                <p>{{item.rate}}</p>
-                <mat-icon class="like-icon">grade</mat-icon>
-            </div>
-            <div class="border rounded-lg">
+            <div class="border rounded-lg" (click)="onLike(item)">
                 <p>{{item.likes}}</p>
-                <mat-icon class="like-icon">thumb_up</mat-icon>
+                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}" class="like-icon">thumb_up</mat-icon>
             </div>
         </div>
-<!--        <p class="item-price">{{item.price + " TL"}}</p>-->
     </div>
 </div>
 <hr>
@@ -34,7 +28,7 @@
          *ngFor="let category of menu.categories"
          (click)="storageService.setItem('category', category)"
         [routerLink]="['/submenu']">
-        <img class="category-img" src="{{category.image}}" alt="">
+        <img class="category-img" src="{{category.imgUrl}}" alt="">
         <p class="category-name">{{category.name}}</p>
     </div>
 </div>

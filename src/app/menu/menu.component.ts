@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {StorageService} from '../services/storage.service';
 import {FavoriteService} from '../services/favorite.service';
 import {MenuService} from '../services/menu.service';
+import {StorageService} from '../common/services/storage.service';
 
 @Component({
   selector: 'app-menu',
@@ -23,5 +23,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.menu = this.menuService.menu;
+  }
+
+  onLike(item: any) {
+    this.menuService.like(item);
   }
 }
