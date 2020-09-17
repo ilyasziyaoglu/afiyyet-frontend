@@ -22,17 +22,23 @@ export class AdminComponent implements OnInit {
     itemSave = false;
     categorySave = false;
 
-    categories: any[];
+    categories: any[] = [];
 
     constructor(
         private menuService: MenuService, private storageService: StorageService,
         private router: Router,
         private dialog: MatDialog,
         private categoryService: CategoryService,
-        private productService: ProductService
+        private productService: ProductService,
     ) {
         categoryService.getAll(data => {
             this.categories = data;
+            this.categoryService.currentCategory = this.categories[0];
+            if ( this.categoryService.currentCategory ) {
+                this.productService.getProductsByCategory(this.categoryService.currentCategory.id, results => {
+                    this.categoryService.currentCategory.items = results;
+                });
+            }
         });
     }
 
@@ -62,13 +68,13 @@ export class AdminComponent implements OnInit {
         return arr;
     }
 
-    categoryClick(i: number) {
-        this.selectedCategoryIndex = i;
+    categoryClick(category) {
+        this.categoryService.currentCategory = category;
     }
 
-    addItem(categoryId: number) {
+    addItem() {
         this.router.navigateByUrl('item-edit',
-            {state: {status: 'insert', data: {categoryId, itemId: null, item: null}}}).then();
+            {state: {status: 'insert', data: {itemId: null, item: null}}}).then();
     }
 
     editCategoryName(category) {

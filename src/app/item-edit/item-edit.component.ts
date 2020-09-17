@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductService} from '../services/product.service';
+import {CategoryService} from '../services/category.service';
 
 @Component({
   selector: 'app-item-edit',
@@ -11,17 +12,16 @@ export class ItemEditComponent implements OnInit {
 
   item: any = {};
   status;
-  categoryId;
   itemId;
 
   constructor(
       private router: Router,
-      private productService: ProductService
+      private productService: ProductService,
+      private categoryService: CategoryService
   ) {
 
     this.status = this.router.getCurrentNavigation().extras.state.status;
     this.item = {} || this.router.getCurrentNavigation().extras.state.data.item;
-    this.categoryId = this.router.getCurrentNavigation().extras.state.data.categoryId;
     this.itemId = this.router.getCurrentNavigation().extras.state.data.itemId;
   }
 
@@ -29,7 +29,7 @@ export class ItemEditComponent implements OnInit {
     if (this.status === 'update') {
       this.productService.updateProduct(this.item);
     } else if (this.status === 'insert') {
-      this.productService.insetProduct(this.categoryId, this.item);
+      this.productService.insetProduct(this.categoryService.currentCategory.id, this.item);
     }
   }
 

@@ -10,6 +10,7 @@ import {Category} from '../model/models';
 export class CategoryService extends BaseService {
 
   basePath = 'category';
+  currentCategory: Category;
 
   constructor(
       httpService: HttpService,
@@ -36,9 +37,5 @@ export class CategoryService extends BaseService {
 
   arrangeCateogories(idOrderPairs: any, cb?) {
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrangeCateogories`, idOrderPairs, cb);
-  }
-
-  getProducts(categoryId: any, cb?) {
-    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/getProducts`, categoryId, cb);
   }
 }

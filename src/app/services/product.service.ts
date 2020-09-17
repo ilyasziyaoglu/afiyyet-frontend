@@ -43,6 +43,10 @@ export class ProductService extends BaseService {
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrangeProducts`, idOrderPairs, cb);
   }
 
+  getProductsByCategory(categoryId: any, cb?) {
+    this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-products-by-category${categoryId}`, cb);
+  }
+
   setEditProductToSession(value) {
     this.storageService.setItem('edit-item', value);
   }
