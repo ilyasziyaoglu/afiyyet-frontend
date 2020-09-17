@@ -31,7 +31,9 @@ export class AdminComponent implements OnInit {
         private categoryService: CategoryService,
         private productService: ProductService
     ) {
-        this.categories = menuService.getCategories();
+        categoryService.getAll(data => {
+            this.categories = data;
+        });
     }
 
     ngOnInit(): void {

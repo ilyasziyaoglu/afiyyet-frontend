@@ -25,7 +25,7 @@
                 <div class="col-9" *ngIf="selectedCategoryIndex >= 0">
 
                     <div class="row mx-1 p-0 justify-content-between">
-                        <div class="col-9 bg-dark rounded category-name">{{categories[selectedCategoryIndex].name}}
+                        <div class="col-9 bg-dark rounded category-name">{{categories[selectedCategoryIndex]?.name}}
                             <mat-icon style="cursor: pointer" (click)="editCategoryName(categories[selectedCategoryIndex])">edit</mat-icon>
                         </div>
 
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="row my-2 mx-1 item px-2 py-3"
-                         *ngFor="let item of categories[selectedCategoryIndex].items; let i = index">
+                         *ngFor="let item of categories[selectedCategoryIndex]?.items; let i = index">
                         <img class="item-img col-3" src="{{item.imgUrl}}" alt="{{item.name}}">
                         <div class="col-8">
                             <div class="row">

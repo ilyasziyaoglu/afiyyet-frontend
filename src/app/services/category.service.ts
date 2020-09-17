@@ -9,7 +9,7 @@ import {Category} from '../model/models';
 })
 export class CategoryService extends BaseService {
 
-  basePath = '/category';
+  basePath = 'category';
 
   constructor(
       httpService: HttpService,

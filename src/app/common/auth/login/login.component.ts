@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpMethod, HttpService} from '../../services/http.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {StorageService} from '../../services/storage.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class LoginComponent {
     this.httpService.doRequest(HttpMethod.POST, 'auth/login', data, (response) => {
       this.storageService.setItem('token', response.token);
       this.storageService.setItem('user', response.userResponse);
-      this.router.navigateByUrl('pages/home');
+      this.router.navigateByUrl('/admin');
     });
   }
 }

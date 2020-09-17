@@ -30,13 +30,12 @@ export class RegisterComponent implements OnInit {
         fullName: this.fullName,
         email: this.email,
         password: this.password,
-        gender: this.gender,
       };
 
       this.httpService.doRequest(HttpMethod.POST, 'auth/register', data, (response) => {
         this.storageService.setItem('token', response.token);
         this.storageService.setItem('user', response.userResponse);
-        this.router.navigateByUrl('pages/design');
+        this.router.navigateByUrl('/admin');
       });
     }
   }

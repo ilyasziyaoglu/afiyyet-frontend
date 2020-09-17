@@ -9,7 +9,7 @@ import {StorageService} from '../common/services/storage.service';
 })
 export class ProductService extends BaseService {
 
-  basePath = '/category';
+  basePath = 'product';
 
   constructor(
       httpService: HttpService,
