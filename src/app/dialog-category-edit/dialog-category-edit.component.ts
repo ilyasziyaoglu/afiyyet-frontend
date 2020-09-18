@@ -9,7 +9,7 @@ import {Category} from '../model/models';
 })
 export class DialogCategoryEditComponent implements OnInit {
 
-  category: Category;
+  category: Category = new Category();
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
               private dialog: MatDialogRef<DialogCategoryEditComponent>) {
@@ -19,11 +19,15 @@ export class DialogCategoryEditComponent implements OnInit {
   }
 
   saveClick() {
-    this.dialog.close({text: ''});
+    this.dialog.close({category: this.category});
   }
 
   cancelClick() {
     this.dialog.close({});
+  }
+
+  addPhotoClick() {
+
   }
 
 }

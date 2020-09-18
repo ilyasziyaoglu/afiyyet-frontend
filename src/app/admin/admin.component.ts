@@ -104,6 +104,11 @@ export class AdminComponent implements OnInit {
         const dialogRef = this.dialog.open(DialogCategoryEditComponent);
 
         dialogRef.afterClosed().subscribe(res => {
+            res.category.imgUrl = "";
+            res.category.status = "ACTIVE";
+            this.categoryService.insertCategory(res.category, result => {
+
+            });
         });
     }
 
