@@ -50,8 +50,8 @@ export class HttpService {
         }));
     }
 
-    delete<T>(url: string, headers: HttpHeaders, id?: string): Observable<any> {
-        return this.http.delete<T>(url + id, {headers}).pipe(map((response: any) => {
+    delete<T>(url: string, headers: HttpHeaders): Observable<any> {
+        return this.http.delete<T>(url, {headers}).pipe(map((response: any) => {
             return response;
         }));
     }
