@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {Category} from '../model/models';
 
 @Component({
   selector: 'app-dialog-category-edit',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogCategoryEditComponent implements OnInit {
 
-  constructor() { }
+  category: Category;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+              private dialog: MatDialogRef<DialogCategoryEditComponent>) {
+  }
 
   ngOnInit(): void {
+  }
+
+  saveClick() {
+    this.dialog.close({text: ''});
+  }
+
+  cancelClick() {
+    this.dialog.close({});
   }
 
 }

@@ -8,6 +8,7 @@ import {DialogCategoryNameComponent} from '../dialog-category-name/dialog-catego
 import {StorageService} from '../common/services/storage.service';
 import {CategoryService} from '../services/category.service';
 import {ProductService} from '../services/product.service';
+import {DialogCategoryEditComponent} from '../dialog-category-edit/dialog-category-edit.component';
 
 @Component({
     selector: 'app-admin',
@@ -27,7 +28,7 @@ export class AdminComponent implements OnInit {
         private menuService: MenuService, private storageService: StorageService,
         private router: Router,
         private dialog: MatDialog,
-        private categoryService: CategoryService,
+        public categoryService: CategoryService,
         private productService: ProductService,
     ) {
         categoryService.getAll(data => {
@@ -100,7 +101,10 @@ export class AdminComponent implements OnInit {
     }
 
     addCategory() {
+        const dialogRef = this.dialog.open(DialogCategoryEditComponent);
 
+        dialogRef.afterClosed().subscribe(res => {
+        });
     }
 
 
