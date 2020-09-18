@@ -29,7 +29,7 @@ export class ItemEditComponent implements OnInit {
     if (this.status === 'update') {
       this.productService.updateProduct(this.item);
     } else if (this.status === 'insert') {
-      this.productService.insetProduct(this.categoryService.currentCategory.id, this.item);
+      this.productService.insetProduct(this.categoryService.currentCategory, this.item);
     }
   }
 

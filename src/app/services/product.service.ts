@@ -30,8 +30,8 @@ export class ProductService extends BaseService {
     this.delete(itemId, cb);
   }
 
-  insetProduct(categoryId: any, item: Item, cb?) {
-    item.category = {id: categoryId};
+  insetProduct(category: any, item: Item, cb?) {
+    item.category = category;
     this.post(item, cb);
   }
 
@@ -44,7 +44,7 @@ export class ProductService extends BaseService {
   }
 
   getProductsByCategory(categoryId: any, cb?) {
-    this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-products-by-category/${categoryId}`, cb);
+    this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-products-by-category/${categoryId}`, '', cb);
   }
 
   setEditProductToSession(value) {
