@@ -39,7 +39,7 @@ export class CategoryService extends BaseService {
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-cateogories`, idOrderPairs, cb);
   }
 
-  getCategoriesByBrand(idOrderPairs: any, cb?) {
-    this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-categories-by-brand`, cb);
+  getCategoriesByBrand(cb?) {
+    this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-categories-by-brand`, '', cb);
   }
 }
