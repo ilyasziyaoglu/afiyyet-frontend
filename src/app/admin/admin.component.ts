@@ -27,8 +27,8 @@ export class AdminComponent implements OnInit {
         private menuService: MenuService, private storageService: StorageService,
         private router: Router,
         private dialog: MatDialog,
-        private categoryService: CategoryService,
-        private productService: ProductService,
+        public categoryService: CategoryService,
+        public productService: ProductService,
     ) {
         categoryService.getAll(data => {
             this.categories = data;
