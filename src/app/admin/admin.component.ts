@@ -79,7 +79,14 @@ export class AdminComponent implements OnInit {
 
     deleteItem(itemId) {
         if ( confirm('Bu Ürünü Silmek İstediğinize Emin misiniz?') ) {
-            this.productService.deleteProduct(itemId);
+            this.productService.deleteProduct(itemId, res => {
+                if (res) {
+                    this.categoryService.currentCategory.items
+                        .splice(this.categoryService.currentCategory.items
+                            .findIndex(v => v.id === itemId), 1);
+                }
+            });
+
         }
     }
 
