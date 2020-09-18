@@ -30,7 +30,7 @@ export class AdminComponent implements OnInit {
         public categoryService: CategoryService,
         private productService: ProductService,
     ) {
-        categoryService.getAll(data => {
+        categoryService.getCategoriesByBrand(data => {
             this.categories = data;
             this.categoryService.currentCategory = this.categories[0];
             if ( this.categoryService.currentCategory ) {
@@ -49,9 +49,9 @@ export class AdminComponent implements OnInit {
     }
 
     categoryArrangeSave() {
-        const pairs = [];
+        const pairs = {arrangement: {}};
         this.categories.forEach(category => {
-            pairs.push({id: category.id, order: category.order});
+            pairs.arrangement['"' + category.id + '"'] = category.order;
         });
         this.categoryService.arrangeCateogories(pairs);
     }
