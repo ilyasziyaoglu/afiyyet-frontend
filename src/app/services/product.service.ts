@@ -40,7 +40,7 @@ export class ProductService extends BaseService {
   }
 
   arrangeProducts(idOrderPairs: any, cb?) {
-    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrangeProducts`, idOrderPairs, cb);
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-products`, idOrderPairs, cb);
   }
 
   getProductsByCategory(categoryId: any, cb?) {
