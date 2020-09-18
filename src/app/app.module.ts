@@ -12,7 +12,6 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {AdminComponent} from './admin/admin.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ItemEditComponent} from './item-edit/item-edit.component';
-import {DialogCategoryNameComponent} from './dialog-category-name/dialog-category-name.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component';
@@ -31,7 +30,6 @@ import { DialogCategoryEditComponent } from './dialog-category-edit/dialog-categ
         ItemComponent,
         AdminComponent,
         ItemEditComponent,
-        DialogCategoryNameComponent,
         HomeComponent,
         DialogCategoryEditComponent,
     ],

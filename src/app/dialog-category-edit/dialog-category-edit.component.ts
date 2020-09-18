@@ -9,10 +9,11 @@ import {Category} from '../model/models';
 })
 export class DialogCategoryEditComponent implements OnInit {
 
-  category: Category = new Category();
+  category: Category;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
               private dialog: MatDialogRef<DialogCategoryEditComponent>) {
+    this.category = data || new Category();
   }
 
   ngOnInit(): void {

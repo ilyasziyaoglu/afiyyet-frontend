@@ -14,13 +14,17 @@
                     <button *ngIf="!categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-secondary mb-1">Sıralamayı Kaydet</button>
                     <button *ngIf="categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-success mb-1">Sıralamayı Kaydet</button>
 
-                    <button (click)="addCategory()"
+                    <button (click)="addCategoryClick()"
                             class="btn btn-outline-dark py-2 px-3 mb-2 w-100">Kategori Ekle</button>
 
                     <div cdkDrag *ngFor="let category of categories; let i = index">
-                        <div (click)="categoryClick(category)" style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">
-                            <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
-                            <span style="text-align: left">{{category.name}}</span>
+                        <div (click)="categoryClick(category)"
+                             style="display: flex; justify-content: space-between; align-items: center" class="btn btn-dark w-100 my-1 px-1 py-2">
+                            <div style="display: flex; align-items: center">
+                                <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
+                                <span style="text-align: left">{{category.name}}</span>
+                            </div>
+                            <mat-icon (click)="editCategoryClick(category)">edit</mat-icon>
                         </div>
                     </div>
                 </div>
@@ -29,7 +33,6 @@
 
                     <div class="row mx-1 p-0 justify-content-between">
                         <div class="col-9 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
-                            <mat-icon style="cursor: pointer" (click)="editCategoryName(categoryService.currentCategory)">edit</mat-icon>
                         </div>
 
                         <button *ngIf="!itemSave" class="col-2 btn btn-secondary">Kaydet</button>

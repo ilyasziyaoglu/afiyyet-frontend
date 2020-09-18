@@ -4,7 +4,6 @@ import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Category} from '../model/models';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogCategoryNameComponent} from '../dialog-category-name/dialog-category-name.component';
 import {StorageService} from '../common/services/storage.service';
 import {CategoryService} from '../services/category.service';
 import {ProductService} from '../services/product.service';
@@ -70,23 +69,12 @@ export class AdminComponent implements OnInit {
 
     categoryClick(category) {
         this.categoryService.currentCategory = category;
+        console.log(category);
     }
 
     addItem() {
         this.router.navigateByUrl('item-edit',
             {state: {status: 'insert', data: {}}}).then();
-    }
-
-    editCategoryName(category) {
-        const dialogRef = this.dialog.open(DialogCategoryNameComponent,
-            {data: {categoryName: category.name}});
-
-        dialogRef.afterClosed().subscribe(res => {
-            if ( res.text ) {
-                category.name = res.text;
-                this.categoryService.updateCategory(category);
-            }
-        });
     }
 
     deleteItem(itemId) {
@@ -100,7 +88,7 @@ export class AdminComponent implements OnInit {
             {state: {status: 'update', data: {item}}}).then();
     }
 
-    addCategory() {
+    addCategoryClick() {
         const dialogRef = this.dialog.open(DialogCategoryEditComponent);
 
         dialogRef.afterClosed().subscribe(res => {
@@ -113,4 +101,13 @@ export class AdminComponent implements OnInit {
     }
 
 
+    editCategoryClick(category) {
+        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {data: category});
+
+        dialogRef.afterClosed().subscribe(res => {
+            this.categoryService.updateCategory(res.category, result => {
+
+            });
+        });
+    }
 }
