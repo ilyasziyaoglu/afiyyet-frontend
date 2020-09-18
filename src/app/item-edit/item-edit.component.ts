@@ -12,7 +12,6 @@ export class ItemEditComponent implements OnInit {
 
   item: any = {};
   status;
-  itemId;
 
   constructor(
       private router: Router,
@@ -21,8 +20,7 @@ export class ItemEditComponent implements OnInit {
   ) {
 
     this.status = this.router.getCurrentNavigation().extras.state.status;
-    this.item = {} || this.router.getCurrentNavigation().extras.state.data.item;
-    this.itemId = this.router.getCurrentNavigation().extras.state.data.itemId;
+    this.item = this.router.getCurrentNavigation().extras.state.data.item || {};
   }
 
   saveClick() {

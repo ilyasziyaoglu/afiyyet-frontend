@@ -21,6 +21,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from './common/common.module';
+import { DialogCategoryEditComponent } from './dialog-category-edit/dialog-category-edit.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import {CommonModule} from './common/common.module';
         ItemEditComponent,
         DialogCategoryNameComponent,
         HomeComponent,
+        DialogCategoryEditComponent,
     ],
     imports: [
         CommonModule,

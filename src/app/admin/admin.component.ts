@@ -18,7 +18,6 @@ import {ProductService} from '../services/product.service';
 export class AdminComponent implements OnInit {
 
     openIndex = 0;
-    selectedCategoryIndex = 0;
     itemSave = false;
     categorySave = false;
 
@@ -74,7 +73,7 @@ export class AdminComponent implements OnInit {
 
     addItem() {
         this.router.navigateByUrl('item-edit',
-            {state: {status: 'insert', data: {itemId: null, item: null}}}).then();
+            {state: {status: 'insert', data: {}}}).then();
     }
 
     editCategoryName(category) {
@@ -97,7 +96,11 @@ export class AdminComponent implements OnInit {
 
     editItem(item) {
         this.router.navigateByUrl('item-edit',
-            {state: {status: 'update', data: {categoryId: null, itemId: item.id, item}}}).then();
+            {state: {status: 'update', data: {item}}}).then();
+    }
+
+    addCategory() {
+
     }
 
 

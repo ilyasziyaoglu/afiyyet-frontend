@@ -11,8 +11,11 @@
 
                 <div cdkDropList (cdkDropListDropped)="dropCategory($event)" class="col-3">
 
-                    <button *ngIf="!categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-secondary mb-3">Sıralamayı Kaydet</button>
-                    <button *ngIf="categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-success mb-3">Sıralamayı Kaydet</button>
+                    <button *ngIf="!categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-secondary mb-1">Sıralamayı Kaydet</button>
+                    <button *ngIf="categorySave" (click)="categoryArrangeSave()" class="col-12 btn btn-success mb-1">Sıralamayı Kaydet</button>
+
+                    <button (click)="addCategory()"
+                            class="btn btn-outline-dark py-2 px-3 mb-2 w-100">Kategori Ekle</button>
 
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(category)" style="display: flex; align-items: center" class="btn btn-dark w-100 my-1 px-1">
@@ -22,11 +25,11 @@
                     </div>
                 </div>
 
-                <div class="col-9" *ngIf="selectedCategoryIndex >= 0">
+                <div class="col-9" *ngIf="categoryService.currentCategory">
 
                     <div class="row mx-1 p-0 justify-content-between">
-                        <div class="col-9 bg-dark rounded category-name">{{categories[selectedCategoryIndex]?.name}}
-                            <mat-icon style="cursor: pointer" (click)="editCategoryName(categories[selectedCategoryIndex])">edit</mat-icon>
+                        <div class="col-9 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
+                            <mat-icon style="cursor: pointer" (click)="editCategoryName(categoryService.currentCategory)">edit</mat-icon>
                         </div>
 
                         <button *ngIf="!itemSave" class="col-2 btn btn-secondary">Kaydet</button>
@@ -38,8 +41,8 @@
                                 class="btn btn-outline-dark py-3 px-5">Kategoriye Ürün Ekle</button>
                     </div>
 
-                    <div class="row my-2 mx-1 item px-2 py-3"
-                         *ngFor="let item of categories[selectedCategoryIndex]?.items; let i = index">
+                    <div class="row my-2 mx-1 item px-2 py-2"
+                         *ngFor="let item of categoryService.currentCategory?.items; let i = index">
                         <img class="item-img col-3" src="{{item.imgUrl}}" alt="{{item.name}}">
                         <div class="col-8">
                             <div class="row">
