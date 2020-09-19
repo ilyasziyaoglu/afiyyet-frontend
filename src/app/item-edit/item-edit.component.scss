@@ -3,5 +3,15 @@
   border-radius: 6px 0 0 6px;
   display: flex;
   align-items: center;
-  justify-description: center;
+  justify-content: center;
+}
+
+.addimage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666666;
+  font-weight: bolder;
+  font-size: 20px;
 }

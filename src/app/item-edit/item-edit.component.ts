@@ -42,4 +42,8 @@ export class ItemEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  imageUpdateClick() {
+
+  }
+
 }
