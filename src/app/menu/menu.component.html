@@ -25,7 +25,7 @@
 <h3 class="m-3 mt-3" style="text-align: center">Menü</h3>
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
-         *ngFor="let category of menu.categories"
+         *ngFor="let category of menuService.serviceMenu.categories"
          (click)="storageService.setItem('category', category)"
         [routerLink]="['/submenu']">
         <img class="category-img" src="{{category.imgUrl}}" alt="">

@@ -5,15 +5,17 @@
 }
 
 .favorite {
-  cursor: pointer;
-  top: 1px;
-  right: 1px;
+  color: red;
+  border-color: red;
+}
+
+.like-icon {
+  z-index: 999;
 }
 
 mat-icon {
   position: absolute;
   font-size: 1.5em;
-  z-index: 999;
 }
 
 .item {
@@ -23,18 +25,19 @@ mat-icon {
   border-radius: 3px;
   background-color: #424242;
   min-width: 300px;
+  z-index: 99;
 }
-
-@keyframes item-hover {
-  from {top: 0;} to {top: -2px;}
-  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
-}
-
-.item:hover {
-  animation-name: item-hover;
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
-}
+//
+//@keyframes item-hover {
+//  from {top: 0;} to {top: -2px;}
+//  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
+//}
+//
+//.item:hover {
+//  animation-name: item-hover;
+//  animation-duration: .3s;
+//  animation-fill-mode: forwards;
+//}
 
 .item-img {
   top: -30px;

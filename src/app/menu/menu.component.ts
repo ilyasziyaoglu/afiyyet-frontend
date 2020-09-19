@@ -10,11 +10,6 @@ import {StorageService} from '../common/services/storage.service';
 })
 export class MenuComponent implements OnInit {
 
-  menu = {
-    currency: 'TL',
-    categories: []
-  };
-
   constructor(
       public storageService: StorageService,
       public menuService: MenuService,
@@ -22,7 +17,6 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.menu = this.menuService.serviceMenu;
   }
 
   onLike(item: any) {

@@ -1,9 +1,11 @@
 .back-button {
   cursor: pointer;
 }
+
 .image-container {
   position: relative;
 }
+
 .imgUrl-container {
   position: relative;
   width: 90%;
@@ -43,6 +45,8 @@
   position: absolute;
   top: 10px;
   right: 25px;
+  color: red;
+  border-color: red;
 }
 
 .favorite mat-icon {

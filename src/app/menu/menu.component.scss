@@ -45,18 +45,19 @@
   cursor: pointer;
   border-radius: 10px;
   width: 45%;
+  z-index: 99;
 }
 
-@keyframes item-hover {
-  from {top: 0;} to {top: -2px;}
-  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
-}
-
-.item:hover {
-  animation-name: item-hover;
-  animation-duration: .3s;
-  animation-fill-mode: forwards;
-}
+//@keyframes item-hover {
+//  from {top: 0;} to {top: -2px;}
+//  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
+//}
+//
+//.item:hover {
+//  animation-name: item-hover;
+//  animation-duration: .3s;
+//  animation-fill-mode: forwards;
+//}
 
 .item-img {
   border-top-left-radius: 10px;
