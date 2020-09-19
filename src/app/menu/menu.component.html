@@ -8,7 +8,7 @@
             <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
         </div>
         <img [routerLink]="['/item']" class="item-img" src="{{item.imgUrl}}" alt="">
-        <p [routerLink]="['/item']" class="item-name">{{item.name}}</p>
+        <p [routerLink]="['/item']" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p>
         <div class="m-3 flex-container d-flex justify-content-center">
             <div class="border rounded-lg pl-1 pr-1">
                 <p>{{item.price}}</p>
