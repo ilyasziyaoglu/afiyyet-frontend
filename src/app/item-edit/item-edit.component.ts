@@ -25,9 +25,17 @@ export class ItemEditComponent implements OnInit {
 
   saveClick() {
     if (this.status === 'update') {
-      this.productService.updateProduct(this.item);
+      this.productService.updateProduct(this.item, res => {
+        if (res) {
+          this.router.navigateByUrl('admin').then();
+        }
+      });
     } else if (this.status === 'insert') {
-      this.productService.insetProduct(this.categoryService.currentCategory, this.item);
+      this.productService.insetProduct(this.categoryService.currentCategory, this.item, res => {
+        if (res) {
+          this.router.navigateByUrl('admin').then();
+        }
+      });
     }
   }
 

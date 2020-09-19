@@ -10,11 +10,18 @@ import {MenuService} from '../services/menu.service';
 })
 export class SubmenuComponent implements OnInit {
 
+  items;
+
   constructor(
       public storageService: StorageService,
       private menuService: MenuService,
       public favoriteService: FavoriteService
-  ) { }
+  ) {
+
+    this.items = this.storageService.getItem('menu').categories.find( v => {
+       return v.name === this.storageService.getItem('category').name;
+     }).items;
+  }
 
   ngOnInit(): void {
   }

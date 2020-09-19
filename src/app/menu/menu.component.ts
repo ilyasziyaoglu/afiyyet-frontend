@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.menu = this.menuService.menu;
+    this.menu = this.menuService.serviceMenu;
   }
 
   onLike(item: any) {
