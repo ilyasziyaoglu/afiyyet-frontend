@@ -49,9 +49,9 @@ export class AdminComponent implements OnInit {
     }
 
     categoryArrangeSave() {
-        const pairs = {arrangement: {}};
+        const pairs = [];
         this.categories.forEach(category => {
-            pairs.arrangement['"' + category.id + '"'] = category.order;
+            pairs.push({id: category.id, order: category.order});
         });
         this.categoryService.arrangeCateogories(pairs);
     }
@@ -69,7 +69,9 @@ export class AdminComponent implements OnInit {
 
     categoryClick(category) {
         this.categoryService.currentCategory = category;
-        console.log(category);
+        this.productService.getProductsByCategory(category.id, result => {
+            category.items = result;
+        });
     }
 
     addItem() {
@@ -77,16 +79,13 @@ export class AdminComponent implements OnInit {
             {state: {status: 'insert', data: {}}}).then();
     }
 
-    deleteItem(itemId) {
-        if ( confirm('Bu Ürünü Silmek İstediğinize Emin misiniz?') ) {
-            this.productService.deleteProduct(itemId, res => {
-                if (res) {
-                    this.categoryService.currentCategory.items
-                        .splice(this.categoryService.currentCategory.items
-                            .findIndex(v => v.id === itemId), 1);
+    deleteItem(item, index) {
+        if ( confirm('Bu ürünü silmek istediğinize emin misiniz?') ) {
+            this.productService.deleteProduct(item.id, res => {
+                if ( res ) {
+                    this.categoryService.currentCategory.items.splice(index, 1);
                 }
             });
-
         }
     }
 
@@ -116,5 +115,15 @@ export class AdminComponent implements OnInit {
 
             });
         });
+    }
+
+    onCategoryDelete(category, index) {
+        if ( confirm('Bu kategoriyi silmek istediğinize emin misiniz?') ) {
+            this.categoryService.deleteCategory(category.id, result => {
+                if ( result ) {
+                    this.categories.splice(index, 1);
+                }
+            });
+        }
     }
 }
