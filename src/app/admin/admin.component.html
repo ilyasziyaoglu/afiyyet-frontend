@@ -19,7 +19,7 @@
 
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(category)"
-                             [ngClass]="{'active-category': this.categoryService.currentCategory.id == category.id}"
+                             [ngClass]="{'active-category': this.categoryService.currentCategory?.id == category.id}"
                              style="display: flex; justify-content: space-between; align-items: center" class="btn btn-dark w-100 my-1 px-1 py-2">
                             <div style="display: flex; align-items: center">
                                 <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
