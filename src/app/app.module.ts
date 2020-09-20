@@ -21,6 +21,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from './common/common.module';
 import { DialogCategoryEditComponent } from './dialog-category-edit/dialog-category-edit.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { DialogCategoryEditComponent } from './dialog-category-edit/dialog-categ
         ItemEditComponent,
         HomeComponent,
         DialogCategoryEditComponent,
+        ReservationComponent,
     ],
     imports: [
         CommonModule,

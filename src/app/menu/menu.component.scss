@@ -120,6 +120,19 @@
 
 }
 
+.top-menu {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.top-menu-button {
+  flex: 1;
+  //background-color: #222;
+  color: white;
+  border-radius: 0;
+}
+
 .camp-like {
   display: flex;
   justify-content: center;
