@@ -16,6 +16,7 @@ export class MenuService {
             this.storageService.setItem('menu', menu);
         }
         this.serviceMenu = this.storageService.getItem('menu');
+        this.serviceMenu = this.setCampaigns(this.serviceMenu);
     }
 
     like(item: any) {
@@ -29,5 +30,18 @@ export class MenuService {
         }
         this.storageService.setItem('likes', likes);
         this.storageService.setItem('menu', this.serviceMenu);
+    }
+
+    setCampaigns(menu) {
+        let campaigns = [];
+        for (let i = 0; i < 4; i++) {
+            let campItem = menu.categories[i].items[0];
+            campItem.startDate = '05.09.2020';
+            campItem.endDate = '18.12.2020';
+            //campItem.name += ' Deneme Bakalim Hele Ne olacak sfdvs sdfv sdfv';
+            campaigns.push(campItem);
+        }
+        menu.campaigns = campaigns;
+        return menu;
     }
 }

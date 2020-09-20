@@ -1,5 +1,6 @@
 export let menu = {
     currency: 'TL',
+    campaigns: [],
     categories: [
         {
             name: 'KAHVALTILAR & SERPME LEZZETLER',
