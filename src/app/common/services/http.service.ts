@@ -111,6 +111,53 @@ export class HttpService {
             }
         });
     }
+
+    doRequestFormData(method: string, path: string, req: any, cb?: any) {
+        let headers;
+
+        headers = new HttpHeaders()
+            .append('Content-Type', 'multipart/form-data')
+            .append('Accept', '*/*');
+
+        path = environment.baseApiUrl + path;
+        let request;
+        switch (method) {
+            case 'get':
+                request = this.get(path, headers);
+                break;
+            case 'post':
+                request = this.post(path, req, headers);
+                break;
+            case 'put':
+                request = this.put(path, req, headers);
+                break;
+            case 'delete':
+                request = this.delete(path, headers);
+                break;
+        }
+        request.subscribe(res => {
+            console.info(path, req, res);
+            if (res) {
+                if (cb) {
+                    cb(res);
+                }
+            } else {
+                console.warn('Empty response!');
+                if (cb) {
+                    cb(false);
+                }
+            }
+        }, err => {
+            if (cb) {
+                cb(false);
+            }
+            if (err.status && err.status === 403) {
+                this.router.navigateByUrl('/auth/login');
+            } else {
+                console.error(err);
+            }
+        });
+    }
 }
 
 export enum HttpMethod {

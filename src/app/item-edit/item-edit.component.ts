@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductService} from '../services/product.service';
 import {CategoryService} from '../services/category.service';
+import {FileService} from '../common/services/file.service';
 
 @Component({
   selector: 'app-item-edit',
@@ -16,7 +17,8 @@ export class ItemEditComponent implements OnInit {
   constructor(
       private router: Router,
       private productService: ProductService,
-      private categoryService: CategoryService
+      private categoryService: CategoryService,
+      private fileService: FileService
   ) {
 
     this.status = this.router.getCurrentNavigation().extras.state.status;
@@ -42,8 +44,14 @@ export class ItemEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  imageUpdateClick() {
-
+  imageUpdateClick(image) {
+    const formData = new FormData();
+    console.log("file", image.files[0]);
+    formData.append("file", image.files[0]);
+    console.log("form", formData);
+    this.fileService.uploadFile(formData, res => {
+      console.log("res", res);
+    })
   }
 
 }
