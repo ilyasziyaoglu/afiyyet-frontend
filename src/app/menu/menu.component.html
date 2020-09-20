@@ -1,6 +1,6 @@
 <div class="no-gutters top-menu">
     <button [routerLink]="['/reservation']" class="btn top-menu-button">Rezervasyon</button>
-    <button class="btn top-menu-button">Yorum Yap</button>
+    <button (click)="commentClick()" class="btn top-menu-button">Yorum Yap</button>
 </div>
 <h3 class="m-2 mt-3" style="text-align: center">Favorilerim</h3>
 <p class="empty-favorites-text" *ngIf="!storageService.favorites.length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>

@@ -20,8 +20,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from './common/common.module';
-import { DialogCategoryEditComponent } from './dialog-category-edit/dialog-category-edit.component';
+import { DialogCategoryEditComponent } from './dialogs/dialog-category-edit/dialog-category-edit.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { DialogCommentComponent } from './dialogs/dialog-comment/dialog-comment.component';
 
 @NgModule({
     declarations: [
@@ -34,6 +35,7 @@ import { ReservationComponent } from './reservation/reservation.component';
         HomeComponent,
         DialogCategoryEditComponent,
         ReservationComponent,
+        DialogCommentComponent,
     ],
     imports: [
         CommonModule,
