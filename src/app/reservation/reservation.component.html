@@ -1,1 +1,32 @@
-<p>reservation works!</p>
+<div class= "flex-container d-flex justify-content-center">
+    <h2>Rezervasyon</h2>
+</div>
+<div class="row px-2 py-3 no-gutters">
+    <label for="name" class="float-left">Rezerve İsmi</label>
+    <input id="name" class="form-control mb-3">
+
+    <label for="datetime">Rezervasyon Tarih ve Saati</label>
+    <input id="datetime" class="form-control mb-3" type="datetime-local"/>
+
+    <div class="col-12 row no-gutters flex-container d-flex justify-content-between mb-3">
+        <div class="col-2">
+            <label style="display: block" for="adult">Yetişkin</label>
+            <input id="adult" type="number" class="form-control"/>
+        </div>
+        <div class="col-2">
+            <label style="display: block" for="child">Çocuk</label>
+            <input id="child" type="number" class="form-control"/>
+        </div>
+        <div>
+            <label for="phone">Telefon Numaranız</label>
+            <input id="phone" class="form-control" type="tel"/>
+        </div>
+    </div>
+
+    <textarea rows="3" class="form-control mb-3" placeholder="İstek ve Yorumlarınızı Ekleyebilirsiniz..."></textarea>
+
+    <div class="col-12 row justify-content-center no-gutters">
+        <button [routerLink]="['/menu']" class="col-6 py-2 btn btn-dark">GÖNDER</button>
+    </div>
+
+</div>

@@ -8,6 +8,7 @@ import {ItemEditComponent} from './item-edit/item-edit.component';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './common/auth/login/login.component';
 import {RegisterComponent} from './common/auth/register/register.component';
+import {ReservationComponent} from './reservation/reservation.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'item-edit',
     component: ItemEditComponent
+  },
+  {
+    path: 'reservation',
+    component: ReservationComponent
   }
 ];
 
