@@ -9,14 +9,12 @@
         </div>
         <img [routerLink]="['/item']" class="item-img" src="{{item.imgUrl}}" alt="">
         <p [routerLink]="['/item']" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p>
-        <div class="m-2 flex-container d-flex justify-content-center">
-            <div class="border rounded-lg pl-1 pr-1">
-                <p>{{item.price}}</p>
-                <p>TL</p>
-            </div>
-            <div class="border rounded-lg" (click)="onLike(item)">
-                <p>{{item.likes}}</p>
-                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}" class="like-icon">thumb_up</mat-icon>
+        <div class="fav-like-price-container">
+            <div class="rounded-lg fav-price border">{{item.price}} TL</div>
+            <div class="rounded-lg fav-like border" (click)="onLike(item)">
+                {{item.likes}}&nbsp;
+                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
+                          class="like-icon" style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
             </div>
         </div>
     </div>
@@ -33,13 +31,13 @@
         <p [routerLink]="['/item']" class="camp-item-name">{{item.name}}</p>
         <p [routerLink]="['/item']" class="camp-item-description">{{item.description}}</p>
 
-        <div class="like-price-container p-0">
+        <div class="camp-like-price-container p-0">
             <div class="rounded-lg camp-price">{{item.price}} TL</div>
 
             <div class="rounded-lg camp-like" (click)="onLike(item)">
                 {{item.likes}}&nbsp;
                 <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                          class="like-icon" style="vertical-align: middle;margin-bottom: 2px">thumb_up_alt</mat-icon>
+                          class="like-icon" style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
             </div>
         </div>
     </div>
