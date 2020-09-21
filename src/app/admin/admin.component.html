@@ -1,11 +1,15 @@
-<div class="container-fluid">
-    <div class="row my-3">
-        <div style="background-color: white" class="col-2 py-2">
-            <button class="btn btn-dark w-100 my-1" (click)="menuClick(0)">Menü Düzenle</button>
-            <button class="btn btn-dark w-100 my-1" (click)="menuClick(1)">Raporlar</button>
-            <button class="btn btn-dark w-100 my-1" (click)="menuClick(2)">QR Kodum</button>
-        </div>
-        <div style="background-color: lightgrey" class="col-9 px-0 py-2 rounded"> <!-- DashBoard Alanı -->
+<div class="row pb-2 m-0 justify-content-center w-100 no-gutters">
+    <button style="background-color: black; color: white; border-radius: 0"
+            class="btn col-4 py-1" (click)="menuClick(0)">Menü Düzenle</button>
+    <button style="background-color: black; color: white; border-radius: 0"
+            class="btn col-4 py-1" (click)="menuClick(1)">Raporlar</button>
+    <button style="background-color: black; color: white; border-radius: 0"
+            class="btn col-4 py-1" (click)="menuClick(2)">QR Kodum</button>
+</div>
+<div class="no-gutters">
+    <div class="row my-3 justify-content-center">
+
+        <div style="background-color: lightgrey" class="col-11 px-0 py-2 rounded"> <!-- DashBoard Alanı -->
 
             <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
 
