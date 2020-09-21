@@ -8,7 +8,7 @@ import {StorageService} from '../common/services/storage.service';
 import {CategoryService} from '../services/category.service';
 import {ProductService} from '../services/product.service';
 import {DialogCategoryEditComponent} from '../dialogs/dialog-category-edit/dialog-category-edit.component';
-import {menu} from '../model/data';
+import {environment} from 'src/environments/environment';
 
 @Component({
     selector: 'app-admin',
@@ -18,6 +18,7 @@ import {menu} from '../model/data';
 
 export class AdminComponent implements OnInit {
 
+    environment = environment;
     openIndex = 0;
     itemSave = false;
     categorySave = false;

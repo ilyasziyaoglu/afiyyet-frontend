@@ -9,9 +9,9 @@
          *ngFor="let item of favoriteService.getFavorites()"
          (click)="storageService.setItem('item', item)">
         <div class="favorite">
-            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
+            <mat-icon class="rounded-circle" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
         </div>
-        <img [routerLink]="['/item']" class="item-img" src="{{item.imgUrl}}" alt="">
+        <img [routerLink]="['/item']" class="item-img" src="{{environment.baseCdnUrl + item.imgUrl}}" alt="">
         <p [routerLink]="['/item']" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p>
         <div class="fav-like-price-container">
             <div class="rounded-lg fav-price border">{{item.price}} TL</div>
@@ -30,7 +30,7 @@
     <div class="camp_item m-1 p-0"
          *ngFor="let item of menuService.serviceMenu.campaigns"
          (click)="storageService.setItem('item', item)">
-        <img [routerLink]="['/item']" class="camp-item-img" src="{{item.imgUrl}}" alt="">
+        <img [routerLink]="['/item']" class="camp-item-img" src="{{environment.baseCdnUrl + item.imgUrl}}" alt="">
 
         <p [routerLink]="['/item']" class="camp-item-name">{{item.name}}</p>
         <p [routerLink]="['/item']" class="camp-item-description">{{item.description}}</p>
@@ -54,7 +54,7 @@
          *ngFor="let category of menuService.serviceMenu.categories"
          (click)="storageService.setItem('category', category)"
         [routerLink]="['/submenu']">
-        <img class="category-img" src="{{category.imgUrl}}" alt="">
+        <img class="category-img" src="{{environment.baseCdnUrl + category.imgUrl}}" alt="">
         <p class="category-name">{{category.name}}</p>
     </div>
 </div>

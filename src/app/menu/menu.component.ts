@@ -4,6 +4,7 @@ import {MenuService} from '../services/menu.service';
 import {StorageService} from '../common/services/storage.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogCommentComponent} from '../dialogs/dialog-comment/dialog-comment.component';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-menu',
@@ -11,6 +12,7 @@ import {DialogCommentComponent} from '../dialogs/dialog-comment/dialog-comment.c
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  environment = environment;
 
   constructor(
       public storageService: StorageService,

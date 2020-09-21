@@ -117,7 +117,7 @@ export class HttpService {
 
         headers = new HttpHeaders()
             .append('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
-            .append('Content-Type', 'multipart/form-data')
+            // .append('Content-Type', 'multipart/form-data')
             .append('Accept', '*/*');
 
         path = environment.baseApiUrl + path;
