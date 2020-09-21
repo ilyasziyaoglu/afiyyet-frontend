@@ -116,6 +116,7 @@ export class HttpService {
         let headers;
 
         headers = new HttpHeaders()
+            .append('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
             .append('Content-Type', 'multipart/form-data')
             .append('Accept', '*/*');
 

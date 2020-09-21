@@ -23,7 +23,7 @@ export class CategoryService extends BaseService {
     return this.basePath;
   }
 
-  insertCategory(category: Category, cb?) {
+  insertCategory(category: any, cb?) {
     this.post(category, cb);
   }
 

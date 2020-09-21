@@ -9,7 +9,7 @@
 
             <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
 
-                <div cdkDropList (cdkDropListDropped)="dropCategory($event)" class="col-3">
+                <div style="overflow-y: scroll; height: 75vh" cdkDropList (cdkDropListDropped)="dropCategory($event)" class="col-3">
 
                     <button [ngClass]="{'btn-success': categorySave, 'btn-secondary': !categorySave}"
                             (click)="categoryArrangeSave()" class="col-12 btn mb-1">Sıralamayı Kaydet</button>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="col-9" *ngIf="categoryService.currentCategory">
+                <div class="col-9" *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
 
                     <div class="row mx-1 p-0 justify-content-between">
                         <div class="col-9 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
