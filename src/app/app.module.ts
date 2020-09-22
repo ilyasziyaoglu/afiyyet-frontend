@@ -23,6 +23,8 @@ import {CommonModule} from './common/common.module';
 import { DialogCategoryEditComponent } from './dialogs/dialog-category-edit/dialog-category-edit.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { DialogCommentComponent } from './dialogs/dialog-comment/dialog-comment.component';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -50,6 +52,8 @@ import { DialogCommentComponent } from './dialogs/dialog-comment/dialog-comment.
         DragDropModule,
         FormsModule,
         HttpClientModule,
+        MatListModule,
+        MatButtonModule,
     ],
     providers: [
         {provide : LocationStrategy , useClass: HashLocationStrategy}

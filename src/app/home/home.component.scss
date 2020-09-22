@@ -1,0 +1,94 @@
+.banner-img {
+  filter: brightness(0.5);
+}
+
+h1, p {
+  font-family: Optima, serif;
+}
+
+.advantage {
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+  border-radius: 15px;
+  height: 300px;
+}
+
+.advantage h1 {
+  text-align: center;
+  color: white;
+}
+
+.advantage p {
+  text-align: center;
+  color: white;
+}
+
+.advantage mat-icon {
+  margin-top: 20px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+}
+
+.header {
+  z-index: 999;
+}
+
+.header h1 {
+  width: 100%;
+  line-height: 1.5;
+  font-size: 80px;
+  text-align: center;
+}
+
+.header p {
+  width: 100%;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 30px;
+}
+
+.package {
+  border-radius: 20px !important;
+  background: rgb(178,63,251);
+  background: radial-gradient(circle, rgba(178,63,251,1) 0%, rgba(83,70,252,1) 100%);
+}
+
+.package hr {
+  display: block;
+  margin: auto;
+  width: 30%;
+  background-color: white;
+  height: 2px;
+}
+
+.features h1{
+  text-align: center;
+  color: white;
+}
+
+.package-name {
+  font-size: 70px;
+  font-weight: bolder;
+  margin: 20px;
+}
+
+.features .price {
+  font-size: 30px;
+}
+
+.features button {
+  margin-top: 30px;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.offer .mat-list-base .mat-list-item {
+   color: white !important;
+}
+
+.not-offer .mat-list-base .mat-list-item {
+   color: darkgray !important;
+   text-decoration: line-through;
+}
