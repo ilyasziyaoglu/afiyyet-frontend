@@ -1,7 +1,11 @@
 <div style="display: flex; flex-direction: column; justify-content: center; padding: 0 40px; min-width: 400px">
-    <h2 style="text-align: center">Yeni Kategori</h2>
+    <h2 style="text-align: center">{{isInsert ? 'Yeni Kategori': 'Kategori Düzenleme'}}</h2>
     <div style="display: flex; align-items: center; justify-content: center">
-        <img (click)="addPhotoClick()" class="item-img col-2" [src]="category.imgUrl ? category.imgUrl : '../../../assets/no-image.jpg'">
+        <div style="cursor: pointer" class="col-3 no-gutters">
+            <img class="item-img col-2" [src]="category.imgUrl ? environment.baseCdnUrl + category.imgUrl : '../../../assets/no-image.jpg'">
+            <p *ngIf="!category.imgUrl" class="addimage">Resim Ekle</p>
+            <input #imageInput type="file" class="file_upload_input" (change)="imageUpdateClick(imageInput)" />
+        </div>
         <input id="name" class="form-control col-8" [(ngModel)]="category.name" value="{{category.name}}"/>
     </div>
     <div style="display: flex;">

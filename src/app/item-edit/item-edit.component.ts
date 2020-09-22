@@ -49,9 +49,7 @@ export class ItemEditComponent implements OnInit {
 
   imageUpdateClick(image) {
     const formData = new FormData();
-    console.log('file0', image.files[0]);
     formData.append('file0', image.files[0]);
-    console.log('form', formData);
     this.fileService.uploadFile(formData, res => {
       this.item.imgUrl = res.fileName;
     });
