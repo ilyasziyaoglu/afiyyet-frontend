@@ -1,11 +1,15 @@
-<div class="container-fluid">
-    <div class="row my-3">
-        <div style="background-color: white" class="col-2 py-2">
-            <button class="btn btn-dark w-100 my-1" (click)="menuClick(0)">Menü Düzenle</button>
-            <button class="btn btn-dark w-100 my-1" (click)="menuClick(1)">Raporlar</button>
-            <button class="btn btn-dark w-100 my-1" (click)="menuClick(2)">QR Kodum</button>
-        </div>
-        <div style="background-color: lightgrey" class="col-9 px-0 py-2 rounded"> <!-- DashBoard Alanı -->
+<div class="row pb-2 m-0 justify-content-center w-100 no-gutters">
+    <button style="background-color: black; color: white; border-radius: 0"
+            class="btn col-4 py-1" (click)="menuClick(0)">Menü Düzenle</button>
+    <button style="background-color: black; color: white; border-radius: 0"
+            class="btn col-4 py-1" (click)="menuClick(1)">Raporlar</button>
+    <button style="background-color: black; color: white; border-radius: 0"
+            class="btn col-4 py-1" (click)="menuClick(2)">QR Kodum</button>
+</div>
+<div class="no-gutters">
+    <div class="row my-3 justify-content-center">
+
+        <div style="background-color: lightgrey" class="col-11 px-0 py-2 rounded"> <!-- DashBoard Alanı -->
 
             <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
 
@@ -16,6 +20,9 @@
 
                     <button (click)="addCategoryClick()"
                             class="btn btn-outline-dark py-2 px-3 mb-2 w-100">Kategori Ekle</button>
+
+                    <button (click)="companySelected()"
+                            class="btn btn-dark py-2 px-3 mb-2 w-100">KAMPANYALAR</button>
 
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(category)"
@@ -33,7 +40,8 @@
                     </div>
                 </div>
 
-                <div class="col-9" *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
+                <div class="col-9" cdkDropList (cdkDropListDropped)="dropProduct($event)"
+                     *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
 
                     <div class="row mx-1 p-0 justify-content-between">
                         <div class="col-9 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
@@ -47,7 +55,7 @@
                                 class="btn btn-outline-dark py-3 px-5">Kategoriye Ürün Ekle</button>
                     </div>
 
-                    <div class="row my-2 mx-1 item px-2 py-2"
+                    <div cdkDrag class="row my-2 mx-1 item px-2 py-2"
                          *ngFor="let item of categoryService.currentCategory?.items; let i = index">
                         <img class="item-img col-3 pl-0" [src]="item.imgUrl ? environment.baseCdnUrl + item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
                         <div class="col-8">

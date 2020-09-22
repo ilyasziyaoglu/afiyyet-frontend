@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuService} from '../services/menu.service';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
-import {Brand, Category, Item} from '../model/models';
+import {Category, Item} from '../model/models';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {StorageService} from '../common/services/storage.service';
@@ -97,29 +97,10 @@ export class AdminComponent implements OnInit {
     }
 
     addCategoryClick() {
-        // menu.categories.forEach(category => {
-        // });
-        // let cat = menu.categories[0];
-        // console.log("item", menu.categories[0].items[0]);
-        // let myItem = {
-        //     description: menu.categories[0].items[0].description,
-        //     id: menu.categories[0].items[0].id,
-        //     imgUrl: menu.categories[0].items[0].imgUrl,
-        //     likes: menu.categories[0].items[0].likes,
-        //     name: menu.categories[0].items[0].name,
-        //     order: 0,
-        //     price: menu.categories[0].items[0].price,
-        //     status: 'ACTIVE',
-        //     category: new Category()
-        // };
-        // this.productService.insetProduct(cat, myItem);
-        // console.log("adwf", myItem);
-
 
         const dialogRef = this.dialog.open(DialogCategoryEditComponent);
 
         dialogRef.afterClosed().subscribe(res => {
-            res.category.imgUrl = '';
             res.category.status = 'ACTIVE';
             this.categoryService.insertCategory(res.category, result => {
                 this.categories.push(result);
@@ -134,6 +115,7 @@ export class AdminComponent implements OnInit {
         dialogRef.afterClosed().subscribe(res => {
             this.categoryService.updateCategory(res.category, result => {
 
+
             });
         });
     }
@@ -146,5 +128,14 @@ export class AdminComponent implements OnInit {
                 }
             });
         }
+    }
+
+    companySelected() {
+
+    }
+
+    dropProduct(event: CdkDragDrop<Item>) {
+        this.categorySave = true;
+        //this.categories = this.moveItemOrderInArray(this.categories, event.previousIndex, event.currentIndex);
     }
 }
