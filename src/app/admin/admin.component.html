@@ -21,6 +21,9 @@
                     <button (click)="addCategoryClick()"
                             class="btn btn-outline-dark py-2 px-3 mb-2 w-100">Kategori Ekle</button>
 
+                    <button (click)="companySelected()"
+                            class="btn btn-dark py-2 px-3 mb-2 w-100">KAMPANYALAR</button>
+
                     <div cdkDrag *ngFor="let category of categories; let i = index">
                         <div (click)="categoryClick(category)"
                              [ngClass]="{'active-category': this.categoryService.currentCategory?.id == category.id}"
@@ -37,7 +40,8 @@
                     </div>
                 </div>
 
-                <div class="col-9" *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
+                <div class="col-9" cdkDropList (cdkDropListDropped)="dropProduct($event)"
+                     *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
 
                     <div class="row mx-1 p-0 justify-content-between">
                         <div class="col-9 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
@@ -51,7 +55,7 @@
                                 class="btn btn-outline-dark py-3 px-5">Kategoriye Ürün Ekle</button>
                     </div>
 
-                    <div class="row my-2 mx-1 item px-2 py-2"
+                    <div cdkDrag class="row my-2 mx-1 item px-2 py-2"
                          *ngFor="let item of categoryService.currentCategory?.items; let i = index">
                         <img class="item-img col-3 pl-0" [src]="item.imgUrl ? environment.baseCdnUrl + item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
                         <div class="col-8">
