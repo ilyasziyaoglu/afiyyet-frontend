@@ -16,6 +16,7 @@ export class ItemEditComponent implements OnInit {
 
   item: any = {};
   status;
+  formData: FormData;
 
   constructor(
       private router: Router,
@@ -30,15 +31,20 @@ export class ItemEditComponent implements OnInit {
 
   saveClick() {
     if (this.status === 'update') {
-      this.productService.updateProduct(this.item, res => {
-        if (res) {
-          this.router.navigateByUrl('admin').then();
+      this.fileService.uploadFile(this.formData, res => {
+        if (res.fileName) {
+          this.item.imgUrl = res.fileName;
+          this.productService.updateProduct(this.item, res => {
+            if (res) this.router.navigateByUrl('admin').then();
+          });
         }
       });
     } else if (this.status === 'insert') {
-      this.productService.insetProduct(this.categoryService.currentCategory, this.item, res => {
-        if (res) {
-          this.router.navigateByUrl('admin').then();
+      this.fileService.uploadFile(this.formData, res => {
+        if (res.fileName) {
+          this.productService.insetProduct(this.categoryService.currentCategory, this.item, res => {
+            if (res) this.router.navigateByUrl('admin').then();
+          });
         }
       });
     }
@@ -48,11 +54,8 @@ export class ItemEditComponent implements OnInit {
   }
 
   imageUpdateClick(image) {
-    const formData = new FormData();
-    formData.append('file0', image.files[0]);
-    this.fileService.uploadFile(formData, res => {
-      this.item.imgUrl = res.fileName;
-    });
+    this.formData = new FormData();
+    this.formData.append('file0', image.files[0]);
   }
 
 }
