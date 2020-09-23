@@ -80,12 +80,6 @@ export class AdminComponent implements OnInit {
             this.categoryService.currentCategory.items, event.previousIndex, event.currentIndex);
     }
 
-    moveItemOrderInArray(arr, prevIndex, nextIndex) {
-        arr.splice(nextIndex, 0, arr.splice(prevIndex, 1)[0]);
-        arr = arr.map((item, i) => ({...item, order: i}));
-        return arr;
-    }
-
     categoryClick(category) {
         this.categoryService.currentCategory = category;
         this.productService.getProductsByCategory(category.id, result => {
@@ -147,7 +141,13 @@ export class AdminComponent implements OnInit {
         }
     }
 
-    companySelected() {
+    campaignSelected() {
 
+    }
+
+    moveItemOrderInArray(arr, prevIndex, nextIndex) {
+        arr.splice(nextIndex, 0, arr.splice(prevIndex, 1)[0]);
+        arr = arr.map((item, i) => ({...item, order: i}));
+        return arr;
     }
 }

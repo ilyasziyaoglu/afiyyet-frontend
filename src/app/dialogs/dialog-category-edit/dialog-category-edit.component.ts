@@ -27,14 +27,16 @@ export class DialogCategoryEditComponent implements OnInit {
   }
 
   saveClick() {
-    this.fileService.uploadFile(this.formData, res => {
-      if (res.fileName) {
-        this.category.imgUrl = res.fileName;
-        this.dialog.close({category: this.category});
-      } else {
-        // Burada Kullanıcıya resmin yüklenmemesi ile alakalı bildirim gösterilecek
-      }
-    });
+    if (this.formData || this.isInsert) {
+      this.fileService.uploadFile(this.formData, res => {
+        if (res.fileName) {
+          this.category.imgUrl = res.fileName;
+          this.dialog.close({category: this.category});
+        } else {
+          // Burada Kullanıcıya resmin yüklenmemesi ile alakalı bildirim gösterilecek
+        }
+      });
+    } else this.dialog.close({category: this.category});
   }
 
   cancelClick() {
