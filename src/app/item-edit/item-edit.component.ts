@@ -4,6 +4,7 @@ import {ProductService} from '../services/product.service';
 import {CategoryService} from '../services/category.service';
 import {FileService} from '../common/services/file.service';
 import {environment} from '../../environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-item-edit',
@@ -46,11 +47,27 @@ export class ItemEditComponent implements OnInit {
         });
       }
     } else if (this.status === 'insert') {
+
+      if (!this.item.name) {
+        Swal.fire('Uyarı', 'Ürün ismi boş bırakılamaz!', 'warning');
+        return;
+      }
+
+      if (!this.item.price) {
+        Swal.fire('Uyarı', 'Ürün fiyatı boş bırakılamaz!', 'warning');
+        return;
+      }
+
+      if (!this.formData || !this.formData.has('file0')) {
+        Swal.fire('Uyarı', 'Ürün fotoğrafı boş bırakılamaz!', 'warning');
+        return;
+      }
+
       this.fileService.uploadFile(this.formData, res => {
         if (res.fileName) {
           this.item.imgUrl = res.fileName;
-          this.productService.insetProduct(this.categoryService.currentCategory, this.item, res => {
-            if (res) this.router.navigateByUrl('admin').then();
+          this.productService.insetProduct(this.categoryService.currentCategory, this.item, response => {
+            if (response) { this.router.navigateByUrl('admin'); }
           });
         }
       });

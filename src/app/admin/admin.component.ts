@@ -30,7 +30,7 @@ export class AdminComponent implements OnInit {
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categoryService.categories = data;
-            this.categoryService.currentCategory = this.categoryService.categories[0];
+            this.categoryService.currentCategory = this.categoryService.currentCategory || this.categoryService.categories[0];
             if ( this.categoryService.currentCategory ) {
                 this.productService.getProductsByCategory(this.categoryService.currentCategory.id, results => {
                     this.categoryService.currentCategory.items = results;
