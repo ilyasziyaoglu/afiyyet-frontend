@@ -9,6 +9,7 @@ import {CategoryService} from '../services/category.service';
 import {ProductService} from '../services/product.service';
 import {DialogCategoryEditComponent} from '../dialogs/dialog-category-edit/dialog-category-edit.component';
 import {environment} from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-admin',
@@ -93,13 +94,29 @@ export class AdminComponent implements OnInit {
     }
 
     deleteItem(item, index) {
-        if ( confirm('Bu ürünü silmek istediğinize emin misiniz?') ) {
-            this.productService.deleteProduct(item.id, res => {
-                if ( res ) {
-                    this.categoryService.currentCategory.items.splice(index, 1);
-                }
-            });
-        }
+        Swal.fire({
+            title: 'Dikkat!',
+            text: 'Ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Evet, silinsin!',
+            cancelButtonText: 'İptal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.productService.deleteProduct(item.id, res => {
+                    if ( res ) {
+                        this.categoryService.currentCategory.items.splice(index, 1);
+                        Swal.fire(
+                            'Silindi!',
+                            'Ürün silindi!.',
+                            'success'
+                        );
+                    }
+                });
+            }
+        });
     }
 
     editItem(item) {
