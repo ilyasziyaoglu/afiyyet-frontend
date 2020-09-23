@@ -108,7 +108,6 @@ export class AdminComponent implements OnInit {
     }
 
     addCategoryClick() {
-
         const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%'});
 
         dialogRef.afterClosed().subscribe(res => {
@@ -120,13 +119,13 @@ export class AdminComponent implements OnInit {
     }
 
 
-    editCategoryClick(category) {
+    editCategoryClick(category, index) {
         const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%', data: {...category}});
 
         dialogRef.afterClosed().subscribe(res => {
             this.categoryService.updateCategory(res.category, result => {
-
-
+                //Buradaki kod basarili kosulunda calismali
+                this.categoryService.categories[index] = res.category;
             });
         });
     }
