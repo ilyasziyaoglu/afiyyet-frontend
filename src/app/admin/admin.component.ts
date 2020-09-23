@@ -140,10 +140,13 @@ export class AdminComponent implements OnInit {
         const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%', data: {...category}});
 
         dialogRef.afterClosed().subscribe(res => {
-            this.categoryService.updateCategory(res.category, result => {
-                //Buradaki kod basarili kosulunda calismali
-                this.categoryService.categories[index] = res.category;
-            });
+            if ( res.category ) {
+                this.categoryService.updateCategory(res.category, result => {
+                    if (result ) {
+                        this.categoryService.categories[index] = res.category;
+                    }
+                });
+            }
         });
     }
 
