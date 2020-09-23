@@ -7,15 +7,40 @@
 .favorite {
   color: red;
   border-color: red;
-}
-
-.like-icon {
-  z-index: 999;
-}
-
-mat-icon {
   position: absolute;
   font-size: 1.5em;
+}
+
+.like-div {
+  display: flex;
+  font-weight: bold;
+  justify-content: flex-end;
+  align-items: center;
+  color: #343A40;
+
+  mat-icon {
+    color: #343A40;
+  }
+}
+
+.price-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 17px;
+  color: #343A40;
+  border-right: 1px solid #343A40;
+}
+
+.price-like-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  float: right;
+  background-color: white;
+  padding: 5px 0;
+  border-radius: 3px;
 }
 
 .item {
@@ -65,15 +90,6 @@ mat-icon {
   text-align: justify;
   font-family: "Merriweather", serif;
   font-style: italic;
-}
-
-.item-price {
-  position: relative;
-  left: -2px;
-  margin: 2px 2px 2px;
-  width: 100%;
-  text-align: right;
-  float: bottom;
 }
 
 .item-line {
