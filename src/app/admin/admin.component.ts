@@ -98,7 +98,7 @@ export class AdminComponent implements OnInit {
 
     addCategoryClick() {
 
-        const dialogRef = this.dialog.open(DialogCategoryEditComponent);
+        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%'});
 
         dialogRef.afterClosed().subscribe(res => {
             res.category.status = 'ACTIVE';
@@ -110,7 +110,7 @@ export class AdminComponent implements OnInit {
 
 
     editCategoryClick(category) {
-        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {data: {...category}});
+        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%', data: {...category}});
 
         dialogRef.afterClosed().subscribe(res => {
             this.categoryService.updateCategory(res.category, result => {
