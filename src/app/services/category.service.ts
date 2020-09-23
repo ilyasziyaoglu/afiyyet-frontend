@@ -11,6 +11,7 @@ export class CategoryService extends BaseService {
 
   basePath = 'category';
   currentCategory: Category;
+  categories: Category[];
 
   constructor(
       httpService: HttpService,

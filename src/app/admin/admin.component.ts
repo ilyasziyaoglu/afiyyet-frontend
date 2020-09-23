@@ -23,16 +23,14 @@ export class AdminComponent implements OnInit {
     productsArranged = false;
     categoriesArranged = false;
 
-    categories: any[] = [];
-
     constructor(
         private menuService: MenuService, private storageService: StorageService,
         private router: Router, private dialog: MatDialog,
         public categoryService: CategoryService, private productService: ProductService,
     ) {
         categoryService.getCategoriesByBrand(data => {
-            this.categories = data;
-            this.categoryService.currentCategory = this.categories[0];
+            this.categoryService.categories = data;
+            this.categoryService.currentCategory = this.categoryService.categories[0];
             if ( this.categoryService.currentCategory ) {
                 this.productService.getProductsByCategory(this.categoryService.currentCategory.id, results => {
                     this.categoryService.currentCategory.items = results;
@@ -50,7 +48,7 @@ export class AdminComponent implements OnInit {
 
     categoryArrangeSave() {
         const pairs = [];
-        this.categories.forEach(category => {
+        this.categoryService.categories.forEach(category => {
             pairs.push({id: category.id, order: category.order});
         });
         this.categoryService.arrangeCateogories(pairs, res => {
@@ -72,7 +70,8 @@ export class AdminComponent implements OnInit {
 
     arrangeCategory(event: CdkDragDrop<Category>) {
         this.categoriesArranged = true;
-        this.categories = this.moveItemOrderInArray(this.categories, event.previousIndex, event.currentIndex);
+        this.categoryService.categories = this.moveItemOrderInArray(
+            this.categoryService.categories, event.previousIndex, event.currentIndex);
     }
 
     arrangeProduct(event: CdkDragDrop<Item>) {
@@ -121,7 +120,7 @@ export class AdminComponent implements OnInit {
         dialogRef.afterClosed().subscribe(res => {
             res.category.status = 'ACTIVE';
             this.categoryService.insertCategory(res.category, result => {
-                this.categories.push(result);
+                this.categoryService.categories.push(result);
             });
         });
     }
@@ -142,7 +141,7 @@ export class AdminComponent implements OnInit {
         if ( confirm('Bu kategoriyi silmek istediğinize emin misiniz?') ) {
             this.categoryService.deleteCategory(category.id, result => {
                 if ( result ) {
-                    this.categories.splice(index, 1);
+                    this.categoryService.categories.splice(index, 1);
                 }
             });
         }

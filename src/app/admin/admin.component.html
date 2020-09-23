@@ -24,7 +24,7 @@
                     <button (click)="companySelected()"
                             class="btn btn-dark py-2 px-3 mb-2 w-100">KAMPANYALAR</button>
 
-                    <div cdkDrag *ngFor="let category of categories; let i = index">
+                    <div cdkDrag *ngFor="let category of categoryService.categories; let i = index">
                         <div (click)="categoryClick(category)"
                              [ngClass]="{'active-category': this.categoryService.currentCategory?.id == category.id}"
                              style="display: flex; justify-content: space-between; align-items: center" class="btn btn-dark w-100 my-1 px-1 py-2">
