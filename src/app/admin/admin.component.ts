@@ -48,24 +48,22 @@ export class AdminComponent implements OnInit {
     }
 
     categoryArrangeSave() {
-        const pairs = [];
+        const pairs = {};
         this.categoryService.categories.forEach(category => {
-            pairs.push({id: category.id, order: category.order});
+            pairs[category.id] = category.order;
         });
         this.categoryService.arrangeCateogories(pairs, res => {
-            //IF Koşulunun düzenlenmesi lazım.
-            if (res) this.categoriesArranged = false;
+            if (res) { this.categoriesArranged = false; }
         });
     }
 
     productArrangeSave() {
-        const pairs = [];
+        const pairs = {};
         this.categoryService.currentCategory.items.forEach(item => {
-            pairs.push({id: item.id, order: item.order})
+            pairs[item.id] = item.order;
         });
         this.productService.arrangeProducts(pairs, res => {
-            //IF Koşulunun düzenlenmesi lazım.
-            if (res) this.productsArranged = false;
+            if (res) { this.productsArranged = false; }
         });
     }
 

@@ -29,7 +29,7 @@
                              [ngClass]="{'active-category': this.categoryService.currentCategory?.id == category.id}"
                              style="display: flex; justify-content: space-between; align-items: center" class="btn btn-dark w-100 my-1 px-1 py-2">
                             <div style="display: flex; align-items: center">
-                                <mat-icon cdkDragHandle class="mr-1">drag_indicator</mat-icon>
+                                <mat-icon class="drag-indicator mr-1" cdkDragHandle>drag_indicator</mat-icon>
                                 <span style="text-align: left">{{category.name}}</span>
                             </div>
                             <div>
