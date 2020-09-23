@@ -11,11 +11,11 @@
 
         <div style="background-color: lightgrey" class="col-11 px-0 py-2 rounded"> <!-- DashBoard Alanı -->
 
-            <div class="row m-0" *ngIf="openIndex === 0"> <!-- Menu Duzenle Alanı -->
+            <div class="row m-0" *ngIf="currentMenuIndex === 0"> <!-- Menu Duzenle Alanı -->
 
-                <div style="overflow-y: scroll; height: 75vh" cdkDropList (cdkDropListDropped)="dropCategory($event)" class="col-3">
+                <div style="overflow-y: scroll; height: 75vh" cdkDropList (cdkDropListDropped)="arrangeCategory($event)" class="col-3">
 
-                    <button [ngClass]="{'btn-success': categorySave, 'btn-secondary': !categorySave}"
+                    <button [ngClass]="{'btn-success': categoriesArranged, 'btn-secondary': !categoriesArranged}"
                             (click)="categoryArrangeSave()" class="col-12 btn mb-1">Sıralamayı Kaydet</button>
 
                     <button (click)="addCategoryClick()"
@@ -40,14 +40,15 @@
                     </div>
                 </div>
 
-                <div class="col-9" cdkDropList (cdkDropListDropped)="dropProduct($event)"
+                <div class="col-9" cdkDropList (cdkDropListDropped)="arrangeProduct($event)"
                      *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
 
                     <div class="row mx-1 p-0 justify-content-between">
-                        <div class="col-9 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
+                        <div class="col-8 bg-dark rounded category-name">{{categoryService.currentCategory?.name}}
                         </div>
 
-                        <button [ngClass]="{'btn-secondary': !itemSave, 'btn-success': itemSave}" class="col-2 btn">Kaydet</button>
+                        <button [ngClass]="{'btn-secondary': !productsArranged, 'btn-success': productsArranged}"
+                                (click)="productArrangeSave()" class="col-3 btn">Sıralamayı Kaydet</button>
                     </div>
 
                     <div class="row m-1 p-2 justify-content-center">

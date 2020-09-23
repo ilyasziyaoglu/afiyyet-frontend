@@ -19,18 +19,16 @@ import {environment} from 'src/environments/environment';
 export class AdminComponent implements OnInit {
 
     environment = environment;
-    openIndex = 0;
-    itemSave = false;
-    categorySave = false;
+    currentMenuIndex = 0;
+    productsArranged = false;
+    categoriesArranged = false;
 
     categories: any[] = [];
 
     constructor(
         private menuService: MenuService, private storageService: StorageService,
-        private router: Router,
-        private dialog: MatDialog,
-        public categoryService: CategoryService,
-        private productService: ProductService,
+        private router: Router, private dialog: MatDialog,
+        public categoryService: CategoryService, private productService: ProductService,
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categories = data;
@@ -47,7 +45,7 @@ export class AdminComponent implements OnInit {
     }
 
     menuClick(index) {
-        this.openIndex = index;
+        this.currentMenuIndex = index;
     }
 
     categoryArrangeSave() {
@@ -55,12 +53,32 @@ export class AdminComponent implements OnInit {
         this.categories.forEach(category => {
             pairs.push({id: category.id, order: category.order});
         });
-        this.categoryService.arrangeCateogories(pairs);
+        this.categoryService.arrangeCateogories(pairs, res => {
+            //IF Koşulunun düzenlenmesi lazım.
+            if (res) this.categoriesArranged = false;
+        });
     }
 
-    dropCategory(event: CdkDragDrop<Category>) {
-        this.categorySave = true;
+    productArrangeSave() {
+        const pairs = [];
+        this.categoryService.currentCategory.items.forEach(item => {
+            pairs.push({id: item.id, order: item.order})
+        });
+        this.productService.arrangeProducts(pairs, res => {
+            //IF Koşulunun düzenlenmesi lazım.
+            if (res) this.productsArranged = false;
+        });
+    }
+
+    arrangeCategory(event: CdkDragDrop<Category>) {
+        this.categoriesArranged = true;
         this.categories = this.moveItemOrderInArray(this.categories, event.previousIndex, event.currentIndex);
+    }
+
+    arrangeProduct(event: CdkDragDrop<Item>) {
+        this.productsArranged = true;
+        this.categoryService.currentCategory.items = this.moveItemOrderInArray(
+            this.categoryService.currentCategory.items, event.previousIndex, event.currentIndex);
     }
 
     moveItemOrderInArray(arr, prevIndex, nextIndex) {
@@ -132,10 +150,5 @@ export class AdminComponent implements OnInit {
 
     companySelected() {
 
-    }
-
-    dropProduct(event: CdkDragDrop<Item>) {
-        this.categorySave = true;
-        //this.categories = this.moveItemOrderInArray(this.categories, event.previousIndex, event.currentIndex);
     }
 }
