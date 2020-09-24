@@ -28,7 +28,7 @@
                 <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
                           style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
             </div>
-            <div class="col-2  d-flex justify-content-center align-items-center">
+            <div class="col-2 d-flex justify-content-center align-items-center">
                 <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
                 <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
             </div>
