@@ -123,7 +123,11 @@
 .top-menu {
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: #151515;
+
+  :first-of-type {
+    border-right: 1px solid #bbbbbb;
+  }
 }
 
 .top-menu-button {

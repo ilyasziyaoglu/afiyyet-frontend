@@ -153,10 +153,6 @@ export class AdminComponent implements OnInit {
         }
     }
 
-    campaignSelected() {
-
-    }
-
     moveItemOrderInArray(arr, prevIndex, nextIndex) {
         arr.splice(nextIndex, 0, arr.splice(prevIndex, 1)[0]);
         arr = arr.map((item, i) => ({...item, order: i}));
