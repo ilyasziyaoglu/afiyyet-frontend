@@ -25,6 +25,10 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { DialogCommentComponent } from './dialogs/dialog-comment/dialog-comment.component';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import { AdminReservationsComponent } from './admin-reservations/admin-reservations.component';
+import { AdminCommentsComponent } from './admin-comments/admin-comments.component';
+import { AdminReportsComponent } from './admin-reports/admin-reports.component';
+import { AdminCampaignsComponent } from './admin-campaigns/admin-campaigns.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +42,10 @@ import {MatButtonModule} from '@angular/material/button';
         DialogCategoryEditComponent,
         ReservationComponent,
         DialogCommentComponent,
+        AdminReservationsComponent,
+        AdminCommentsComponent,
+        AdminReportsComponent,
+        AdminCampaignsComponent,
     ],
     imports: [
         CommonModule,

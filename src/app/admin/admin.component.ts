@@ -20,7 +20,6 @@ import Swal from 'sweetalert2';
 export class AdminComponent implements OnInit {
 
     environment = environment;
-    currentMenuIndex = 0;
     productsArranged = false;
     categoriesArranged = false;
 
@@ -41,10 +40,6 @@ export class AdminComponent implements OnInit {
     }
 
     ngOnInit(): void {
-    }
-
-    menuClick(index) {
-        this.currentMenuIndex = index;
     }
 
     categoryArrangeSave() {

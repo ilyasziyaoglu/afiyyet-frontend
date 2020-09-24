@@ -9,6 +9,10 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './common/auth/login/login.component';
 import {RegisterComponent} from './common/auth/register/register.component';
 import {ReservationComponent} from './reservation/reservation.component';
+import {AdminReservationsComponent} from './admin-reservations/admin-reservations.component';
+import {AdminCommentsComponent} from './admin-comments/admin-comments.component';
+import {AdminReportsComponent} from './admin-reports/admin-reports.component';
+import {AdminCampaignsComponent} from './admin-campaigns/admin-campaigns.component';
 
 
 const routes: Routes = [
@@ -52,6 +56,22 @@ const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent
+  },
+  {
+    path: 'admin-reservations',
+    component: AdminReservationsComponent
+  },
+  {
+    path: 'admin-comments',
+    component: AdminCommentsComponent
+  },
+  {
+    path: 'admin-reports',
+    component: AdminReportsComponent
+  },
+  {
+    path: 'admin-campaigns',
+    component: AdminCampaignsComponent
   }
 ];
 
