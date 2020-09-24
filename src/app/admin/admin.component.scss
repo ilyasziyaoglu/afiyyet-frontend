@@ -11,13 +11,50 @@
   font-weight: bold;
 }
 
+.item-drag-icon {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  transform: scale(2);
+}
+
+.edit-delete-container {
+  position:absolute;
+  bottom: 15px;
+  right: 14px;
+  display: flex;
+}
+
 .item {
+  position: relative;
   color: aliceblue;
   margin: 35px 5px 5px 25px;
   cursor: pointer;
   border-radius: 3px;
   background-color: #343A40;
   align-items: center;
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+}
+.img-container:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; /* The padding depends on the width, not on the height, so with a padding-bottom of 100% you will get a square */
+}
+
+.img-container img {
+  position: absolute; /* Take your picture out of the flow */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; /* Make the picture taking the size of it's parent */
+  width: 100%; /* This if for the object-fit */
+  height: 100%; /* This if for the object-fit */
+  object-fit: cover; /* Equivalent of the background-size: cover; of a background-image */
+  object-position: center;
 }
 
 .item_desc {
@@ -29,20 +66,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-}
-
-.item-img {
-  height: 200px;
-  object-fit: cover;
-}
-
-.item-name {
-}
-
-.description {
-}
-
-.item-price {
 }
 
 .drag-indicator {

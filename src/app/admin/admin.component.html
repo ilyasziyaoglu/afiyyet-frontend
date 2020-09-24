@@ -58,7 +58,10 @@
 
                     <div cdkDrag class="row my-2 mx-1 item px-2 py-2"
                          *ngFor="let item of categoryService.currentCategory?.items; let i = index">
-                        <img class="item-img col-3 pl-0" [src]="item.imgUrl ? environment.baseCdnUrl + item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
+                        <div class="img-container col-2 pl-0 mr-2">
+                            <img [src]="item.imgUrl ? environment.baseCdnUrl + item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
+                        </div>
+                        <mat-icon cdkDragHandle class="item-drag-icon">view_headline</mat-icon>
                         <div class="col-8">
                             <div class="row">
                                 <p class="item_desc">Başlık</p><h3 class="mb-2 align-self-center font-weight-bold">{{item.name}}</h3>
@@ -70,9 +73,9 @@
                                 <p class="item_desc">Fiyat</p><p class="item-price align-self-center">{{item.price}}</p>
                             </div>
                         </div>
-                        <div class="col-1">
-                            <mat-icon (click)="editItem(item)" style="font-size: 30px;">edit</mat-icon>
-                            <mat-icon (click)="deleteItem(item, i)" style="font-size: 30px; color: #F4511E">delete</mat-icon>
+                        <div class="edit-delete-container">
+                            <mat-icon (click)="editItem(item)" style="transform: scale(1.3); margin-right: 10px">edit</mat-icon>
+                            <mat-icon (click)="deleteItem(item, i)" style="transform: scale(1.3); color: #F4511E">delete</mat-icon>
                         </div>
                     </div>
 
