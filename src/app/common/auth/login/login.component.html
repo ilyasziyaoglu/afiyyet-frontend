@@ -1,30 +1,28 @@
-<div class="row">
-    <div class="col"></div>
-    <div class="col">
+<div class="row d-flex justify-content-center m-5">
+    <div class="col-sm-3">
         <form action="http://localhost:8080/login">
 
             <div class="form-group">
-                <label for="username" class="w-100">Email or Username</label>
-                <input [(ngModel)]="username" id="username" name="username" type="email" placeholder="Email address">
+                <label for="username">E-posta veya kullanıcı adı</label>
+                <input [(ngModel)]="username" id="username" name="username" type="email" placeholder="E-posta veya kullanıcı adı">
             </div>
 
             <div class="form-group">
-                <label for="password" class="w-100">Password</label>
-                <input [(ngModel)]="password" id="password" name="password" type="password" placeholder="Password">
+                <label for="password" class="w-100">Parola</label>
+                <input [(ngModel)]="password" id="password" name="password" type="password" placeholder="Parola">
             </div>
 
             <!--        <p class="text-right"><a [routerLink]="['/auth/forget-password']">Froget password?</a></p>-->
 
             <div class="form-group">
-                <mat-checkbox>Remember me</mat-checkbox>
+                <mat-checkbox>Beni hatırla</mat-checkbox>
             </div>
 
-            <button (click)="onLogin()" class="btn-lg w-100 rounded-0" type="button">Login</button>
+            <button (click)="onLogin()" class="btn-lg w-100 rounded-0" type="button">Giriş</button>
             <br>
             <br>
-            <p class="text-center">Don't have an account? <a [routerLink]="['/register']">Register</a></p>
+            <p class="text-center">Hesabınız yok mu? <a [routerLink]="['/register']">Kayıt Ol</a></p>
 
         </form>
     </div>
-    <div class="col"></div>
 </div>
