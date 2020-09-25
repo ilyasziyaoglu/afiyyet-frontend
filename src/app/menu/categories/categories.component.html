@@ -6,13 +6,12 @@
 <p class="empty-favorites-text" *ngIf="!storageService.favorites.length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
 <div class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 border border-dark"
-         *ngFor="let item of favoriteService.getFavorites()"
-         (click)="storageService.setItem('item', item)">
+         *ngFor="let item of favoriteService.getFavorites()">
         <div class="favorite">
             <mat-icon class="rounded-circle" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
         </div>
-        <img [routerLink]="['/menu/item']" class="item-img" src="{{item.imgUrl}}" alt="">
-        <p [routerLink]="['/menu/item']" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p>
+        <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="item-img" src="{{item.imgUrl}}" alt="">
+        <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p>
         <div class="fav-like-price-container">
             <div class="rounded-lg fav-price border">{{item.price}} TL</div>
             <div class="rounded-lg fav-like border" (click)="onLike(item)">
@@ -28,12 +27,11 @@
 
 <div class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
-         *ngFor="let item of menuService.serviceMenu.campaigns"
-         (click)="storageService.setItem('item', item)">
-        <img [routerLink]="['/menu/item']" class="camp-item-img" src="{{item.imgUrl}}" alt="">
+         *ngFor="let item of menuService.serviceMenu.campaigns">
+        <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-img" src="{{item.imgUrl}}" alt="">
 
-        <p [routerLink]="['/menu/item']" class="camp-item-name">{{item.name}}</p>
-        <p [routerLink]="['/menu/item']" class="camp-item-description">{{item.description}}</p>
+        <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-name">{{item.name}}</p>
+        <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-description">{{item.description}}</p>
 
         <div class="camp-like-price-container p-0">
             <div class="rounded-lg camp-price">{{item.price}} TL</div>
