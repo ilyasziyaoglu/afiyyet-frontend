@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {StorageService} from '../common/services/storage.service';
-import {menu} from '../model/data';
+import {StorageService} from '../base/services/storage.service';
+import {menu} from './models/data';
 
 @Injectable({
     providedIn: 'root',

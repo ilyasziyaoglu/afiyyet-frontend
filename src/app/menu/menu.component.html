@@ -1,60 +1,10 @@
-<div class="no-gutters top-menu">
-    <button [routerLink]="['/reservation']" class="btn top-menu-button">Rezervasyon</button>
-    <button (click)="commentClick()" class="btn top-menu-button">Yorum Yap</button>
+<div class="header">
+    <mat-icon class="m-3 back-button" (click)="location.back()">arrow_back</mat-icon>
+    <img class="logo-img" src="https://www.whiteshoresrealty.com/images/logo.png">
 </div>
-<h3 class="m-2 mt-3" style="text-align: center">Favorilerim</h3>
-<p class="empty-favorites-text" *ngIf="!storageService.favorites.length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
-<div class="m-1 p-0 myfavorites justify-content-center">
-    <div class="item m-1 p-0 border border-dark"
-         *ngFor="let item of favoriteService.getFavorites()"
-         (click)="storageService.setItem('item', item)">
-        <div class="favorite">
-            <mat-icon class="rounded-circle" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
-        </div>
-        <img [routerLink]="['/item']" class="item-img" src="{{item.imgUrl}}" alt="">
-        <p [routerLink]="['/item']" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p>
-        <div class="fav-like-price-container">
-            <div class="rounded-lg fav-price border">{{item.price}} TL</div>
-            <div class="rounded-lg fav-like border" (click)="onLike(item)">
-                {{item.likes}}&nbsp;
-                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                          style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-<h3 class="m-2 mt-3" style="text-align: center">Kampanyalar</h3>
-
-<div class="m-1 p-0 camp_items justify-content-center">
-    <div class="camp_item m-1 p-0"
-         *ngFor="let item of menuService.serviceMenu.campaigns"
-         (click)="storageService.setItem('item', item)">
-        <img [routerLink]="['/item']" class="camp-item-img" src="{{item.imgUrl}}" alt="">
-
-        <p [routerLink]="['/item']" class="camp-item-name">{{item.name}}</p>
-        <p [routerLink]="['/item']" class="camp-item-description">{{item.description}}</p>
-
-        <div class="camp-like-price-container p-0">
-            <div class="rounded-lg camp-price">{{item.price}} TL</div>
-
-            <div class="rounded-lg camp-like" (click)="onLike(item)">
-                {{item.likes}}&nbsp;
-                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                          class="like-icon" style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
-            </div>
-        </div>
-    </div>
-</div>
-
-<hr>
-<h3 class="m-3 mt-3" style="text-align: center">Menü</h3>
-<div class="row m-1 justify-content-center">
-    <div class="m-1 p-0 category"
-         *ngFor="let category of menuService.serviceMenu.categories"
-         (click)="storageService.setItem('category', category)"
-        [routerLink]="['/submenu']">
-        <img class="category-img" src="{{category.imgUrl}}" alt="">
-        <p class="category-name">{{category.name}}</p>
-    </div>
+<router-outlet></router-outlet>
+<div class="footer align-content-center">
+    <p style="text-align: center;line-height:45px;font-weight: bold; font-size: 13px">© 2020 by
+        <a style="font-size: 15px;color: white; text-decoration: underline; font-weight: bold" href="https://evercode.net" target="_blank">EverCode</a>
+    </p>
 </div>

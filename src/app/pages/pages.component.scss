@@ -5,13 +5,18 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 50px;
   background-color: #151515;
   color: white;
 }
 
-.back-button {
-  cursor: pointer;
+.header ul {
+  width: 100%;
+  margin: 10px;
+  list-style: none;
+}
+
+.header ul li {
+  margin: 0 10px;
 }
 
 .logo-img {
@@ -21,7 +26,6 @@
 }
 
 .footer {
-  position: sticky;
   z-index: 99;
   bottom: 0;
   margin: 0;

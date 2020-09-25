@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {Category} from '../../model/models';
-import {environment} from '../../../environments/environment';
-import {FileService} from '../../common/services/file.service';
+import {Category} from '../../../../services/models/models';
+import {environment} from '../../../../../environments/environment';
+import {FileService} from '../../../../base/services/file.service';
 import Swal from 'sweetalert2';
 
 @Component({

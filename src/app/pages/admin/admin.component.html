@@ -1,0 +1,13 @@
+<div class="w-100 flex-container d-flex justify-content-center no-gutters">
+    <button style="background-color: #343A40; color: white; border-radius: 0;"
+            class="btn py-2 flex-fill" [routerLink]="['/admin/menu-edit']">Menü Düzenle</button>
+    <button style="background-color: #151515; color: white; border-radius: 0;"
+            class="btn py-1 flex-fill" [routerLink]="['/admin/admin-campaigns']">Kampanyalar</button>
+    <button style="background-color: #151515; color: white; border-radius: 0;"
+            class="btn py-1 flex-fill" [routerLink]="['/admin/admin-reports']">Raporlar</button>
+    <button style="background-color: #151515; color: white; border-radius: 0;"
+            class="btn py-1 flex-fill" [routerLink]="['/admin/admin-reservations']">Rezervasyonlar</button>
+    <button style="background-color: #151515; color: white; border-radius: 0"
+            class="btn py-1 flex-fill" [routerLink]="['/admin/admin-comments']">Yorumlar</button>
+</div>
+<router-outlet></router-outlet>

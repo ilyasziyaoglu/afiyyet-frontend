@@ -1,23 +1,23 @@
 import {Component, OnInit} from '@angular/core';
-import {MenuService} from '../services/menu.service';
+import {MenuService} from '../../../services/menu.service';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
-import {Category, Item} from '../model/models';
+import {Category, Item} from '../../../services/models/models';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {StorageService} from '../common/services/storage.service';
-import {CategoryService} from '../services/category.service';
-import {ProductService} from '../services/product.service';
+import {StorageService} from '../../../base/services/storage.service';
+import {CategoryService} from '../../../services/category.service';
+import {ProductService} from '../../../services/product.service';
 import {DialogCategoryEditComponent} from '../dialogs/dialog-category-edit/dialog-category-edit.component';
 import {environment} from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-admin',
-    templateUrl: './admin.component.html',
-    styleUrls: ['./admin.component.scss'],
+    templateUrl: './admin-menu.component.html',
+    styleUrls: ['./admin-menu.component.scss'],
 })
 
-export class AdminComponent implements OnInit {
+export class AdminMenuComponent implements OnInit {
 
     environment = environment;
     productsArranged = false;

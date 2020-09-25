@@ -6,6 +6,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {RouterModule} from '@angular/router';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+
 @NgModule({
     declarations: [
         LoginComponent,
@@ -19,5 +20,5 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         MatCheckboxModule,
     ],
 })
-export class CommonModule {
+export class BaseModule {
 }

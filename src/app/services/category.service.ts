@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {BaseService} from '../common/services/base-service';
-import {HttpMethod, HttpService} from '../common/services/http.service';
-import {StorageService} from '../common/services/storage.service';
-import {Category} from '../model/models';
+import {BaseService} from '../base/services/base-service';
+import {HttpMethod, HttpService} from '../base/services/http.service';
+import {StorageService} from '../base/services/storage.service';
+import {Category} from './models/models';
 
 @Injectable({
   providedIn: 'root'

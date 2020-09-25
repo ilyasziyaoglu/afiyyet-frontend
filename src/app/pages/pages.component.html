@@ -1,0 +1,16 @@
+<div class="header p-1 d-flex justify-content-end">
+    <ul class="d-flex justify-content-end">
+        <li>
+            <button class="btn btn-light" type="button" [routerLink]="['/login']">Login</button>
+        </li>
+        <li>
+            <button class="btn btn-light" type="button" [routerLink]="['/register']">Register</button>
+        </li>
+    </ul>
+</div>
+<router-outlet></router-outlet>
+<div class="footer align-content-center">
+    <p style="text-align: center;line-height:45px;font-weight: bold; font-size: 13px">© 2020 by
+        <a style="font-size: 15px;color: white; text-decoration: underline; font-weight: bold" href="https://evercode.net" target="_blank">EverCode</a>
+    </p>
+</div>

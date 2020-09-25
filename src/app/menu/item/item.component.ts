@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FavoriteService} from '../services/favorite.service';
-import {StorageService} from '../common/services/storage.service';
-import {MenuService} from '../services/menu.service';
+import {FavoriteService} from '../../services/favorite.service';
+import {StorageService} from '../../base/services/storage.service';
+import {MenuService} from '../../services/menu.service';
 
 @Component({
   selector: 'app-item',
