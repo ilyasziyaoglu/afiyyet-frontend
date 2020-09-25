@@ -5,10 +5,10 @@ import {MenuService} from '../../services/menu.service';
 
 @Component({
     selector: 'app-submenu',
-    templateUrl: './submenu.component.html',
-    styleUrls: ['./submenu.component.scss'],
+    templateUrl: './products.component.html',
+    styleUrls: ['./products.component.scss'],
 })
-export class SubmenuComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
     items = [];
 

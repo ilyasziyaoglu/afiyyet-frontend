@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {CategoriesComponent} from './categories/categories.component';
-import {SubmenuComponent} from './submenu/submenu.component';
-import {ItemComponent} from './item/item.component';
+import {ProductsComponent} from './products/products.component';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {ReservationComponent} from './reservation/reservation.component';
 import {MenuComponent} from './menu.component';
 
@@ -18,11 +18,11 @@ const routes: Routes = [
             },
             {
                 path: 'submenu',
-                component: SubmenuComponent,
+                component: ProductsComponent,
             },
             {
                 path: 'item',
-                component: ItemComponent,
+                component: ProductDetailComponent,
             },
             {
                 path: 'reservation',

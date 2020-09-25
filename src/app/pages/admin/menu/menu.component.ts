@@ -13,11 +13,11 @@ import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-admin',
-    templateUrl: './admin-menu.component.html',
-    styleUrls: ['./admin-menu.component.scss'],
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.scss'],
 })
 
-export class AdminMenuComponent implements OnInit {
+export class MenuComponent implements OnInit {
 
     environment = environment;
     productsArranged = false;

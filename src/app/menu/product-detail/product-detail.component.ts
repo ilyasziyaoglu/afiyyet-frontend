@@ -5,10 +5,10 @@ import {MenuService} from '../../services/menu.service';
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
 
   item: any;
 

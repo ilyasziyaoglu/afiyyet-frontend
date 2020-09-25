@@ -3,8 +3,8 @@ import {NgModule} from '@angular/core';
 import {MenuRoutingModule} from './menu-routing.module';
 import {MenuComponent} from './menu.component';
 import {CategoriesComponent} from './categories/categories.component';
-import {SubmenuComponent} from './submenu/submenu.component';
-import {ItemComponent} from './item/item.component';
+import {ProductsComponent} from './products/products.component';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {ReservationComponent} from './reservation/reservation.component';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
@@ -14,8 +14,8 @@ import {CommonModule} from '@angular/common';
     declarations: [
         MenuComponent,
         CategoriesComponent,
-        SubmenuComponent,
-        ItemComponent,
+        ProductsComponent,
+        ProductDetailComponent,
         ReservationComponent,
     ],
     imports: [

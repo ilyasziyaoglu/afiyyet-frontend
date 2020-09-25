@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AdminReservationsComponent} from './admin-reservations/admin-reservations.component';
-import {AdminCommentsComponent} from './admin-comments/admin-comments.component';
-import {AdminCampaignsComponent} from './admin-campaigns/admin-campaigns.component';
-import {AdminMenuComponent} from './admin-menu/admin-menu.component';
+import {ReservationsComponent} from './reservations/reservations.component';
+import {CommentsComponent} from './comments/comments.component';
+import {CampaignsComponent} from './campaigns/campaigns.component';
+import {MenuComponent} from './menu/menu.component';
 import {ItemEditComponent} from './item-edit/item-edit.component';
 import {AdminComponent} from './admin.component';
-import {AdminReportsComponent} from './admin-reports/admin-reports.component';
+import {ReportsComponent} from './reports/reports.component';
 
 const routes: Routes = [
     {
@@ -16,7 +16,7 @@ const routes: Routes = [
             {path: '', redirectTo: 'menu-edit', pathMatch: 'full'},
             {
                 path: 'menu-edit',
-                component: AdminMenuComponent,
+                component: MenuComponent,
             },
             {
                 path: 'item-edit',
@@ -24,19 +24,19 @@ const routes: Routes = [
             },
             {
                 path: 'admin-reservations',
-                component: AdminReservationsComponent,
+                component: ReservationsComponent,
             },
             {
                 path: 'admin-comments',
-                component: AdminCommentsComponent,
+                component: CommentsComponent,
             },
             {
                 path: 'admin-campaigns',
-                component: AdminCampaignsComponent,
+                component: CampaignsComponent,
             },
             {
                 path: 'admin-reports',
-                component: AdminReportsComponent,
+                component: ReportsComponent,
             },
         ],
     },
