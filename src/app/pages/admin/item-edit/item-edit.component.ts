@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductService} from '../../../services/product.service';
 import {CategoryService} from '../../../services/category.service';
 import {FileService} from '../../../base/services/file.service';
-import {environment} from '../../../../environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,8 +11,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./item-edit.component.scss']
 })
 export class ItemEditComponent implements OnInit {
-
-  environment = environment;
 
   item: any = {};
   status;

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseApiUrl: 'http://31.220.55.12:8000/',
-  baseCdnUrl: 'http://31.220.55.12:5000/'
+  // baseApiUrl: 'http://localhost:8000/',
 };
 
 /*

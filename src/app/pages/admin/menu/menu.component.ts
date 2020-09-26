@@ -8,7 +8,6 @@ import {StorageService} from '../../../base/services/storage.service';
 import {CategoryService} from '../../../services/category.service';
 import {ProductService} from '../../../services/product.service';
 import {DialogCategoryEditComponent} from '../dialogs/dialog-category-edit/dialog-category-edit.component';
-import {environment} from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +18,6 @@ import Swal from 'sweetalert2';
 
 export class MenuComponent implements OnInit {
 
-    environment = environment;
     productsArranged = false;
     categoriesArranged = false;
 

@@ -31,7 +31,8 @@ export class StorageService {
     }
 
     getItem(key) {
-        return JSON.parse(sessionStorage.getItem(key));
+        const item = sessionStorage.getItem(key);
+        return item !== 'undefined' ? JSON.parse(item) : null;
     }
 
     removeItem(key) {

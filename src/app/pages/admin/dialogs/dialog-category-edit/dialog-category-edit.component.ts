@@ -1,7 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Category} from '../../../../services/models/models';
-import {environment} from '../../../../../environments/environment';
 import {FileService} from '../../../../base/services/file.service';
 import Swal from 'sweetalert2';
 
@@ -14,7 +13,6 @@ export class DialogCategoryEditComponent implements OnInit {
 
   category: Category;
   isInsert = true;
-  environment = environment;
   formData: FormData;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
