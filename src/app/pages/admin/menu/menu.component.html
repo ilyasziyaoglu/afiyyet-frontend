@@ -42,14 +42,17 @@
                     </div>
                     <div class="col-7 col-lg-9 p-1">
                         <div class="row m-0">
-                            <p class="item_desc">Başlık</p><h3 class="align-self-center font-weight-bold">{{item.name}}</h3>
+<!--                            <p class="item_desc">Başlık</p>-->
+                            <h3 class="font-weight-bold px-2 py-1 rounded item-name">{{item.name}}</h3>
                         </div>
-                        <div class="row m-0">
-                            <p class="item_desc">Fiyat</p><p class="item-price align-self-center">{{item.price}}</p>
+                        <div class="row no-gutters description-desktop">
+                            <p class="font-italic p-2 rounded item-description">{{item.description}}</p>
                         </div>
-                        <div class="row m-0 description-in-the-middle">
-<!--                            <p class="item_desc">İçerik</p>-->
-                            <p class="font-italic">{{item.description}}</p>
+                        <div class="row m-1 p-0 w-100 description-mobile">
+                            <p class="p-2 rounded font-italic item-description">{{item.description}}</p>
+                        </div>
+                        <div class="row m-0 justify-content-center">
+                            <p class="item-price align-self-center p-2 rounded" style="font-size: 16px; font-weight: bold">Fiyat: {{item.price}} TL</p>
                         </div>
                     </div>
                     <div class="col-2 col-lg-1 p-1 item-action-group">
@@ -57,10 +60,6 @@
                         <mat-icon (click)="editItem(item)">edit</mat-icon>
                         <mat-icon class="text-danger" (click)="deleteItem(item, i)">delete</mat-icon>
                     </div>
-                </div>
-
-                <div class="row m-1 p-0 w-100 description-bottom">
-                    <p class="item_desc">İçerik</p><p class="description font-italic align-self-center">{{item.description}}</p>
                 </div>
             </div>
 
