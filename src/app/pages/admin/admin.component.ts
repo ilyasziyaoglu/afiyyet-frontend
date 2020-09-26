@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {StorageService} from '../../base/services/storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(storageService: StorageService, router: Router) {
+    if (!storageService.getItem('user')) {
+      router.navigateByUrl('/login');
+    }
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {UserService} from '../base/services/user.service';
+import {StorageService} from '../base/services/storage.service';
 
 @Component({
     selector: 'app-page',
@@ -7,10 +10,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-    constructor() {
+    isLogged = false;
+
+    constructor(private router: Router,
+                private userService: UserService,
+                private storageService: StorageService) {
+        if (storageService.getItem('user')) this.isLogged = true;
     }
 
     ngOnInit(): void {
     }
 
+    logout() {
+        this.userService.logOut();
+        this.router.navigateByUrl('/login');
+    }
 }
