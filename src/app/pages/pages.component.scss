@@ -7,14 +7,15 @@
   padding: 0;
   background-color: #151515;
   color: white;
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.75);
 }
 
 .btn-login {
   background-color: #151515;
   color: white;
   font-size: 17px;
-  border-width: 0;
-  border-left: 1px solid white
 }
 
 .btn-login :hover {
@@ -53,8 +54,13 @@
   color: white;
 }
 
+.nav-item-icon {
+  vertical-align: middle;
+}
+
 @media only screen and (min-width: 1024px) {
   .nav-item-text {
     display: initial;
+    vertical-align: middle;
   }
 }
