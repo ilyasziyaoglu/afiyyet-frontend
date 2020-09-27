@@ -26,3 +26,17 @@ export class Brand {
     logoImgUrl: string;
     status: string;
 }
+
+export class Campaign {
+    description: string;
+    expireDate: string;
+    id: number;
+    imgUrl: string;
+    likes: number;
+    name: string;
+    order: number;
+    price: number
+    startDate: string;
+    status: string;
+
+}
