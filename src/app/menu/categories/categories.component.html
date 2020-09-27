@@ -3,28 +3,14 @@
 <div class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of favoriteService.getFavorites()">
-        <!-- <div class="favorite d-flex justify-content-center align-items-center">
-            <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">close</mat-icon>
-        </div> -->
         <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="item-img" src="{{item.imgUrl}}" alt="">
-        <!-- <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="item-name">{{item.name.length > 15 ? item.name.slice(0, 15) + '...' : item.name}}</p> -->
         <div class="w-100 m-0 p-1 fav-like-price-container">
-            <!-- <div class="rounded-lg fav-price border">{{item.price}} TL</div>
-            <div class="rounded-lg fav-like border" (click)="onLike(item)">
-                {{item.likes}}&nbsp;
-                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                          style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
-            </div> -->
             <div class="row w-100 m-0 text-white">
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
                      [routerLink]="['/menu/item']"
                      (click)="storageService.setItem('item', item)">
                     {{item.price}} TL
                 </div>
-                <!-- <div class="col border-right border-white d-flex justify-content-center align-items-center">
-                    <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
-                    <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
-                </div> -->
                 <div class="col d-flex justify-content-center align-items-center"
                     (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
@@ -43,7 +29,6 @@
         <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-img" src="{{item.imgUrl}}" alt="">
 
         <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="p-1 camp-item-name">{{item.name}}</p>
-        <!-- <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-description">{{item.description}}</p> -->
 
         <div class="w-100 camp-like-price-container p-0">
 
@@ -53,23 +38,12 @@
                     (click)="storageService.setItem('item', item)">
                     {{item.price}} TL
                 </div>
-                <!-- <div class="col border-right border-white d-flex justify-content-center align-items-center">
-                    <mat-icon *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
-                    <mat-icon *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
-                </div> -->
                 <div class="col d-flex justify-content-center align-items-center"
                     (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
                             style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
                 </div>
             </div>
-            <!-- <div class="rounded-lg camp-price">{{item.price}} TL</div>
-
-            <div class="rounded-lg camp-like" (click)="onLike(item)">
-                {{item.likes}}&nbsp;
-                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                          class="like-icon" style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
-            </div> -->
         </div>
     </div>
 </div>

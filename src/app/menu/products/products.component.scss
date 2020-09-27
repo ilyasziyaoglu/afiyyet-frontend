@@ -48,17 +48,6 @@
   min-width: 300px;
   z-index: 99;
 }
-//
-//@keyframes item-hover {
-//  from {top: 0;} to {top: -2px;}
-//  from {box-shadow: 0 0;} to {box-shadow: 0 0 7px black;}
-//}
-//
-//.item:hover {
-//  animation-name: item-hover;
-//  animation-duration: .3s;
-//  animation-fill-mode: forwards;
-//}
 
 .item-img {
   top: -30px;
@@ -94,11 +83,6 @@
   top: -20px;
   background-color: white;
 }
-//
-//.item-footer {
-//  position: relative;
-//  //top: -15px;
-//}
 
 .active {
   color: dodgerblue;
