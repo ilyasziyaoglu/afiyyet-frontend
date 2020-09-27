@@ -2,6 +2,16 @@
     <mat-icon class="m-3 back-button" (click)="location.back()">arrow_back</mat-icon>
     <img class="logo-img" src="https://www.whiteshoresrealty.com/images/logo.png">
 </div>
+<div class="row w-100 m-0 p-0 top-menu border-top border-white">
+    <div class="col m-0 p-1 border-right border-white d-flex justify-content-center align-items-center"
+        [routerLink]="['/menu/reservation']">
+        <mat-icon>playlist_add_check</mat-icon>
+    </div>
+    <div class="col m-0 p-1 d-flex justify-content-center align-items-center"
+        (click)="commentClick()">
+        <mat-icon>feedback</mat-icon>
+    </div>
+</div>
 <router-outlet></router-outlet>
 <div class="footer align-content-center">
     <p style="text-align: center;line-height:45px;font-weight: bold; font-size: 13px">© 2020 by

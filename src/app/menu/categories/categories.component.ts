@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
 import {StorageService} from '../../base/services/storage.service';
-import {MatDialog} from '@angular/material/dialog';
-import {DialogCommentComponent} from '../../pages/admin/dialogs/dialog-comment/dialog-comment.component';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +14,6 @@ export class CategoriesComponent implements OnInit {
       public storageService: StorageService,
       public menuService: MenuService,
       public favoriteService: FavoriteService,
-      private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -24,9 +21,5 @@ export class CategoriesComponent implements OnInit {
 
   onLike(item: any) {
     this.menuService.like(item);
-  }
-
-  commentClick() {
-    this.dialog.open(DialogCommentComponent,  {width: '85%'});
   }
 }

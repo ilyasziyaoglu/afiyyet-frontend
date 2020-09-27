@@ -23,6 +23,6 @@ export class PagesComponent implements OnInit {
 
     logout() {
         this.userService.logOut();
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/pages/smartmenu/home');
     }
 }

@@ -1,11 +1,30 @@
+hr {
+  margin: 0;
+  padding: 0;
+}
 .menu-container {
   margin-top: 1px;
 }
 
 button {
   background-color: #151515;
+  border: none;
   color: white;
   border-radius: 0;
+}
+
+button :focus {
+  outline: 0;
+  border: none;
+}
+
+button :active {
+  outline: none;
+  border: none;
+}
+
+button :hover {
+  color: dodgerblue;
 }
 
 .button-text {
