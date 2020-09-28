@@ -13,6 +13,7 @@ import Swal from "sweetalert2";
 export class CampaignsComponent implements OnInit {
 
   campaignsArranged = false;
+  today = new Date();
 
   constructor(public campaignService: CampaignService,
               private router: Router) {
@@ -32,8 +33,15 @@ export class CampaignsComponent implements OnInit {
     //       console.log("deneme", res);
     //     }
     // )
+    console.log("today", this.today);
     campaignService.getAllCampaigns(res => {
-      campaignService.campaigns = res;
+      res.forEach(camp => {
+        if (camp.expireDate < this.today){
+          campaignService.passiveCampaigns.push(camp);
+        } else {
+          campaignService.activeCampaigns.push(camp);
+        }
+      })
     });
   }
 
@@ -50,7 +58,7 @@ export class CampaignsComponent implements OnInit {
         {state: {status: 'insert', data: {}}});
   }
 
-  deleteItem(item: any, index) {
+  deleteItem(item: any, index, isActive: boolean) {
     Swal.fire({
       title: 'Dikkat!',
       text: 'Ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz!',
@@ -64,7 +72,8 @@ export class CampaignsComponent implements OnInit {
       if (result.isConfirmed) {
         this.campaignService.deleteCampaign(item.id, res => {
           if ( res ) {
-            this.campaignService.campaigns.splice(index, 1);
+            if (isActive) this.campaignService.activeCampaigns.splice(index, 1);
+            else this.campaignService.passiveCampaigns.splice(index, 1);
             Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
           }
         });
@@ -72,8 +81,12 @@ export class CampaignsComponent implements OnInit {
     });
   }
 
-  convertDate(strDate) {
+  convertDateString(strDate) {
     return new Date(strDate).toLocaleString('en-GB').slice(0, -3);
+  }
+
+  convDate(strDate) {
+    return new Date(strDate);
   }
 
   arrangeCampaign(event: CdkDragDrop<Campaign>) {

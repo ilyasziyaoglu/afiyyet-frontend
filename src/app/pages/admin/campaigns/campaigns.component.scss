@@ -8,6 +8,16 @@
   align-items: center;
 }
 
+.item-passive {
+  position: relative;
+  color: aliceblue;
+  margin: 35px 5px 5px 25px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #4A535B;
+  align-items: center;
+}
+
 .item-action-group mat-icon {
   font-size: 2em;
   width: 100%;

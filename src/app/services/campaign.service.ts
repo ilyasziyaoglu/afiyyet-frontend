@@ -9,7 +9,8 @@ import {Campaign} from './models/models';
 export class CampaignService extends BaseService{
 
   basePath = 'campaign';
-  campaigns: Campaign[];
+  activeCampaigns: Campaign[] = [];
+  passiveCampaigns: Campaign[] = [];
 
   constructor(httpService: HttpService) {
     super(httpService);
