@@ -43,6 +43,9 @@ export class CampaignEditComponent implements OnInit {
       return;
     }
 
+    this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
+    this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
+
     if (this.status === 'update') {
       if (this.formData) {
         this.fileService.uploadFile(this.formData, res => {

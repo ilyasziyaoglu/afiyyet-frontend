@@ -17,8 +17,9 @@
                       class="description form-control col-10">{{campaign.description}}</textarea>
         </div>
         <div class="form-group row">
-            <label for="price" class="col-2 col-form-label bg-dark input_label">Fiyat</label>
             <input id="price" [(ngModel)]="campaign.price" value="{{campaign.price}}" class="item-price form-control col-10">
+            <input id="startDate" class="form-control mb-3" [(ngModel)]="campaign.startDate" value="{{campaign.startDate}}" type="datetime-local"/>
+            <input id="expireDate" class="form-control mb-3" [(ngModel)]="campaign.expireDate" value="{{campaign.expireDate}}" type="datetime-local"/>
         </div>
     </div>
 </div>

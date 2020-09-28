@@ -33,8 +33,10 @@ export class CampaignsComponent implements OnInit {
     //       console.log("deneme", res);
     //     }
     // )
-    console.log("today", this.today);
     campaignService.getAllCampaigns(res => {
+      //push isleminde duplicate gorunmemesi icin boş array'e atandi.
+      campaignService.activeCampaigns = [];
+      campaignService.passiveCampaigns = [];
       res.forEach(camp => {
         if (camp.expireDate < this.today){
           campaignService.passiveCampaigns.push(camp);
