@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CampaignService} from '../../../services/campaign.service';
 import {Campaign} from '../../../services/models/models';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-campaigns',
@@ -12,7 +13,8 @@ export class CampaignsComponent implements OnInit {
 
   campaignsArranged = false;
 
-  constructor(public campaignService: CampaignService) {
+  constructor(public campaignService: CampaignService,
+              private router: Router) {
     // campaignService.insertCampaign(
     //     {
     //       description: "Bir Alana Sifir hediye",
@@ -37,8 +39,14 @@ export class CampaignsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  editItem(item: any) {
+  editCampaign(item: any) {
+    this.router.navigateByUrl('/campaign-edit',
+        {state: {status: 'update', data: {item}} });
+  }
 
+  addCampaign() {
+    this.router.navigateByUrl('/campaign-edit',
+        {state: {status: 'insert', data: {}}});
   }
 
   deleteItem(item: any, i: number) {
@@ -49,15 +57,11 @@ export class CampaignsComponent implements OnInit {
     return new Date(strDate).toLocaleString('en-GB').slice(0, -3);
   }
 
-  arrangeProduct(event: CdkDragDrop<Campaign>) {
+  arrangeCampaign(event: CdkDragDrop<Campaign>) {
 
   }
 
   campaignArrangeSave() {
-
-  }
-
-  addCampaign() {
 
   }
 }

@@ -21,16 +21,16 @@ export class CampaignService extends BaseService{
     this.post(campaign, cb);
   }
 
-  deleteCampaign() {
-
+  deleteCampaign(campaignId, cb?) {
+    this.delete(campaignId, cb);
   }
 
   arrangeCampaign() {
 
   }
 
-  updateCampaign() {
-
+  updateCampaign(campaign, cb?) {
+    this.put(campaign, cb);
   }
 
   getAllCampaigns(cb?) {

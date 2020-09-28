@@ -11,6 +11,7 @@ import {BaseModule} from './base/base.module';
 import {MenuModule} from './menu/menu.module';
 import {PagesModule} from './pages/pages.module';
 import { CampaignEditComponent } from './pages/admin/campaign-edit/campaign-edit.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { CampaignEditComponent } from './pages/admin/campaign-edit/campaign-edit
         MenuModule,
         PagesModule,
         MatIconModule,
+        FormsModule,
     ],
     providers: [
         {provide : LocationStrategy , useClass: HashLocationStrategy}
