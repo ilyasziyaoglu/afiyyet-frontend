@@ -12,7 +12,7 @@ export class CampaignsComponent implements OnInit {
 
   campaignsArranged = false;
 
-  constructor(private campaignService: CampaignService) {
+  constructor(public campaignService: CampaignService) {
     // campaignService.insertCampaign(
     //     {
     //       description: "Bir Alana Sifir hediye",

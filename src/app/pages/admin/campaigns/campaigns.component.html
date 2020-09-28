@@ -30,9 +30,9 @@
             <div class="row m-1 p-0 w-100 description-mobile">
                 <p class="w-100 p-2 rounded font-italic item-description-mobile">{{item.description}}</p>
             </div>
-            <div class=" row no-gutters w-100 justify-content-end">
-                <p style="border-right: 1px solid white " class="mr-2 pr-2 font-weight-bolder">Başlangıç: {{convertDate(item.startDate)}}</p>
-                <p class="mr-2 font-weight-bolder">Bitiş: {{convertDate(item.expireDate)}}</p>
+            <div class="row no-gutters w-100 justify-content-between">
+                <p class="ml-2 dates py-1 px-2 rounded font-weight-bolder">{{convertDate(item.startDate)}}</p>
+                <p class="mr-2 dates py-1 px-2 rounded font-weight-bolder">{{convertDate(item.expireDate)}}</p>
             </div>
         </div>
     </div>

@@ -10,10 +10,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {BaseModule} from './base/base.module';
 import {MenuModule} from './menu/menu.module';
 import {PagesModule} from './pages/pages.module';
+import { CampaignEditComponent } from './pages/admin/campaign-edit/campaign-edit.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        CampaignEditComponent,
     ],
     imports: [
         BrowserModule,

@@ -7,6 +7,7 @@ import {MenuComponent} from './menu/menu.component';
 import {ItemEditComponent} from './item-edit/item-edit.component';
 import {AdminComponent} from './admin.component';
 import {ReportsComponent} from './reports/reports.component';
+import {CampaignEditComponent} from './campaign-edit/campaign-edit.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
             {
                 path: 'item-edit',
                 component: ItemEditComponent,
+            },
+            {
+                path: 'campaign-edit',
+                component: CampaignEditComponent
             },
             {
                 path: 'admin-reservations',
