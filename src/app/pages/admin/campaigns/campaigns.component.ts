@@ -3,6 +3,7 @@ import {CampaignService} from '../../../services/campaign.service';
 import {Campaign} from '../../../services/models/models';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Router} from '@angular/router';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-admin-campaigns',
@@ -49,8 +50,26 @@ export class CampaignsComponent implements OnInit {
         {state: {status: 'insert', data: {}}});
   }
 
-  deleteItem(item: any, i: number) {
-
+  deleteItem(item: any, index) {
+    Swal.fire({
+      title: 'Dikkat!',
+      text: 'Ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Evet, silinsin!',
+      cancelButtonText: 'İptal',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.campaignService.deleteCampaign(item.id, res => {
+          if ( res ) {
+            this.campaignService.campaigns.splice(index, 1);
+            Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
+          }
+        });
+      }
+    });
   }
 
   convertDate(strDate) {

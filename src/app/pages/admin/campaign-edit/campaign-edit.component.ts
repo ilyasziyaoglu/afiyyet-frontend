@@ -49,13 +49,13 @@ export class CampaignEditComponent implements OnInit {
           if (res.fileName) {
             this.campaign.imgUrl = res.fileName;
             this.campaignService.updateCampaign(this.campaign, res => {
-              if (res) this.router.navigateByUrl('admin').then();
+              if (res) this.router.navigateByUrl('/admin-campaigns').then();
             });
           }
         });
       } else {
         this.campaignService.updateCampaign(this.campaign, res => {
-          if (res) this.router.navigateByUrl('admin').then();
+          if (res) this.router.navigateByUrl('/admin-campaigns').then();
         });
       }
     } else if (this.status === 'insert') {
@@ -63,7 +63,7 @@ export class CampaignEditComponent implements OnInit {
         if (res.fileName) {
           this.campaign.imgUrl = res.fileName;
           this.campaignService.insertCampaign(this.campaign, response => {
-            if (response) { this.router.navigateByUrl('admin'); }
+            if (response) { this.router.navigateByUrl('/admin-campaigns'); }
           });
         }
       });

@@ -99,11 +99,7 @@ export class MenuComponent implements OnInit {
                 this.productService.deleteProduct(item.id, res => {
                     if ( res ) {
                         this.categoryService.currentCategory.items.splice(index, 1);
-                        Swal.fire(
-                            'Silindi!',
-                            'Ürün silindi!.',
-                            'success'
-                        );
+                        Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
                     }
                 });
             }
