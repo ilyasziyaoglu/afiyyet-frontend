@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
-import {Item} from './models/models';
+import {Product} from './models/models';
 import {StorageService} from '../base/services/storage.service';
 
 @Injectable({
@@ -30,12 +30,12 @@ export class ProductService extends BaseService {
     this.delete(itemId, cb);
   }
 
-  insetProduct(category: any, item: Item, cb?) {
+  insetProduct(category: any, item: Product, cb?) {
     item.category = category;
     this.post(item, cb);
   }
 
-  updateProduct(item: Item, cb?) {
+  updateProduct(item: Product, cb?) {
     this.put(item, cb);
   }
 

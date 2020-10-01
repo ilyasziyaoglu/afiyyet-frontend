@@ -105,7 +105,7 @@ export class HttpService {
                 cb(false);
             }
             if (err.status && err.status === 403) {
-                this.router.navigateByUrl('/auth/login');
+                this.router.navigateByUrl('/login');
             } else {
                 console.error(err);
             }
@@ -153,7 +153,7 @@ export class HttpService {
                 cb(false);
             }
             if (err.status && err.status === 403) {
-                this.router.navigateByUrl('/auth/login');
+                this.router.navigateByUrl('/login');
             } else {
                 console.error(err);
             }

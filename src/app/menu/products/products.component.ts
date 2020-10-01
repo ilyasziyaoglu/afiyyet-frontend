@@ -10,17 +10,17 @@ import {MenuService} from '../../services/menu.service';
 })
 export class ProductsComponent implements OnInit {
 
-    items = [];
-
     constructor(
         public storageService: StorageService,
         private menuService: MenuService,
         public favoriteService: FavoriteService,
     ) {
+    }
 
-        this.items = this.menuService.serviceMenu.categories.find(v => {
+    getProducts() {
+        return this.menuService.menu.categories.find(v => {
             return v.name === this.storageService.getItem('category').name;
-        }).items;
+        }).products;
     }
 
     ngOnInit(): void {

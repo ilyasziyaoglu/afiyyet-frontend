@@ -1,4 +1,4 @@
-export class Item {
+export class Product {
     id: number;
     name: string;
     imgUrl: string;
@@ -17,7 +17,7 @@ export class Category {
     order: number;
     status: string;
     brand: Brand;
-    items: Item[];
+    products: Product[];
 }
 
 export class Brand {
