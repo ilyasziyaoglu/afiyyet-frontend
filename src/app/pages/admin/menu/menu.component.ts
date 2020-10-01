@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuService} from '../../../services/menu.service';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
-import {Category, Item} from '../../../services/models/models';
+import {Category, Product} from '../../../services/models/models';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {StorageService} from '../../../base/services/storage.service';
@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
             this.categoryService.currentCategory = this.categoryService.currentCategory || this.categoryService.categories[0];
             if ( this.categoryService.currentCategory ) {
                 this.productService.getProductsByCategory(this.categoryService.currentCategory.id, results => {
-                    this.categoryService.currentCategory.items = results;
+                    this.categoryService.currentCategory.products = results;
                 });
             }
         });
@@ -52,7 +52,7 @@ export class MenuComponent implements OnInit {
 
     productArrangeSave() {
         const pairs = {};
-        this.categoryService.currentCategory.items.forEach(item => {
+        this.categoryService.currentCategory.products.forEach(item => {
             pairs[item.id] = item.order;
         });
         this.productService.arrangeProducts(pairs, res => {
@@ -66,10 +66,10 @@ export class MenuComponent implements OnInit {
             this.categoryService.categories, event.previousIndex, event.currentIndex);
     }
 
-    arrangeProduct(event: CdkDragDrop<Item>) {
+    arrangeProduct(event: CdkDragDrop<Product>) {
         this.productsArranged = true;
-        this.categoryService.currentCategory.items = this.moveItemOrderInArray(
-            this.categoryService.currentCategory.items, event.previousIndex, event.currentIndex);
+        this.categoryService.currentCategory.products = this.moveItemOrderInArray(
+            this.categoryService.currentCategory.products, event.previousIndex, event.currentIndex);
     }
 
     categoryClick(category) {
@@ -98,7 +98,7 @@ export class MenuComponent implements OnInit {
             if (result.isConfirmed) {
                 this.productService.deleteProduct(item.id, res => {
                     if ( res ) {
-                        this.categoryService.currentCategory.items.splice(index, 1);
+                        this.categoryService.currentCategory.products.splice(index, 1);
                         Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
                     }
                 });

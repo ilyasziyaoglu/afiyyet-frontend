@@ -25,7 +25,7 @@
 
 <div class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
-         *ngFor="let item of menuService.serviceMenu.campaigns">
+         *ngFor="let item of menuService.menu.campaigns">
         <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-img" src="{{item.imgUrl}}" alt="">
 
         <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="p-1 camp-item-name">{{item.name}}</p>
@@ -52,7 +52,7 @@
 <h3 class="my-2" style="text-align: center">Menü</h3>
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
-         *ngFor="let category of menuService.serviceMenu.categories"
+         *ngFor="let category of menuService.menu.categories"
          (click)="storageService.setItem('category', category)"
         [routerLink]="['/submenu']">
         <img class="category-img" src="{{category.imgUrl}}" alt="">

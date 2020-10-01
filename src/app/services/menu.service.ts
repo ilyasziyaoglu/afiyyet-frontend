@@ -3,30 +3,41 @@ import {StorageService} from '../base/services/storage.service';
 import {menu} from './models/data';
 import {ProductService} from './product.service';
 import {CategoryService} from './category.service';
+import {BaseService} from '../base/services/base-service';
+import {HttpMethod, HttpService} from '../base/services/http.service';
 
 @Injectable({
     providedIn: 'root',
 })
-export class MenuService {
+export class MenuService extends BaseService {
 
-    serviceMenu;
+    basePath = 'menu';
+    menu = {categories: [], campaigns: []};
 
     constructor(
+        httpService: HttpService,
         private storageService: StorageService,
         private categoryService: CategoryService,
-        private productService: ProductService,
+        private productService: ProductService
     ) {
-        if ( !this.storageService.getItem('menu') ) {
-            this.storageService.setItem('menu', menu);
-        }
-        this.serviceMenu = this.storageService.getItem('menu');
-        this.setCampaigns();
-        //
-        // this.serviceMenu.categories.forEach(c => {
+        super(httpService);
+
+        this.getMenu('brand1');
+
+        // GET MOCK DATA
+        // if ( !this.storageService.getItem('menu') ) {
+        //     this.storageService.setItem('menu', menu);
+        // }
+        // this.menu = this.storageService.getItem('menu');
+        // this.setCampaigns();
+
+
+        // IMPORT MOCK DATA TO DB
+        // this.menu.categories.forEach(c => {
         // categoryService.post(c, result => {
         //     if ( result ) {
         //         console.info("Kategori basari ile eklendi.");
-        //         c.items.forEach(i => {
+        //         c.products.forEach(i => {
         //             i.category = result;
         //             productService.post(i, result2 => {
         //                 if (result2 ) {
@@ -43,6 +54,16 @@ export class MenuService {
         // });
     }
 
+    getBasePath(): string {
+        return this.basePath;
+    }
+
+    getMenu(brandName) {
+        this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/${brandName}`, '', result => {
+            this.menu.categories = result;
+        });
+    }
+
     like(item: any) {
         const likes = this.storageService.getItem('likes') || [];
         if ( likes.includes(item.id) ) {
@@ -53,13 +74,13 @@ export class MenuService {
             item.likes ++;
         }
         this.storageService.setItem('likes', likes);
-        this.storageService.setItem('menu', this.serviceMenu);
+        this.storageService.setItem('menu', this.menu);
     }
 
     setCampaigns() {
         const campaigns = [];
         for (let i = 0; i < 4; i ++) {
-            const campItem = menu.categories[i].items[0];
+            const campItem = menu.categories[i].products[0];
             campItem.startDate = '05.09.2020';
             campItem.endDate = '18.12.2020';
             campaigns.push(campItem);
