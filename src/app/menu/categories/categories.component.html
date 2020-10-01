@@ -9,7 +9,7 @@
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
                      [routerLink]="['/menu/item']"
                      (click)="storageService.setItem('item', item)">
-                    {{item.price}}<sub>TL</sub>
+                    {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center"
                     (click)="onLike(item)">{{item.likes}}&nbsp;
@@ -36,7 +36,7 @@
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
                     [routerLink]="['/menu/item']"
                     (click)="storageService.setItem('item', item)">
-                    {{item.price}}<sub>TL</sub>
+                    {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center"
                     (click)="onLike(item)">{{item.likes}}&nbsp;
