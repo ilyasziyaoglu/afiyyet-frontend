@@ -46,7 +46,9 @@ export class MenuComponent implements OnInit {
             pairs[category.id] = category.order;
         });
         this.categoryService.arrangeCateogories(pairs, res => {
-            if (res) { this.categoriesArranged = false; }
+            if ( res ) {
+                this.categoriesArranged = false;
+            }
         });
     }
 
@@ -56,7 +58,9 @@ export class MenuComponent implements OnInit {
             pairs[item.id] = item.order;
         });
         this.productService.arrangeProducts(pairs, res => {
-            if (res) { this.productsArranged = false; }
+            if ( res ) {
+                this.productsArranged = false;
+            }
         });
     }
 
@@ -75,7 +79,7 @@ export class MenuComponent implements OnInit {
     categoryClick(category) {
         this.categoryService.currentCategory = category;
         this.productService.getProductsByCategory(category.id, result => {
-            category.items = result;
+            category.products = result;
         });
     }
 
@@ -95,7 +99,7 @@ export class MenuComponent implements OnInit {
             confirmButtonText: 'Evet, silinsin!',
             cancelButtonText: 'İptal',
         }).then((result) => {
-            if (result.isConfirmed) {
+            if ( result.isConfirmed ) {
                 this.productService.deleteProduct(item.id, res => {
                     if ( res ) {
                         this.categoryService.currentCategory.products.splice(index, 1);
@@ -130,7 +134,7 @@ export class MenuComponent implements OnInit {
         dialogRef.afterClosed().subscribe(res => {
             if ( res.category ) {
                 this.categoryService.updateCategory(res.category, result => {
-                    if (result ) {
+                    if ( result ) {
                         this.categoryService.categories[index] = res.category;
                     }
                 });

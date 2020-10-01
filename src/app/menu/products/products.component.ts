@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
 
     constructor(
         public storageService: StorageService,
-        private menuService: MenuService,
+        public menuService: MenuService,
         public favoriteService: FavoriteService,
     ) {
     }
