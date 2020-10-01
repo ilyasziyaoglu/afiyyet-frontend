@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CampaignService} from '../../../services/campaign.service';
 import {Campaign} from '../../../services/models/models';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Router} from '@angular/router';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-admin-campaigns',
+  selector: 'app-campaigns',
   templateUrl: './campaigns.component.html',
   styleUrls: ['./campaigns.component.scss']
 })
@@ -34,7 +34,7 @@ export class CampaignsComponent implements OnInit {
     //     }
     // )
     campaignService.getAllCampaigns(res => {
-      //push isleminde duplicate gorunmemesi icin boş array'e atandi.
+      // push isleminde duplicate gorunmemesi icin boş array'e atandi.
       campaignService.activeCampaigns = [];
       campaignService.passiveCampaigns = [];
       res.forEach(camp => {
@@ -43,21 +43,16 @@ export class CampaignsComponent implements OnInit {
         } else {
           campaignService.activeCampaigns.push(camp);
         }
-      })
+      });
     });
   }
 
   ngOnInit(): void {
   }
 
-  editCampaign(item: any) {
-    this.router.navigateByUrl('/campaign-edit',
-        {state: {status: 'update', data: {item}} });
-  }
-
-  addCampaign() {
-    this.router.navigateByUrl('/campaign-edit',
-        {state: {status: 'insert', data: {}}});
+  editCampaign(campaign: any) {
+    this.campaignService.currentCampaign = campaign;
+    this.campaignService.isEdit = true;
   }
 
   deleteItem(item: any, index, isActive: boolean) {
@@ -74,8 +69,8 @@ export class CampaignsComponent implements OnInit {
       if (result.isConfirmed) {
         this.campaignService.deleteCampaign(item.id, res => {
           if ( res ) {
-            if (isActive) this.campaignService.activeCampaigns.splice(index, 1);
-            else this.campaignService.passiveCampaigns.splice(index, 1);
+            if (isActive) { this.campaignService.activeCampaigns.splice(index, 1); }
+            else { this.campaignService.passiveCampaigns.splice(index, 1); }
             Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
           }
         });

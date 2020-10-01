@@ -28,19 +28,19 @@ const routes: Routes = [
                 component: CampaignEditComponent
             },
             {
-                path: 'admin-reservations',
+                path: 'reservations',
                 component: ReservationsComponent,
             },
             {
-                path: 'admin-comments',
+                path: 'comments',
                 component: CommentsComponent,
             },
             {
-                path: 'admin-campaigns',
+                path: 'campaigns',
                 component: CampaignsComponent,
             },
             {
-                path: 'admin-reports',
+                path: 'reports',
                 component: ReportsComponent,
             },
         ],
