@@ -88,10 +88,24 @@ export class CampaignsComponent implements OnInit {
   }
 
   arrangeCampaign(event: CdkDragDrop<Campaign>) {
-
+    this.campaignsArranged = true;
+    this.campaignService.activeCampaigns = this.moveItemOrderInArray(
+        this.campaignService.activeCampaigns, event.previousIndex, event.currentIndex);
   }
 
   campaignArrangeSave() {
+    const pairs = {};
+    this.campaignService.activeCampaigns.forEach(campaign => {
+      pairs[campaign.id] = campaign.order;
+    });
+    this.campaignService.arrangeCampaigns(pairs, res => {
+      if (res) { this.campaignsArranged = false; }
+    });
+  }
 
+  moveItemOrderInArray(arr, prevIndex, nextIndex) {
+    arr.splice(nextIndex, 0, arr.splice(prevIndex, 1)[0]);
+    arr = arr.map((item, i) => ({...item, order: i}));
+    return arr;
   }
 }

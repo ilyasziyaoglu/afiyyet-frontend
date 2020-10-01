@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
-import {HttpService} from '../base/services/http.service';
+import {HttpMethod, HttpService} from '../base/services/http.service';
 import {Campaign} from './models/models';
 
 @Injectable({
@@ -26,8 +26,8 @@ export class CampaignService extends BaseService{
     this.delete(campaignId, cb);
   }
 
-  arrangeCampaign() {
-
+  arrangeCampaigns(idOrderPairs: any, cb?) {
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-campaigns`, idOrderPairs, cb);
   }
 
   updateCampaign(campaign, cb?) {
