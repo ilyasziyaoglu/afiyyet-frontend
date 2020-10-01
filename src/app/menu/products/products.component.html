@@ -21,7 +21,7 @@
             <div class="col border-right border-white d-flex justify-content-center align-items-center"
                  [routerLink]="['/menu/item']"
                  (click)="storageService.setItem('item', item)">
-                {{item.price}} TL
+                {{item.price}}<sub>TL</sub>
             </div>
             <div class="col border-right border-white d-flex justify-content-center align-items-center">
                 <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>

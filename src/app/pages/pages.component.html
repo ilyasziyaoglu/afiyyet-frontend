@@ -1,27 +1,20 @@
 <div class="header p-0 d-flex justify-content-end">
-<!--    <ul class="d-flex justify-content-end">-->
-<!--        <li>-->
-            <div class="py-2 px-5 btn-login" [routerLink]="['/pages/smartmenu/home']">
-                <mat-icon class="nav-item-icon">home</mat-icon>
-                <span class="nav-item-text">Home</span>
-            </div>
-            <div class="py-2 px-5 btn-login" *ngIf="isLogged" [routerLink]="['/admin']">
-                <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
-                <span class="nav-item-text">Admin Panel</span>
-            </div>
-            <div class="py-2 px-5 btn-login" *ngIf="isLogged" (click)="logout()">
-                <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
-                <span class="nav-item-text">Çıkış Yap</span>
-            </div>
-            <div class="py-2 px-5 btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
-                <mat-icon class="nav-item-icon">login</mat-icon>
-                <span class="nav-item-text">Giriş Yap</span>
-            </div>
-<!--        </li>-->
-<!--        <li>-->
-<!--            <div class="btn btn-light" [routerLink]="['/register']">Register</div>-->
-<!--        </li>-->
-<!--    </ul>-->
+    <div class="py-2 px-5 btn-login" [routerLink]="['/pages/smartmenu/home']">
+        <mat-icon class="nav-item-icon">home</mat-icon>
+        <span class="nav-item-text">Home</span>
+    </div>
+    <div class="py-2 px-5 btn-login" *ngIf="isLogged" [routerLink]="['/admin']">
+        <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
+        <span class="nav-item-text">Admin Panel</span>
+    </div>
+    <div class="py-2 px-5 btn-login" *ngIf="isLogged" (click)="logout()">
+        <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
+        <span class="nav-item-text">Çıkış Yap</span>
+    </div>
+    <div class="py-2 px-5 btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
+        <mat-icon class="nav-item-icon">login</mat-icon>
+        <span class="nav-item-text">Giriş Yap</span>
+    </div>
 </div>
 <router-outlet></router-outlet>
 <div class="footer align-content-center">

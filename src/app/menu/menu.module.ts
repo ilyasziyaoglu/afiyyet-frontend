@@ -8,6 +8,10 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {ReservationComponent} from './reservation/reservation.component';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -22,6 +26,10 @@ import {CommonModule} from '@angular/common';
         CommonModule,
         MenuRoutingModule,
         MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
     ],
 })
 export class MenuModule {

@@ -106,21 +106,12 @@ h1, p {
 }
 
 @media only screen and (min-width: 768px) {
-  .banner-img {
-    filter: brightness(0.5);
-  }
 
   .demo-button {
     padding: 1rem;
     font-size: 1.5em;
     width: 50%;
     z-index: 99;
-  }
-
-  .overlay-text {
-    position: absolute;
-    top: 100px;
-    color: white;
   }
 
   .package-name {
@@ -150,31 +141,18 @@ h1, p {
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  .overlay-text {
-    position: absolute;
-    top: 200px;
-    color: white;
-  }
-}
-
-
 @media only screen and (min-width: 1366px) {
-  .banner-img {
-    filter: brightness(0.5);
-  }
 
   .demo-button {
     padding: 1rem;
     font-size: 2em;
-    width: 30%;
+    width: 20%;
     z-index: 99;
   }
 
-  .overlay-text {
-    position: absolute;
-    top: 400px;
-    color: white;
+  .advantages {
+    padding-left: 15%;
+    padding-right: 15%;
   }
 
   .package-name {
@@ -192,30 +170,16 @@ h1, p {
   }
 
   .header h1 {
-    font-size: 8em;
+    font-size: 4em;
   }
 
   .header p {
-    font-size: 3em;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 1.5em;
   }
 
   .col-sm-3 {
     max-width: 400px !important;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .overlay-text {
-    position: absolute;
-    top: 150px;
-    color: white;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  .overlay-text {
-    position: absolute;
-    top: 300px;
-    color: white;
   }
 }
