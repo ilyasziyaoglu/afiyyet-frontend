@@ -4,8 +4,8 @@ export class Item {
     imgUrl: string;
     price: number;
     description: string;
-    order: number;
     likes: number;
+    order: number;
     status: string;
     category: any;
 }
@@ -28,15 +28,15 @@ export class Brand {
 }
 
 export class Campaign {
-    description: string;
-    expireDate: string;
     id: number;
-    imgUrl: string;
-    likes: number;
     name: string;
-    order: number;
+    imgUrl: string;
     price: number
+    description: string;
+    likes: number;
+    order: number;
     startDate: string;
+    expireDate: string;
     status: string;
 
 }
