@@ -112,7 +112,7 @@ export class MenuComponent implements OnInit {
     }
 
     addCategoryClick() {
-        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%'});
+        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {panelClass: 'category-edit-dialog'});
 
         dialogRef.afterClosed().subscribe(res => {
             res.category.status = 'ACTIVE';
@@ -124,7 +124,8 @@ export class MenuComponent implements OnInit {
 
 
     editCategoryClick(category, index) {
-        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {width: '60%', data: {...category}});
+        const dialogRef = this.dialog.open(DialogCategoryEditComponent,
+            {panelClass: 'category-edit-dialog', data: {...category}});
 
         dialogRef.afterClosed().subscribe(res => {
             if ( res.category ) {
