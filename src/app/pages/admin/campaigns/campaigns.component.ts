@@ -87,10 +87,6 @@ export class CampaignsComponent implements OnInit {
     return new Date(strDate).toLocaleString('en-GB').slice(0, -3);
   }
 
-  convDate(strDate) {
-    return new Date(strDate);
-  }
-
   arrangeCampaign(event: CdkDragDrop<Campaign>) {
 
   }
