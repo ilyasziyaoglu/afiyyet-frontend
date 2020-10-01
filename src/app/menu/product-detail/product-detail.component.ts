@@ -10,14 +10,11 @@ import {MenuService} from '../../services/menu.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  item: any;
-
   constructor(
       public storageService: StorageService,
       private menuService: MenuService,
       public favoriteService: FavoriteService
   ) {
-    this.item = storageService.getItem('item');
   }
 
   ngOnInit(): void {

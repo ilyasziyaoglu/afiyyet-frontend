@@ -13,6 +13,8 @@ export class MenuService extends BaseService {
 
     basePath = 'menu';
     menu = {categories: [], campaigns: []};
+    currentCategory: any;
+    currentProduct: any;
 
     constructor(
         httpService: HttpService,

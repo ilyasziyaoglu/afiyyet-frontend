@@ -17,12 +17,6 @@ export class ProductsComponent implements OnInit {
     ) {
     }
 
-    getProducts() {
-        return this.menuService.menu.categories.find(v => {
-            return v.name === this.storageService.getItem('category').name;
-        }).products;
-    }
-
     ngOnInit(): void {
     }
 

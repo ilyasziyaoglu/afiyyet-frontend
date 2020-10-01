@@ -53,7 +53,7 @@
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu.categories"
-         (click)="storageService.setItem('category', category)"
+         (click)="menuService.currentCategory = category"
         [routerLink]="['/submenu']">
         <img class="category-img" src="{{category.imgUrl}}" alt="">
         <p class="category-name">{{category.name}}</p>

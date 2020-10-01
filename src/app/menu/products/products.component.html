@@ -2,21 +2,21 @@
 <h1 class="category-name">{{storageService.category.name}}</h1>
 <div class="row m-1 justify-content-center">
     <div class="col p-2 item align-content-end"
-         *ngFor="let item of getProducts()">
+         *ngFor="let item of menuService.currentCategory?.products">
 
         <img class="item-img"
              [routerLink]="['/menu/item']"
-             (click)="storageService.setItem('item', item)"
+             (click)="menuService.currentProduct = item"
              src="{{item.imgUrl}}" alt="{{item.name}}">
         <div class="item-name"
              [routerLink]="['/menu/item']"
-             (click)="storageService.setItem('item', item)">
+             (click)="menuService.currentProduct = item">
             <h3>{{item.name}}</h3>
         </div>
         <hr class="item-line">
         <p class="description"
            [routerLink]="['/menu/item']"
-           (click)="storageService.setItem('item', item)">{{item.description}}</p>
+           (click)="menuService.currentProduct = item">{{item.description}}</p>
         <div class="row w-100 m-0">
             <div class="col border-right border-white d-flex justify-content-center align-items-center"
                  [routerLink]="['/menu/item']"
