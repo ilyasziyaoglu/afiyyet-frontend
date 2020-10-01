@@ -1,11 +1,11 @@
 <div class="row my-2 mx-1 item px-2 py-3 justify-content-center align-items-center">
 
-    <div style="cursor: pointer" class="col-sm-3 no-gutters">
+    <div style="cursor: pointer" class="col-8 col-md-6 col-lg-3 mb-3 mb-md-3 no-gutters">
         <img class="col-12" [src]="campaign.imgUrl ? campaign.imgUrl : '../../assets/no-image.jpg'" alt="{{campaign.name}}">
         <p *ngIf="!campaign.imgUrl" class="addimage">Resim Ekle</p>
         <input #imageInput type="file" class="file_upload_input" (change)="imageUpdateClick(imageInput)" />
     </div>
-    <div class="col-6">
+    <div class="col-12 col-lg-6">
         <div class="form-group mb-2 row">
             <label for="name" class="col-2 col-form-label bg-dark input_label">Başlık</label>
             <input id="name" [(ngModel)]="campaign.name"
@@ -16,10 +16,17 @@
             <textarea id="description" [(ngModel)]="campaign.description"
                       class="description form-control col-10">{{campaign.description}}</textarea>
         </div>
-        <div class="form-group row">
-            <input id="price" [(ngModel)]="campaign.price" value="{{campaign.price}}" class="item-price form-control col-10">
-            <input id="startDate" class="form-control mb-3" [(ngModel)]="campaign.startDate" value="{{campaign.startDate}}" type="datetime-local"/>
-            <input id="expireDate" class="form-control mb-3" [(ngModel)]="campaign.expireDate" value="{{campaign.expireDate}}" type="datetime-local"/>
+        <div class="form-group mb-2 row p-0 col-11 col-sm-8 col-md-7 col-lg-6">
+            <label for="startDate" class="col-form-label bg-dark input_label col-4">Başlangıç</label>
+            <input id="startDate" class="form-control col-8" [(ngModel)]="campaign.startDate" value="{{campaign.startDate}}" type="datetime-local"/>
+        </div>
+        <div class="form-group mb-2 row p-0 col-11 col-sm-8 col-md-7 col-lg-6">
+            <label for="expireDate" class="col-form-label bg-dark input_label col-4">Bitiş</label>
+            <input id="expireDate" class="form-control col-8" [(ngModel)]="campaign.expireDate" value="{{campaign.expireDate}}" type="datetime-local"/>
+        </div>
+        <div class="form-group mb-2 row p-0 col-11 col-sm-8 col-md-7 col-lg-6">
+            <label for="price" class="col-form-label bg-dark input_label col-4">Fiyat</label>
+            <input id="price" class="item-price form-control col-8" [(ngModel)]="campaign.price" value="{{campaign.price}}">
         </div>
     </div>
 </div>
