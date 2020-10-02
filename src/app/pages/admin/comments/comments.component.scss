@@ -1,0 +1,27 @@
+.header {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bolder;
+  color: #323232;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-comment {
+  color: white;
+  text-align: justify;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.item-date {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
