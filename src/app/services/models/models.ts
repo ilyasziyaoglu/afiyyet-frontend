@@ -38,5 +38,15 @@ export class Campaign {
     startDate: string;
     expireDate: string;
     status: string;
+}
 
+export class Reservation {
+    adultCount: number;
+    brand: any;
+    childCount: number;
+    fullName: string;
+    id: number;
+    phoneNumber: string;
+    reservationDate: string;
+    specifications: string;
 }

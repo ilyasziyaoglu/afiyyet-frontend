@@ -1,0 +1,53 @@
+.header {
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bolder;
+  color: #323232;
+}
+
+.reservation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reservation-name {
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 15px;
+}
+
+.reservation-icon {
+  color: white;
+  margin-right: 6px;
+}
+
+.bottom-container {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  background-color: #F4511E;
+  align-items: center;
+  padding: 7px 0;
+  border-radius: 5px;
+}
+
+.phone-date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.reservation-phone-date {
+  color: white;
+}
+
+.reservation-comment {
+  color: white;
+  text-align: justify;
+  font-weight: bold;
+  font-size: 15px;
+}

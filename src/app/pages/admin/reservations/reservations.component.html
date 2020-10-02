@@ -1,2 +1,20 @@
-<h1 style="text-align: center; width: 100%;">REZERVASYONLAR</h1>
-<h3 style="text-align: center; width: 100%;">Çok Yakında</h3>
+<h1 class="header">REZERVASYONLAR</h1>
+<div class="row px-2 px-md-4 px-lg-4 justify-content-center">
+    <div *ngFor="let reservation of reservations"
+         class="reservation mx-3 my-3 px-3 py-2 bg-dark rounded col-10 col-md-4 col-lg-3">
+        <p class="reservation-name">{{reservation.fullName}}</p>
+        <div class="phone-date-container">
+            <mat-icon class="reservation-icon">phone</mat-icon>
+            <span class="reservation-phone-date">{{reservation.phoneNumber}}</span>
+        </div>
+        <div class="phone-date-container">
+            <mat-icon class="reservation-icon">event</mat-icon>
+            <span class="reservation-phone-date">{{convertDateString(reservation.reservationDate)}}</span>
+        </div>
+        <p *ngIf="reservation.specifications" class="reservation-comment">{{reservation.specifications}}</p>
+        <div class="bottom-container">
+            <span style="font-weight: bolder">{{reservation.adultCount}} Yetişkin</span>
+            <span style="font-weight: bolder">{{reservation.childCount}} Çocuk</span>
+        </div>
+    </div>
+</div>
