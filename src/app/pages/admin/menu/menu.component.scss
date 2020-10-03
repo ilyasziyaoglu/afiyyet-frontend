@@ -2,6 +2,17 @@
   background-color: black;
 }
 
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.category-edit-delete-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .category-name {
   display: flex;
   color: white;
