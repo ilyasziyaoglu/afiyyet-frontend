@@ -22,6 +22,6 @@ export class CommentService extends BaseService{
   }
 
   insertComment(comment, cb?) {
-    this.post({comment: comment, brand: {id: 3}}, cb);
+    this.post(comment, cb);
   }
 }

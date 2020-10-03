@@ -1,11 +1,11 @@
 <div style="display: flex; flex-direction: column; justify-content: center;">
     <label>
-        <textarea rows="3" class="form-control mb-1" placeholder="Yorumunuz..."></textarea>
+        <textarea [(ngModel)]="comment" rows="3" class="form-control mb-1" placeholder="Yorumunuz..."></textarea>
     </label>
     <p style="font-size: 11px">Yorumunuz sadece Restoran işletmesi tarafından görüntülenecektir</p>
     <div style="display: flex;">
         <button (click)="saveClick()"
                 style="flex: 1;background-color: #009688; color: white" class="btn mr-2">Gönder</button>
-        <button (click)="cancelClick()" style="flex: 1;" class="btn btn-outline-light">İptal</button>
+        <button (click)="cancelClick()" style="flex: 1;" class="btn btn-outline-dark">İptal</button>
     </div>
 </div>
