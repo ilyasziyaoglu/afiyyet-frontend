@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-reservation',
@@ -7,9 +8,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+      public location: Location,
+  ) { }
 
   ngOnInit(): void {
   }
 
+    onSubmit() {
+        this.location.back();
+    }
 }

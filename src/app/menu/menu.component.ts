@@ -16,11 +16,9 @@ export class MenuComponent implements OnInit {
         private dialog: MatDialog,
         public menuService: MenuService,
     ) {
-        if ( !menuService.menu ) {
-            const brand = window.location.href.split('/').slice(- 1).pop();
-            if ( brand ) {
-                this.menuService.getMenu(brand);
-            }
+        const brand = window.location.href.split('/').slice(- 1).pop();
+        if ( brand ) {
+            this.menuService.getMenu(brand);
         }
     }
 

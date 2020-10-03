@@ -84,7 +84,7 @@ export class MenuComponent implements OnInit {
     }
 
     addItem() {
-        this.router.navigateByUrl('item-edit',
+        this.router.navigateByUrl('/pages/admin/item-edit',
             {state: {status: 'insert', data: {}}}).then();
     }
 
@@ -111,7 +111,7 @@ export class MenuComponent implements OnInit {
     }
 
     editItem(item) {
-        this.router.navigateByUrl('item-edit',
+        this.router.navigateByUrl('/pages/admin/item-edit',
             {state: {status: 'update', data: {item}}}).then();
     }
 
