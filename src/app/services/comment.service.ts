@@ -22,6 +22,6 @@ export class CommentService extends BaseService{
   }
 
   insertComment(comment, cb?) {
-    this.post(comment, cb);
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/insert-comment`, comment, cb);
   }
 }
