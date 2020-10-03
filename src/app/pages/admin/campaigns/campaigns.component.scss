@@ -66,6 +66,10 @@
 //}
 
 @media only screen and (min-width: 1024px) {
+  .item {
+    width: 60% !important;
+  }
+
   .item-action-group mat-icon{
     margin: 5px 0;
   }
@@ -80,6 +84,10 @@
 }
 
 @media only screen and (min-width: 1336px) {
+  .item {
+    width: 50% !important;
+  }
+
   .categories {
     height: 75vh;
     overflow: scroll;
