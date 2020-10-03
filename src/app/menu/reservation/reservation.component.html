@@ -5,38 +5,30 @@
     <form class="w-100">
         <mat-form-field class="w-100">
             <mat-label>İsim Soyisim</mat-label>
-            <input matInput placeholder="İsim Soyisim...">
+            <input required type="text" matInput placeholder="İsim Soyisim...">
         </mat-form-field>
 
         <mat-form-field class="w-100" color="accent" appearance="fill">
             <mat-label>Custom calendar color</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input required matInput [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker color="primary"></mat-datepicker>
         </mat-form-field>
 
-        <table class="w-100 m-0">
-            <tr>
-                <td>
-                    <mat-form-field>
-                        <mat-label>Yetişkin</mat-label>
-                        <input matInput placeholder="Yetişkin sayısı...">
-                    </mat-form-field>
-                </td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>
-                    <mat-form-field>
-                        <mat-label>Çocuk</mat-label>
-                        <input matInput placeholder="Çocuk sayısı...">
-                    </mat-form-field>
-                </td>
-            </tr>
-        </table>
+        <mat-form-field class="w-100">
+            <mat-label>Yetişkin</mat-label>
+            <input required type="number" min="1" max="500" value="2" matInput placeholder="Yetişkin sayısı...">
+        </mat-form-field>
 
         <mat-form-field class="w-100">
-            <mat-label>Telephone</mat-label>
-            <span matPrefix>+1 &nbsp;</span>
-            <input type="tel" matInput placeholder="555-555-1234">
+            <mat-label>Çocuk</mat-label>
+            <input type="number" min="0" max="20" value="0" matInput placeholder="Çocuk sayısı...">
+        </mat-form-field>
+
+        <mat-form-field class="w-100">
+            <mat-label>Telefon</mat-label>
+            <span matPrefix>+90 &nbsp;</span>
+            <input required type="tel" matInput placeholder="555-555-1234">
             <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
 
@@ -45,7 +37,7 @@
             <textarea matInput placeholder="Mesajınız..."></textarea>
         </mat-form-field>
 
-        <button (click)="onSubmit()" class="col-6 py-2 btn btn-dark">Gönder</button>
+        <button (click)="onSubmit()" class="col-6 py-2 submit-button btn btn-dark">Gönder</button>
     </form>
 </div>
 
