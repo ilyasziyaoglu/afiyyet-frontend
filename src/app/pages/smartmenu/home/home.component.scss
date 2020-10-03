@@ -67,27 +67,62 @@ h1, p {
   padding: 20px;
 }
 
-.package hr {
+.package button {
   display: block;
-  margin: auto;
-  width: 30%;
-  background-color: white;
-  height: 2px;
+  margin: 10px auto;
+  width: 50% !important;
 }
 
-.features h1{
+.package .bottom-hr {
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+  background-color: white;
+}
+
+.discount-text {
+  font-size: 2em;
   text-align: center;
-  color: white;
+  color: gold;
 }
 
 .package-name {
-  font-size: 6em;
+  font-size: 2em !important;
+  text-align: center;
+  color: white;
   font-weight: bolder;
   margin: 20px;
 }
 
-.features .price {
-  font-size: 3em;
+.package-description {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.offer {
+  height: 6em;
+}
+
+.offer .col {
+  padding: 0 !important;
+}
+
+.offer .currency {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+}
+
+.offer .price {
+  font-size: 8em !important;
+}
+
+.offer .unit {
+  font-size: 2em;
+  position: absolute;
+  bottom: 0;
 }
 
 .features button {
@@ -96,13 +131,27 @@ h1, p {
   width: 100%;
 }
 
-.offer .mat-list-base .mat-list-item {
+.offer-features .mat-list-base .mat-list-item {
    color: white !important;
 }
 
-.not-offer .mat-list-base .mat-list-item {
+.not-offer-features .mat-list-base .mat-list-item mat-icon {
    color: darkgray !important;
-   text-decoration: line-through;
+}
+
+.not-offer-features .mat-list-base .mat-list-item p {
+  color: darkgray !important;
+  text-decoration: line-through;
+}
+
+.offer-features p {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+.not-offer-features p {
+  margin-left: 5px;
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 769px) {
