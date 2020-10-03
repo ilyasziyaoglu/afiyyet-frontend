@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {FormsModule} from '@angular/forms';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {FormsModule} from '@angular/forms';
         MatDatepickerModule,
         MatNativeDateModule,
         FormsModule,
+        NgxMaterialTimepickerModule,
     ],
 })
 export class MenuModule {

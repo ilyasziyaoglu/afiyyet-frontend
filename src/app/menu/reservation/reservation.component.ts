@@ -10,13 +10,15 @@ import {MenuService} from '../../services/menu.service';
 })
 export class ReservationComponent implements OnInit {
 
+    time: any;
+
     reservation = {
-        adultCount: 0,
+        adultCount: 2,
         brand: {},
         childCount: 0,
         fullName: '',
         phoneNumber: '',
-        reservationDate: '',
+        reservationDate: new Date(),
         specifications: ''
     };
 
@@ -31,9 +33,12 @@ export class ReservationComponent implements OnInit {
     }
 
     onSubmit() {
-        this.reservation.brand = this.menuService.menu.brand
+        this.reservation.brand = this.menuService.menu.brand;
+        const hour = this.time.split(':');
+        this.reservation.reservationDate.setHours(hour[0], hour[1]);
+        console.log(this.reservation.reservationDate);
         this.reservationService.insertReservation(this.reservation, res => {
-            if (res) this.location.back();
+            if (res) { this.location.back(); }
         });
     }
 }
