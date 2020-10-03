@@ -33,7 +33,7 @@
 
         <mat-form-field class="w-100 my-3">
             <mat-label>Telefon</mat-label>
-            <input type="tel" matInput placeholder="555-555-1234" required>
+            <input type="tel" [(ngModel)]="reservation.phoneNumber" [ngModelOptions]="{standalone: true}" matInput placeholder="5555551234" required>
             <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
 
