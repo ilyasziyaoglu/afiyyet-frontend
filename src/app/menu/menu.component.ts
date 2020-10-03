@@ -3,6 +3,8 @@ import {Location} from '@angular/common';
 import {DialogCommentComponent} from '../pages/admin/dialogs/dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MenuService} from '../services/menu.service';
+import {StorageService} from '../base/services/storage.service';
+import {FavoriteService} from '../services/favorite.service';
 
 @Component({
     selector: 'app-menus',
@@ -15,6 +17,7 @@ export class MenuComponent implements OnInit {
         public location: Location,
         private dialog: MatDialog,
         public menuService: MenuService,
+        public favoriteService: FavoriteService,
     ) {
         const brand = window.location.href.split('/')[5];
         if ( brand ) {

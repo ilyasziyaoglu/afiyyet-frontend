@@ -14,6 +14,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {FormsModule} from '@angular/forms';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
         MatNativeDateModule,
         FormsModule,
         NgxMaterialTimepickerModule,
+        MatBadgeModule,
     ],
 })
 export class MenuModule {

@@ -1,6 +1,14 @@
-<div class="header">
-    <mat-icon class="m-3 back-button" (click)="location.back()">arrow_back</mat-icon>
-    <img class="logo-img" src="https://www.whiteshoresrealty.com/images/logo.png">
+<div class="header d-flex justify-content-between">
+    <div>
+        <mat-icon class="m-3 back-button" (click)="location.back()">arrow_back</mat-icon>
+    </div>
+    <div>
+        <img class="logo-img" [src]="menuService.menu?.brand.logoImgUrl">
+    </div>
+    <div>
+        <mat-icon class="m-3 back-button" (click)="location.back()" matBadge="{{favoriteService.getFavorites().length}}" matBadgeSize="small">favorite</mat-icon>
+    </div>
+
 </div>
 <div class="row w-100 m-0 p-0 top-menu border-top border-white">
     <div class="col m-0 p-1 border-right border-white d-flex justify-content-center align-items-center"
