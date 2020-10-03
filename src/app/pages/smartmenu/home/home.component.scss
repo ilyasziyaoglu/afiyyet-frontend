@@ -105,7 +105,7 @@ h1, p {
    text-decoration: line-through;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
 
   .demo-button {
     padding: 1rem;
@@ -136,7 +136,7 @@ h1, p {
     font-size: 1.5em;
   }
 
-  .col-sm-3 {
+  .package, .advantage {
     max-width: 400px !important;
   }
 }
@@ -151,8 +151,8 @@ h1, p {
   }
 
   .advantages {
-    padding-left: 15%;
-    padding-right: 15%;
+    margin-left: 5% !important;
+    margin-right: 5% !important;
   }
 
   .package-name {
@@ -179,7 +179,14 @@ h1, p {
     font-size: 1.5em;
   }
 
-  .col-sm-3 {
+  .package, .advantage {
     max-width: 400px !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .advantages {
+    margin-left: 18% !important;
+    margin-right: 18% !important;
   }
 }
