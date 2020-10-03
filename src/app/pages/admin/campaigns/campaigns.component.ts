@@ -53,6 +53,7 @@ export class CampaignsComponent implements OnInit {
   editCampaign(campaign: any) {
     this.campaignService.currentCampaign = campaign;
     this.campaignService.isEdit = true;
+    this.router.navigateByUrl('/pages/admin/campaign-edit');
   }
 
   deleteItem(item: any, index, isActive: boolean) {

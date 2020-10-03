@@ -38,7 +38,6 @@ export class CampaignEditComponent implements OnInit {
         }
 
         if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
-            console.log('formData', this.formData);
             Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
             return;
         }
@@ -52,13 +51,13 @@ export class CampaignEditComponent implements OnInit {
                     if ( res.fileName ) {
                         this.campaign.imgUrl = res.fileName;
                         this.campaignService.updateCampaign(this.campaign, res2 => {
-                            if ( res2 ) { this.router.navigateByUrl('/campaigns').then(); }
+                            if ( res2 ) { this.router.navigateByUrl('/pages/admin/campaigns').then(); }
                         });
                     }
                 });
             } else {
                 this.campaignService.updateCampaign(this.campaign, res => {
-                    if ( res ) { this.router.navigateByUrl('/campaigns').then(); }
+                    if ( res ) { this.router.navigateByUrl('/pages/admin/campaigns').then(); }
                 });
             }
         } else {
@@ -67,7 +66,7 @@ export class CampaignEditComponent implements OnInit {
                     this.campaign.imgUrl = res.fileName;
                     this.campaignService.insertCampaign(this.campaign, response => {
                         if ( response ) {
-                            this.router.navigateByUrl('/campaigns');
+                            this.router.navigateByUrl('/pages/admin/campaigns');
                         }
                     });
                 }
