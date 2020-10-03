@@ -5,36 +5,35 @@
     <form class="w-100">
         <mat-form-field class="w-100">
             <mat-label>İsim Soyisim</mat-label>
-            <input required type="text" matInput placeholder="İsim Soyisim...">
+            <input [(ngModel)]="reservation.fullName" name="fullName" matInput placeholder="İsim Soyisim...">
         </mat-form-field>
 
         <mat-form-field class="w-100" color="accent" appearance="fill">
             <mat-label>Custom calendar color</mat-label>
-            <input required matInput [matDatepicker]="picker">
+            <input [(ngModel)]="reservation.reservationDate" name="reservationDate" matInput [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker color="primary"></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="w-100">
             <mat-label>Yetişkin</mat-label>
-            <input required type="number" min="1" max="500" value="2" matInput placeholder="Yetişkin sayısı...">
+            <input [(ngModel)]="reservation.adultCount" required type="number" min="1" max="500" value="2" matInput placeholder="Yetişkin sayısı...">
         </mat-form-field>
 
         <mat-form-field class="w-100">
             <mat-label>Çocuk</mat-label>
-            <input type="number" min="0" max="20" value="0" matInput placeholder="Çocuk sayısı...">
+            <input [(ngModel)]="reservation.childCount" type="number" min="0" max="20" value="0" matInput placeholder="Çocuk sayısı...">
         </mat-form-field>
 
         <mat-form-field class="w-100">
             <mat-label>Telefon</mat-label>
-            <span matPrefix>+90 &nbsp;</span>
-            <input required type="tel" matInput placeholder="555-555-1234">
+            <input type="tel" matInput placeholder="555-555-1234">
             <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="w-100">
             <mat-label>Mesajınız</mat-label>
-            <textarea matInput placeholder="Mesajınız..."></textarea>
+            <textarea [(ngModel)]="reservation.specifications" name="specifications" matInput placeholder="Mesajınız..."></textarea>
         </mat-form-field>
 
         <button (click)="onSubmit()" class="col-6 py-2 submit-button btn btn-dark">Gönder</button>
