@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-import {DialogCommentComponent} from '../pages/admin/dialogs/dialog-comment/dialog-comment.component';
+import {DialogCommentComponent} from './dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MenuService} from '../services/menu.service';
 import {StorageService} from '../base/services/storage.service';
