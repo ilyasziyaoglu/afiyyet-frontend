@@ -1,19 +1,27 @@
 <div class="header p-0 d-flex justify-content-end">
     <div class="py-2 px-5 btn-login" [routerLink]="['/pages/smartmenu/home']">
-        <mat-icon class="nav-item-icon">home</mat-icon>
-        <span class="nav-item-text">Home</span>
+        <div>
+            <mat-icon class="nav-item-icon">home</mat-icon>
+            <span class="nav-item-text">Home</span>
+        </div>
     </div>
     <div class="py-2 px-5 btn-login" *ngIf="isLogged" [routerLink]="['/admin']">
-        <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
-        <span class="nav-item-text">Admin Panel</span>
+        <div>
+            <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
+            <span class="nav-item-text">Admin Panel</span>
+        </div>
     </div>
     <div class="py-2 px-5 btn-login" *ngIf="isLogged" (click)="logout()">
-        <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
-        <span class="nav-item-text">Çıkış Yap</span>
+        <div>
+            <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
+            <span class="nav-item-text">Çıkış Yap</span>
+        </div>
     </div>
     <div class="py-2 px-5 btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
-        <mat-icon class="nav-item-icon">login</mat-icon>
-        <span class="nav-item-text">Giriş Yap</span>
+        <div>
+            <mat-icon class="nav-item-icon">login</mat-icon>
+            <span class="nav-item-text">Giriş Yap</span>
+        </div>
     </div>
 </div>
 <router-outlet></router-outlet>

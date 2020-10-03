@@ -1,22 +1,22 @@
-button {
+.menu-button {
   background-color: #232323;
   border: none;
   color: white;
   border-radius: 0;
 }
 
-button :focus {
+.menu-button :focus {
   outline: 0;
   border: none;
 }
 
-button :active {
+.menu-button :active {
   outline: none;
   border: none;
 }
 
-button :hover {
-  color: dodgerblue;
+.menu-button :hover {
+  color: #666666;
 }
 
 .button-text {
