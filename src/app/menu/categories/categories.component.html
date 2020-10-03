@@ -3,45 +3,55 @@
 <div class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of favoriteService.getFavorites()">
-        <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="item-img" src="{{item.imgUrl}}" alt="">
+        <img class="item-img" src="{{item.imgUrl}}"
+             #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
+             (click)="menuService.currentProduct = item"
+             [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
         <div class="w-100 m-0 p-1 fav-like-price-container">
             <div class="row w-100 m-0 text-white">
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
-                     [routerLink]="['/menu/item']"
-                     (click)="storageService.setItem('item', item)">
+                     (click)="menuService.currentProduct = item"
+                     [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center"
-                    (click)="onLike(item)">{{item.likes}}&nbsp;
+                     (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                              style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
+                              style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
+                    </mat-icon>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <hr class="m-0 p-0">
-<h3 class="my-1" style="text-align: center">Kampanyalar</h3>
+<h3 class="my-1 text-center">Kampanyalar</h3>
 
 <div class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
-         *ngFor="let item of menuService.menu.campaigns">
-        <img [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="camp-item-img" src="{{item.imgUrl}}" alt="">
+         *ngFor="let item of menuService.menu?.campaigns">
+        <img class="camp-item-img" src="{{item.imgUrl}}"
+             #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
+             (click)="menuService.currentProduct = item"
+             [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
 
-        <p [routerLink]="['/menu/item']" (click)="storageService.setItem('item', item)" class="p-1 camp-item-name">{{item.name}}</p>
+        <p class="p-1 camp-item-name"
+           (click)="menuService.currentProduct = item"
+           [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">{{item.name}}</p>
 
         <div class="w-100 camp-like-price-container p-0">
 
             <div class="row w-100 m-0 p-1 text-white">
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
-                    [routerLink]="['/menu/item']"
-                    (click)="storageService.setItem('item', item)">
+                     (click)="menuService.currentProduct = item"
+                     [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center"
-                    (click)="onLike(item)">{{item.likes}}&nbsp;
+                     (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
-                            style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
+                              style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
+                    </mat-icon>
                 </div>
             </div>
         </div>
@@ -52,10 +62,11 @@
 <h3 class="my-2" style="text-align: center">Menü</h3>
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
-         *ngFor="let category of menuService.menu.categories"
+         *ngFor="let category of menuService.menu?.categories"
          (click)="menuService.currentCategory = category"
-        [routerLink]="['/submenu']">
-        <img class="category-img" src="{{category.imgUrl}}" alt="">
+         [routerLink]="[category.name.toLowerCase().replaceAll(' ','-')]">
+        <img class="category-img" src="{{category.imgUrl}}"
+             #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
         <p class="category-name">{{category.name}}</p>
     </div>
 </div>

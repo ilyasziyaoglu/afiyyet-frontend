@@ -8,6 +8,7 @@ export class Product {
     order: number;
     status: string;
     category: any;
+    categoryName: string;
 }
 
 export class Category {

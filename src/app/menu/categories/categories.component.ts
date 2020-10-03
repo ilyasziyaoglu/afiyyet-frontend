@@ -1,26 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
 import {StorageService} from '../../base/services/storage.service';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+    selector: 'app-menu',
+    templateUrl: './categories.component.html',
+    styleUrls: ['./categories.component.scss'],
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesComponent {
 
-  constructor(
-      public storageService: StorageService,
-      public menuService: MenuService,
-      public favoriteService: FavoriteService,
-  ) { }
+    constructor(
+        public storageService: StorageService,
+        public menuService: MenuService,
+        public favoriteService: FavoriteService,
+    ) {
+    }
 
-  ngOnInit(): void {
-    // this.menuService.getMenu('brand1');
-  }
-
-  onLike(item: any) {
-    this.menuService.like(item);
-  }
+    onLike(item: any) {
+        this.menuService.like(item);
+    }
 }

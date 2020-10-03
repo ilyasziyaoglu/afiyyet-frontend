@@ -5,9 +5,8 @@ import {RegisterComponent} from './base/auth/register/register.component';
 
 
 const routes: Routes = [
-    {path: '', redirectTo: 'pages', pathMatch: 'full'},
     {path: 'pages', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)},
-    {path: 'menu', loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule)},
+    {path: 'menu/:brand', loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule)},
     {
         path: 'login',
         component: LoginComponent,
@@ -16,6 +15,7 @@ const routes: Routes = [
         path: 'register',
         component: RegisterComponent,
     },
+    {path: '', redirectTo: 'pages', pathMatch: 'full'},
 ];
 
 @NgModule({

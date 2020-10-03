@@ -3,7 +3,8 @@
     <h1 class="item-name">{{menuService.currentProduct.name}}</h1>
     <div class="row W-100 no-gutters justify-content-center align-items-center">
         <div class="image-container">
-            <img class="item-img" src="{{menuService.currentProduct.imgUrl}}" alt="{{menuService.currentProduct.name}}">
+            <img class="item-img" src="{{menuService.currentProduct.imgUrl}}" alt="{{menuService.currentProduct.name}}"
+                 #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
             <div class="favorite">
                 <mat-icon *ngIf="favoriteService.isFavorite(menuService.currentProduct.id)"
                           (click)="favoriteService.removeFavorite(menuService.currentProduct)">favorite

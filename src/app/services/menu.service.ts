@@ -12,9 +12,13 @@ import {HttpMethod, HttpService} from '../base/services/http.service';
 export class MenuService extends BaseService {
 
     basePath = 'menu';
-    menu = {categories: [], campaigns: []};
+
+    currentBrand: any;
     currentCategory: any;
     currentProduct: any;
+    currentCampaign: any;
+
+    menu: any;
 
     constructor(
         httpService: HttpService,
@@ -24,7 +28,7 @@ export class MenuService extends BaseService {
     ) {
         super(httpService);
 
-        this.getMenu('brand1');
+        // this.getMenu('brand1');
 
         // GET MOCK DATA
         // if ( !this.storageService.getItem('menu') ) {
@@ -61,8 +65,9 @@ export class MenuService extends BaseService {
     }
 
     getMenu(brandName) {
+        this.currentBrand = brandName;
         this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/${brandName}`, '', result => {
-            this.menu.categories = result;
+            this.menu = result;
         });
     }
 

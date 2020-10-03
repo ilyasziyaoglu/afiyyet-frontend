@@ -4,7 +4,7 @@ import {StorageService} from '../../base/services/storage.service';
 import {MenuService} from '../../services/menu.service';
 
 @Component({
-    selector: 'app-submenu',
+    selector: 'app-products',
     templateUrl: './products.component.html',
     styleUrls: ['./products.component.scss'],
 })

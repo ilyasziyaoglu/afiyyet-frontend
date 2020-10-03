@@ -11,17 +11,16 @@ const routes: Routes = [
         path: '',
         component: MenuComponent,
         children: [
-            {path: '', redirectTo: 'categories', pathMatch: 'full'},
             {
-                path: 'categories',
+                path: '',
                 component: CategoriesComponent,
             },
             {
-                path: 'submenu',
+                path: ':category',
                 component: ProductsComponent,
             },
             {
-                path: 'item',
+                path: ':category/:product',
                 component: ProductDetailComponent,
             },
             {

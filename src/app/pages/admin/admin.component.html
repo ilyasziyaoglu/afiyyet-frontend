@@ -1,33 +1,23 @@
 <div class="row w-100 flex-container d-flex justify-content-center no-gutters">
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['/admin/menu-edit']">
-        <div>
-            <mat-icon>view_list</mat-icon>
-            <span class="button-text">Menü Düzenle</span>
-        </div>
+    <button class="pt-3 pb-1 flex-fill" [routerLink]="['menu']">
+        <mat-icon>view_list</mat-icon>
+        <span class="button-text">Menü Düzenle</span>
     </button>
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['/admin/campaigns']">
-        <div>
-            <mat-icon>loyalty</mat-icon>
-            <span class="button-text">Kampanyalar</span>
-        </div>
+    <button class="pt-3 pb-1 flex-fill" [routerLink]="['campaigns']">
+        <mat-icon>loyalty</mat-icon>
+        <span class="button-text">Kampanyalar</span>
     </button>
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['/admin/reports']">
-        <div>
-            <mat-icon>analytics</mat-icon>
-            <span class="button-text">Raporlar</span>
-        </div>
+    <button class="pt-3 pb-1 flex-fill" [routerLink]="['reports']">
+        <mat-icon>analytics</mat-icon>
+        <span class="button-text">Raporlar</span>
     </button>
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['/admin/reservations']">
-        <div>
-            <mat-icon>assignment_turned_in</mat-icon>
-            <span class="button-text">Rezervasyonlar</span>
-        </div>
+    <button class="pt-3 pb-1 flex-fill" [routerLink]="['reservations']">
+        <mat-icon>assignment_turned_in</mat-icon>
+        <span class="button-text">Rezervasyonlar</span>
     </button>
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['/admin/comments']">
-        <div>
-            <mat-icon>grading</mat-icon>
-            <span class="button-text">Yorumlar</span>
-        </div>
+    <button class="pt-3 pb-1 flex-fill" [routerLink]="['comments']">
+        <mat-icon>grading</mat-icon>
+        <span class="button-text">Yorumlar</span>
     </button>
 </div>
 <router-outlet></router-outlet>

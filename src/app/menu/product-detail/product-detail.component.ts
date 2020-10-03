@@ -5,8 +5,8 @@ import {MenuService} from '../../services/menu.service';
 
 @Component({
   selector: 'app-item',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
 

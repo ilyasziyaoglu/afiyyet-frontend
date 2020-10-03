@@ -14,9 +14,9 @@ const routes: Routes = [
         path: '',
         component: AdminComponent,
         children: [
-            {path: '', redirectTo: 'menu-edit', pathMatch: 'full'},
+            {path: '', redirectTo: 'menu', pathMatch: 'full'},
             {
-                path: 'menu-edit',
+                path: 'menu',
                 component: MenuComponent,
             },
             {

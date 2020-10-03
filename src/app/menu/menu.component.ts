@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-import { DialogCommentComponent } from '../pages/admin/dialogs/dialog-comment/dialog-comment.component';
-import { MatDialog } from '@angular/material/dialog';
+import {DialogCommentComponent} from '../pages/admin/dialogs/dialog-comment/dialog-comment.component';
+import {MatDialog} from '@angular/material/dialog';
+import {MenuService} from '../services/menu.service';
 
 @Component({
     selector: 'app-menus',
@@ -12,15 +13,22 @@ export class MenuComponent implements OnInit {
 
     constructor(
         public location: Location,
-        private dialog: MatDialog
+        private dialog: MatDialog,
+        public menuService: MenuService,
     ) {
+        if ( !menuService.menu ) {
+            const brand = window.location.href.split('/').slice(- 1).pop();
+            if ( brand ) {
+                this.menuService.getMenu(brand);
+            }
+        }
     }
 
     ngOnInit(): void {
     }
 
     commentClick() {
-      this.dialog.open(DialogCommentComponent,  {width: '85%'});
+        this.dialog.open(DialogCommentComponent, {width: '85%'});
     }
 
 }

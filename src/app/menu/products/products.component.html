@@ -1,25 +1,26 @@
 <br>
-<h1 class="category-name">{{storageService.category.name}}</h1>
+<h1 class="category-name">{{menuService.currentCategory?.name}}</h1>
 <div class="row m-1 justify-content-center">
     <div class="col p-2 item align-content-end"
          *ngFor="let item of menuService.currentCategory?.products">
 
         <img class="item-img"
-             [routerLink]="['/menu/item']"
+             [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
              (click)="menuService.currentProduct = item"
+             #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
              src="{{item.imgUrl}}" alt="{{item.name}}">
         <div class="item-name"
-             [routerLink]="['/menu/item']"
+             [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
              (click)="menuService.currentProduct = item">
             <h3>{{item.name}}</h3>
         </div>
         <hr class="item-line">
         <p class="description"
-           [routerLink]="['/menu/item']"
+           [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
            (click)="menuService.currentProduct = item">{{item.description}}</p>
         <div class="row w-100 m-0">
             <div class="col border-right border-white d-flex justify-content-center align-items-center"
-                 [routerLink]="['/menu/item']"
+                 [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
                  (click)="storageService.setItem('item', item)">
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
