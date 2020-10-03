@@ -16,16 +16,16 @@ const routes: Routes = [
                 component: CategoriesComponent,
             },
             {
-                path: ':category',
-                component: ProductsComponent,
+                path: 'reservation',
+                component: ReservationComponent,
             },
             {
                 path: ':category/:product',
                 component: ProductDetailComponent,
             },
             {
-                path: 'reservation',
-                component: ReservationComponent,
+                path: ':category',
+                component: ProductsComponent,
             },
         ],
     },
