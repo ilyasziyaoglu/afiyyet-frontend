@@ -60,8 +60,8 @@ export class SessionService {
         sessionStorage.removeItem(this.USER);
     }
 
-    setCurrentProduct(product) {
-        sessionStorage.setItem(this.CURRENT_PROD, JSON.stringify(product));
+    setCurrentProduct(product, isEdit) {
+        sessionStorage.setItem(this.CURRENT_PROD, JSON.stringify({product, isEdit}));
     }
 
     getCurrentProduct() {

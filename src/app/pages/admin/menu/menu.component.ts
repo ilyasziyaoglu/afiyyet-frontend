@@ -28,6 +28,7 @@ export class MenuComponent implements OnInit {
         private menuService: MenuService, private storageService: SessionService,
         private router: Router, private dialog: MatDialog,
         public categoryService: CategoryService, private productService: ProductService,
+        private sessionService: SessionService
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categoryService.categories = data;
@@ -90,8 +91,8 @@ export class MenuComponent implements OnInit {
     }
 
     addItem() {
-        this.router.navigateByUrl('/pages/admin/item-edit',
-            {state: {status: 'insert', data: {}}}).then();
+        this.sessionService.setCurrentProduct(null, false);
+        this.router.navigateByUrl('/pages/admin/item-edit');
     }
 
     deleteItem(item, index) {
@@ -117,8 +118,8 @@ export class MenuComponent implements OnInit {
     }
 
     editItem(item) {
-        this.router.navigateByUrl('/pages/admin/item-edit',
-            {state: {status: 'update', data: {item}}}).then();
+        this.sessionService.setCurrentProduct(item, true);
+        this.router.navigateByUrl('/pages/admin/item-edit');
     }
 
     addCategoryClick() {
