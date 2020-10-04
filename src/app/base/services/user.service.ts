@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService } from './base-service';
 import { HttpService } from './http.service';
 import {SessionService} from './session.service';
+import {LocalService} from './local.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,8 @@ export class UserService extends BaseService {
 
   constructor(
       httpService: HttpService,
-      private storageService: SessionService
+      private sessionService: SessionService,
+      private localService: LocalService
   ) {
     super(httpService);
   }
@@ -22,7 +24,32 @@ export class UserService extends BaseService {
   }
 
   logOut() {
-    this.storageService.setItem('token', null);
-    this.storageService.setItem('user', null);
+    this.localService.removeUser();
+    this.sessionService.removeUser();
+  }
+
+  login(user, token, isRememberCheck) {
+    if (isRememberCheck) {
+      this.localService.setUser(user, token);
+      this.sessionService.removeUser();
+    } else {
+      this.sessionService.setUser(user, token);
+      this.localService.removeUser();
+    }
+  }
+
+  register(user, token) {
+    this.localService.setUser(user, token);
+    this.sessionService.removeUser();
+  }
+
+  getUser() {
+    if (this.localService.getUser()) {
+      return this.localService.getUser();
+    } else if (this.sessionService.getUser()) {
+      return this.sessionService.getUser();
+    } else {
+      return false;
+    }
   }
 }

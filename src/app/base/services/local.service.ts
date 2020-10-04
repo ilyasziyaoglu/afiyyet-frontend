@@ -5,5 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class LocalService {
 
+  USER = "@user";
+
   constructor() { }
+
+  setUser(user, token) {
+    localStorage.setItem(this.USER, JSON.stringify({user, token}));
+  }
+
+  getUser() {
+    let user = localStorage.getItem(this.USER);
+    if (user) return JSON.parse(user);
+    return null;
+  }
+
+  removeUser() {
+    localStorage.removeItem(this.USER);
+  }
 }

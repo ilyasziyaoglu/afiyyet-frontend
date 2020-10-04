@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../base/services/user.service';
-import {SessionService} from '../base/services/session.service';
 
 @Component({
     selector: 'app-page',
@@ -13,9 +12,8 @@ export class PagesComponent implements OnInit {
     isLogged = false;
 
     constructor(private router: Router,
-                private userService: UserService,
-                private storageService: SessionService) {
-        if (storageService.getItem('user')) this.isLogged = true;
+                private userService: UserService) {
+        if (userService.getUser()) this.isLogged = true;
     }
 
     ngOnInit(): void {

@@ -7,6 +7,7 @@ export class SessionService {
 
     favorites: string[] = [];
     category: any;
+    USER = "@user";
 
     constructor() {
         const keys = Object.keys(sessionStorage);
@@ -41,5 +42,19 @@ export class SessionService {
 
     updateItem(key) {
         this.setItem(key, this[key]);
+    }
+
+    setUser(user, token) {
+        sessionStorage.setItem(this.USER, JSON.stringify({user, token}));
+    }
+
+    getUser() {
+        let user = sessionStorage.getItem(this.USER);
+        if (user) return JSON.parse(user);
+        return null;
+    }
+
+    removeUser() {
+        sessionStorage.removeItem(this.USER);
     }
 }
