@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpMethod, HttpService} from '../../services/http.service';
 import {Router} from '@angular/router';
 import {StorageService} from '../../services/storage.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -32,10 +33,14 @@ export class RegisterComponent implements OnInit {
         password: this.password,
       };
 
-      this.httpService.doRequest(HttpMethod.POST, 'auth/register', data, (response) => {
-        this.storageService.setItem('token', response.token);
-        this.storageService.setItem('user', response.userResponse);
-        this.router.navigateByUrl('pages/admin/menu');
+      this.httpService.doRequest(HttpMethod.POST, 'auth/register', data, (res) => {
+        if ( res ) {
+          this.storageService.setItem('token', res.token);
+          this.storageService.setItem('user', res.userResponse);
+          this.router.navigateByUrl('pages/admin/menu');
+        } else {
+          Swal.fire('Uyarı!', 'Kayıt başarısız. Lütfen bilgilerinizi kontrol ediniz.', 'warning');
+        }
       });
     }
   }
