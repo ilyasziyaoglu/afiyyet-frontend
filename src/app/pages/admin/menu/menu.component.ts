@@ -4,7 +4,7 @@ import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Category, Product} from '../../../services/models/models';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {StorageService} from '../../../base/services/storage.service';
+import {SessionService} from '../../../base/services/session.service';
 import {CategoryService} from '../../../services/category.service';
 import {ProductService} from '../../../services/product.service';
 import {DialogCategoryEditComponent} from '../dialog-category-edit/dialog-category-edit.component';
@@ -25,7 +25,7 @@ export class MenuComponent implements OnInit {
     categoryProductCount = 0;
 
     constructor(
-        private menuService: MenuService, private storageService: StorageService,
+        private menuService: MenuService, private storageService: SessionService,
         private router: Router, private dialog: MatDialog,
         public categoryService: CategoryService, private productService: ProductService,
     ) {

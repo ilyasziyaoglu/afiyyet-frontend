@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpMethod, HttpService} from '../../services/http.service';
 import {Router} from '@angular/router';
-import {StorageService} from '../../services/storage.service';
+import {SessionService} from '../../services/session.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private httpService: HttpService,
     private router: Router,
-    private storageService: StorageService,
+    private storageService: SessionService,
   ) { }
 
   ngOnInit() {

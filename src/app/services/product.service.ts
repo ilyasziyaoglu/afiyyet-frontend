@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
 import {Product} from './models/models';
-import {StorageService} from '../base/services/storage.service';
+import {SessionService} from '../base/services/session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ProductService extends BaseService {
 
   constructor(
       httpService: HttpService,
-      private storageService: StorageService
+      private storageService: SessionService
   ) {
     super(httpService);
   }

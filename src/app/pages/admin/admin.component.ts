@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {StorageService} from '../../base/services/storage.service';
+import {SessionService} from '../../base/services/session.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(storageService: StorageService, router: Router) {
+  constructor(storageService: SessionService, router: Router) {
     if (!storageService.getItem('user')) {
       router.navigateByUrl('/login');
     }
