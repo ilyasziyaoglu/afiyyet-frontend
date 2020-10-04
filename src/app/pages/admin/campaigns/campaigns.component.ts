@@ -38,7 +38,7 @@ export class CampaignsComponent implements OnInit {
       campaignService.activeCampaigns = [];
       campaignService.passiveCampaigns = [];
       res.forEach(camp => {
-        if (camp.expireDate < this.today){
+        if (new Date(camp.expireDate) < this.today){
           campaignService.passiveCampaigns.push(camp);
         } else {
           campaignService.activeCampaigns.push(camp);

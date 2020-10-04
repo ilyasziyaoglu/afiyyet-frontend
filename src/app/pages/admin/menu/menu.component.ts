@@ -20,6 +20,9 @@ export class MenuComponent implements OnInit {
 
     productsArranged = false;
     categoriesArranged = false;
+    categoryCount = 0;
+    totalProductCount = 253;
+    categoryProductCount = 0;
 
     constructor(
         private menuService: MenuService, private storageService: StorageService,
@@ -28,10 +31,12 @@ export class MenuComponent implements OnInit {
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categoryService.categories = data;
+            this.categoryCount = data.length;
             this.categoryService.currentCategory = this.categoryService.currentCategory || this.categoryService.categories[0];
             if ( this.categoryService.currentCategory ) {
                 this.productService.getProductsByCategory(this.categoryService.currentCategory.id, results => {
                     this.categoryService.currentCategory.products = results;
+                    this.categoryProductCount = results.length;
                 });
             }
         });
@@ -80,6 +85,7 @@ export class MenuComponent implements OnInit {
         this.categoryService.currentCategory = category;
         this.productService.getProductsByCategory(category.id, result => {
             category.products = result;
+            this.categoryProductCount = result.length;
         });
     }
 
@@ -157,4 +163,12 @@ export class MenuComponent implements OnInit {
         arr = arr.map((item, i) => ({...item, order: i}));
         return arr;
     }
+
+    getTotalProducts(categories) {
+        let count = 0;
+        categories.forEach(cat => count += cat.products.length);
+        return count;
+    }
+
+
 }

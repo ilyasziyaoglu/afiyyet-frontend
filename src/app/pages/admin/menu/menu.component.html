@@ -10,6 +10,11 @@
             <button (click)="addCategoryClick()"
                     class="btn btn-outline-dark py-2 mb-2 w-100">Kategori Ekle</button>
 
+            <div style="background-color: #F4511E" class="d-flex justify-content-around py-1 rounded">
+                <span class="cat-prod-count-span">{{categoryCount}} Kategori</span>
+                <span class="cat-prod-count-span">{{totalProductCount}} Ürün</span>
+            </div>
+
             <div cdkDrag *ngFor="let category of categoryService.categories; let i = index">
                 <div (click)="categoryClick(category)"
                      [ngClass]="{'active-category': this.categoryService.currentCategory?.id == category.id}"
@@ -28,7 +33,11 @@
 
         <div class="col-sm-9 col-md-7 col-lg-9" cdkDropList (cdkDropListDropped)="arrangeProduct($event)" *ngIf="categoryService.currentCategory" style="overflow-y: scroll; height: 75vh">
 
-            <div class="bg-dark p-3 mt-3 rounded category-name">{{categoryService.currentCategory?.name}}</div>
+            <div class="bg-dark p-3 mt-3 rounded category-name">
+                {{categoryService.currentCategory?.name}}
+                <mat-icon class="product-count-icon" matBadge="{{categoryProductCount}}"
+                          matBadgeSize="small">view_carousel</mat-icon>
+            </div>
             <div class="row mx-0 my-3 justify-content-between">
                 <button class="btn save-order" [ngClass]="{'btn-secondary': !productsArranged, 'btn-success': productsArranged}" (click)="productArrangeSave()">Sıralamayı Kaydet</button>
                 <button (click)="addItem()" class="btn add-product btn-outline-dark">Ürün Ekle</button>
