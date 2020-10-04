@@ -7,20 +7,12 @@ import {LocalService} from './local.service';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService extends BaseService {
-
-  basePath = '/user';
+export class UserService {
 
   constructor(
-      httpService: HttpService,
       private sessionService: SessionService,
       private localService: LocalService
   ) {
-    super(httpService);
-  }
-
-  getBasePath(): string {
-    return this.basePath;
   }
 
   logOut() {
@@ -50,6 +42,16 @@ export class UserService extends BaseService {
       return this.sessionService.getUser();
     } else {
       return false;
+    }
+  }
+
+  getToken () {
+    if (this.localService.getUser()) {
+      return this.localService.getUser().token;
+    } else if (this.sessionService.getUser()) {
+      return this.sessionService.getUser().token;
+    } else {
+      return null;
     }
   }
 }

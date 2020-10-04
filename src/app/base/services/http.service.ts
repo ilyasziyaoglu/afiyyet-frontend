@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
 import {Router} from '@angular/router';
+import {UserService} from './user.service';
 
 @Injectable({
     providedIn: 'root',
@@ -15,6 +16,7 @@ export class HttpService {
     constructor(
         private http: HttpClient,
         private router: Router,
+        private userService: UserService
     ) {
     }
 
@@ -64,7 +66,7 @@ export class HttpService {
         let headers;
         if (!path.startsWith('auth/')) {
             headers = new HttpHeaders()
-                .append('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
+                .append('Authorization', 'Bearer ' + this.userService.getToken())
                 .append('Content-Type', 'application/json; charset=utf-8')
                 .append('Accept', '*/*');
         } else {
@@ -116,7 +118,7 @@ export class HttpService {
         let headers;
 
         headers = new HttpHeaders()
-            .append('Authorization', 'Bearer ' + sessionStorage.getItem('token'))
+            .append('Authorization', 'Bearer ' + this.userService.getToken())
             // .append('Content-Type', 'multipart/form-data')
             .append('Accept', '*/*');
 
