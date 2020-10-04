@@ -4,6 +4,7 @@ import {Campaign} from '../../../services/models/models';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import {SessionService} from '../../../base/services/session.service';
 
 @Component({
   selector: 'app-campaigns',
@@ -16,7 +17,8 @@ export class CampaignsComponent implements OnInit {
   today = new Date();
 
   constructor(public campaignService: CampaignService,
-              private router: Router) {
+              private router: Router,
+              private sessionService: SessionService) {
     // campaignService.insertCampaign(
     //     {
     //       description: "Bir Alana Sifir hediye",
@@ -51,8 +53,12 @@ export class CampaignsComponent implements OnInit {
   }
 
   editCampaign(campaign: any) {
-    this.campaignService.currentCampaign = campaign;
-    this.campaignService.isEdit = true;
+    this.sessionService.setCurrentCampaign(campaign, true);
+    this.router.navigateByUrl('/pages/admin/campaign-edit');
+  }
+
+  insertCampaign() {
+    this.sessionService.setCurrentCampaign(null, false);
     this.router.navigateByUrl('/pages/admin/campaign-edit');
   }
 

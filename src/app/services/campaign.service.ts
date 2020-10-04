@@ -11,8 +11,6 @@ export class CampaignService extends BaseService {
     basePath = 'campaign';
     activeCampaigns: Campaign[] = [];
     passiveCampaigns: Campaign[] = [];
-    currentCampaign: any;
-    isEdit: boolean;
 
     constructor(httpService: HttpService) {
         super(httpService);

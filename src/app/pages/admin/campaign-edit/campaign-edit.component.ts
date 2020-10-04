@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
 import {CampaignService} from '../../../services/campaign.service';
+import {SessionService} from '../../../base/services/session.service';
 
 @Component({
     selector: 'app-campaign-edit',
@@ -11,16 +12,21 @@ import {CampaignService} from '../../../services/campaign.service';
 })
 export class CampaignEditComponent implements OnInit {
 
+    sessionData: any;
     campaign: any;
     formData: FormData;
 
     constructor(private router: Router,
                 private fileService: FileService,
-                private campaignService: CampaignService) {
+                private campaignService: CampaignService,
+                private sessionService: SessionService) {
 
-      this.campaign = this.campaignService.currentCampaign || {};
-      // this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
-      // this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+      this.sessionData = this.sessionService.getCurrentCampaign() || {};
+      this.campaign = this.sessionData.campaign || {};
+      if (this.sessionData.campaign) {
+          this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
+          this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+      }
     }
 
     ngOnInit(): void {
@@ -45,7 +51,7 @@ export class CampaignEditComponent implements OnInit {
         this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
         this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
 
-        if ( this.campaignService.isEdit) {
+        if ( this.sessionData.isEdit) {
             if ( this.formData ) {
                 this.fileService.uploadFile(this.formData, res => {
                     if ( res.fileName ) {

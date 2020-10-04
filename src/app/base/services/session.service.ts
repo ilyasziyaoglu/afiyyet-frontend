@@ -8,6 +8,8 @@ export class SessionService {
     favorites: string[] = [];
     category: any;
     USER = "@user";
+    CURRENT_PROD = "@currentProduct";
+    CURRENT_CAMP = "@currentCampaign";
 
     constructor() {
         const keys = Object.keys(sessionStorage);
@@ -56,5 +58,33 @@ export class SessionService {
 
     removeUser() {
         sessionStorage.removeItem(this.USER);
+    }
+
+    setCurrentProduct(product) {
+        sessionStorage.setItem(this.CURRENT_PROD, JSON.stringify(product));
+    }
+
+    getCurrentProduct() {
+        let product = sessionStorage.getItem(this.CURRENT_PROD);
+        if (product) return JSON.parse(product);
+        return null;
+    }
+
+    removeCurrentProduct() {
+        sessionStorage.removeItem(this.CURRENT_PROD);
+    }
+
+    setCurrentCampaign(campaign, isEdit) {
+        sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify({campaign, isEdit}));
+    }
+
+    getCurrentCampaign() {
+        let campaign = sessionStorage.getItem(this.CURRENT_CAMP);
+        if (campaign) return JSON.parse(campaign);
+        return null;
+    }
+
+    removeCurrentCampaign() {
+        sessionStorage.removeItem(this.CURRENT_CAMP);
     }
 }
