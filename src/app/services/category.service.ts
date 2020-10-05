@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
-import {SessionService} from '../base/services/session.service';
+import {AdminSessionService} from '../base/services/admin-session.service';
 import {Category} from './models/models';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class CategoryService extends BaseService {
 
   constructor(
       httpService: HttpService,
-      private storageService: SessionService
+      private storageService: AdminSessionService
   ) {
     super(httpService);
   }

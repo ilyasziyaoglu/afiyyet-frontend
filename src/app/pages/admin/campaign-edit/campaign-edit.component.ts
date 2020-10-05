@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
 import {CampaignService} from '../../../services/campaign.service';
-import {SessionService} from '../../../base/services/session.service';
+import {AdminSessionService} from '../../../base/services/admin-session.service';
 
 @Component({
     selector: 'app-campaign-edit',
@@ -19,9 +19,9 @@ export class CampaignEditComponent implements OnInit {
     constructor(private router: Router,
                 private fileService: FileService,
                 private campaignService: CampaignService,
-                private sessionService: SessionService) {
+                private adminSessionService: AdminSessionService) {
 
-      this.sessionData = this.sessionService.getCurrentCampaign() || {};
+      this.sessionData = this.adminSessionService.getCurrentCampaign() || {};
       this.campaign = this.sessionData.campaign || {};
       if (this.sessionData.campaign) {
           this.campaign.startDate = this.dateToISOString(this.campaign.startDate);

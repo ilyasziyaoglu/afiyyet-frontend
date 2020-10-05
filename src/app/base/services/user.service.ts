@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from './base-service';
 import { HttpService } from './http.service';
-import {SessionService} from './session.service';
-import {LocalService} from './local.service';
+import {AdminSessionService} from './admin-session.service';
+import {AdminLocalService} from './admin-local.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,46 +10,46 @@ import {LocalService} from './local.service';
 export class UserService {
 
   constructor(
-      private sessionService: SessionService,
-      private localService: LocalService
+      private adminSessionService: AdminSessionService,
+      private adminLocalService: AdminLocalService
   ) {
   }
 
   logOut() {
-    this.localService.removeUser();
-    this.sessionService.removeUser();
+    this.adminLocalService.removeUser();
+    this.adminSessionService.removeUser();
   }
 
   login(user, token, isRememberCheck) {
     if (isRememberCheck) {
-      this.localService.setUser(user, token);
-      this.sessionService.removeUser();
+      this.adminLocalService.setUser(user, token);
+      this.adminSessionService.removeUser();
     } else {
-      this.sessionService.setUser(user, token);
-      this.localService.removeUser();
+      this.adminSessionService.setUser(user, token);
+      this.adminLocalService.removeUser();
     }
   }
 
   register(user, token) {
-    this.localService.setUser(user, token);
-    this.sessionService.removeUser();
+    this.adminLocalService.setUser(user, token);
+    this.adminSessionService.removeUser();
   }
 
   getUser() {
-    if (this.localService.getUser()) {
-      return this.localService.getUser();
-    } else if (this.sessionService.getUser()) {
-      return this.sessionService.getUser();
+    if (this.adminLocalService.getUser()) {
+      return this.adminLocalService.getUser();
+    } else if (this.adminSessionService.getUser()) {
+      return this.adminSessionService.getUser();
     } else {
       return false;
     }
   }
 
   getToken () {
-    if (this.localService.getUser()) {
-      return this.localService.getUser().token;
-    } else if (this.sessionService.getUser()) {
-      return this.sessionService.getUser().token;
+    if (this.adminLocalService.getUser()) {
+      return this.adminLocalService.getUser().token;
+    } else if (this.adminSessionService.getUser()) {
+      return this.adminSessionService.getUser().token;
     } else {
       return null;
     }

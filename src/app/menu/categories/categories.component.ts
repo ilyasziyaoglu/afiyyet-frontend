@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
-import {SessionService} from '../../base/services/session.service';
+import {AdminSessionService} from '../../base/services/admin-session.service';
 
 @Component({
     selector: 'app-menu',
@@ -11,7 +11,7 @@ import {SessionService} from '../../base/services/session.service';
 export class CategoriesComponent {
 
     constructor(
-        public storageService: SessionService,
+        public storageService: AdminSessionService,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
     ) {

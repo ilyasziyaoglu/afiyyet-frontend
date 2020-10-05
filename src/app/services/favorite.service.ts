@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {MenuService} from './menu.service';
-import {SessionService} from '../base/services/session.service';
+import {AdminSessionService} from '../base/services/admin-session.service';
 
 @Injectable({
     providedIn: 'root',
@@ -8,7 +8,7 @@ import {SessionService} from '../base/services/session.service';
 export class FavoriteService {
 
     constructor(
-        private storageService: SessionService,
+        private storageService: AdminSessionService,
         private menuService: MenuService,
     ) {
     }

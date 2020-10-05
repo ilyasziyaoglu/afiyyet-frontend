@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
-import {SessionService} from '../../base/services/session.service';
+import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuService} from '../../services/menu.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {MenuService} from '../../services/menu.service';
 export class ProductsComponent implements OnInit {
 
     constructor(
-        public storageService: SessionService,
+        public storageService: AdminSessionService,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
     ) {

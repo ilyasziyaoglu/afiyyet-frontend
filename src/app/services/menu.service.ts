@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {SessionService} from '../base/services/session.service';
+import {AdminSessionService} from '../base/services/admin-session.service';
 import {menu} from './models/data';
 import {ProductService} from './product.service';
 import {CategoryService} from './category.service';
@@ -22,7 +22,7 @@ export class MenuService extends BaseService {
 
     constructor(
         httpService: HttpService,
-        private storageService: SessionService,
+        private storageService: AdminSessionService,
         private categoryService: CategoryService,
         private productService: ProductService
     ) {

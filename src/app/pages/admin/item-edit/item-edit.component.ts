@@ -4,7 +4,7 @@ import {ProductService} from '../../../services/product.service';
 import {CategoryService} from '../../../services/category.service';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
-import {SessionService} from '../../../base/services/session.service';
+import {AdminSessionService} from '../../../base/services/admin-session.service';
 
 @Component({
   selector: 'app-item-edit',
@@ -22,9 +22,9 @@ export class ItemEditComponent implements OnInit {
       private productService: ProductService,
       private categoryService: CategoryService,
       private fileService: FileService,
-      private sessionService: SessionService
+      private adminSessionService: AdminSessionService
   ) {
-    this.sessionData = this.sessionService.getCurrentProduct() || {};
+    this.sessionData = this.adminSessionService.getCurrentProduct() || {};
     this.item = this.sessionData.product || {};
   }
 
