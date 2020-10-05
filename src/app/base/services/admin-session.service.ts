@@ -8,8 +8,8 @@ export class AdminSessionService {
     favorites: string[] = [];
     category: any;
     USER = "@user";
-    CURRENT_PROD = "@currentProduct";
-    CURRENT_CAMP = "@currentCampaign";
+    CURRENT_PROD = "@currProdAdmin";
+    CURRENT_CAMP = "@currCampAdmin";
 
     constructor() {
         const keys = Object.keys(sessionStorage);

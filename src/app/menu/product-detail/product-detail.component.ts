@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
 import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuService} from '../../services/menu.service';
+import {MenuSessionService} from '../../base/services/menu-session.service';
 
 @Component({
   selector: 'app-item',
@@ -10,11 +11,15 @@ import {MenuService} from '../../services/menu.service';
 })
 export class ProductDetailComponent implements OnInit {
 
+  currentProduct;
+
   constructor(
       public storageService: AdminSessionService,
       public menuService: MenuService,
-      public favoriteService: FavoriteService
+      public favoriteService: FavoriteService,
+      public menuSessionService: MenuSessionService
   ) {
+    this.currentProduct = menuSessionService.getCurrentProduct();
   }
 
   ngOnInit(): void {
