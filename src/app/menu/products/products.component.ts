@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
         public storageService: AdminSessionService,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
-        private menuSessionService: MenuSessionService
+        public menuSessionService: MenuSessionService
     ) {
     }
 

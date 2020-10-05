@@ -7,6 +7,7 @@ export class MenuSessionService {
 
   CURRENT_PROD = "@currProdMenu";
   CURRENT_CAMP = "@currCampMenu";
+  CURRENT_CATEGORY = "@currCatMenu";
 
   constructor() { }
 
@@ -36,5 +37,19 @@ export class MenuSessionService {
 
   removeCurrentCampaign() {
     sessionStorage.removeItem(this.CURRENT_CAMP);
+  }
+
+  setCurrentCategory(category) {
+    sessionStorage.setItem(this.CURRENT_CATEGORY, JSON.stringify(category));
+  }
+
+  getCurrentCategory() {
+    let category = sessionStorage.getItem(this.CURRENT_CATEGORY);
+    if (category) return JSON.parse(category);
+    return null;
+  }
+
+  removeCurrentCategory() {
+    sessionStorage.removeItem(this.CURRENT_CATEGORY);
   }
 }
