@@ -1,5 +1,5 @@
 <h3 class="my-1" style="text-align: center">Favorilerim</h3>
-<p class="empty-favorites-text" *ngIf="!storageService.favorites.length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
+<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
 <div class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of favoriteService.getFavorites()">

@@ -7,10 +7,10 @@
                  #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
             <div class="favorite">
                 <mat-icon *ngIf="favoriteService.isFavorite(currentProduct.id)"
-                          (click)="favoriteService.removeFavorite(currentProduct)">favorite
+                          (click)="favoriteService.removeFavorite(currentProduct.id)">favorite
                 </mat-icon>
                 <mat-icon *ngIf="!favoriteService.isFavorite(currentProduct.id)"
-                          (click)="favoriteService.addFavorite(currentProduct)">favorite_border
+                          (click)="favoriteService.addFavorite(currentProduct.id)">favorite_border
                 </mat-icon>
             </div>
         </div>

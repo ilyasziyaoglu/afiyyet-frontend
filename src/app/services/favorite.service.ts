@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {MenuService} from './menu.service';
 import {AdminSessionService} from '../base/services/admin-session.service';
+import {MenuLocalService} from '../base/services/menu-local.service';
 
 @Injectable({
     providedIn: 'root',
@@ -10,6 +11,7 @@ export class FavoriteService {
     constructor(
         private storageService: AdminSessionService,
         private menuService: MenuService,
+        private menuLocalService: MenuLocalService
     ) {
     }
 
@@ -29,18 +31,15 @@ export class FavoriteService {
         return favorites;
     }
 
-    removeFavorite(item: any) {
-        const index = this.storageService.favorites.indexOf(item.id);
-        this.storageService.favorites.splice(index, 1);
-        this.storageService.updateItem('favorites');
+    removeFavorite(id) {
+        this.menuLocalService.removeFavourite(id);
     }
 
-    addFavorite(item: any) {
-        this.storageService.favorites.push(item.id);
-        this.storageService.updateItem('favorites');
+    addFavorite(id) {
+        this.menuLocalService.addFavourite(id);
     }
 
     isFavorite(id) {
-        return this.storageService.favorites.includes((id));
+        return this.menuLocalService.getFavourites().includes((id));
     }
 }

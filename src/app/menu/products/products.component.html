@@ -25,8 +25,8 @@
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
             <div class="col border-right border-white d-flex justify-content-center align-items-center">
-                <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
-                <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
+                <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
+                <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>
             </div>
             <div class="col d-flex justify-content-center align-items-center"
                 (click)="onLike(item)">{{item.likes}}&nbsp;

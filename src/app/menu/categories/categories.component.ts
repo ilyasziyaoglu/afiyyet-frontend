@@ -3,6 +3,7 @@ import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
 import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
+import {MenuLocalService} from '../../base/services/menu-local.service';
 
 @Component({
     selector: 'app-menu',
@@ -15,7 +16,8 @@ export class CategoriesComponent {
         public storageService: AdminSessionService,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
-        private menuSessionService: MenuSessionService
+        private menuSessionService: MenuSessionService,
+        public menuLocalService: MenuLocalService
     ) {
     }
 

@@ -5,7 +5,6 @@ import {Injectable} from '@angular/core';
 })
 export class AdminSessionService {
 
-    favorites: string[] = [];
     category: any;
     USER = "@user";
     CURRENT_PROD = "@currProdAdmin";
