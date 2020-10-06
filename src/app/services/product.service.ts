@@ -12,8 +12,7 @@ export class ProductService extends BaseService {
   basePath = 'product';
 
   constructor(
-      httpService: HttpService,
-      private storageService: AdminSessionService
+      httpService: HttpService
   ) {
     super(httpService);
   }
@@ -45,17 +44,5 @@ export class ProductService extends BaseService {
 
   getProductsByCategory(categoryId: any, cb?) {
     this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-products-by-category/${categoryId}`, '', cb);
-  }
-
-  setEditProductToSession(value) {
-    this.storageService.setItem('edit-item', value);
-  }
-
-  deleteEditProductFromSession() {
-    this.storageService.removeItem('edit-item');
-  }
-
-  getEditProductFromSessioon() {
-    return this.storageService.getItem('edit-item');
   }
 }
