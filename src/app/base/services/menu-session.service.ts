@@ -21,10 +21,6 @@ export class MenuSessionService {
     return null;
   }
 
-  removeCurrentProduct() {
-    sessionStorage.removeItem(this.CURRENT_PROD);
-  }
-
   setCurrentCampaign(campaign) {
     sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify(campaign));
   }
@@ -35,10 +31,6 @@ export class MenuSessionService {
     return null;
   }
 
-  removeCurrentCampaign() {
-    sessionStorage.removeItem(this.CURRENT_CAMP);
-  }
-
   setCurrentCategory(category) {
     sessionStorage.setItem(this.CURRENT_CATEGORY, JSON.stringify(category));
   }
@@ -47,9 +39,5 @@ export class MenuSessionService {
     let category = sessionStorage.getItem(this.CURRENT_CATEGORY);
     if (category) return JSON.parse(category);
     return null;
-  }
-
-  removeCurrentCategory() {
-    sessionStorage.removeItem(this.CURRENT_CATEGORY);
   }
 }

@@ -69,10 +69,6 @@ export class AdminSessionService {
         return null;
     }
 
-    removeCurrentProduct() {
-        sessionStorage.removeItem(this.CURRENT_PROD);
-    }
-
     setCurrentCampaign(campaign, isEdit) {
         sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify({campaign, isEdit}));
     }
@@ -81,9 +77,5 @@ export class AdminSessionService {
         let campaign = sessionStorage.getItem(this.CURRENT_CAMP);
         if (campaign) return JSON.parse(campaign);
         return null;
-    }
-
-    removeCurrentCampaign() {
-        sessionStorage.removeItem(this.CURRENT_CAMP);
     }
 }

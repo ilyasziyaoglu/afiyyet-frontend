@@ -1,0 +1,55 @@
+.back-button {
+  cursor: pointer;
+}
+
+.image-container {
+  position: relative;
+}
+
+.imgUrl-container {
+  position: relative;
+  width: 90%;
+}
+
+.item-name {
+  font-weight: bolder;
+}
+
+.item-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 400px;
+}
+
+.active {
+  color: dodgerblue;
+}
+
+.flex-container * {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.like-icon {
+  font-size: 1.1rem;
+}
+
+.item-description {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+}
+
+h1, .item-description {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1366px) {
+
+  .imgUrl-container {
+    width: fit-content;
+    max-width: 600px;
+    max-height: 400px;
+  }
+}

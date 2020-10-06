@@ -29,6 +29,10 @@ export class CategoriesComponent {
         this.menuSessionService.setCurrentProduct(product);
     }
 
+    campaignClick(campaign) {
+        this.menuSessionService.setCurrentCampaign(campaign);
+    }
+
     categoryClick(category) {
         this.menuSessionService.setCurrentCategory(category);
     }

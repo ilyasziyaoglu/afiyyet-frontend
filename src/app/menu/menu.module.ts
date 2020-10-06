@@ -15,6 +15,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {FormsModule} from '@angular/forms';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatBadgeModule} from '@angular/material/badge';
+import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {MatBadgeModule} from '@angular/material/badge';
         ProductsComponent,
         ProductDetailComponent,
         ReservationComponent,
+        CampaignDetailComponent
     ],
     imports: [
         CommonModule,
