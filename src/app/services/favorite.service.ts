@@ -9,7 +9,6 @@ import {MenuLocalService} from '../base/services/menu-local.service';
 export class FavoriteService {
 
     constructor(
-        private storageService: AdminSessionService,
         private menuService: MenuService,
         private menuLocalService: MenuLocalService
     ) {
