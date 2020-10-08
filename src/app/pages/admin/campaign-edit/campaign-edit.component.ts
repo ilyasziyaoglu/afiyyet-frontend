@@ -43,8 +43,23 @@ export class CampaignEditComponent implements OnInit {
             return;
         }
 
+        if ( isNaN(this.campaign.price) ) {
+            Swal.fire('Uyarı', 'Kampanya fiyatı rakam olmak zorundadır!', 'warning');
+            return;
+        }
+
         if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
             Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
+            return;
+        }
+
+        if ( !this.campaign.startDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın başlama tarihi boş bırakılamaz!', 'warning');
+            return;
+        }
+
+        if ( !this.campaign.expireDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın bitiş tarihi boş bırakılamaz!', 'warning');
             return;
         }
 
@@ -59,6 +74,8 @@ export class CampaignEditComponent implements OnInit {
                         this.campaignService.updateCampaign(this.campaign, res2 => {
                             if ( res2 ) { this.router.navigateByUrl('/pages/admin/campaigns').then(); }
                         });
+                    } else {
+                        Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
                     }
                 });
             } else {
@@ -75,6 +92,8 @@ export class CampaignEditComponent implements OnInit {
                             this.router.navigateByUrl('/pages/admin/campaigns');
                         }
                     });
+                } else {
+                    Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
                 }
             });
         }

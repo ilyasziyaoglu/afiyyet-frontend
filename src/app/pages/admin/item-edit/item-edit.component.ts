@@ -39,6 +39,11 @@ export class ItemEditComponent implements OnInit {
       return;
     }
 
+    if ( isNaN(this.item.price) ) {
+      Swal.fire('Uyarı', 'Ürün fiyatı rakam olmak zorundadır!', 'warning');
+      return;
+    }
+
     if ((!this.formData || !this.formData.has('file0')) && !this.item.imgUrl) {
       Swal.fire('Uyarı', 'Ürün fotoğrafı boş bırakılamaz!', 'warning');
       return;
@@ -52,6 +57,8 @@ export class ItemEditComponent implements OnInit {
             this.productService.updateProduct(this.item, res => {
               if (res) this.router.navigateByUrl('/pages/admin').then();
             });
+          } else {
+            Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
           }
         });
       } else {
@@ -66,6 +73,8 @@ export class ItemEditComponent implements OnInit {
           this.productService.insetProduct(this.categoryService.currentCategory, this.item, response => {
             if (response) { this.router.navigateByUrl('/pages/admin'); }
           });
+        } else {
+          Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
         }
       });
     }

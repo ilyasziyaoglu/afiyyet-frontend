@@ -36,13 +36,13 @@ export class DialogCategoryEditComponent implements OnInit {
       return;
     }
 
-    if (this.formData || this.isInsert) {
+    if (this.formData) {
       this.fileService.uploadFile(this.formData, res => {
         if (res.fileName) {
           this.category.imgUrl = res.fileName;
           this.dialog.close({category: this.category});
         } else {
-          // Burada Kullanıcıya resmin yüklenmemesi ile alakalı bildirim gösterilecek
+          Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
         }
       });
     } else { this.dialog.close({category: this.category}); }
