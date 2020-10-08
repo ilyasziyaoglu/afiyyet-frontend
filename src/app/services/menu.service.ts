@@ -43,6 +43,5 @@ export class MenuService extends BaseService {
             item.likes ++;
         }
         this.storageService.setItem('likes', likes);
-        this.storageService.setItem('menu', this.menu);
     }
 }

@@ -37,14 +37,6 @@ export class AdminSessionService {
         return item !== 'undefined' ? JSON.parse(item) : null;
     }
 
-    removeItem(key) {
-        sessionStorage.removeItem('edit-item');
-    }
-
-    updateItem(key) {
-        this.setItem(key, this[key]);
-    }
-
     setUser(user, token) {
         sessionStorage.setItem(this.USER, JSON.stringify({user, token}));
     }

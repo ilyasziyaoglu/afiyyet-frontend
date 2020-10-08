@@ -27,12 +27,12 @@ export class DialogCategoryEditComponent implements OnInit {
 
   saveClick() {
     if (!this.category.name) {
-      Swal.fire('Uyarı', 'Kategory ismi boş bırakılamaz!', 'warning');
+      Swal.fire('Uyarı', 'Kategori ismi boş bırakılamaz!', 'warning');
       return;
     }
 
     if ((!this.formData || !this.formData.has('file0')) && !this.category.imgUrl) {
-      Swal.fire('Uyarı', 'Kategory fotoğrafı boş bırakılamaz!', 'warning');
+      Swal.fire('Uyarı', 'Kategori fotoğrafı boş bırakılamaz!', 'warning');
       return;
     }
 
