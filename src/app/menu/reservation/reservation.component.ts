@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class ReservationComponent implements OnInit {
 
     time: any;
+    today = new Date();
 
     reservation = {
         adultCount: 2,
@@ -68,7 +69,11 @@ export class ReservationComponent implements OnInit {
         this.reservation.brand = this.menuService.menu.brand;
         const hour = this.time.split(':');
         this.reservation.reservationDate.setHours(hour[0], hour[1]);
-        console.log(this.reservation.reservationDate);
+        if ( this.today > this.reservation.reservationDate) {
+            Swal.fire('Uyarı', 'Bulunduğunuz saatten öncesi için rezervasyon alınamaz', 'warning');
+            return;
+        }
+
         this.reservationService.insertReservation(this.reservation, res => {
             if ( res ) {
                 Swal.fire('Sonuç', 'Rezervasyonunuz başarı ile oluşturulmuştur!', 'success').then(() => {
