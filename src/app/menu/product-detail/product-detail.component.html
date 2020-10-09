@@ -5,7 +5,7 @@
         <div class="image-container">
             <img class="item-img" src="{{currentProduct.imgUrl}}" alt="{{currentProduct.name}}"
                  #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
-            <div class="favorite">
+            <div *ngIf="isFavEnabled" class="favorite">
                 <mat-icon *ngIf="favoriteService.isFavorite(currentProduct.id)"
                           (click)="favoriteService.removeFavorite(currentProduct.id)">favorite
                 </mat-icon>

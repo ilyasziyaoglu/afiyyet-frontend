@@ -5,7 +5,7 @@
     <div>
         <img class="logo-img" [src]="menuService.menu?.brand.logoImgUrl">
     </div>
-    <div>
+    <div *ngIf="isFavEnabled">
         <mat-icon class="m-3 back-button" (click)="location.back()" matBadge="{{favoriteService.getFavorites().length}}" matBadgeSize="small">favorite</mat-icon>
     </div>
 

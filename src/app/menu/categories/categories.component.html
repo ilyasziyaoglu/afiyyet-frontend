@@ -1,6 +1,6 @@
-<h3 class="my-1" style="text-align: center">Favorilerim</h3>
-<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
-<div class="m-1 p-0 myfavorites justify-content-center">
+<h3 *ngIf="isFavEnabled" class="my-1" style="text-align: center">Favorilerim</h3>
+<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length && isFavEnabled">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
+<div *ngIf="isFavEnabled" class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of favoriteService.getFavorites()">
         <img class="item-img" src="{{item.imgUrl}}"
@@ -24,7 +24,7 @@
         </div>
     </div>
 </div>
-<hr class="m-0 p-0">
+<hr *ngIf="isFavEnabled" class="m-0 p-0">
 <h3 class="my-1 text-center">Kampanyalar</h3>
 
 <div class="m-1 p-0 camp_items justify-content-center">

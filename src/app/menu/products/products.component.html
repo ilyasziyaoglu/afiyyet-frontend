@@ -24,7 +24,7 @@
                  (click)="productClick(item)">
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
-            <div class="col border-right border-white d-flex justify-content-center align-items-center">
+            <div *ngIf="isFavEnabled" class="col border-right border-white d-flex justify-content-center align-items-center">
                 <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
                 <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>
             </div>

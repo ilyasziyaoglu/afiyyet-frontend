@@ -12,6 +12,7 @@ import {MenuSessionService} from '../../base/services/menu-session.service';
 export class ProductDetailComponent implements OnInit {
 
   currentProduct;
+  isFavEnabled = false;
 
   constructor(
       public storageService: AdminSessionService,
@@ -20,6 +21,7 @@ export class ProductDetailComponent implements OnInit {
       public menuSessionService: MenuSessionService
   ) {
     this.currentProduct = menuSessionService.getCurrentProduct();
+    //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
   }
 
   ngOnInit(): void {

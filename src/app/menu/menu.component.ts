@@ -13,6 +13,8 @@ import {FavoriteService} from '../services/favorite.service';
 })
 export class MenuComponent implements OnInit {
 
+    isFavEnabled = false;
+
     constructor(
         public location: Location,
         private dialog: MatDialog,
@@ -22,6 +24,7 @@ export class MenuComponent implements OnInit {
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
             this.menuService.getMenu(brand);
+            //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
         }
     }
 
