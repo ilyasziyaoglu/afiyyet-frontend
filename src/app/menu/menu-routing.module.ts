@@ -5,6 +5,7 @@ import {ProductsComponent} from './products/products.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {ReservationComponent} from './reservation/reservation.component';
 import {MenuComponent} from './menu.component';
+import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
 
 const routes: Routes = [
     {
@@ -20,13 +21,17 @@ const routes: Routes = [
                 component: ReservationComponent,
             },
             {
+                path: 'kampanyalar/:campaign',
+                component: CampaignDetailComponent
+            },
+            {
                 path: ':category/:product',
                 component: ProductDetailComponent,
             },
             {
                 path: ':category',
                 component: ProductsComponent,
-            },
+            }
         ],
     },
 ];

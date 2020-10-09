@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {FavoriteService} from '../../services/favorite.service';
 import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuService} from '../../services/menu.service';
+import {FavoriteService} from '../../services/favorite.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  selector: 'app-campaign-detail',
+  templateUrl: './campaign-detail.component.html',
+  styleUrls: ['./campaign-detail.component.scss']
 })
-export class ProductDetailComponent implements OnInit {
+export class CampaignDetailComponent implements OnInit {
 
-  currentProduct;
+  currentCampaign;
 
   constructor(
       public storageService: AdminSessionService,
@@ -19,7 +19,7 @@ export class ProductDetailComponent implements OnInit {
       public favoriteService: FavoriteService,
       public menuSessionService: MenuSessionService
   ) {
-    this.currentProduct = menuSessionService.getCurrentProduct();
+    this.currentCampaign = menuSessionService.getCurrentCampaign();
   }
 
   ngOnInit(): void {

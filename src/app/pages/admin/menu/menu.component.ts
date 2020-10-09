@@ -4,7 +4,7 @@ import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Category, Product} from '../../../services/models/models';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {StorageService} from '../../../base/services/storage.service';
+import {AdminSessionService} from '../../../base/services/admin-session.service';
 import {CategoryService} from '../../../services/category.service';
 import {ProductService} from '../../../services/product.service';
 import {DialogCategoryEditComponent} from '../dialog-category-edit/dialog-category-edit.component';
@@ -20,18 +20,24 @@ export class MenuComponent implements OnInit {
 
     productsArranged = false;
     categoriesArranged = false;
+    categoryCount = 0;
+    totalProductCount = 253;
+    categoryProductCount = 0;
 
     constructor(
-        private menuService: MenuService, private storageService: StorageService,
+        private menuService: MenuService, private storageService: AdminSessionService,
         private router: Router, private dialog: MatDialog,
         public categoryService: CategoryService, private productService: ProductService,
+        private adminSessionService: AdminSessionService
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categoryService.categories = data;
+            this.categoryCount = data.length;
             this.categoryService.currentCategory = this.categoryService.currentCategory || this.categoryService.categories[0];
             if ( this.categoryService.currentCategory ) {
                 this.productService.getProductsByCategory(this.categoryService.currentCategory.id, results => {
                     this.categoryService.currentCategory.products = results;
+                    this.categoryProductCount = results.length;
                 });
             }
         });
@@ -80,12 +86,13 @@ export class MenuComponent implements OnInit {
         this.categoryService.currentCategory = category;
         this.productService.getProductsByCategory(category.id, result => {
             category.products = result;
+            this.categoryProductCount = result.length;
         });
     }
 
     addItem() {
-        this.router.navigateByUrl('/pages/admin/item-edit',
-            {state: {status: 'insert', data: {}}}).then();
+        this.adminSessionService.setCurrentProduct(null, false);
+        this.router.navigateByUrl('/pages/admin/item-edit');
     }
 
     deleteItem(item, index) {
@@ -111,8 +118,8 @@ export class MenuComponent implements OnInit {
     }
 
     editItem(item) {
-        this.router.navigateByUrl('/pages/admin/item-edit',
-            {state: {status: 'update', data: {item}}}).then();
+        this.adminSessionService.setCurrentProduct(item, true);
+        this.router.navigateByUrl('/pages/admin/item-edit');
     }
 
     addCategoryClick() {
@@ -157,4 +164,12 @@ export class MenuComponent implements OnInit {
         arr = arr.map((item, i) => ({...item, order: i}));
         return arr;
     }
+
+    getTotalProducts(categories) {
+        let count = 0;
+        categories.forEach(cat => count += cat.products.length);
+        return count;
+    }
+
+
 }

@@ -18,7 +18,7 @@ export class FileService extends BaseService{
   }
 
   uploadFile(file: any, cb?) {
-    this.getHttpService().doRequestFormData(HttpMethod.POST, `${this.getBasePath()}/upload`, file, cb);
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/upload`, file, cb, true);
   }
 
 

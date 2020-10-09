@@ -1,32 +1,32 @@
 <br>
-<h1 class="category-name">{{menuService.currentCategory?.name}}</h1>
+<h1 class="category-name">{{menuSessionService.getCurrentCategory()?.name}}</h1>
 <div class="row m-1 justify-content-center">
     <div class="col p-2 item align-content-end"
-         *ngFor="let item of menuService.currentCategory?.products">
+         *ngFor="let item of menuSessionService.getCurrentCategory()?.products">
 
         <img class="item-img"
              [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-             (click)="menuService.currentProduct = item"
+             (click)="productClick(item)"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
              src="{{item.imgUrl}}" alt="{{item.name}}">
         <div class="item-name"
              [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-             (click)="menuService.currentProduct = item">
+             (click)="productClick(item)">
             <h3>{{item.name}}</h3>
         </div>
         <hr class="item-line">
         <p class="description"
            [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-           (click)="menuService.currentProduct = item">{{item.description}}</p>
+           (click)="productClick(item)">{{item.description}}</p>
         <div class="row w-100 m-0">
             <div class="col border-right border-white d-flex justify-content-center align-items-center"
                  [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-                 (click)="storageService.setItem('item', item)">
+                 (click)="productClick(item)">
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
             <div class="col border-right border-white d-flex justify-content-center align-items-center">
-                <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item)">favorite</mat-icon>
-                <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item)">favorite_border</mat-icon>
+                <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
+                <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>
             </div>
             <div class="col d-flex justify-content-center align-items-center"
                 (click)="onLike(item)">{{item.likes}}&nbsp;

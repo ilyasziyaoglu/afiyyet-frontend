@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
-import {StorageService} from '../../base/services/storage.service';
+import {AdminSessionService} from '../../base/services/admin-session.service';
+import {MenuSessionService} from '../../base/services/menu-session.service';
+import {MenuLocalService} from '../../base/services/menu-local.service';
 
 @Component({
     selector: 'app-menu',
@@ -11,13 +13,27 @@ import {StorageService} from '../../base/services/storage.service';
 export class CategoriesComponent {
 
     constructor(
-        public storageService: StorageService,
+        public storageService: AdminSessionService,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
+        private menuSessionService: MenuSessionService,
+        public menuLocalService: MenuLocalService
     ) {
     }
 
     onLike(item: any) {
         this.menuService.like(item);
+    }
+
+    productClick(product) {
+        this.menuSessionService.setCurrentProduct(product);
+    }
+
+    campaignClick(campaign) {
+        this.menuSessionService.setCurrentCampaign(campaign);
+    }
+
+    categoryClick(category) {
+        this.menuSessionService.setCurrentCategory(category);
     }
 }

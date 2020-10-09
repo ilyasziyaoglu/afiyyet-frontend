@@ -15,6 +15,7 @@ import {CommonModule} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReportsComponent } from './reports/reports.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ReportsComponent } from './reports/reports.component';
         FormsModule,
         CommonModule,
         MatIconModule,
+        MatBadgeModule,
     ],
 })
 export class AdminModule {

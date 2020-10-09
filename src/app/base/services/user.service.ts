@@ -1,28 +1,57 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from './base-service';
 import { HttpService } from './http.service';
-import {StorageService} from './storage.service';
+import {AdminSessionService} from './admin-session.service';
+import {AdminLocalService} from './admin-local.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService extends BaseService {
-
-  basePath = '/user';
+export class UserService {
 
   constructor(
-      httpService: HttpService,
-      private storageService: StorageService
+      private adminSessionService: AdminSessionService,
+      private adminLocalService: AdminLocalService
   ) {
-    super(httpService);
-  }
-
-  getBasePath(): string {
-    return this.basePath;
   }
 
   logOut() {
-    this.storageService.setItem('token', null);
-    this.storageService.setItem('user', null);
+    this.adminLocalService.removeUser();
+    this.adminSessionService.removeUser();
+  }
+
+  login(user, token, isRememberCheck) {
+    if (isRememberCheck) {
+      this.adminLocalService.setUser(user, token);
+      this.adminSessionService.removeUser();
+    } else {
+      this.adminSessionService.setUser(user, token);
+      this.adminLocalService.removeUser();
+    }
+  }
+
+  register(user, token) {
+    this.adminLocalService.setUser(user, token);
+    this.adminSessionService.removeUser();
+  }
+
+  getUser() {
+    if (this.adminLocalService.getUser()) {
+      return this.adminLocalService.getUser();
+    } else if (this.adminSessionService.getUser()) {
+      return this.adminSessionService.getUser();
+    } else {
+      return false;
+    }
+  }
+
+  getToken () {
+    if (this.adminLocalService.getUser()) {
+      return this.adminLocalService.getUser().token;
+    } else if (this.adminSessionService.getUser()) {
+      return this.adminSessionService.getUser().token;
+    } else {
+      return null;
+    }
   }
 }

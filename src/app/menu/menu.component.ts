@@ -3,7 +3,7 @@ import {Location} from '@angular/common';
 import {DialogCommentComponent} from './dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MenuService} from '../services/menu.service';
-import {StorageService} from '../base/services/storage.service';
+import {AdminSessionService} from '../base/services/admin-session.service';
 import {FavoriteService} from '../services/favorite.service';
 
 @Component({

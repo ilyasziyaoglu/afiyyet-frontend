@@ -16,10 +16,19 @@
 .category-name {
   display: flex;
   color: white;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: large;
   font-weight: bold;
+}
+
+.product-count-icon {
+  transform: scale(1.2);
+}
+
+.cat-prod-count-span {
+  color: white;
+  font-weight: bolder;
 }
 
 .edit-delete-container {

@@ -1,16 +1,16 @@
 <h3 class="my-1" style="text-align: center">Favorilerim</h3>
-<p class="empty-favorites-text" *ngIf="!storageService.favorites.length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
+<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
 <div class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of favoriteService.getFavorites()">
         <img class="item-img" src="{{item.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
-             (click)="menuService.currentProduct = item"
+             (click)="productClick(item)"
              [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
         <div class="w-100 m-0 p-1 fav-like-price-container">
             <div class="row w-100 m-0 text-white">
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
-                     (click)="menuService.currentProduct = item"
+                     (click)="productClick(item)"
                      [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
@@ -32,18 +32,18 @@
          *ngFor="let item of menuService.menu?.campaigns">
         <img class="camp-item-img" src="{{item.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
-             (click)="menuService.currentProduct = item"
+             (click)="campaignClick(item)"
              [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
 
         <p class="p-1 camp-item-name"
-           (click)="menuService.currentProduct = item"
+           (click)="campaignClick(item)"
            [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">{{item.name}}</p>
 
         <div class="w-100 camp-like-price-container p-0">
 
             <div class="row w-100 m-0 p-1 text-white">
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
-                     (click)="menuService.currentProduct = item"
+                     (click)="campaignClick(item)"
                      [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
@@ -63,7 +63,7 @@
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"
-         (click)="menuService.currentCategory = category"
+         (click)="categoryClick(category)"
          [routerLink]="[category.name.toLowerCase().replaceAll(' ','-')]">
         <img class="category-img" src="{{category.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">

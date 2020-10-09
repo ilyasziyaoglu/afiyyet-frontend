@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
 import {CampaignService} from '../../../services/campaign.service';
+import {AdminSessionService} from '../../../base/services/admin-session.service';
 
 @Component({
     selector: 'app-campaign-edit',
@@ -11,16 +12,21 @@ import {CampaignService} from '../../../services/campaign.service';
 })
 export class CampaignEditComponent implements OnInit {
 
+    sessionData: any;
     campaign: any;
     formData: FormData;
 
     constructor(private router: Router,
                 private fileService: FileService,
-                private campaignService: CampaignService) {
+                private campaignService: CampaignService,
+                private adminSessionService: AdminSessionService) {
 
-      this.campaign = this.campaignService.currentCampaign || {};
-      // this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
-      // this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+      this.sessionData = this.adminSessionService.getCurrentCampaign() || {};
+      this.campaign = this.sessionData.campaign || {};
+      if (this.sessionData.campaign) {
+          this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
+          this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+      }
     }
 
     ngOnInit(): void {
@@ -37,15 +43,30 @@ export class CampaignEditComponent implements OnInit {
             return;
         }
 
+        if ( isNaN(this.campaign.price) ) {
+            Swal.fire('Uyarı', 'Kampanya fiyatı rakam olmak zorundadır!', 'warning');
+            return;
+        }
+
         if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
             Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
+            return;
+        }
+
+        if ( !this.campaign.startDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın başlama tarihi boş bırakılamaz!', 'warning');
+            return;
+        }
+
+        if ( !this.campaign.expireDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın bitiş tarihi boş bırakılamaz!', 'warning');
             return;
         }
 
         this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
         this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
 
-        if ( this.campaignService.isEdit) {
+        if ( this.sessionData.isEdit) {
             if ( this.formData ) {
                 this.fileService.uploadFile(this.formData, res => {
                     if ( res.fileName ) {
@@ -53,6 +74,8 @@ export class CampaignEditComponent implements OnInit {
                         this.campaignService.updateCampaign(this.campaign, res2 => {
                             if ( res2 ) { this.router.navigateByUrl('/pages/admin/campaigns').then(); }
                         });
+                    } else {
+                        Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
                     }
                 });
             } else {
@@ -69,6 +92,8 @@ export class CampaignEditComponent implements OnInit {
                             this.router.navigateByUrl('/pages/admin/campaigns');
                         }
                     });
+                } else {
+                    Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
                 }
             });
         }
