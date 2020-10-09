@@ -200,8 +200,8 @@ h1, p {
   }
 
   .advantages {
-    margin-left: 5% !important;
-    margin-right: 5% !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
   }
 
   .package-name {
@@ -235,7 +235,7 @@ h1, p {
 
 @media only screen and (min-width: 1500px) {
   .advantages {
-    margin-left: 18% !important;
-    margin-right: 18% !important;
+    padding-left: 18% !important;
+    padding-right: 18% !important;
   }
 }

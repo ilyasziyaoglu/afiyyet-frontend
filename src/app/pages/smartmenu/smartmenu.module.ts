@@ -5,6 +5,7 @@ import {SmartmenuComponent} from './smartmenu.component';
 import {HomeComponent} from './home/home.component';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
         SmartmenuRoutingModule,
         MatListModule,
         MatIconModule,
+        CommonModule,
     ],
 })
 export class SmartmenuModule {
