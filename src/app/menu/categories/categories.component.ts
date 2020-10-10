@@ -23,7 +23,7 @@ export class CategoriesComponent {
     }
 
     productClick(product) {
-        this.menuService.currentProduct = product
+        this.menuService.currentProduct = product;
         this.menuSessionService.setCurrentProduct(product.id);
     }
 

@@ -51,14 +51,14 @@ export class MenuService extends BaseService {
     like(item: any, isCampaign?) {
         const postfix = isCampaign ? 'campaign-like' : 'product-like';
         if ( this.menuLocalService.getLikes(isCampaign).includes(item.id) ) {
-            this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: true}, result => {
+            this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: false}, result => {
                 if ( result ) {
                     this.menuLocalService.removeLike(item.id, isCampaign);
                     item.likes --;
                 }
             });
         } else {
-            this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: false}, result => {
+            this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: true}, result => {
                 if ( result ) {
                     this.menuLocalService.addLike(item.id, isCampaign);
                     item.likes ++;

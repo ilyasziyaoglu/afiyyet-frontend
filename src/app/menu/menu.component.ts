@@ -25,15 +25,15 @@ export class MenuComponent implements OnInit {
         public favoriteService: FavoriteService,
         private menuSessionService: MenuSessionService
     ) {
-        let currProdId = menuSessionService.getCurrentProduct();
-        let currCatId = menuSessionService.getCurrentCategory();
+        const currProdId = menuSessionService.getCurrentProduct();
+        const currCatId = menuSessionService.getCurrentCategory();
 
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
             this.menuService.getMenu(brand, () => {
 
                 menuService.currentCampaign = menuService.menu.campaigns
-                    .find(camp => camp.id === menuSessionService.getCurrentCampaign())
+                    .find(camp => camp.id === menuSessionService.getCurrentCampaign());
 
                 menuService.currentProduct = menuService.menu.categories
                     .find(cat => cat.id === currCatId).products
