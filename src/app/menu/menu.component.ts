@@ -14,10 +14,6 @@ import {featureType} from '../services/models/FeatureTypes';
 })
 export class MenuComponent implements OnInit {
 
-    isFavEnabled = false;
-    isReservEnabled = false;
-    isFeedBackEnabled = false;
-
     constructor(
         public location: Location,
         private dialog: MatDialog,
@@ -27,16 +23,17 @@ export class MenuComponent implements OnInit {
     ) {
         let currProdId = menuSessionService.getCurrentProduct();
         let currCatId = menuSessionService.getCurrentCategory();
+        let currCampId = menuSessionService.getCurrentCampaign();
 
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
             this.menuService.getMenu(brand, () => {
 
                 menuService.currentCampaign = menuService.menu.campaigns
-                    .find(camp => camp.id === menuSessionService.getCurrentCampaign())
+                    .find(camp => camp.id === currCampId)
 
                 menuService.currentProduct = menuService.menu.categories
-                    .find(cat => cat.id === currCatId).products
+                    .find(cat => cat.id === currCatId)?.products
                     .find(prod => prod.id === currProdId);
 
                 menuService.currentCategory = menuService.menu.categories
