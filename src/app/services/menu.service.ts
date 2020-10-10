@@ -38,11 +38,11 @@ export class MenuService extends BaseService {
     }
 
     like(item: any, isCampaign?) {
-        if ( this.menuLocalService.getLikes().includes(item.id) ) {
-            this.menuLocalService.removeLike(item.id);
+        if ( this.menuLocalService.getLikes(isCampaign).includes(item.id) ) {
+            this.menuLocalService.removeLike(item.id, isCampaign);
             item.likes --;
         } else {
-            this.menuLocalService.addLike(item.id);
+            this.menuLocalService.addLike(item.id, isCampaign);
             item.likes ++;
         }
     }

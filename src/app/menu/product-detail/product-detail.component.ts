@@ -13,6 +13,7 @@ export class ProductDetailComponent implements OnInit {
 
   currentProduct;
   isFavEnabled = false;
+  isLikeEnabled = false;
 
   constructor(
       public menuLocalService: MenuLocalService,

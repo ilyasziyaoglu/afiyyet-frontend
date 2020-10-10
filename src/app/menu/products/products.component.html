@@ -19,16 +19,16 @@
            [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
            (click)="productClick(item.id)">{{item.description}}</p>
         <div class="row w-100 m-0">
-            <div class="col border-right border-white d-flex justify-content-center align-items-center"
+            <div class="col d-flex justify-content-center align-items-center"
                  [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
                  (click)="productClick(item.id)">
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
-            <div *ngIf="isFavEnabled" class="col border-right border-white d-flex justify-content-center align-items-center">
+            <div *ngIf="isFavEnabled" class="col d-flex border-left border-white justify-content-center align-items-center">
                 <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
                 <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>
             </div>
-            <div class="col d-flex justify-content-center align-items-center"
+            <div *ngIf="isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
                 (click)="onLike(item)">{{item.likes}}&nbsp;
                 <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
                           style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>

@@ -12,7 +12,7 @@
             <p>{{currentCampaign.price}}</p>
             <p>TL</p>
         </div>
-        <div class="border rounded-lg" (click)="onLike(currentCampaign)">
+        <div *ngIf="isLikeEnabled" class="border rounded-lg" (click)="onLike(currentCampaign)">
             <p>{{currentCampaign.likes}}</p>
             <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(currentCampaign.id)}" class="like-icon">
                 thumb_up

@@ -13,6 +13,7 @@ import {MenuLocalService} from '../../base/services/menu-local.service';
 export class ProductsComponent implements OnInit {
 
     isFavEnabled = false;
+    isLikeEnabled = true;
     currentCategory;
 
     constructor(
