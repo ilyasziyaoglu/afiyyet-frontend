@@ -13,6 +13,7 @@ import {MenuLocalService} from '../../base/services/menu-local.service';
 export class ProductsComponent implements OnInit {
 
     isFavEnabled = false;
+    currentCategory = {};
 
     constructor(
         public menuService: MenuService,
@@ -21,6 +22,11 @@ export class ProductsComponent implements OnInit {
         public menuLocalService: MenuLocalService
     ) {
         //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
+        const brand = window.location.href.split('/')[5];
+        if ( brand ) this.menuService.getMenu(brand, () => {
+            this.currentCategory = menuService.menu?.categories.find(cat => cat.id === menuSessionService.getCurrentCategory());
+        });
+
     }
 
     ngOnInit(): void {

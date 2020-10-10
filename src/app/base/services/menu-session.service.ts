@@ -31,13 +31,13 @@ export class MenuSessionService {
     return null;
   }
 
-  setCurrentCategory(category) {
-    sessionStorage.setItem(this.CURRENT_CATEGORY, JSON.stringify(category));
+  setCurrentCategory(categoryId) {
+    sessionStorage.setItem(this.CURRENT_CATEGORY, JSON.stringify(categoryId));
   }
 
   getCurrentCategory() {
-    let category = sessionStorage.getItem(this.CURRENT_CATEGORY);
-    if (category) return JSON.parse(category);
+    let categoryId = sessionStorage.getItem(this.CURRENT_CATEGORY);
+    if (categoryId) return JSON.parse(categoryId);
     return null;
   }
 }

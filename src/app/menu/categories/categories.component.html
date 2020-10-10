@@ -63,7 +63,7 @@
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"
-         (click)="categoryClick(category)"
+         (click)="categoryClick(category.id)"
          [routerLink]="[category.name.toLowerCase().replaceAll(' ','-')]">
         <img class="category-img" src="{{category.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">

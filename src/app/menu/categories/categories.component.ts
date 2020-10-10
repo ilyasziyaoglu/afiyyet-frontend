@@ -36,7 +36,7 @@ export class CategoriesComponent {
         this.menuSessionService.setCurrentCampaign(campaign);
     }
 
-    categoryClick(category) {
-        this.menuSessionService.setCurrentCategory(category);
+    categoryClick(categoryId) {
+        this.menuSessionService.setCurrentCategory(categoryId);
     }
 }

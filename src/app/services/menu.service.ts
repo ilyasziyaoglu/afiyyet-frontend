@@ -26,11 +26,15 @@ export class MenuService extends BaseService {
         return this.basePath;
     }
 
-    getMenu(brandName) {
+    getMenu(brandName, cb?) {
         this.currentBrand = brandName;
-        this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/${brandName}`, '', result => {
-            this.menu = result;
-        });
+        if (this.menu && cb) {cb();}
+        else {
+            this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/${brandName}`, '', result => {
+                this.menu = result;
+                if (cb) {cb();}
+            });
+        }
     }
 
     like(item: any, isCampaign?) {
