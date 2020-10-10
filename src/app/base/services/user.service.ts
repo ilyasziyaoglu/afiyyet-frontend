@@ -45,7 +45,7 @@ export class UserService {
     }
   }
 
-  getToken () {
+  getToken() {
     if (this.adminLocalService.getUser()) {
       return this.adminLocalService.getUser().token;
     } else if (this.adminSessionService.getUser()) {

@@ -64,15 +64,15 @@ export class HttpService {
 
     doRequest(method: string, path: string, req: any, cb?: any, isFileUpload?) {
         let headers;
-        if (isFileUpload) {
+        const token = this.userService.getToken();
+        if (!path.startsWith('auth/') && token) {
             headers = new HttpHeaders()
-                .append('Authorization', 'Bearer ' + this.userService.getToken())
-                // .append('Content-Type', 'multipart/form-data')
-                .append('Accept', '*/*');
-        } else if (!path.startsWith('auth/')) {
-            headers = new HttpHeaders()
-                .append('Authorization', 'Bearer ' + this.userService.getToken())
+                .append('Authorization', token)
                 .append('Content-Type', 'application/json; charset=utf-8')
+                .append('Accept', '*/*');
+        } else if (isFileUpload && token) {
+            headers = new HttpHeaders()
+                .append('Authorization', token)
                 .append('Accept', '*/*');
         } else {
             headers = new HttpHeaders()

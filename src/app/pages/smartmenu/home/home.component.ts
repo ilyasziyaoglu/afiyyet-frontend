@@ -57,9 +57,10 @@ export class HomeComponent implements OnInit {
         {icon: 'share', title: 'Sosyal medya paylaşımı'},
         {icon: 'analytics', title: 'Raporlar ve Müşteri Analizleri'},
         {icon: 'emoji_emotions', title: 'Mutluluk seviyesi'},
+        {icon: 'shopping_basket', title: 'Online sipariş alma'},
     ];
 
-    colors = ['blue', 'red', 'green'/*, 'yellow', 'purple', 'pink', 'orange', 'brown'*/];
+    colors = ['blue', 'red', 'green', 'orange'/*, 'yellow', 'purple', 'pink', 'orange', 'brown'*/];
 
     constructor() {
     }

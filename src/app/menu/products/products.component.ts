@@ -13,13 +13,13 @@ import {MenuLocalService} from '../../base/services/menu-local.service';
 export class ProductsComponent implements OnInit {
 
     isFavEnabled = false;
-    currentCategory = {};
+    currentCategory;
 
     constructor(
         public menuService: MenuService,
         public favoriteService: FavoriteService,
         public menuSessionService: MenuSessionService,
-        public menuLocalService: MenuLocalService
+        public menuLocalService: MenuLocalService,
     ) {
         //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
         const brand = window.location.href.split('/')[5];
