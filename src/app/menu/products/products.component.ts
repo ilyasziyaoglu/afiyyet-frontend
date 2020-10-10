@@ -14,6 +14,7 @@ import {featureType} from '../../services/models/FeatureTypes';
 export class ProductsComponent implements OnInit {
 
     isFavEnabled = false;
+    isLikeEnabled = true;
     currentCategory;
 
     constructor(

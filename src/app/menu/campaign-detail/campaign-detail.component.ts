@@ -12,6 +12,7 @@ import {MenuLocalService} from '../../base/services/menu-local.service';
 export class CampaignDetailComponent implements OnInit {
 
   currentCampaign;
+  isLikeEnabled = false;
 
   constructor(
       public menuLocalService: MenuLocalService,

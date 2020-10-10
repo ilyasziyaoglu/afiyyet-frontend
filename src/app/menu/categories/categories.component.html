@@ -9,12 +9,12 @@
              [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
         <div class="w-100 m-0 p-1 fav-like-price-container">
             <div class="row w-100 m-0 text-white">
-                <div class="col border-right border-white d-flex justify-content-center align-items-center"
+                <div class="col d-flex justify-content-center align-items-center"
                      (click)="productClick(item.id)"
                      [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
-                <div class="col d-flex justify-content-center align-items-center"
+                <div *ngIf="isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
                      (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
                               style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
@@ -42,12 +42,12 @@
         <div class="w-100 camp-like-price-container p-0">
 
             <div class="row w-100 m-0 p-1 text-white">
-                <div class="col border-right border-white d-flex justify-content-center align-items-center"
+                <div class="col d-flex justify-content-center align-items-center"
                      (click)="campaignClick(item.id)"
                      [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
-                <div class="col d-flex justify-content-center align-items-center"
+                <div *ngIf="isLikeEnabled" class="col d-flex border-left border-white justify-content-center align-items-center"
                      (click)="onLike(item, true)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(item.id)}"
                               style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt

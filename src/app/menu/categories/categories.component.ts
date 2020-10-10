@@ -13,6 +13,7 @@ import {featureType} from '../../services/models/FeatureTypes';
 export class CategoriesComponent {
     isFavEnabled = true;
     isCampEnabled = true;
+    isLikeEnabled = false;
 
     constructor(
         public menuService: MenuService,
