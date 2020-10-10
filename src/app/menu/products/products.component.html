@@ -30,7 +30,7 @@
             </div>
             <div class="col d-flex justify-content-center align-items-center"
                 (click)="onLike(item)">{{item.likes}}&nbsp;
-                <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(item.id)}"
+                <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
                           style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
             </div>
         </div>

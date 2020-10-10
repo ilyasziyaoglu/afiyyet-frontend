@@ -10,32 +10,7 @@ export class AdminSessionService {
     CURRENT_PROD = "@currProdAdmin";
     CURRENT_CAMP = "@currCampAdmin";
 
-    constructor() {
-        const keys = Object.keys(sessionStorage);
-        let i = keys.length;
-
-        while (i --) {
-            const value = sessionStorage.getItem(keys[i]);
-            try {
-                this[keys[i]] = JSON.parse(value);
-            } catch (e) {
-                this[keys[i]] = value;
-            }
-        }
-    }
-
-    setItem(key: string, value: any) {
-        this[key] = value;
-        if ( typeof value !== 'string' ) {
-            value = JSON.stringify(value);
-        }
-        sessionStorage.setItem(key, value);
-    }
-
-    getItem(key) {
-        const item = sessionStorage.getItem(key);
-        return item !== 'undefined' ? JSON.parse(item) : null;
-    }
+    constructor() {}
 
     setUser(user, token) {
         sessionStorage.setItem(this.USER, JSON.stringify({user, token}));

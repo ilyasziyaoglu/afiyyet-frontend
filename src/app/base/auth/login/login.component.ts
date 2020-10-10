@@ -19,6 +19,7 @@ export class LoginComponent {
         private router: Router,
         private userService: UserService
     ) {
+        if (userService.getUser()) router.navigateByUrl('pages/admin/menu');
     }
 
 

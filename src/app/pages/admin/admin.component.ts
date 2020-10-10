@@ -16,9 +16,7 @@ export class AdminComponent implements OnInit {
   isFeedBackEnabled = false;
 
   constructor(userService: UserService, router: Router) {
-    if (!userService.getUser()) {
-      router.navigateByUrl('/login');
-    }
+    if (!userService.getUser()) router.navigateByUrl('login');
     //this.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
     //this.isReportsEnabled = menuService.menu.brand.features.includes(featureType.REPORTS);
     //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
-import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuService} from '../../services/menu.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
+import {MenuLocalService} from '../../base/services/menu-local.service';
 
 @Component({
   selector: 'app-item',
@@ -15,7 +15,7 @@ export class ProductDetailComponent implements OnInit {
   isFavEnabled = false;
 
   constructor(
-      public storageService: AdminSessionService,
+      public menuLocalService: MenuLocalService,
       public menuService: MenuService,
       public favoriteService: FavoriteService,
       public menuSessionService: MenuSessionService

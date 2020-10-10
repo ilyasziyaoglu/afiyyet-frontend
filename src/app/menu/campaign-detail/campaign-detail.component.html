@@ -14,7 +14,7 @@
         </div>
         <div class="border rounded-lg" (click)="onLike(currentCampaign)">
             <p>{{currentCampaign.likes}}</p>
-            <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(currentCampaign.id)}" class="like-icon">
+            <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(currentCampaign.id)}" class="like-icon">
                 thumb_up
             </mat-icon>
         </div>

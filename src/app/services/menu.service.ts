@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {AdminSessionService} from '../base/services/admin-session.service';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
+import {MenuLocalService} from '../base/services/menu-local.service';
 
 @Injectable({
     providedIn: 'root',
@@ -17,7 +17,7 @@ export class MenuService extends BaseService {
 
     constructor(
         httpService: HttpService,
-        private storageService: AdminSessionService
+        private menuLocalService: MenuLocalService
     ) {
         super(httpService);
     }
@@ -33,15 +33,13 @@ export class MenuService extends BaseService {
         });
     }
 
-    like(item: any) {
-        const likes = this.storageService.getItem('likes') || [];
-        if ( likes.includes(item.id) ) {
-            likes.splice(likes.indexOf(item.id), 1);
+    like(item: any, isCampaign?) {
+        if ( this.menuLocalService.getLikes().includes(item.id) ) {
+            this.menuLocalService.removeLike(item.id);
             item.likes --;
         } else {
-            likes.push(item.id);
+            this.menuLocalService.addLike(item.id);
             item.likes ++;
         }
-        this.storageService.setItem('likes', likes);
     }
 }

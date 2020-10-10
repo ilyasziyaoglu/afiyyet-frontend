@@ -22,7 +22,7 @@
         </div>
         <div class="border rounded-lg" (click)="onLike(currentProduct)">
             <p>{{currentProduct.likes}}</p>
-            <mat-icon [ngClass]="{'active': (storageService.getItem('likes') || []).includes(currentProduct.id)}" class="like-icon">
+            <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(currentProduct.id)}" class="like-icon">
                 thumb_up
             </mat-icon>
         </div>

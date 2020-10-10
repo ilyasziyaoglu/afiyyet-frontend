@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuService} from '../../services/menu.service';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
+import {MenuLocalService} from '../../base/services/menu-local.service';
 
 @Component({
   selector: 'app-campaign-detail',
@@ -14,7 +14,7 @@ export class CampaignDetailComponent implements OnInit {
   currentCampaign;
 
   constructor(
-      public storageService: AdminSessionService,
+      public menuLocalService: MenuLocalService,
       public menuService: MenuService,
       public favoriteService: FavoriteService,
       public menuSessionService: MenuSessionService
@@ -26,7 +26,7 @@ export class CampaignDetailComponent implements OnInit {
   }
 
   onLike(item: any) {
-    this.menuService.like(item);
+    this.menuService.like(item, true);
   }
 
 }
