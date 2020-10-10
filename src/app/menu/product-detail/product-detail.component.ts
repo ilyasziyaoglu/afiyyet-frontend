@@ -25,11 +25,13 @@ export class ProductDetailComponent implements OnInit {
     //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
 
     const brand = window.location.href.split('/')[5];
-    if ( brand ) this.menuService.getMenu(brand, () => {
-      this.currentProduct = menuService.menu?.categories
-          .find(cat => cat.id === currCatId).products
-          .find(prod => prod.id === currProdId);
-    });
+    if ( brand ) {
+      this.menuService.getMenu(brand, () => {
+        this.currentProduct = menuService.menu?.categories
+            .find(cat => cat.id === currCatId).products
+            .find(prod => prod.id === currProdId);
+      });
+    }
   }
 
   ngOnInit(): void {

@@ -19,7 +19,13 @@ export class CampaignDetailComponent implements OnInit {
       public favoriteService: FavoriteService,
       public menuSessionService: MenuSessionService
   ) {
-    this.currentCampaign = menuSessionService.getCurrentCampaign();
+    const brand = window.location.href.split('/')[5];
+    if ( brand ) {
+      this.menuService.getMenu(brand, () => {
+        this.currentCampaign = menuService.menu?.campaigns
+            .find(camp => camp.id === menuSessionService.getCurrentCampaign())
+      });
+    }
   }
 
   ngOnInit(): void {

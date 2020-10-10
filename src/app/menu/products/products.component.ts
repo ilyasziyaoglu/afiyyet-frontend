@@ -23,9 +23,11 @@ export class ProductsComponent implements OnInit {
     ) {
         //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
         const brand = window.location.href.split('/')[5];
-        if ( brand ) this.menuService.getMenu(brand, () => {
-            this.currentCategory = menuService.menu?.categories.find(cat => cat.id === menuSessionService.getCurrentCategory());
-        });
+        if ( brand ) {
+            this.menuService.getMenu(brand, () => {
+                this.currentCategory = menuService.menu?.categories.find(cat => cat.id === menuSessionService.getCurrentCategory());
+            });
+        }
 
     }
 

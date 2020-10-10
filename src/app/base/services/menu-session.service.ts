@@ -21,13 +21,13 @@ export class MenuSessionService {
     return null;
   }
 
-  setCurrentCampaign(campaign) {
-    sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify(campaign));
+  setCurrentCampaign(campaignId) {
+    sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify(campaignId));
   }
 
   getCurrentCampaign() {
-    let campaign = sessionStorage.getItem(this.CURRENT_CAMP);
-    if (campaign) return JSON.parse(campaign);
+    let campaignId = sessionStorage.getItem(this.CURRENT_CAMP);
+    if (campaignId) return JSON.parse(campaignId);
     return null;
   }
 

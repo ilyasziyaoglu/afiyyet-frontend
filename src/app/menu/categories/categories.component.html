@@ -32,18 +32,18 @@
          *ngFor="let item of menuService.menu?.campaigns">
         <img class="camp-item-img" src="{{item.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
-             (click)="campaignClick(item)"
+             (click)="campaignClick(item.id)"
              [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
 
         <p class="p-1 camp-item-name"
-           (click)="campaignClick(item)"
+           (click)="campaignClick(item.id)"
            [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">{{item.name}}</p>
 
         <div class="w-100 camp-like-price-container p-0">
 
             <div class="row w-100 m-0 p-1 text-white">
                 <div class="col border-right border-white d-flex justify-content-center align-items-center"
-                     (click)="campaignClick(item)"
+                     (click)="campaignClick(item.id)"
                      [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>

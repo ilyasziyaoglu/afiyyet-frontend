@@ -12,7 +12,7 @@ import {featureType} from '../../services/models/FeatureTypes';
 })
 export class CategoriesComponent {
     isFavEnabled = true;
-    isCampEnabled = false;
+    isCampEnabled = true;
 
     constructor(
         public menuService: MenuService,
@@ -32,8 +32,8 @@ export class CategoriesComponent {
         this.menuSessionService.setCurrentProduct(productId);
     }
 
-    campaignClick(campaign) {
-        this.menuSessionService.setCurrentCampaign(campaign);
+    campaignClick(campaignId) {
+        this.menuSessionService.setCurrentCampaign(campaignId);
     }
 
     categoryClick(categoryId) {
