@@ -13,6 +13,7 @@ import {featureType} from '../../services/models/FeatureTypes';
 })
 export class CategoriesComponent {
     isFavEnabled = false;
+    isCampEnabled = false;
 
     constructor(
         public storageService: AdminSessionService,
@@ -22,6 +23,7 @@ export class CategoriesComponent {
         public menuLocalService: MenuLocalService
     ) {
         //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
+        //this.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
     }
 
     onLike(item: any) {

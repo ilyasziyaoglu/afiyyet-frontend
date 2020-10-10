@@ -11,7 +11,7 @@
 
 </div>
 <div class="row w-100 m-0 p-0 top-menu border-top border-white">
-    <div class="col m-0 p-1 border-right border-white d-flex justify-content-center align-items-center"
+    <div *ngIf="isReservEnabled" class="col m-0 p-1 border-right border-white d-flex justify-content-center align-items-center"
         [routerLink]="['reservation']">
         <mat-icon>playlist_add_check</mat-icon><p>&nbsp;&nbsp;Rezervasyon</p>
     </div>

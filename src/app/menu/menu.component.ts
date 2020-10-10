@@ -14,6 +14,7 @@ import {FavoriteService} from '../services/favorite.service';
 export class MenuComponent implements OnInit {
 
     isFavEnabled = false;
+    isReservEnabled = false;
 
     constructor(
         public location: Location,
@@ -25,6 +26,7 @@ export class MenuComponent implements OnInit {
         if ( brand ) {
             this.menuService.getMenu(brand);
             //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
+            //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
         }
     }
 
