@@ -5,6 +5,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {MenuService} from '../services/menu.service';
 import {AdminSessionService} from '../base/services/admin-session.service';
 import {FavoriteService} from '../services/favorite.service';
+import {featureType} from '../services/models/FeatureTypes';
 
 @Component({
     selector: 'app-menus',
@@ -15,6 +16,7 @@ export class MenuComponent implements OnInit {
 
     isFavEnabled = false;
     isReservEnabled = false;
+    isFeedBackEnabled = false;
 
     constructor(
         public location: Location,
@@ -27,6 +29,7 @@ export class MenuComponent implements OnInit {
             this.menuService.getMenu(brand);
             //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
             //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
+            //this.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
         }
     }
 

@@ -15,7 +15,7 @@
         [routerLink]="['reservation']">
         <mat-icon>playlist_add_check</mat-icon><p>&nbsp;&nbsp;Rezervasyon</p>
     </div>
-    <div class="col m-0 p-1 d-flex justify-content-center align-items-center"
+    <div *ngIf="isFeedBackEnabled" class="col m-0 p-1 d-flex justify-content-center align-items-center"
         (click)="commentClick()">
         <mat-icon>feedback</mat-icon><p>&nbsp;&nbsp;Fikir Bildir</p>
     </div>

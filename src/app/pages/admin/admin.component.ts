@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   isCampEnabled = false;
   isReportsEnabled = false;
   isReservEnabled = false;
+  isFeedBackEnabled = false;
 
   constructor(userService: UserService, router: Router) {
     if (!userService.getUser()) {
@@ -21,6 +22,7 @@ export class AdminComponent implements OnInit {
     //this.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
     //this.isReportsEnabled = menuService.menu.brand.features.includes(featureType.REPORTS);
     //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
+    //this.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
   }
 
   ngOnInit(): void {
