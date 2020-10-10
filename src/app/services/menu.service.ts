@@ -17,7 +17,7 @@ export class MenuService extends BaseService {
 
     constructor(
         httpService: HttpService,
-        private menuLocalService: MenuLocalService
+        private menuLocalService: MenuLocalService,
     ) {
         super(httpService);
     }
@@ -28,22 +28,34 @@ export class MenuService extends BaseService {
 
     getMenu(brandName, cb?) {
         this.currentBrand = brandName;
-        if (this.menu && cb) {cb();}
-        else {
+        if ( this.menu && cb ) {
+            cb();
+        } else {
             this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/${brandName}`, '', result => {
                 this.menu = result;
-                if (cb) {cb();}
+                if ( cb ) {
+                    cb();
+                }
             });
         }
     }
 
     like(item: any, isCampaign?) {
+        const postfix = isCampaign ? 'campaign-like' : 'product-like';
         if ( this.menuLocalService.getLikes().includes(item.id) ) {
-            this.menuLocalService.removeLike(item.id);
-            item.likes --;
+            this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: true}, result => {
+                if ( result ) {
+                    this.menuLocalService.removeLike(item.id, isCampaign);
+                    item.likes --;
+                }
+            });
         } else {
-            this.menuLocalService.addLike(item.id);
-            item.likes ++;
+            this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: false}, result => {
+                if ( result ) {
+                    this.menuLocalService.addLike(item.id, isCampaign);
+                    item.likes ++;
+                }
+            });
         }
     }
 }

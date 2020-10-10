@@ -4,6 +4,7 @@ import {AdminSessionService} from '../../base/services/admin-session.service';
 import {MenuService} from '../../services/menu.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
 import {MenuLocalService} from '../../base/services/menu-local.service';
+import {featureType} from '../../services/models/FeatureTypes';
 
 @Component({
     selector: 'app-products',
@@ -21,7 +22,7 @@ export class ProductsComponent implements OnInit {
         public menuSessionService: MenuSessionService,
         public menuLocalService: MenuLocalService,
     ) {
-        //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
+        this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
             this.menuService.getMenu(brand, () => {
