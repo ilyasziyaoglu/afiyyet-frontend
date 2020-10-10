@@ -9,6 +9,7 @@ import {CategoryService} from '../../../services/category.service';
 import {ProductService} from '../../../services/product.service';
 import {DialogCategoryEditComponent} from '../dialog-category-edit/dialog-category-edit.component';
 import Swal from 'sweetalert2';
+import {UserService} from '../../../base/services/user.service';
 
 @Component({
     selector: 'app-admin',
@@ -28,7 +29,7 @@ export class MenuComponent implements OnInit {
         private menuService: MenuService, private storageService: AdminSessionService,
         private router: Router, private dialog: MatDialog,
         public categoryService: CategoryService, private productService: ProductService,
-        private adminSessionService: AdminSessionService
+        private adminSessionService: AdminSessionService, public userService: UserService
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categoryService.categories = data;

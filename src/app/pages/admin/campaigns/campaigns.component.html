@@ -1,5 +1,5 @@
 <div class="row w-100 m-0 p-3 col-sm-12 d-flex justify-content-center">
-    <button class="btn save-order mx-0 mx-lg-2 my-1 my-lg-0 col-sm-12 col-md-5 col-lg-3 col-lg-3"
+    <button *ngIf="userService.isOrderEnabled" class="btn save-order mx-0 mx-lg-2 my-1 my-lg-0 col-sm-12 col-md-5 col-lg-3 col-lg-3"
             [ngClass]="{'btn-secondary': !campaignsArranged, 'btn-success': campaignsArranged}" (click)="campaignArrangeSave()">Sıralamayı Kaydet
     </button>
     <button class="btn add-product mx-0 mx-lg-2 my-1 my-lg-0 btn-outline-dark col-sm-12 col-md-5 col-lg-3 col-lg-3"
@@ -7,7 +7,7 @@
     </button>
 </div>
 <div class="row w-100 m-0 p-3 d-flex justify-content-center" cdkDropList (cdkDropListDropped)="arrangeCampaign($event)">
-    <div cdkDrag class="my-2 mx-2 p-1 item " *ngFor="let item of campaignService.activeCampaigns; let i = index">
+    <div [cdkDragDisabled]="!userService.isOrderEnabled" cdkDrag class="my-2 mx-2 p-1 item " *ngFor="let item of campaignService.activeCampaigns; let i = index">
 
         <div class="row m-0 p-0 w-100">
             <div class="col-3 col-lg-2 p-1 h-25">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-2 col-lg-1 p-1 item-action-group">
-                <mat-icon cdkDragHandle>view_headline</mat-icon>
+                <mat-icon *ngIf="userService.isOrderEnabled" cdkDragHandle>view_headline</mat-icon>
                 <mat-icon (click)="editCampaign(item)">edit</mat-icon>
                 <mat-icon class="text-danger" (click)="deleteItem(item, i, true)">delete</mat-icon>
             </div>

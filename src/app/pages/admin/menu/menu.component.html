@@ -4,7 +4,7 @@
 
         <div class="col-sm-3 col-md-5 col-lg-3 mt-2 categories" cdkDropList (cdkDropListDropped)="arrangeCategory($event)">
 
-            <button [ngClass]="{'btn-success': categoriesArranged, 'btn-secondary': !categoriesArranged}"
+            <button *ngIf="userService.isOrderEnabled" [ngClass]="{'btn-success': categoriesArranged, 'btn-secondary': !categoriesArranged}"
                     (click)="categoryArrangeSave()" class="w-100 btn mb-1">Sıralamayı Kaydet</button>
 
             <button (click)="addCategoryClick()"
@@ -15,12 +15,12 @@
                 <span class="cat-prod-count-span">{{totalProductCount}} Ürün</span>
             </div>
 
-            <div cdkDrag *ngFor="let category of categoryService.categories; let i = index">
+            <div cdkDrag [cdkDragDisabled]="!userService.isOrderEnabled" *ngFor="let category of categoryService.categories; let i = index">
                 <div (click)="categoryClick(category)"
                      [ngClass]="{'active-category': this.categoryService.currentCategory?.id == category.id}"
                      class="btn btn-dark w-100 my-1 px-1 py-2 category-container">
                     <div style="display: flex; align-items: center">
-                        <mat-icon class="drag-indicator mr-1" cdkDragHandle>drag_indicator</mat-icon>
+                        <mat-icon class="drag-indicator mr-1" *ngIf="userService.isOrderEnabled" cdkDragHandle>drag_indicator</mat-icon>
                         <span style="text-align: left">{{category.name}}</span>
                     </div>
                     <div class="category-edit-delete-container">
@@ -39,11 +39,12 @@
                           matBadgeSize="small">view_carousel</mat-icon>
             </div>
             <div class="row mx-0 my-3 justify-content-between">
-                <button class="btn save-order" [ngClass]="{'btn-secondary': !productsArranged, 'btn-success': productsArranged}" (click)="productArrangeSave()">Sıralamayı Kaydet</button>
+                <button class="btn save-order" [ngClass]="{'btn-secondary': !productsArranged, 'btn-success': productsArranged}"
+                        *ngIf="userService.isOrderEnabled" (click)="productArrangeSave()">Sıralamayı Kaydet</button>
                 <button (click)="addItem()" class="btn add-product btn-outline-dark">Ürün Ekle</button>
             </div>
 
-            <div cdkDrag class="row my-2 mx-0 p-1 item" *ngFor="let item of categoryService.currentCategory?.products; let i = index">
+            <div cdkDrag [cdkDragDisabled]="!userService.isOrderEnabled" class="row my-2 mx-0 p-1 item" *ngFor="let item of categoryService.currentCategory?.products; let i = index">
 
                 <div class="row m-0 p-0 w-100">
                     <div class="col-3 col-lg-2 p-1 h-25">
@@ -62,7 +63,7 @@
                         </div>
                     </div>
                     <div class="col-2 col-lg-1 p-1 item-action-group">
-                        <mat-icon cdkDragHandle>view_headline</mat-icon>
+                        <mat-icon *ngIf="userService.isOrderEnabled" cdkDragHandle>view_headline</mat-icon>
                         <mat-icon (click)="editItem(item)">edit</mat-icon>
                         <mat-icon class="text-danger" (click)="deleteItem(item, i)">delete</mat-icon>
                     </div>
