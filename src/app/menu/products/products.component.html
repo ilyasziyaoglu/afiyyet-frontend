@@ -24,11 +24,11 @@
                  (click)="productClick(item)">
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
-            <div *ngIf="isFavEnabled" class="col d-flex border-left border-white justify-content-center align-items-center">
+            <div *ngIf="menuService.isFavEnabled" class="col d-flex border-left border-white justify-content-center align-items-center">
                 <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
                 <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>
             </div>
-            <div *ngIf="isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
+            <div *ngIf="menuService.isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
                 (click)="onLike(item)">{{item.likes}}&nbsp;
                 <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
                           style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>

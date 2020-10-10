@@ -3,7 +3,6 @@ import {MenuService} from '../../services/menu.service';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
 import {MenuLocalService} from '../../base/services/menu-local.service';
-import {MenuComponent} from '../menu.component';
 
 @Component({
   selector: 'app-campaign-detail',
@@ -11,8 +10,6 @@ import {MenuComponent} from '../menu.component';
   styleUrls: ['./campaign-detail.component.scss']
 })
 export class CampaignDetailComponent implements OnInit {
-
-  isLikeEnabled = false;
 
   constructor(
       public menuLocalService: MenuLocalService,

@@ -5,7 +5,7 @@
         <div class="image-container">
             <img class="item-img" src="{{menuService.currentProduct.imgUrl}}" alt="{{menuService.currentProduct.name}}"
                  #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
-            <div *ngIf="isFavEnabled" class="favorite">
+            <div *ngIf="menuService.isFavEnabled" class="favorite">
                 <mat-icon *ngIf="favoriteService.isFavorite(menuService.currentProduct.id)"
                           (click)="favoriteService.removeFavorite(menuService.currentProduct.id)">favorite
                 </mat-icon>
@@ -20,7 +20,7 @@
             <p>{{menuService.currentProduct.price}}</p>
             <p>TL</p>
         </div>
-        <div *ngIf="isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentProduct)">
+        <div *ngIf="menuService.isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentProduct)">
             <p>{{menuService.currentProduct.likes}}</p>
             <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(menuService.currentProduct.id)}" class="like-icon">
                 thumb_up

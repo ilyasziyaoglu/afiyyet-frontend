@@ -17,6 +17,12 @@ export class MenuService extends BaseService {
 
     menu: any;
 
+    isLikeEnabled = false;
+    isFavEnabled = false;
+    isCampEnabled = false;
+    isFeedBackEnabled = false;
+    isReservEnabled = false;
+
     constructor(
         httpService: HttpService,
         private menuLocalService: MenuLocalService,

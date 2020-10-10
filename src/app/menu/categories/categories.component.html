@@ -1,6 +1,6 @@
-<h3 *ngIf="isFavEnabled" class="my-1" style="text-align: center">Favorilerim</h3>
-<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length && isFavEnabled">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
-<div *ngIf="isFavEnabled" class="m-1 p-0 myfavorites justify-content-center">
+<h3 *ngIf="menuService.isFavEnabled" class="my-1" style="text-align: center">Favorilerim</h3>
+<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length && menuService.isFavEnabled">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
+<div *ngIf="menuService.isFavEnabled" class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of favoriteService.getFavorites()">
         <img class="item-img" src="{{item.imgUrl}}"
@@ -14,7 +14,7 @@
                      [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
-                <div *ngIf="isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
+                <div *ngIf="menuService.isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
                      (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
                               style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
@@ -24,10 +24,10 @@
         </div>
     </div>
 </div>
-<hr *ngIf="isFavEnabled" class="m-0 p-0">
-<h3 *ngIf="isCampEnabled" class="my-1 text-center">Kampanyalar</h3>
+<hr *ngIf="menuService.isFavEnabled" class="m-0 p-0">
+<h3 *ngIf="menuService.isCampEnabled" class="my-1 text-center">Kampanyalar</h3>
 
-<div *ngIf="isCampEnabled" class="m-1 p-0 camp_items justify-content-center">
+<div *ngIf="menuService.isCampEnabled" class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
          *ngFor="let item of menuService.menu?.campaigns">
         <img class="camp-item-img" src="{{item.imgUrl}}"
@@ -47,7 +47,7 @@
                      [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
-                <div *ngIf="isLikeEnabled" class="col d-flex border-left border-white justify-content-center align-items-center"
+                <div *ngIf="menuService.isLikeEnabled" class="col d-flex border-left border-white justify-content-center align-items-center"
                      (click)="onLike(item, true)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(item.id)}"
                               style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
@@ -58,8 +58,8 @@
     </div>
 </div>
 
-<hr *ngIf="isCampEnabled" class="m-0 p-0">
-<h3 *ngIf="isCampEnabled || isFavEnabled" class="my-2" style="text-align: center">Menü</h3>
+<hr *ngIf="menuService.isCampEnabled" class="m-0 p-0">
+<h3 *ngIf="menuService.isCampEnabled || menuService.isFavEnabled" class="my-2" style="text-align: center">Menü</h3>
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"

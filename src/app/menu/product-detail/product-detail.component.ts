@@ -11,18 +11,12 @@ import {MenuLocalService} from '../../base/services/menu-local.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  isFavEnabled = false;
-  isLikeEnabled = false;
-
   constructor(
       public menuLocalService: MenuLocalService,
       public menuService: MenuService,
       public favoriteService: FavoriteService,
       public menuSessionService: MenuSessionService
-  ) {
-
-    //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
-  }
+  ) {}
 
   ngOnInit(): void {
   }

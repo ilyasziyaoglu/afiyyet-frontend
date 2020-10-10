@@ -5,6 +5,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {MenuService} from '../services/menu.service';
 import {FavoriteService} from '../services/favorite.service';
 import {MenuSessionService} from '../base/services/menu-session.service';
+import {featureType} from '../services/models/FeatureTypes';
 
 @Component({
     selector: 'app-menus',
@@ -40,10 +41,13 @@ export class MenuComponent implements OnInit {
 
                 menuService.currentCategory = menuService.menu.categories
                     .find(cat => cat.id === currCatId);
+
+                menuService.isLikeEnabled = menuService.menu.brand.features.includes(featureType.LIKE);
+                menuService.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
+                menuService.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
+                menuService.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
+                menuService.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
             });
-            //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
-            //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
-            //this.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
         }
     }
 
