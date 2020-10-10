@@ -19,22 +19,6 @@ export class CampaignsComponent implements OnInit {
   constructor(public campaignService: CampaignService,
               private router: Router,
               private adminSessionService: AdminSessionService) {
-    // campaignService.insertCampaign(
-    //     {
-    //       description: "Bir Alana Sifir hediye",
-    //       expireDate: "2020-09-30T19:20:49.454Z",
-    //       imgUrl: "https://cdn.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg",
-    //       likes: 5,
-    //       name: "string",
-    //       order: 1,
-    //       price: 45,
-    //       startDate: "2020-09-27T19:20:49.454Z",
-    //       status: "ACTIVE"
-    //     },
-    //     res => {
-    //       console.log("deneme", res);
-    //     }
-    // )
     campaignService.getAllCampaigns(res => {
       // push isleminde duplicate gorunmemesi icin boş array'e atandi.
       campaignService.activeCampaigns = [];

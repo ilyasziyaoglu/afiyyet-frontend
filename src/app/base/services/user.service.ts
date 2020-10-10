@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BaseService } from './base-service';
-import { HttpService } from './http.service';
 import {AdminSessionService} from './admin-session.service';
 import {AdminLocalService} from './admin-local.service';
 
@@ -8,6 +6,13 @@ import {AdminLocalService} from './admin-local.service';
   providedIn: 'root',
 })
 export class UserService {
+
+  isOrderEnabled;
+  isCampEnabled;
+  isCRUDEnabled;
+  isFeedBackEnabled;
+  isReservEnabled;
+  isReportsEnabled;
 
   constructor(
       private adminSessionService: AdminSessionService,

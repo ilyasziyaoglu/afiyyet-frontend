@@ -9,7 +9,6 @@ export const featureType = Object.freeze({
     MOST_POPULAR: 'MOST_POPULAR',
     FAVORITE: 'FAVORITE',
     CAMPAIGN: 'CAMPAIGN',
-    UPDATES: 'UPDATES',
     FEEDBACKS: 'FEEDBACKS',
     COUPONS: 'COUPONS',
     RESERVATIONS: 'RESERVATIONS',

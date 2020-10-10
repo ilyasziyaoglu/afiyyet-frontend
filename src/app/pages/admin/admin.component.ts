@@ -10,17 +10,17 @@ import {featureType} from '../../services/models/FeatureTypes';
 })
 export class AdminComponent implements OnInit {
 
-  isCampEnabled = false;
-  isReportsEnabled = false;
-  isReservEnabled = false;
-  isFeedBackEnabled = false;
+  constructor(public userService: UserService, router: Router) {
 
-  constructor(userService: UserService, router: Router) {
-    if (!userService.getUser()) router.navigateByUrl('login');
-    //this.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
-    //this.isReportsEnabled = menuService.menu.brand.features.includes(featureType.REPORTS);
-    //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
-    //this.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
+    let user = userService.getUser().user;
+    if (!user) router.navigateByUrl('login');
+
+    userService.isCampEnabled = user.brand.features.includes(featureType.CAMPAIGN);
+    userService.isReportsEnabled = user.brand.features.includes(featureType.REPORTS);
+    userService.isReservEnabled = user.brand.features.includes(featureType.RESERVATIONS);
+    userService.isFeedBackEnabled = user.brand.features.includes(featureType.FEEDBACKS);
+    userService.isOrderEnabled = user.brand.features.includes(featureType.ORDERING);
+    userService.isCRUDEnabled = user.brand.features.includes(featureType.CRUD_OPERATIONS);
   }
 
   ngOnInit(): void {
