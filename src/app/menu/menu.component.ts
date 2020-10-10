@@ -21,9 +21,9 @@ export class MenuComponent implements OnInit {
         public favoriteService: FavoriteService,
         private menuSessionService: MenuSessionService
     ) {
-        let currProdId = menuSessionService.getCurrentProduct();
-        let currCatId = menuSessionService.getCurrentCategory();
-        let currCampId = menuSessionService.getCurrentCampaign();
+        const currProdId = menuSessionService.getCurrentProduct();
+        const currCatId = menuSessionService.getCurrentCategory();
+        const currCampId = menuSessionService.getCurrentCampaign();
 
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
