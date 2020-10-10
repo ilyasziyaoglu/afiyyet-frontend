@@ -3,9 +3,8 @@ import {Location} from '@angular/common';
 import {DialogCommentComponent} from './dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
 import {MenuService} from '../services/menu.service';
-import {AdminSessionService} from '../base/services/admin-session.service';
 import {FavoriteService} from '../services/favorite.service';
-import {featureType} from '../services/models/FeatureTypes';
+import {MenuSessionService} from '../base/services/menu-session.service';
 
 @Component({
     selector: 'app-menus',
@@ -23,10 +22,25 @@ export class MenuComponent implements OnInit {
         private dialog: MatDialog,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
+        private menuSessionService: MenuSessionService
     ) {
+        let currProdId = menuSessionService.getCurrentProduct();
+        let currCatId = menuSessionService.getCurrentCategory();
+
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
-            this.menuService.getMenu(brand);
+            this.menuService.getMenu(brand, () => {
+
+                menuService.currentCampaign = menuService.menu.campaigns
+                    .find(camp => camp.id === menuSessionService.getCurrentCampaign())
+
+                menuService.currentProduct = menuService.menu.categories
+                    .find(cat => cat.id === currCatId).products
+                    .find(prod => prod.id === currProdId);
+
+                menuService.currentCategory = menuService.menu.categories
+                    .find(cat => cat.id === currCatId);
+            });
             //this.isFavEnabled = menuService.menu.brand.features.includes(featureType.FAVORITE);
             //this.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
             //this.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);

@@ -1,31 +1,31 @@
 <br>
-<div *ngIf="currentProduct">
-    <h1 class="item-name">{{currentProduct.name}}</h1>
+<div *ngIf="menuService.currentProduct">
+    <h1 class="item-name">{{menuService.currentProduct.name}}</h1>
     <div class="row W-100 no-gutters justify-content-center align-items-center">
         <div class="image-container">
-            <img class="item-img" src="{{currentProduct.imgUrl}}" alt="{{currentProduct.name}}"
+            <img class="item-img" src="{{menuService.currentProduct.imgUrl}}" alt="{{menuService.currentProduct.name}}"
                  #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
             <div *ngIf="isFavEnabled" class="favorite">
-                <mat-icon *ngIf="favoriteService.isFavorite(currentProduct.id)"
-                          (click)="favoriteService.removeFavorite(currentProduct.id)">favorite
+                <mat-icon *ngIf="favoriteService.isFavorite(menuService.currentProduct.id)"
+                          (click)="favoriteService.removeFavorite(menuService.currentProduct.id)">favorite
                 </mat-icon>
-                <mat-icon *ngIf="!favoriteService.isFavorite(currentProduct.id)"
-                          (click)="favoriteService.addFavorite(currentProduct.id)">favorite_border
+                <mat-icon *ngIf="!favoriteService.isFavorite(menuService.currentProduct.id)"
+                          (click)="favoriteService.addFavorite(menuService.currentProduct.id)">favorite_border
                 </mat-icon>
             </div>
         </div>
     </div>
     <div class="m-3 flex-container d-flex justify-content-center">
         <div class="border rounded-lg pl-1 pr-1">
-            <p>{{currentProduct.price}}</p>
+            <p>{{menuService.currentProduct.price}}</p>
             <p>TL</p>
         </div>
-        <div *ngIf="isLikeEnabled" class="border rounded-lg" (click)="onLike(currentProduct)">
-            <p>{{currentProduct.likes}}</p>
-            <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(currentProduct.id)}" class="like-icon">
+        <div *ngIf="isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentProduct)">
+            <p>{{menuService.currentProduct.likes}}</p>
+            <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(menuService.currentProduct.id)}" class="like-icon">
                 thumb_up
             </mat-icon>
         </div>
     </div>
-    <p class="item-description">{{currentProduct.description}}</p>
+    <p class="item-description">{{menuService.currentProduct.description}}</p>
 </div>

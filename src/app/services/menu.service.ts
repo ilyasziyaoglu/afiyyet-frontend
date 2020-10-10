@@ -12,6 +12,8 @@ export class MenuService extends BaseService {
 
     currentBrand: any;
     currentCategory: any;
+    currentCampaign: any;
+    currentProduct: any;
 
     menu: any;
 

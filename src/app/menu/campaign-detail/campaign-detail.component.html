@@ -1,23 +1,23 @@
 <br>
-<div *ngIf="currentCampaign">
-    <h1 class="item-name">{{currentCampaign.name}}</h1>
+<div *ngIf="menuService.currentCampaign">
+    <h1 class="item-name">{{menuService.currentCampaign.name}}</h1>
     <div class="row W-100 no-gutters justify-content-center align-items-center">
         <div class="image-container">
-            <img class="item-img" src="{{currentCampaign.imgUrl}}" alt="{{currentCampaign.name}}"
+            <img class="item-img" src="{{menuService.currentCampaign.imgUrl}}" alt="{{menuService.currentCampaign.name}}"
                  #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
         </div>
     </div>
     <div class="m-3 flex-container d-flex justify-content-center">
         <div class="border rounded-lg pl-1 pr-1">
-            <p>{{currentCampaign.price}}</p>
+            <p>{{menuService.currentCampaign.price}}</p>
             <p>TL</p>
         </div>
-        <div *ngIf="isLikeEnabled" class="border rounded-lg" (click)="onLike(currentCampaign)">
-            <p>{{currentCampaign.likes}}</p>
-            <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(currentCampaign.id)}" class="like-icon">
+        <div *ngIf="isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentCampaign)">
+            <p>{{menuService.currentCampaign.likes}}</p>
+            <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(menuService.currentCampaign.id)}" class="like-icon">
                 thumb_up
             </mat-icon>
         </div>
     </div>
-    <p class="item-description">{{currentCampaign.description}}</p>
+    <p class="item-description">{{menuService.currentCampaign.description}}</p>
 </div>

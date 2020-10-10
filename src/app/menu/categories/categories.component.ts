@@ -29,15 +29,18 @@ export class CategoriesComponent {
         this.menuService.like(item, isCampaign);
     }
 
-    productClick(productId) {
-        this.menuSessionService.setCurrentProduct(productId);
+    productClick(product) {
+        this.menuService.currentProduct = product
+        this.menuSessionService.setCurrentProduct(product.id);
     }
 
-    campaignClick(campaignId) {
-        this.menuSessionService.setCurrentCampaign(campaignId);
+    campaignClick(campaign) {
+        this.menuService.currentCampaign = campaign;
+        this.menuSessionService.setCurrentCampaign(campaign.id);
     }
 
-    categoryClick(categoryId) {
-        this.menuSessionService.setCurrentCategory(categoryId);
+    categoryClick(category) {
+        this.menuService.currentCategory = category;
+        this.menuSessionService.setCurrentCategory(category.id);
     }
 }

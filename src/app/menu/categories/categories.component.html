@@ -5,12 +5,12 @@
          *ngFor="let item of favoriteService.getFavorites()">
         <img class="item-img" src="{{item.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
-             (click)="productClick(item.id)"
+             (click)="productClick(item)"
              [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
         <div class="w-100 m-0 p-1 fav-like-price-container">
             <div class="row w-100 m-0 text-white">
                 <div class="col d-flex justify-content-center align-items-center"
-                     (click)="productClick(item.id)"
+                     (click)="productClick(item)"
                      [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
@@ -32,18 +32,18 @@
          *ngFor="let item of menuService.menu?.campaigns">
         <img class="camp-item-img" src="{{item.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
-             (click)="campaignClick(item.id)"
+             (click)="campaignClick(item)"
              [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
 
         <p class="p-1 camp-item-name"
-           (click)="campaignClick(item.id)"
+           (click)="campaignClick(item)"
            [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">{{item.name}}</p>
 
         <div class="w-100 camp-like-price-container p-0">
 
             <div class="row w-100 m-0 p-1 text-white">
                 <div class="col d-flex justify-content-center align-items-center"
-                     (click)="campaignClick(item.id)"
+                     (click)="campaignClick(item)"
                      [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
@@ -63,7 +63,7 @@
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"
-         (click)="categoryClick(category.id)"
+         (click)="categoryClick(category)"
          [routerLink]="[category.name.toLowerCase().replaceAll(' ','-')]">
         <img class="category-img" src="{{category.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
