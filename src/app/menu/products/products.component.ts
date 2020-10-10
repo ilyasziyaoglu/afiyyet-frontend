@@ -36,7 +36,7 @@ export class ProductsComponent implements OnInit {
         this.menuService.like(item);
     }
 
-    productClick(product) {
-        this.menuSessionService.setCurrentProduct(product);
+    productClick(productId) {
+        this.menuSessionService.setCurrentProduct(productId);
     }
 }

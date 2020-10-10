@@ -28,8 +28,8 @@ export class CategoriesComponent {
         this.menuService.like(item, isCampaign);
     }
 
-    productClick(product) {
-        this.menuSessionService.setCurrentProduct(product);
+    productClick(productId) {
+        this.menuSessionService.setCurrentProduct(productId);
     }
 
     campaignClick(campaign) {

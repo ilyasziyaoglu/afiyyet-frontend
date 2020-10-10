@@ -11,13 +11,13 @@ export class MenuSessionService {
 
   constructor() { }
 
-  setCurrentProduct(product) {
-    sessionStorage.setItem(this.CURRENT_PROD, JSON.stringify(product));
+  setCurrentProduct(productId) {
+    sessionStorage.setItem(this.CURRENT_PROD, JSON.stringify(productId));
   }
 
   getCurrentProduct() {
-    let product = sessionStorage.getItem(this.CURRENT_PROD);
-    if (product) return JSON.parse(product);
+    let productId = sessionStorage.getItem(this.CURRENT_PROD);
+    if (productId) return JSON.parse(productId);
     return null;
   }
 

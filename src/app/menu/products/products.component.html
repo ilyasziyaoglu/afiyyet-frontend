@@ -6,22 +6,22 @@
 
         <img class="item-img"
              [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-             (click)="productClick(item)"
+             (click)="productClick(item.id)"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
              src="{{item.imgUrl}}" alt="{{item.name}}">
         <div class="item-name"
              [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-             (click)="productClick(item)">
+             (click)="productClick(item.id)">
             <h3>{{item.name}}</h3>
         </div>
         <hr class="item-line">
         <p class="description"
            [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-           (click)="productClick(item)">{{item.description}}</p>
+           (click)="productClick(item.id)">{{item.description}}</p>
         <div class="row w-100 m-0">
             <div class="col border-right border-white d-flex justify-content-center align-items-center"
                  [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-                 (click)="productClick(item)">
+                 (click)="productClick(item.id)">
                 {{item.price}}&nbsp;<sub>TL</sub>
             </div>
             <div *ngIf="isFavEnabled" class="col border-right border-white d-flex justify-content-center align-items-center">
