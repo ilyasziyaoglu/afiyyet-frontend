@@ -1005,13 +1005,6 @@ export let menu = {
                 }],
         },
         {
-            name: 'DONDURMALAR',
-            id: '919',
-            imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_F3236.jpg',
-
-            products: [],
-        },
-        {
             name: 'SICAK İÇECEKLER',
             id: '920',
             imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/categories/egekahvecisi.qrmenue.com_C8643.jpg',
