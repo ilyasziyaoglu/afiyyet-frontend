@@ -80,7 +80,7 @@ export class ReservationComponent implements OnInit {
                     this.location.back();
                 });
             } else {
-                Swal.fire('Sonuç', 'Rezervasyonunuz olu;tururken bir hata ile karşılaştık! :( Lütfen bilgileri kontrol edin veya daha sonra tekrar deneyin.', 'error');
+                Swal.fire('Sonuç', 'Rezervasyonunuz oluştururken bir hata ile karşılaştık! :( Lütfen bilgileri kontrol edin veya daha sonra tekrar deneyin.', 'error');
             }
         });
     }
