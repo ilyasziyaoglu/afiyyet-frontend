@@ -89,6 +89,10 @@
     width: 70% !important;
   }
 
+  .item-passive {
+    width: 70% !important;
+  }
+
   .item-action-group mat-icon{
     margin: 5px 0;
   }
@@ -104,6 +108,10 @@
 
 @media only screen and (min-width: 1336px) {
   .item {
+    width: 50% !important;
+  }
+
+  .item-passive {
     width: 50% !important;
   }
 
