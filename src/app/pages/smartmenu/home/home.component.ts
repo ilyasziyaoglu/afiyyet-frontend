@@ -16,27 +16,27 @@ export class HomeComponent implements OnInit {
         {
             icon: 'speed',
             title: 'İş Yükünüzü Azaltın Zamandan Kazanın',
-            decription: 'Dijital Menü ile iş yükünüzü azaltabilecek ve müşterilerinize daha hızlı bir hizmet sunacaksınız',
+            decription: 'Akıllı Menü ile iş yükünüzü azaltabilecek ve müşterilerinize daha hızlı bir hizmet sunacaksınız',
         },
         {
             icon: 'nature_people',
             title: 'Çevre Dostu Olun',
-            decription: 'Dijital Menü kullanarak sizde doğayı koruyun',
+            decription: 'Akıllı Menü kullanarak sizde doğayı koruyun',
         },
         {
             icon: 'sync',
             title: 'Sürekli Güncel Kalın',
-            decription: 'Dijital Menü size sınırsız içerik güncelleme hakkı sağlar. Menü de yaptığınız değişiklikler anında müşterilerinize yansısın',
+            decription: 'Akıllı Menü size sınırsız içerik güncelleme hakkı sağlar. Menü de yaptığınız değişiklikler anında müşterilerinize yansısın',
         },
         {
             icon: 'app_blocking',
             title: 'Uygulama İndirmeden',
-            decription: 'Dijital Menü\'nün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulamaya indirilmesine gerek yoktur',
+            decription: 'Akıllı Menü\'nün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulamaya indirilmesine gerek yoktur',
         },
         {
             icon: 'share',
-            title: 'Dijital Menü İle Her Yerdesiniz',
-            decription: 'Dijital Menü\'nün linkini veya kare kodunu sosyal medya üzerinden paylaşarak restoranınıza gelmeden uzaktan erişim ile Menü\'nüzü müşterilerinize tanıtabilirsiniz ve yeni müşteriler kazanabilirsiniz',
+            title: 'Akıllı Menü İle Her Yerdesiniz',
+            decription: 'Akıllı Menü\'nün linkini veya kare kodunu sosyal medya üzerinden paylaşarak restoranınıza gelmeden uzaktan erişim ile Menü\'nüzü müşterilerinize tanıtabilirsiniz ve yeni müşteriler kazanabilirsiniz',
         },
     ];
 
