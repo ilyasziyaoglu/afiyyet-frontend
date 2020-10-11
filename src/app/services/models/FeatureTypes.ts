@@ -1,7 +1,6 @@
 export const featureType = Object.freeze({
     QR_MENU: 'QR_MENU',
     QR_WIFI: 'QR_WIFI',
-    CRUD_OPERATIONS: 'CRUD_OPERATIONS',
     ORDERING: 'ORDERING',
     EDUCATION: 'EDUCATION',
     SUPPORT: 'SUPPORT',

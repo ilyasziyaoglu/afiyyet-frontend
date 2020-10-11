@@ -5,6 +5,7 @@ import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
 import {AdminSessionService} from '../../../base/services/admin-session.service';
+import {UserService} from '../../../base/services/user.service';
 
 @Component({
   selector: 'app-campaigns',
@@ -18,7 +19,8 @@ export class CampaignsComponent implements OnInit {
 
   constructor(public campaignService: CampaignService,
               private router: Router,
-              private adminSessionService: AdminSessionService) {
+              private adminSessionService: AdminSessionService,
+              public userService: UserService) {
     campaignService.getAllCampaigns(res => {
       // push isleminde duplicate gorunmemesi icin boş array'e atandi.
       campaignService.activeCampaigns = [];

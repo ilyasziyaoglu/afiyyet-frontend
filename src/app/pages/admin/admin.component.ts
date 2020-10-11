@@ -20,7 +20,6 @@ export class AdminComponent implements OnInit {
     userService.isReservEnabled = user.brand.features.includes(featureType.RESERVATIONS);
     userService.isFeedBackEnabled = user.brand.features.includes(featureType.FEEDBACKS);
     userService.isOrderEnabled = user.brand.features.includes(featureType.ORDERING);
-    userService.isCRUDEnabled = user.brand.features.includes(featureType.CRUD_OPERATIONS);
   }
 
   ngOnInit(): void {
