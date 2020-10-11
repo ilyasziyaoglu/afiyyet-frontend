@@ -35,8 +35,11 @@
   display: flex;
 }
 
-.prduct-img {
-  width: 100%;
+.product-img {
+  border-radius: 8px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
 }
 
 .item {
@@ -96,6 +99,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
+
+  .product-img {
+    width: 115px;
+    height: 115px;
+  }
+
   .item-action-group mat-icon{
     margin: 5px 0;
   }
@@ -110,6 +119,11 @@
 }
 
 @media only screen and (min-width: 1336px) {
+  .product-img {
+    width: 200px;
+    height: 200px;
+  }
+
   .categories {
     height: 75vh;
     overflow: scroll;
