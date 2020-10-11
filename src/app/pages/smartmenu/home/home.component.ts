@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
         {
             icon: 'money_off',
             title: 'Maliyetinizi Azaltın',
-            decription: 'Fiyat veya içerik güncellemeleriniz de menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi istediğiniz zaman güncelleyerek sürekli güncel kalın.',
+            decription: 'Fiyat veya içerik güncellemeleriniz de menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi istediğiniz zaman güncelleyerek sürekli güncel kalın',
         },
         {
             icon: 'speed',
@@ -26,12 +26,12 @@ export class HomeComponent implements OnInit {
         {
             icon: 'sync',
             title: 'Sürekli Güncel Kalın',
-            decription: 'Akıllı Menü size sınırsız içerik güncelleme hakkı sağlar. Menü de yaptığınız değişiklikler anında müşterilerinize yansısın',
+            decription: 'Akıllı Menü size sınırsız içerik güncelleme hakkı sağlar. Menü de yaptığınız tüm değişiklikler anında müşterilerinize yansır',
         },
         {
             icon: 'app_blocking',
             title: 'Uygulama İndirmeden',
-            decription: 'Akıllı Menü\'nün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulamaya indirilmesine gerek yoktur',
+            decription: 'Akıllı Menü\'nün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulama indirilmesine gerek yoktur',
         },
         {
             icon: 'share',
