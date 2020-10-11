@@ -34,6 +34,16 @@
   position: relative;
   width: 100%;
 }
+
+
+.abd:hover .attach {
+  opacity: 0.8;
+}
+
+.attach {
+  opacity: 0;
+}
+
 .img-container:after {
   content: "";
   display: block;
