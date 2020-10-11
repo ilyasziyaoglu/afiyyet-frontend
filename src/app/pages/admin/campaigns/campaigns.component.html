@@ -10,10 +10,10 @@
     <div [cdkDragDisabled]="!userService.isOrderEnabled" cdkDrag class="my-2 mx-2 p-1 item " *ngFor="let item of campaignService.activeCampaigns; let i = index">
 
         <div class="row m-0 p-0 w-100">
-            <div class="col-3 col-lg-2 p-1 h-25">
+            <div class="col-3 col-lg-3 p-1 h-25">
                 <img class="product-img" [src]="item.imgUrl ? item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
             </div>
-            <div class="col-7 col-lg-9 p-1">
+            <div class="col-7 col-md-8 col-lg-8 p-1">
                 <div class="row m-0">
                     <!--                            <p class="item_desc">Başlık</p>-->
                     <h3 class="font-weight-bold px-2 py-1 rounded item-name">{{item.name}}</h3>
@@ -25,7 +25,7 @@
                     <p class="item-price align-self-center p-2 rounded" style="font-size: 16px; font-weight: bold">Fiyat: {{item.price}} TL</p>
                 </div>
             </div>
-            <div class="col-2 col-lg-1 p-1 item-action-group">
+            <div class="col-2 col-md-1 col-lg-1 p-1 item-action-group">
                 <mat-icon *ngIf="userService.isOrderEnabled" cdkDragHandle>view_headline</mat-icon>
                 <mat-icon (click)="editCampaign(item)">edit</mat-icon>
                 <mat-icon class="text-danger" (click)="deleteItem(item, i, true)">delete</mat-icon>
@@ -46,28 +46,28 @@
 
 <div class="row m-3 d-flex justify-content-center">
     <h2 class="w-100 text-center">Geçmiş Kampanyalar</h2>
-    <div class="my-2 mx-2 p-1 item-passive col-10 col-lg-5" *ngFor="let item of campaignService.passiveCampaigns; let i = index">
 
+    <div cdkDrag class="my-2 mx-2 p-1 item " *ngFor="let item of campaignService.passiveCampaigns; let i = index">
         <div class="row m-0 p-0 w-100">
-            <div class="col-3 col-lg-2 p-1 h-25">
+            <div class="col-3 col-lg-3 p-1 h-25">
                 <img class="product-img" [src]="item.imgUrl ? item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
             </div>
-            <div class="col-7 col-lg-9 p-1">
+            <div class="col-7 col-md-8 col-lg-8 p-1">
                 <div class="row m-0">
                     <!--                            <p class="item_desc">Başlık</p>-->
-                    <h3 style="background-color: #394046" class="font-weight-bold px-2 py-1 rounded item-name">{{item.name}}</h3>
+                    <h3 class="font-weight-bold px-2 py-1 rounded item-name">{{item.name}}</h3>
                 </div>
                 <div class="row no-gutters description-desktop">
-                    <p style="background-color: #394046" class="font-italic p-2 rounded item-description">{{item.description}}</p>
+                    <p class="font-italic p-2 rounded item-description">{{item.description}}</p>
                 </div>
                 <div class="row m-0 justify-content-center">
-                    <p class="item-price align-self-center p-2 rounded" style="font-size: 16px; font-weight: bold; background-color: #394046">
-                        Fiyat: {{item.price}} TL</p>
+                    <p class="item-price align-self-center p-2 rounded" style="font-size: 16px; font-weight: bold">Fiyat: {{item.price}} TL</p>
                 </div>
             </div>
-            <div class="col-2 col-lg-1 p-1 item-action-group">
+            <div class="col-2 col-md-1 col-lg-1 p-1 item-action-group">
+                <mat-icon *ngIf="userService.isOrderEnabled" cdkDragHandle>view_headline</mat-icon>
                 <mat-icon (click)="editCampaign(item)">edit</mat-icon>
-                <mat-icon class="text-danger" (click)="deleteItem(item, i, false)">delete</mat-icon>
+                <mat-icon class="text-danger" (click)="deleteItem(item, i, true)">delete</mat-icon>
             </div>
             <div class="row m-1 p-0 w-100 description-mobile">
                 <p class="w-100 p-2 rounded font-italic item-description-mobile">{{item.description}}</p>

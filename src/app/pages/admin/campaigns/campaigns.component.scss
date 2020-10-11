@@ -51,7 +51,10 @@
 }
 
 .product-img {
-  width: 100%;
+  border-radius: 5px;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
 }
 
 .dates {
@@ -65,9 +68,25 @@
 //  width: 48%;
 //}
 
+@media only screen and (min-width: 767px) {
+
+  .product-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
+
+  .product-img {
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
   .item {
-    width: 60% !important;
+    width: 70% !important;
   }
 
   .item-action-group mat-icon{
