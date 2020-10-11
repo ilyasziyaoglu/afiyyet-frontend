@@ -22,6 +22,6 @@ export class ReservationService extends BaseService{
   }
 
   insertReservation(reservation, cb?) {
-    this.post(reservation, cb);
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/guest/reserve`, reservation, cb);
   }
 }
