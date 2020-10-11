@@ -10,33 +10,33 @@ export class HomeComponent implements OnInit {
     advantages = [
         {
             icon: 'money_off',
-            title: 'Maliyetten Kazanın',
-            decription: 'Artık her fiyat veya içerik güncellemenizde menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi maliyetsizce güncelleyin.',
+            title: 'Maliyetinizi Azaltın',
+            decription: 'Fiyat veya içerik güncellemeleriniz de menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi istediğiniz zaman güncelleyerek sürekli güncel kalın.',
         },
         {
             icon: 'speed',
-            title: 'İş Yükünüzü Azaltın',
-            decription: 'Akıllı Menü sayesinde iş yükünü azaltabilecek ve müşterilerinizi bekletmeyeceksiniz.',
+            title: 'İş Yükünüzü Azaltın Zamandan Kazanın',
+            decription: 'Dijital Menü ile iş yükünüzü azaltabilecek ve müşterilerinize daha hızlı bir hizmet sunacaksınız',
         },
         {
             icon: 'nature_people',
             title: 'Çevre Dostu Olun',
-            decription: 'Akıllı Menü kullanarak doğayı korumaya destek olun.',
+            decription: 'Dijital Menü kullanarak sizde doğayı koruyun',
         },
         {
             icon: 'sync',
             title: 'Sürekli Güncel Kalın',
-            decription: 'Sınırsız içerik güncelleme hakkı. Yönetim paneli üzerinden yağtığınız tüm değişiklikler anında müşterilerinize yansır.',
+            decription: 'Dijital Menü size sınırsız içerik güncelleme hakkı sağlar. Menü de yaptığınız değişiklikler anında müşterilerinize yansısın',
         },
         {
             icon: 'app_blocking',
             title: 'Uygulama İndirmeden',
-            decription: 'Üstelik Akıllı Menü\'nün bu özelliklerini müşterilerinize sunabilmek için herhangi bir uygulama indirmelerine gerek yok.',
+            decription: 'Dijital Menü\'nün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulamaya indirilmesine gerek yoktur',
         },
         {
             icon: 'share',
-            title: 'Sosyal Medyada Paylaş',
-            decription: 'Akıllı Menünün linkini veya kare kodunu sosyal medya üzerinden paylaşabilirsiniz.',
+            title: 'Dijital Menü İle Her Yerdesiniz',
+            decription: 'Dijital Menü\'nün linkini veya kare kodunu sosyal medya üzerinden paylaşarak restoranınıza gelmeden uzaktan erişim ile Menü\'nüzü müşterilerinize tanıtabilirsiniz ve yeni müşteriler kazanabilirsiniz',
         },
     ];
 
