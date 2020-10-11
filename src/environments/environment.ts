@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'http://31.220.55.12:8000/',
+  baseApiUrl: 'https://afiyyet.com:8002/',
   // baseApiUrl: 'http://localhost:8000/',
 };
 

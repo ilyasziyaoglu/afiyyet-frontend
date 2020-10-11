@@ -26,4 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.55.12:/smartmenu/smartmenu-frontend/
+scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@141.136.36.175:/smartmenu/smartmenu-frontend/
+
+scp -r ~/Desktop/smartmenu/dist/smartmenu/ root@141.136.36.175:/smartmenu/smartmenu-frontend/

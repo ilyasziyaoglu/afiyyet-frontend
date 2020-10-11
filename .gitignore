@@ -57,3 +57,5 @@ buck-out/
 *.jsbundle
 
 dist/
+
+src/environments/environment.ts
