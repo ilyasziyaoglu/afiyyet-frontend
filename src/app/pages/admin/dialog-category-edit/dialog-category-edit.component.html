@@ -7,7 +7,7 @@
                 <img class="attach" src="../../../../assets/upload.jpg">
             </div>
             <p *ngIf="!category.imgUrl" class="addimage">Ekle</p>
-            <input #imageInput type="file" class="file_upload_input" (change)="imageUpdateClick(imageInput)" />
+            <input type="file" accept="image/*" class="file_upload_input" (change)="imageUpdateClick($event)" />
         </div>
         <input id="name" class="form-control col-10 col-md-8 col-lg-7" [(ngModel)]="category.name" value="{{category.name}}"/>
     </div>
