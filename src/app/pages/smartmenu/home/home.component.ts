@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {ContactFormService} from '../../../services/contactform.service';
+import Swal from "sweetalert2";
 
 @Component({
     selector: 'app-home',
@@ -62,10 +65,32 @@ export class HomeComponent implements OnInit {
 
     colors = ['blue', 'red', 'green', 'orange'/*, 'yellow', 'purple', 'pink', 'orange', 'brown'*/];
 
-    constructor() {
+        contactForm = new FormGroup({
+        fullName: new FormControl(''),
+        phoneNumber: new FormControl(''),
+        subject: new FormControl(''),
+        message: new FormControl(''),
+    });
+
+    constructor(
+        private contactFormService: ContactFormService
+    ) {
     }
 
     ngOnInit(): void {
     }
 
+    onSubmit() {
+
+        if ( !this.contactForm.valid ) {
+            return;
+        }
+        this.contactFormService.post(this.contactForm.value, res => {
+            if (res) {
+                Swal.fire('Başarılı', 'Mesajınız başarı ile alınmıştır. En kısa sürede size geri dönüş yapılacaktır.', 'success');
+            } else {
+                Swal.fire('Error', 'Mesajınızı iletirken bir hata oluştu!', 'error');
+            }
+        });
+    }
 }

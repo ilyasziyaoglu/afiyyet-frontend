@@ -158,3 +158,36 @@
 <div id="contact" class="row w-100 header">
     <h1>İletişim</h1>
 </div>
+<div class="row w-100 mx-0 mb-5 d-flex justify-content-center">
+    <form [formGroup]="contactForm" class="col-sm-12 col-md-12 col-lg-7">
+        <div class="row w-100 m-0 d-flex justify-content-center">
+            <div class="col-10 col-md-5 col-lg-5">
+                <mat-form-field class="w-100 my-3">
+                    <mat-label>İsim Soyisim</mat-label>
+                    <input formControlName="fullName" name="fullName" matInput placeholder="İsim Soyisim..." required>
+                </mat-form-field>
+            </div>
+            <div class="col-10 col-md-5 col-lg-5">
+                <mat-form-field class="w-100 my-3">
+                    <mat-label>Telefon</mat-label>
+                    <input type="tel" formControlName="phoneNumber" matInput placeholder="5555551234" required>
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-10">
+                <mat-form-field class="w-100 my-3">
+                    <mat-label>Konu</mat-label>
+                    <input formControlName="subject" name="subject" matInput placeholder="Konu..." required>
+                </mat-form-field>
+            </div>
+            <div class="col-10">
+                <mat-form-field class="w-100 my-3">
+                    <mat-label>Mesajınız</mat-label>
+                    <textarea formControlName="message" name="message" matInput placeholder="Mesajınız..." required></textarea>
+                </mat-form-field>
+            </div>
+
+            <button (click)="onSubmit()" class="col-6 py-2 submit-button btn btn-dark">Gönder</button>
+        </div>
+    </form>
+</div>
