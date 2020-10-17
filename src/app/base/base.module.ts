@@ -5,12 +5,14 @@ import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {RouterModule} from '@angular/router';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 @NgModule({
     declarations: [
         LoginComponent,
         RegisterComponent,
+        SpinnerComponent,
     ],
     imports: [
         FormsModule,
@@ -18,6 +20,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         RouterModule,
         FormsModule,
         MatCheckboxModule,
+    ],
+    exports: [
+        SpinnerComponent,
     ],
 })
 export class BaseModule {

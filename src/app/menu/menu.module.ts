@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatBadgeModule} from '@angular/material/badge';
 import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
+import {BaseModule} from '../base/base.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {CampaignDetailComponent} from './campaign-detail/campaign-detail.compone
         FormsModule,
         NgxMaterialTimepickerModule,
         MatBadgeModule,
+        BaseModule,
     ],
 })
 export class MenuModule {

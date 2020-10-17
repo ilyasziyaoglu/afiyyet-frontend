@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {DialogCommentComponent} from './dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
@@ -12,7 +12,8 @@ import {featureType} from '../services/models/FeatureTypes';
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterViewInit {
+    isLoading = true;
 
     constructor(
         public location: Location,
@@ -49,6 +50,10 @@ export class MenuComponent implements OnInit {
     }
 
     ngOnInit(): void {
+    }
+
+    ngAfterViewInit() {
+        this.isLoading = false;
     }
 
     commentClick() {
