@@ -87,6 +87,8 @@ export class HomeComponent implements OnInit {
         }
         this.contactFormService.post(this.contactForm.value, res => {
             if (res) {
+                this.contactForm.reset();
+                this.contactForm.markAsUntouched();
                 Swal.fire('Başarılı', 'Mesajınız başarı ile alınmıştır. En kısa sürede size geri dönüş yapılacaktır.', 'success');
             } else {
                 Swal.fire('Error', 'Mesajınızı iletirken bir hata oluştu!', 'error');
