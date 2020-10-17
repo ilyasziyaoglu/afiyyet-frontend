@@ -1,48 +1,48 @@
-<div class="header p-0 d-flex justify-content-end">
-    <div class="py-2 px-5 btn-login" [routerLink]="['smartmenu/home']">
+<div class="w-100 m-0 header p-0 d-flex justify-content-end">
+    <div class="btn-login" [routerLink]="['smartmenu/home']">
         <div>
             <mat-icon class="nav-item-icon">home</mat-icon>
             <span class="nav-item-text">Home</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
+    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
         <div>
             <span class="nav-item-text">Akıllı Menü Nedir</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
+    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
         <div>
             <span class="nav-item-text">Avantajlar</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
+    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
         <div>
             <span class="nav-item-text">Özellikler</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
+    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
         <div>
             <span class="nav-item-text">Paketler</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
+    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
         <div>
             <span class="nav-item-text">İletişim</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" *ngIf="isLogged" [routerLink]="['admin/menu']">
+    <div class="btn-login" *ngIf="isLogged" [routerLink]="['admin/menu']">
         <div>
             <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
             <span class="nav-item-text">Admin Panel</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" *ngIf="isLogged" (click)="logout()">
+    <div class="btn-login" *ngIf="isLogged" (click)="logout()">
         <div>
             <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
             <span class="nav-item-text">Çıkış Yap</span>
         </div>
     </div>
-    <div class="py-2 px-5 btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
+    <div class="btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
         <div>
             <mat-icon class="nav-item-icon">login</mat-icon>
             <span class="nav-item-text">Giriş Yap</span>
@@ -50,8 +50,8 @@
     </div>
 </div>
 <router-outlet></router-outlet>
-<div class="footer align-content-center">
-    <p style="text-align: center;line-height:45px;font-weight: bold; font-size: 13px">© 2020 by
-        <a style="font-size: 15px;color: white; text-decoration: underline; font-weight: bold" href="https://evercode.net" target="_blank">EverCode</a>
-    </p>
+<div class="whatsapp">
+    <a href="https://web.whatsapp.com/send?phone=905061107443&text&app_absent=0">
+        <img class="whatsapp-icon" src="../../assets/whatsapp.png" alt="Whatsapp">
+    </a>
 </div>
