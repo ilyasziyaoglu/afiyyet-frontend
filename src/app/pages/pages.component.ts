@@ -11,9 +11,11 @@ export class PagesComponent implements OnInit {
 
     isLogged = false;
 
-    constructor(private router: Router,
-                private userService: UserService) {
-        if (userService.getUser()) this.isLogged = true;
+    constructor(
+        public router: Router,
+        private userService: UserService
+    ) {
+        if (userService.getUser()) { this.isLogged = true; }
     }
 
     ngOnInit(): void {

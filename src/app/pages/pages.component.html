@@ -5,6 +5,31 @@
             <span class="nav-item-text">Home</span>
         </div>
     </div>
+    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
+        <div>
+            <span class="nav-item-text">Akıllı Menü Nedir</span>
+        </div>
+    </div>
+    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
+        <div>
+            <span class="nav-item-text">Avantajlar</span>
+        </div>
+    </div>
+    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
+        <div>
+            <span class="nav-item-text">Özellikler</span>
+        </div>
+    </div>
+    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
+        <div>
+            <span class="nav-item-text">Paketler</span>
+        </div>
+    </div>
+    <div class="py-2 px-5 btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
+        <div>
+            <span class="nav-item-text">İletişim</span>
+        </div>
+    </div>
     <div class="py-2 px-5 btn-login" *ngIf="isLogged" [routerLink]="['admin/menu']">
         <div>
             <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>

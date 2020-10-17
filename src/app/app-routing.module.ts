@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './base/auth/login/login.component';
 import {RegisterComponent} from './base/auth/register/register.component';
 
@@ -18,8 +18,13 @@ const routes: Routes = [
     {path: '', redirectTo: 'pages', pathMatch: 'full'},
 ];
 
+const routerOptions: ExtraOptions = {
+    useHash: false,
+    anchorScrolling: 'enabled',
+};
+
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, routerOptions)],
     exports: [RouterModule],
 })
 export class AppRoutingModule {
