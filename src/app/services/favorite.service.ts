@@ -21,6 +21,7 @@ export class FavoriteService {
                 if ( category.products ) {
                     for (const item of category.products) {
                         if ( this.isFavorite(item.id) ) {
+                            item.categoryName = category.name;
                             favorites.push(item);
                         }
                     }
