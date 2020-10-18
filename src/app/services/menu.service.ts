@@ -35,7 +35,7 @@ export class MenuService extends BaseService {
         super(httpService);
 
         // GET MOCK DATA
-        this.menu = menu;
+        // this.menu = menu;
 
         // IMPORT MOCK DATA TO DB
         // this.menu.categories.forEach(c => {
