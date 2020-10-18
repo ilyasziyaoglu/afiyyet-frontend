@@ -15,9 +15,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 #### File Transfer 
-scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/
+`scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/`
 
-scp -r ~/Desktop/smartmenu/dist/smartmenu/ root@31.220.53.64:/smartmenu/smartmenu-frontend/
+`scp -r ~/Desktop/smartmenu/dist/smartmenu/ root@31.220.53.64:/smartmenu/smartmenu-frontend/`
 
 #### For Running SH Files with PM2 Exponential Backoff Restart Delay
 
