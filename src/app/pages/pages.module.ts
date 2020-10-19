@@ -6,6 +6,8 @@ import {AdminModule} from './admin/admin.module';
 import {SmartmenuModule} from './smartmenu/smartmenu.module';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import {CommonModule} from '@angular/common';
         SmartmenuModule,
         MatIconModule,
         CommonModule,
+        MatSidenavModule,
+        MatButtonModule,
     ],
 })
 export class PagesModule {

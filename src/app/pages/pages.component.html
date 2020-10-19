@@ -1,57 +1,123 @@
-<div class="w-100 m-0 header p-0 d-flex justify-content-end">
-    <div class="btn-login" [routerLink]="['smartmenu/home']">
-        <div>
-            <mat-icon class="nav-item-icon">home</mat-icon>
-            <span class="nav-item-text">Home</span>
-        </div>
+<div class="w-100 m-0 p-0 header d-flex justify-content-between">
+    <div class="logo d-flex justify-content-start">
+        <img class="logo-img" src="../../assets/evercode.jpeg" alt="Ever Code">
+        <h3>Ever Code</h3>
     </div>
-    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
-        <div>
-            <span class="nav-item-text">Akıllı Menü Nedir</span>
-        </div>
+    <div>
+        <button class="btn btn-lg toggle-side-menu" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
     </div>
-    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
-        <div>
-            <span class="nav-item-text">Avantajlar</span>
+    <div class="top-menu-container d-flex justify-content-end">
+        <div class="btn-login" [routerLink]="['smartmenu/home']">
+            <div>
+                <mat-icon class="nav-item-icon">home</mat-icon>
+                <span class="nav-item-text"> Home</span>
+            </div>
         </div>
-    </div>
-    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
-        <div>
-            <span class="nav-item-text">Özellikler</span>
+        <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
+            <div>
+                <span class="nav-item-text">Akıllı Menü Nedir</span>
+            </div>
         </div>
-    </div>
-    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
-        <div>
-            <span class="nav-item-text">Paketler</span>
+        <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
+            <div>
+                <span class="nav-item-text">Avantajlar</span>
+            </div>
         </div>
-    </div>
-    <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
-        <div>
-            <span class="nav-item-text">İletişim</span>
+        <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
+            <div>
+                <span class="nav-item-text">Özellikler</span>
+            </div>
         </div>
-    </div>
-    <div class="btn-login" *ngIf="isLogged" [routerLink]="['admin/menu']">
-        <div>
-            <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
-            <span class="nav-item-text">Admin Panel</span>
+        <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
+            <div>
+                <span class="nav-item-text">Paketler</span>
+            </div>
         </div>
-    </div>
-    <div class="btn-login" *ngIf="isLogged" (click)="logout()">
-        <div>
-            <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
-            <span class="nav-item-text">Çıkış Yap</span>
+        <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
+            <div>
+                <span class="nav-item-text">İletişim</span>
+            </div>
         </div>
-    </div>
-    <div class="btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
-        <div>
-            <mat-icon class="nav-item-icon">login</mat-icon>
-            <span class="nav-item-text">Giriş Yap</span>
+        <div class="btn-login" *ngIf="isLogged" [routerLink]="['admin/menu']">
+            <div>
+                <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
+                <span class="nav-item-text"> Admin Panel</span>
+            </div>
+        </div>
+        <div class="btn-login" *ngIf="isLogged" (click)="logout()">
+            <div>
+                <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
+                <span class="nav-item-text"> Çıkış Yap</span>
+            </div>
+        </div>
+        <div class="btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
+            <div>
+                <mat-icon class="nav-item-icon">login</mat-icon>
+                <span class="nav-item-text"> Giriş Yap</span>
+            </div>
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>
-<div class="whatsapp">
-    <a href="https://web.whatsapp.com/send?phone=905061107443&text&app_absent=0">
-        <img class="whatsapp-icon" src="../../assets/whatsapp.png" alt="Whatsapp">
-    </a>
-</div>
+<mat-drawer-container class="side-menu-container" [hasBackdrop]="true">
+    <mat-drawer #drawer [mode]="'over'">
+        <div class="btn-login col-sm-12 px-5" [routerLink]="['smartmenu/home']">
+            <div>
+                <mat-icon class="nav-item-icon">home</mat-icon>
+                <span class="nav-item-text"> Home</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
+            <div>
+                <span class="nav-item-text">Akıllı Menü Nedir</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#advantages')">
+            <div>
+                <span class="nav-item-text">Avantajlar</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#features')">
+            <div>
+                <span class="nav-item-text">Özellikler</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#packages')">
+            <div>
+                <span class="nav-item-text">Paketler</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#contact')">
+            <div>
+                <span class="nav-item-text">İletişim</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" *ngIf="isLogged" [routerLink]="['admin/menu']">
+            <div>
+                <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
+                <span class="nav-item-text"> Admin Panel</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" *ngIf="isLogged" (click)="logout()">
+            <div>
+                <mat-icon class="nav-item-icon">exit_to_app</mat-icon>
+                <span class="nav-item-text"> Çıkış Yap</span>
+            </div>
+        </div>
+        <div class="btn-login col-sm-12 px-5" *ngIf="!isLogged" [routerLink]="['/login']">
+            <div>
+                <mat-icon class="nav-item-icon">login</mat-icon>
+                <span class="nav-item-text"> Giriş Yap</span>
+            </div>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+        <div class="whatsapp">
+            <a href="https://web.whatsapp.com/send?phone=905061107443&text&app_absent=0">
+                <img class="whatsapp-icon" src="../../assets/whatsapp.png" alt="Whatsapp">
+            </a>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
