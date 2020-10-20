@@ -3,7 +3,45 @@ h1, p {
 }
 
 .banner-img {
-  width: 100%;
+  position: absolute;
+  height: 600px;
+  left: 20px;
+  top: 60px;
+  z-index: 999;
+}
+
+.banner-div {
+  height: 600px;
+  background-image: linear-gradient(to right, #DD2C00 , #FF6D00);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+}
+
+.btn-login {
+  padding: 15px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 300;
+}
+
+.btn-login :hover {
+  color: #F49A8B;
+}
+
+.logo-img {
+  float: right;
+  margin: 10px;
+  height: 30px;
+}
+
+.logo {
+  min-width: 200px;
+  color: white;
+}
+
+.logo h3 {
+  margin: auto 5px;
 }
 
 .demo-button {

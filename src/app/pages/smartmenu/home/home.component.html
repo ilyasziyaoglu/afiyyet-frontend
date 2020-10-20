@@ -1,4 +1,49 @@
-<img class="banner-img" src="../../../../assets/mockup.jpg">
+<img class="banner-img" src="../../../../assets/s20.png">
+<div class="banner-div">
+    <div class="w-100 m-0 p-0 header d-flex justify-content-between">
+        <div class="logo d-flex justify-content-start">
+            <img class="logo-img" src="../../../../assets/logo.png" alt="Ever Code">
+            <h3>EverCode</h3>
+        </div>
+        <div class="top-menu-container d-flex justify-content-end">
+            <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
+                <div>
+                    <span class="nav-item-text">AVANTAJLAR</span>
+                </div>
+            </div>
+            <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
+                <div>
+                    <span class="nav-item-text">ÖZELLİKLER</span>
+                </div>
+            </div>
+            <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
+                <div>
+                    <span class="nav-item-text">PAKETLER</span>
+                </div>
+            </div>
+            <div class="btn-login" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
+                <div>
+                    <span class="nav-item-text">İLETİŞİM</span>
+                </div>
+            </div>
+            <div class="btn-login" *ngIf="isLogged" [routerLink]="['admin/menu']">
+                <div>
+                    <span class="nav-item-text">YÖNETİM PANELİ</span>
+                </div>
+            </div>
+            <div class="btn-login" *ngIf="isLogged" (click)="logout()">
+                <div>
+                    <span class="nav-item-text">ÇIKIŞ YAP</span>
+                </div>
+            </div>
+            <div class="btn-login" *ngIf="!isLogged" [routerLink]="['/login']">
+                <div>
+                    <span class="nav-item-text">GİRİŞ YAP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="what-is-smartmenu" class="row w-100 header overlay-text">
     <h1>Akıllı Menü Nedir?</h1>
     <p>Akıllı Menü, EverCode tarafından geliştirilmiş cafe ve restoranların menü içeriklerini müşterilerine dinamik ve dijital bir şekilde sunma olanağı tanır. Sağladığı müşteri deneyimine ve işletme sahibine yönelik özellikleri ile sektörün en iyisi konumundadır. İşletmeniz için Akıllı Menü entegrasyonu yapmak oldukça kolaydır. Dakikalar içinde işletme hesabınızı oluşturabilir, menü içeriklerinizi ekleyebilirsiniz.</p>
