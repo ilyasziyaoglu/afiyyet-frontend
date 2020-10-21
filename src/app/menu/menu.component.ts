@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {DialogCommentComponent} from './dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
@@ -12,7 +12,7 @@ import {featureType} from '../services/models/FeatureTypes';
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
 })
-export class MenuComponent implements OnInit, AfterViewInit {
+export class MenuComponent implements OnInit {
     isLoading = true;
 
     constructor(
@@ -46,15 +46,12 @@ export class MenuComponent implements OnInit, AfterViewInit {
                 menuService.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
                 menuService.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
                 menuService.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
+                this.isLoading = false;
             });
         }
     }
 
     ngOnInit(): void {
-    }
-
-    ngAfterViewInit() {
-        this.isLoading = false;
     }
 
     commentClick() {
