@@ -4,14 +4,13 @@ h1, p {
 
 .banner-img {
   position: absolute;
-  width: 38%;
   left: 20px;
   top: 60px;
   z-index: 999;
 }
 
 .banner-div {
-  height: 580px;
+  height: 80vh;
   background-image: linear-gradient(to right, #DD2C00 , #FF6D00);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
 }
@@ -30,8 +29,7 @@ h1, p {
 }
 
 .logo-img {
-  float: right;
-  margin: 10px;
+  margin-left: 10px;
   height: 30px;
 }
 
@@ -192,6 +190,19 @@ h1, p {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 576px){
+  .banner-img {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 577px){
+  .banner-img {
+    width: 60%;
+  }
+}
+
 @media only screen and (min-width: 769px) {
 
   .demo-button {
@@ -225,6 +236,26 @@ h1, p {
 
   .package, .advantage {
     max-width: 400px !important;
+  }
+
+  .banner-img {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .banner-img {
+    width: 40%;
+  }
+
+  .banner-div {
+    height: 55vh;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .banner-img {
+    width: 35%;
   }
 }
 

@@ -1,15 +1,5 @@
 <mat-drawer-container class="side-menu-container" [hasBackdrop]="true">
     <mat-drawer #drawer [mode]="'over'">
-        <div class="btn-login col-sm-12 px-5" [routerLink]="['smartmenu/home']">
-            <div>
-                <span class="nav-item-text">Home</span>
-            </div>
-        </div>
-        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#what-is-smartmenu')">
-            <div>
-                <span class="nav-item-text">Akıllı Menü Nedir</span>
-            </div>
-        </div>
         <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('/pages/smartmenu/home#advantages')">
             <div>
                 <span class="nav-item-text">Avantajlar</span>
