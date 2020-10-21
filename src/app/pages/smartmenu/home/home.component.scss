@@ -4,16 +4,16 @@ h1, p {
 
 .banner-img {
   position: absolute;
-  height: 600px;
+  width: 38%;
   left: 20px;
   top: 60px;
   z-index: 999;
 }
 
 .banner-div {
-  height: 600px;
+  height: 580px;
   background-image: linear-gradient(to right, #DD2C00 , #FF6D00);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
 }
 
 .btn-login {
