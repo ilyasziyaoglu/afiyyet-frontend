@@ -62,7 +62,7 @@
 </div>
 <mat-drawer-container class="side-menu-container" [hasBackdrop]="true">
     <mat-drawer #drawer [mode]="'over'">
-        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle(); router.navigateByUrl('smartmenu/home')">
+        <div class="btn-login col-sm-12 px-5" (click)="drawer.toggle();  router.navigateByUrl('/pages/smartmenu/home')">
             <div>
                 <mat-icon class="nav-item-icon">home</mat-icon>
                 <span class="nav-item-text"> Home</span>
@@ -93,7 +93,7 @@
                 <span class="nav-item-text">İletişim</span>
             </div>
         </div>
-        <div class="btn-login col-sm-12 px-5" *ngIf="isLogged" (click)="drawer.toggle(); router.navigateByUrl('admin/menu')">
+        <div class="btn-login col-sm-12 px-5" *ngIf="isLogged" (click)="drawer.toggle(); router.navigateByUrl('pages/admin/menu')">
             <div>
                 <mat-icon class="nav-item-icon">admin_panel_settings</mat-icon>
                 <span class="nav-item-text"> Admin Panel</span>
@@ -105,7 +105,7 @@
                 <span class="nav-item-text"> Çıkış Yap</span>
             </div>
         </div>
-        <div class="btn-login col-sm-12 px-5" *ngIf="!isLogged"  (click)="drawer.toggle(); router.navigateByUrl('login')">
+        <div class="btn-login col-sm-12 px-5" *ngIf="!isLogged" (click)="drawer.toggle(); router.navigateByUrl('login')">
             <div>
                 <mat-icon class="nav-item-icon">login</mat-icon>
                 <span class="nav-item-text"> Giriş Yap</span>

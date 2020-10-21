@@ -1,6 +1,8 @@
 <div class="header d-flex justify-content-between">
     <div (click)="location.back()">
-        <mat-icon class="m-3 back-button">arrow_back</mat-icon>
+        <button class="btn m-0 p-0 text-white">
+            <mat-icon class="m-3 back-button">arrow_back</mat-icon>
+        </button>
     </div>
     <div>
         <img class="logo-img" [src]="menuService.menu?.brand.logoImgUrl">
