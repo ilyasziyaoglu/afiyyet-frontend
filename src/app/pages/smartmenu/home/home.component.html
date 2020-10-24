@@ -1,26 +1,26 @@
 <mat-sidenav-container>
 
     <mat-sidenav #sidenav>
-        <div class="col-sm-12 px-5"
+        <div class="col-sm-12 sidenav-item"
              (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#advantages')">
-            <span class="nav-item-text">Avantajlar</span>
+            <span class="sidenav-item-text">Avantajlar</span>
         </div>
-        <div class="col-sm-12 px-5"
+        <div class="col-sm-12 sidenav-item"
              (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#features')">
             <span class="nav-item-text">Özellikler</span>
         </div>
-        <div class="col-sm-12 px-5"
+        <div class="col-sm-12 sidenav-item"
              (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#packages')">
             <span class="nav-item-text">Paketler</span>
         </div>
-        <div class="col-sm-12 px-5"
+        <div class="col-sm-12 sidenav-item"
              (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#contact')">
             <span class="nav-item-text">İletişim</span>
         </div>
-        <div class="col-sm-12 px-5" *ngIf="isLogged" (click)="logout()">
+        <div class="col-sm-12 sidenav-item" *ngIf="isLogged" (click)="logout()">
             <span class="nav-item-text">ÇIKIŞ YAP</span>
         </div>
-        <div class="col-sm-12 px-5" *ngIf="!isLogged" [routerLink]="['/login']">
+        <div class="col-sm-12 sidenav-item" *ngIf="!isLogged" [routerLink]="['/login']">
             <span class="nav-item-text">GİRİŞ YAP</span>
         </div>
     </mat-sidenav>
@@ -35,7 +35,7 @@
                     <h3 class="font-weight-bold">EverCode</h3>
                 </div>
                 <div (click)="sidenav.toggle()" class="side-nav-btn">
-                    <mat-icon style="color: white">menu</mat-icon>
+                    <mat-icon>menu</mat-icon>
                 </div>
                 <div class="top-menu-container d-flex justify-content-end">
                     <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
