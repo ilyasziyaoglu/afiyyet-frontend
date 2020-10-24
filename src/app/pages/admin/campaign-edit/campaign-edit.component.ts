@@ -4,6 +4,7 @@ import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
 import {CampaignService} from '../../../services/campaign.service';
 import {AdminSessionService} from '../../../base/services/admin-session.service';
+import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-campaign-edit',
@@ -16,17 +17,19 @@ export class CampaignEditComponent implements OnInit {
     campaign: any;
     formData: FormData;
 
-    constructor(private router: Router,
-                private fileService: FileService,
-                private campaignService: CampaignService,
-                private adminSessionService: AdminSessionService) {
-
-      this.sessionData = this.adminSessionService.getCurrentCampaign() || {};
-      this.campaign = this.sessionData.campaign || {};
-      if (this.sessionData.campaign) {
-          this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
-          this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
-      }
+    constructor(
+        private router: Router,
+        private fileService: FileService,
+        public location: Location,
+        private campaignService: CampaignService,
+        private adminSessionService: AdminSessionService
+    ) {
+        this.sessionData = this.adminSessionService.getCurrentCampaign() || {};
+        this.campaign = this.sessionData.campaign || {};
+        if ( this.sessionData.campaign ) {
+            this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
+            this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+        }
     }
 
     ngOnInit(): void {
@@ -66,13 +69,15 @@ export class CampaignEditComponent implements OnInit {
         this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
         this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
 
-        if ( this.sessionData.isEdit) {
+        if ( this.sessionData.isEdit ) {
             if ( this.formData ) {
                 this.fileService.uploadFile(this.formData, res => {
                     if ( res.fileName ) {
                         this.campaign.imgUrl = res.fileName;
                         this.campaignService.updateCampaign(this.campaign, res2 => {
-                            if ( res2 ) { this.router.navigateByUrl('/pages/admin/campaigns').then(); }
+                            if ( res2 ) {
+                                this.router.navigateByUrl('/pages/admin/campaigns').then();
+                            }
                         });
                     } else {
                         Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
@@ -80,7 +85,9 @@ export class CampaignEditComponent implements OnInit {
                 });
             } else {
                 this.campaignService.updateCampaign(this.campaign, res => {
-                    if ( res ) { this.router.navigateByUrl('/pages/admin/campaigns').then(); }
+                    if ( res ) {
+                        this.router.navigateByUrl('/pages/admin/campaigns').then();
+                    }
                 });
             }
         } else {

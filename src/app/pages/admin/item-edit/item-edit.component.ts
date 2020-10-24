@@ -5,6 +5,7 @@ import {CategoryService} from '../../../services/category.service';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
 import {AdminSessionService} from '../../../base/services/admin-session.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-item-edit',
@@ -22,6 +23,7 @@ export class ItemEditComponent implements OnInit {
       private productService: ProductService,
       private categoryService: CategoryService,
       private fileService: FileService,
+      public location: Location,
       private adminSessionService: AdminSessionService
   ) {
     this.sessionData = this.adminSessionService.getCurrentProduct() || {};

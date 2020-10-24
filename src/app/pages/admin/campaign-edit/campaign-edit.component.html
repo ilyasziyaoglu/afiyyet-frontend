@@ -6,31 +6,31 @@
         <input #imageInput type="file" class="file_upload_input" (change)="imageUpdateClick(imageInput)" />
     </div>
     <div class="col-12 col-lg-6">
-        <div class="form-group mb-2 row">
+        <div class="form-group m-0 p-2 w-100 row">
             <label for="name" class="col-2 col-form-label bg-dark input_label">Başlık</label>
             <input id="name" [(ngModel)]="campaign.name"
                    class="form-control col-10" value="{{campaign.name}}" />
         </div>
-        <div class="form-group mb-2 row">
+        <div class="form-group m-0 p-2 w-100 row">
             <label for="description" class="col-2 col-form-label bg-dark input_label">İçerik</label>
-            <textarea id="description" [(ngModel)]="campaign.description"
+            <textarea id="description" [(ngModel)]="campaign.description" rows="4"
                       class="description form-control col-10">{{campaign.description}}</textarea>
         </div>
-        <div class="form-group mb-2 row p-0 col-11 col-sm-8 col-md-7 col-lg-6">
+        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
             <label for="startDate" class="col-form-label bg-dark input_label col-4">Başlangıç</label>
             <input id="startDate" class="form-control col-8" [(ngModel)]="campaign.startDate" value="{{campaign.startDate}}" type="datetime-local"/>
         </div>
-        <div class="form-group mb-2 row p-0 col-11 col-sm-8 col-md-7 col-lg-6">
+        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
             <label for="expireDate" class="col-form-label bg-dark input_label col-4">Bitiş</label>
             <input id="expireDate" class="form-control col-8" [(ngModel)]="campaign.expireDate" value="{{campaign.expireDate}}" type="datetime-local"/>
         </div>
-        <div class="form-group mb-2 row p-0 col-11 col-sm-8 col-md-7 col-lg-6">
+        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
             <label for="price" class="col-form-label bg-dark input_label col-4">Fiyat</label>
             <input id="price" class="item-price form-control col-8" [(ngModel)]="campaign.price" value="{{campaign.price}}">
         </div>
+        <div class="form-group m-0 p-2 w-100 row d-flex justify-content-between">
+            <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
+            <button (click)="location.back()" class="btn btn-danger form-button">İptal</button>
+        </div>
     </div>
-</div>
-<div class="my-3" style="display: flex; justify-content: center">
-    <button (click)="saveClick()"
-            style="background-color: #00796B; color: white; padding: 20px 90px" class="btn">Kaydet</button>
 </div>
