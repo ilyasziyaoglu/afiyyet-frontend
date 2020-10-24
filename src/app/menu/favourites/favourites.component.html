@@ -1,0 +1,28 @@
+<h3 class="my-1" style="text-align: center">Favorilerim</h3>
+<p class="empty-favorites-text" *ngIf="!menuLocalService.getFavourites().length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
+<div *ngIf="menuService.isFavEnabled" class="row w-100 m-1 p-0 d-flex justify-content-center">
+    <div class="item w-75 m-2 p-0 overflow-hidden"
+         *ngFor="let item of favoriteService.getFavorites()">
+        <img class="item-img" src="{{item.imgUrl}}"
+             #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
+             (click)="productClick(item)">
+
+        <p class="p-1 item-name" (click)="onLike(item)">{{item.name}}</p>
+
+        <div class="w-100 m-0 p-1 fav-like-price-container">
+            <div class="row w-100 m-0 text-white">
+                <div class="col d-flex justify-content-center align-items-center"
+                     (click)="productClick(item)"
+                     [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
+                    {{item.price}}&nbsp;<sub>TL</sub>
+                </div>
+                <div *ngIf="menuService.isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
+                     (click)="onLike(item)">{{item.likes}}&nbsp;
+                    <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
+                              style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

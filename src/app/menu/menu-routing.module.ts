@@ -6,6 +6,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {ReservationComponent} from './reservation/reservation.component';
 import {MenuComponent} from './menu.component';
 import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
+import {FavouritesComponent} from './favourites/favourites.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,10 @@ const routes: Routes = [
             {
                 path: 'reservation',
                 component: ReservationComponent,
+            },
+            {
+                path: 'favourites',
+                component: FavouritesComponent,
             },
             {
                 path: 'kampanyalar/:campaign',

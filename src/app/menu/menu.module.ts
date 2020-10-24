@@ -17,6 +17,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatBadgeModule} from '@angular/material/badge';
 import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
 import {BaseModule} from '../base/base.module';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {BaseModule} from '../base/base.module';
         ProductsComponent,
         ProductDetailComponent,
         ReservationComponent,
-        CampaignDetailComponent
+        CampaignDetailComponent,
+        FavouritesComponent
     ],
     imports: [
         CommonModule,

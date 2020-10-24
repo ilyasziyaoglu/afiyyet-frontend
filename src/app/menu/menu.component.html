@@ -6,16 +6,16 @@
         <img class="logo-img" [src]="menuService.menu?.brand.logoImgUrl">
     </div>
     <div *ngIf="menuService.isFavEnabled">
-        <mat-icon class="m-3 back-button" matBadge="{{favoriteService.getFavorites().length}}" matBadgeSize="small">favorite</mat-icon>
+        <mat-icon class="m-3 back-button" matBadge="{{favoriteService.getFavorites().length}}" [routerLink]="['favourites']" matBadgeSize="small">favorite</mat-icon>
     </div>
 
 </div>
 <div class="row w-100 m-0 p-0 top-menu">
-    <div *ngIf="menuService.isReservEnabled" class="col m-0 p-1 border border-white d-flex justify-content-center align-items-center"
+    <div *ngIf="menuService.isReservEnabled" class="col m-0 p-1 border-right border-white d-flex justify-content-center align-items-center"
         [routerLink]="['reservation']">
         <mat-icon>playlist_add_check</mat-icon><p>&nbsp;&nbsp;Rezervasyon</p>
     </div>
-    <div *ngIf="menuService.isFeedBackEnabled" class="col m-0 p-1 border border-white d-flex justify-content-center align-items-center"
+    <div *ngIf="menuService.isFeedBackEnabled" class="col m-0 p-1 d-flex justify-content-center align-items-center"
         (click)="commentClick()">
         <mat-icon>feedback</mat-icon><p>&nbsp;&nbsp;Fikir Bildir</p>
     </div>

@@ -99,4 +99,15 @@ export class MenuService extends BaseService {
             });
         }
     }
+
+    getMostPopulars() {
+        const likeMap = [];
+        this.menu.categories.forEach(c => {
+            c.products.forEach(p => {
+                p.categoryName = c.name;
+                likeMap.push({id: p.id, likes: p.likes, product: p});
+            });
+        });
+        return likeMap.sort((a, b) => b.likes - a.likes).slice(0, 5).map(i => {return i.product});
+    }
 }
