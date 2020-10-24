@@ -1,5 +1,11 @@
 <div *ngIf="userService.isCampEnabled || userService.isReportsEnabled || userService.isReservEnabled || userService.isFeedBackEnabled"
      class="row w-100 flex-container d-flex justify-content-center no-gutters">
+    <button *ngIf="userService.isCampEnabled" class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['campaigns']">
+        <div>
+            <mat-icon>home</mat-icon>
+            <span class="button-text">Ana Sayfa</span>
+        </div>
+    </button>
     <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['menu']">
         <div>
             <mat-icon>view_list</mat-icon>
@@ -28,6 +34,12 @@
         <div>
             <mat-icon>grading</mat-icon>
             <span class="button-text">Yorumlar</span>
+        </div>
+    </button>
+    <button *ngIf="userService.isCampEnabled" class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['campaigns']">
+        <div>
+            <mat-icon>exit_to_app</mat-icon>
+            <span class="button-text">Çıkış</span>
         </div>
     </button>
 </div>
