@@ -37,20 +37,23 @@
          *ngFor="let item of menuService.getMostPopulars()">
         <img class="item-img" src="{{item.imgUrl}}"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
-             (click)="productClick(item)">
-<!--             [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">-->
+             (click)="productClick(item)"
+             [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
+
+        <p class="p-1 camp-item-name"
+           (click)="campaignClick(item)"
+           [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">{{item.name | titlecase}}</p>
+
         <div class="w-100 m-0 p-1 fav-like-price-container">
             <div class="row w-100 m-0 text-white">
                 <div class="col d-flex justify-content-center align-items-center"
-                     (click)="productClick(item)">
-<!--                     [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">-->
+                     (click)="productClick(item)"
+                     [routerLink]="[item.categoryName.toLowerCase().replaceAll(' ', '-') + '/' + item.name.toLowerCase().replaceAll(' ', '-')]">
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
                 <div *ngIf="menuService.isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
                      (click)="onLike(item)">{{item.likes}}&nbsp;
-                    <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
-                              style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
-                    </mat-icon>
+                    <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}" style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt</mat-icon>
                 </div>
             </div>
         </div>
