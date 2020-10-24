@@ -1,73 +1,89 @@
-.item {
-  position: relative;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-.fav-like-price-container {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  background-color: #000a;
-  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-  justify-content: space-between;
-  margin: 0 5px 5px 5px;
-}
-
-.item-name {
-  font-weight: bolder;
-  position: absolute;
-  top: 0;
-  word-wrap: break-word;
-  color: #fff;
-  padding: 5px;
-  text-align: center;
+.category-name {
   width: 100%;
-  font-size: 15px;
-  white-space: pre-wrap;
-  background-color: #000a;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-
-  display: -webkit-box;
-  overflow : hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  font-weight: bolder;
+  text-align: center;
 }
 
-.empty-favorites-text {
-  margin: 0 30px;
-  text-align: center;
+.favorite {
+  color: red;
+  border-color: red;
+  position: absolute;
+  font-size: 1.7em;
+}
+
+.like-div {
+  display: flex;
+  font-weight: bold;
+  justify-content: flex-end;
+  align-items: center;
+  color: #343A40;
+}
+
+.price-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 17px;
+  color: #343A40;
+  border-right: 1px solid #343A40;
+}
+
+.price-like-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  float: right;
+  background-color: white;
+  padding: 5px 0;
+  border-radius: 3px;
+}
+
+.item {
+  color: aliceblue;
+  margin: 35px 5px 5px 25px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: #424242;
+  min-width: 300px;
+  z-index: 99;
 }
 
 .item-img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+  top: -30px;
+  left: -30px;
+  position: relative;
+  float: left;
+  border-radius: 3px;
+  width: 100px;
+  height: 100px;
+  object-fit:cover;
+}
+
+.item-name {
+  position: relative;
+  left: -10px;
+  font-weight: bolder;
+}
+
+.description {
+  position: relative;
+  margin-top: -10px;
+  margin-left: 20px;
+  top: -20px;
+  left: -10px;
+  text-align: justify;
+  font-family: "Merriweather", serif;
+  font-style: italic;
+}
+
+.item-line {
+  position: relative;
+  margin-left: 88px;
+  top: -20px;
+  background-color: white;
 }
 
 .active {
   color: dodgerblue;
-}
-
-@media only screen and (min-width: 1366px) {
-
-  .item {
-    max-width: 250px;
-  }
-
-  .item-img {
-    width: 248px;
-    max-height: 200px;
-  }
-
-  .favorite {
-    right: 10px;
-  }
-
-  .favorite mat-icon {
-    font-size: 2em;
-  }
 }
