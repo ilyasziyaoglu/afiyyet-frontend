@@ -2,20 +2,23 @@
 
     <mat-sidenav #sidenav>
         <div class="col-sm-12 sidenav-item"
-             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#advantages')">
+             (click)="sidenav.toggle(); scroll('advantages')">
             <span class="sidenav-item-text">Avantajlar</span>
         </div>
         <div class="col-sm-12 sidenav-item"
-             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#features')">
+             (click)="sidenav.toggle(); scroll('features')">
             <span class="nav-item-text">Özellikler</span>
         </div>
         <div class="col-sm-12 sidenav-item"
-             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#packages')">
+             (click)="sidenav.toggle(); scroll('packages')">
             <span class="nav-item-text">Paketler</span>
         </div>
         <div class="col-sm-12 sidenav-item"
-             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#contact')">
+             (click)="sidenav.toggle(); scroll('contact')">
             <span class="nav-item-text">İletişim</span>
+        </div>
+        <div class="sidenav-item" *ngIf="isLogged" [routerLink]="['/pages/admin/menu']">
+            <span class="nav-item-text">YÖNETİM PANELİ</span>
         </div>
         <div class="col-sm-12 sidenav-item" *ngIf="isLogged" (click)="logout()">
             <span class="nav-item-text">ÇIKIŞ YAP</span>
@@ -38,19 +41,19 @@
                     <mat-icon>menu</mat-icon>
                 </div>
                 <div class="top-menu-container d-flex justify-content-end">
-                    <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
+                    <div class="btn-nav" (click)="scroll('advantages')">
                         <span class="nav-item-text">AVANTAJLAR</span>
                     </div>
-                    <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
+                    <div class="btn-nav" (click)="scroll('features')">
                         <span class="nav-item-text">ÖZELLİKLER</span>
                     </div>
-                    <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
+                    <div class="btn-nav" (click)="scroll('packages')">
                         <span class="nav-item-text">PAKETLER</span>
                     </div>
-                    <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
+                    <div class="btn-nav" (click)="scroll('contact')">
                         <span class="nav-item-text">İLETİŞİM</span>
                     </div>
-                    <div class="btn-nav" *ngIf="isLogged" [routerLink]="['admin/menu']">
+                    <div class="btn-nav" *ngIf="isLogged" [routerLink]="['/pages/admin/menu']">
                         <span class="nav-item-text">YÖNETİM PANELİ</span>
                     </div>
                     <div class="btn-nav" *ngIf="isLogged" (click)="logout()">
@@ -85,7 +88,7 @@
             </button>
         </div>
         <hr>
-        <div id="advantages" class="row w-100 advantages-title">
+        <div id="advantages" class="row w-100 title">
             <h1>Akıllı Menü Avantajları</h1>
         </div>
         <div class="row w-100 m-0 advantages d-flex justify-content-center">
@@ -99,7 +102,7 @@
         <br>
         <br>
         <hr>
-        <div id="features" class="row w-100 header">
+        <div id="features" class="row w-100 title">
             <h1>Özellikler</h1>
         </div>
         <div class="row w-100 m-0 px-0 py-3 d-flex justify-content-center">
@@ -112,7 +115,7 @@
         <br>
         <br>
         <hr>
-        <div id="packages" class="row w-100 header">
+        <div id="packages" class="row w-100 title">
             <h1>Paketler</h1>
         </div>
         <div class="row w-100 m-0 mb-5 features d-flex justify-content-center">
@@ -235,7 +238,7 @@
         </div>
         <br>
         <hr>
-        <div id="contact" class="row w-100 header">
+        <div id="contact" class="row w-100 title">
             <h1>İletişim</h1>
         </div>
         <div class="row w-100 mx-0 mb-5 d-flex justify-content-center">

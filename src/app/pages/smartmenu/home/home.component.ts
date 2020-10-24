@@ -12,6 +12,12 @@ import {UserService} from '../../../base/services/user.service';
 })
 export class HomeComponent implements OnInit {
 
+    scroll(id) {
+        let el = document.getElementById(id);
+        console.log("el", el)
+        el.scrollIntoView({behavior:"smooth"});
+    }
+
     advantages = [
         {
             icon: 'money_off',
