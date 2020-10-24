@@ -89,6 +89,7 @@ export class MenuComponent implements OnInit {
             category.products = result;
             this.categoryProductCount = result.length;
         });
+        document.getElementById("category-name").scrollIntoView();
     }
 
     addItem() {
