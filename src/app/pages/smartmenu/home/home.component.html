@@ -1,24 +1,31 @@
 <mat-sidenav-container>
+
     <mat-sidenav #sidenav>
-        <div class="btn-nav col-sm-12 px-5"
+        <div class="col-sm-12 px-5"
              (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#advantages')">
-            <div>
-                <span class="nav-item-text">Avantajlar</span>
-            </div>
+            <span class="nav-item-text">Avantajlar</span>
         </div>
-        <div class="btn-nav col-sm-12 px-5"
-             (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
-            <div>
-                <span class="nav-item-text">Özellikler</span>
-            </div>
+        <div class="col-sm-12 px-5"
+             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#features')">
+            <span class="nav-item-text">Özellikler</span>
         </div>
-        <div class="btn-nav col-sm-12 px-5"
-             (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
-            <div>
-                <span class="nav-item-text">Paketler</span>
-            </div>
+        <div class="col-sm-12 px-5"
+             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#packages')">
+            <span class="nav-item-text">Paketler</span>
+        </div>
+        <div class="col-sm-12 px-5"
+             (click)="sidenav.toggle(); router.navigateByUrl('/pages/smartmenu/home#contact')">
+            <span class="nav-item-text">İletişim</span>
+        </div>
+        <div class="col-sm-12 px-5" *ngIf="isLogged" (click)="logout()">
+            <span class="nav-item-text">ÇIKIŞ YAP</span>
+        </div>
+        <div class="col-sm-12 px-5" *ngIf="!isLogged" [routerLink]="['/login']">
+            <span class="nav-item-text">GİRİŞ YAP</span>
         </div>
     </mat-sidenav>
+
+
     <mat-sidenav-content>
         <img class="banner-img" src="../../../../assets/s20.png">
         <div class="banner-div">
@@ -27,44 +34,30 @@
                     <img class="logo-img" src="../../../../assets/logo.png" alt="Ever Code">
                     <h3 class="font-weight-bold">EverCode</h3>
                 </div>
-                <div (click)="sidenav.toggle()">
-                    <mat-icon>menu</mat-icon>
+                <div (click)="sidenav.toggle()" class="side-nav-btn">
+                    <mat-icon style="color: white">menu</mat-icon>
                 </div>
                 <div class="top-menu-container d-flex justify-content-end">
                     <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#advantages')">
-                        <div>
-                            <span class="nav-item-text">AVANTAJLAR</span>
-                        </div>
+                        <span class="nav-item-text">AVANTAJLAR</span>
                     </div>
                     <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#features')">
-                        <div>
-                            <span class="nav-item-text">ÖZELLİKLER</span>
-                        </div>
+                        <span class="nav-item-text">ÖZELLİKLER</span>
                     </div>
                     <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#packages')">
-                        <div>
-                            <span class="nav-item-text">PAKETLER</span>
-                        </div>
+                        <span class="nav-item-text">PAKETLER</span>
                     </div>
                     <div class="btn-nav" (click)="router.navigateByUrl('/pages/smartmenu/home#contact')">
-                        <div>
-                            <span class="nav-item-text">İLETİŞİM</span>
-                        </div>
+                        <span class="nav-item-text">İLETİŞİM</span>
                     </div>
                     <div class="btn-nav" *ngIf="isLogged" [routerLink]="['admin/menu']">
-                        <div>
-                            <span class="nav-item-text">YÖNETİM PANELİ</span>
-                        </div>
+                        <span class="nav-item-text">YÖNETİM PANELİ</span>
                     </div>
                     <div class="btn-nav" *ngIf="isLogged" (click)="logout()">
-                        <div>
-                            <span class="nav-item-text">ÇIKIŞ YAP</span>
-                        </div>
+                        <span class="nav-item-text">ÇIKIŞ YAP</span>
                     </div>
                     <div class="btn-nav" *ngIf="!isLogged" [routerLink]="['/login']">
-                        <div>
-                            <span class="nav-item-text">GİRİŞ YAP</span>
-                        </div>
+                        <span class="nav-item-text">GİRİŞ YAP</span>
                     </div>
                 </div>
             </div>

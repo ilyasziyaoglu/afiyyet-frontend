@@ -4,9 +4,10 @@ h1, p {
 
 .banner-img {
   position: absolute;
-  left: 20px;
   top: 60px;
   z-index: 10;
+  width: 100%;
+  left: 0;
 }
 
 .banner-div {
@@ -194,13 +195,6 @@ h1, p {
   margin-bottom: 0;
 }
 
-@media only screen and (max-width: 576px){
-  .banner-img {
-    width: 100%;
-    left: 0;
-  }
-}
-
 @media only screen and (min-width: 577px){
   .banner-img {
     width: 60%;
@@ -208,6 +202,14 @@ h1, p {
 }
 
 @media only screen and (min-width: 769px) {
+
+  .top-menu-container {
+    display: flex !important;
+  }
+
+  .side-nav-btn {
+    display: none;
+  }
 
   .demo-button {
     padding: 1rem;
@@ -255,10 +257,6 @@ h1, p {
   .banner-div {
     height: 55vh;
   }
-
-  .top-menu-container {
-    display: flex !important;
-  }
 }
 
 @media only screen and (min-width: 1366px) {
@@ -301,6 +299,10 @@ h1, p {
 
   .package, .advantage {
     max-width: 400px !important;
+  }
+
+  .banner-img {
+    width: 30%;
   }
 }
 
