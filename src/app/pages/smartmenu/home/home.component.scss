@@ -67,8 +67,11 @@ h1, p {
 }
 
 .demo-button-mobile {
+  color: #F4511E;
+  border: 1px solid #F4511E;
+  border-radius: 30px;
   padding: 1rem;
-  font-size: 1.5em;
+  font-size: 1em;
   width: 70%;
   z-index: 99;
   margin: auto;

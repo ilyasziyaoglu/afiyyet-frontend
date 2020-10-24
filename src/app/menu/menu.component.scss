@@ -22,8 +22,14 @@
 }
 
 .top-menu {
-  background-color: #252525;
   color: white;
+  position: sticky;
+  bottom: 0;
+  z-index: 99;
+}
+
+.top-menu div {
+  background-color: #252525;
 }
 
 .top-menu p {
