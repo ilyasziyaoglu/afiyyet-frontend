@@ -10,7 +10,9 @@ import {featureType} from '../../services/models/FeatureTypes';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(public userService: UserService, router: Router) {
+  isLogged = false;
+  constructor(public userService: UserService, public router: Router) {
+    if (userService.getUser()) { this.isLogged = true; }
 
     let user = userService.getUser().user;
     if (!user) router.navigateByUrl('login');
@@ -23,6 +25,12 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.userService.logOut();
+    this.isLogged = false;
+    this.router.navigateByUrl('/pages/smartmenu/home');
   }
 
 }
