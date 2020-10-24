@@ -75,8 +75,7 @@ h1, p {
 }
 
 .advantage {
-  background: rgb(178, 63, 251);
-  background: radial-gradient(circle, rgba(178, 63, 251, 1) 0%, rgba(83, 70, 252, 1) 100%);
+  background: radial-gradient(circle, #FF6D00, #DD2C00);
   border-radius: 15px;
 }
 
@@ -148,8 +147,7 @@ h1, p {
 
 .package {
   border-radius: 20px !important;
-  background: rgb(178, 63, 251);
-  background: radial-gradient(circle, rgba(178, 63, 251, 1) 0%, rgba(83, 70, 252, 1) 100%);
+  background: radial-gradient(circle,  #FF6D00, #DD2C00);
   padding: 20px;
 }
 
