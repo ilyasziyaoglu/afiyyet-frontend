@@ -209,7 +209,7 @@ h1, p {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
 
   .top-menu-container {
     display: flex !important;
@@ -253,12 +253,11 @@ h1, p {
   }
 
   .banner-img {
-    height: 75vh;
+    height: 60vh;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-
 }
 
 @media only screen and (min-width: 1366px) {
