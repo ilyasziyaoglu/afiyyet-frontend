@@ -6,7 +6,7 @@ h1, p {
   position: absolute;
   left: 20px;
   top: 60px;
-  z-index: 999;
+  z-index: 10;
 }
 
 .banner-div {
@@ -15,22 +15,26 @@ h1, p {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
 }
 
-.btn-login {
+.btn-nav {
   padding: 15px;
   color: white;
   font-size: 15px;
   cursor: pointer;
   outline: none;
   font-weight: 300;
-}
 
-.btn-login :hover {
-  color: #F49A8B;
+  :hover {
+    color: #F49A8B;
+  }
 }
 
 .logo-img {
   margin-left: 10px;
   height: 30px;
+}
+
+.top-menu-container {
+  display: none !important;
 }
 
 .logo {
@@ -243,7 +247,7 @@ h1, p {
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
   .banner-img {
     width: 40%;
   }
@@ -251,11 +255,9 @@ h1, p {
   .banner-div {
     height: 55vh;
   }
-}
 
-@media only screen and (min-width: 1200px) {
-  .banner-img {
-    width: 35%;
+  .top-menu-container {
+    display: flex !important;
   }
 }
 
@@ -302,7 +304,7 @@ h1, p {
   }
 }
 
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1440px) {
   .advantages {
     padding-left: 18% !important;
     padding-right: 18% !important;
