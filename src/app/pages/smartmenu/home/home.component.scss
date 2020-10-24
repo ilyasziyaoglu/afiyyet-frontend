@@ -25,15 +25,16 @@ h1, p {
 }
 
 .banner-div {
+  position: relative;
   height: 80vh;
-  background-image: linear-gradient(to right, #DD2C00 , #FF6D00);
+  background-image: linear-gradient(to right, #DD2C00, #FF6D00);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%);
 }
 
 .btn-nav {
   padding: 15px;
   color: white;
-  font-size: 15px;
+  font-size: 10px;
   cursor: pointer;
   outline: none;
   font-weight: 300;
@@ -62,13 +63,20 @@ h1, p {
 }
 
 .demo-button {
-  display: block;
+  display: none;
+}
+
+.demo-button-mobile {
+  padding: 1rem;
+  font-size: 1.5em;
+  width: 70%;
+  z-index: 99;
   margin: auto;
 }
 
 .advantage {
-  background: rgb(178,63,251);
-  background: radial-gradient(circle, rgba(178,63,251,1) 0%, rgba(83,70,252,1) 100%);
+  background: rgb(178, 63, 251);
+  background: radial-gradient(circle, rgba(178, 63, 251, 1) 0%, rgba(83, 70, 252, 1) 100%);
   border-radius: 15px;
 }
 
@@ -92,33 +100,56 @@ h1, p {
   font-size: 7em;
 }
 
-.header {
+.advantages-title {
   margin: 0;
   padding: 2% 10%;
   width: 100%;
   overflow: hidden;
+
+  h1 {
+    margin: 0;
+    width: 100%;
+    line-height: 1.5;
+    font-size: 3em;
+    text-align: center;
+  }
 }
 
-.header h1 {
+.what-is-menu-mobile {
   margin: 0;
+  padding: 2% 10%;
   width: 100%;
-  line-height: 1.5;
-  font-size: 3em;
-  text-align: center;
+  overflow: hidden;
+
+  h1 {
+    margin: 0;
+    width: 100%;
+    line-height: 1.5;
+    font-size: 3em;
+    text-align: center;
+  }
+
+  p {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.2em;
+  }
 }
 
-.header p {
-  width: 100%;
-  margin: 0;
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.2em;
+.what-is-menu {
+  display: none;
+}
+
+.header {
+  display: none;
 }
 
 .package {
   border-radius: 20px !important;
-  background: rgb(178,63,251);
-  background: radial-gradient(circle, rgba(178,63,251,1) 0%, rgba(83,70,252,1) 100%);
+  background: rgb(178, 63, 251);
+  background: radial-gradient(circle, rgba(178, 63, 251, 1) 0%, rgba(83, 70, 252, 1) 100%);
   padding: 20px;
 }
 
@@ -187,11 +218,11 @@ h1, p {
 }
 
 .offer-features .mat-list-base .mat-list-item {
-   color: white !important;
+  color: white !important;
 }
 
 .not-offer-features .mat-list-base .mat-list-item mat-icon {
-   color: darkgray !important;
+  color: darkgray !important;
 }
 
 .not-offer-features .mat-list-base .mat-list-item p {
@@ -211,19 +242,48 @@ h1, p {
 
 @media only screen and (min-width: 768px) {
 
+  .what-is-menu {
+    display: flex;
+    position: absolute;
+    bottom: 25%;
+    right: 5%;
+    width: 40%;
+    justify-content: flex-end;
+
+    h1 {
+      color: white;
+      font-weight:100;
+      font-size: 20px;
+    }
+
+    p {
+      color: white;
+      text-align: end;
+      font-size: 13px;
+      font-weight: 100;
+    }
+  }
+
+  .demo-button {
+    display: inline;
+    background-color: white;
+    color: #FF6D00;
+    border-radius: 50px;
+    font-size: 1.4em;
+    font-weight: lighter;
+    padding: 14px 30px;
+  }
+
+  .demo-button-mobile {
+    display: none;
+  }
+
   .top-menu-container {
     display: flex !important;
   }
 
   .side-nav-btn {
     display: none;
-  }
-
-  .demo-button {
-    padding: 1rem;
-    font-size: 1.5em;
-    width: 50%;
-    z-index: 99;
   }
 
   .package-name {
@@ -240,16 +300,8 @@ h1, p {
     font-size: 8em;
   }
 
-  .header h1 {
-    font-size: 4em;
-  }
-
-  .header p {
-    font-size: 1.5em;
-  }
-
-  .package, .advantage {
-    max-width: 400px !important;
+  .what-is-menu-mobile {
+    display: none;
   }
 
   .banner-img {
@@ -258,16 +310,26 @@ h1, p {
 }
 
 @media only screen and (min-width: 1024px) {
+
+  .btn-nav {
+    font-size: 15px;
+  }
+
+  .what-is-menu {
+    bottom: 35%;
+    right: 5%;
+
+    h1 {
+      font-size: 25px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+  }
 }
 
 @media only screen and (min-width: 1366px) {
-
-  .demo-button {
-    padding: 1rem;
-    font-size: 2em;
-    width: 25%;
-    z-index: 99;
-  }
 
   .advantages {
     padding-left: 5% !important;
@@ -286,16 +348,6 @@ h1, p {
 
   .advantage mat-icon {
     font-size: 8em;
-  }
-
-  .header h1 {
-    font-size: 4em;
-  }
-
-  .header p {
-    padding-left: 25%;
-    padding-right: 25%;
-    font-size: 1.5em;
   }
 
   .package, .advantage {
