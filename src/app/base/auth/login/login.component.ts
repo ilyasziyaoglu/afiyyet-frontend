@@ -31,7 +31,7 @@ export class LoginComponent {
         this.httpService.doRequest(HttpMethod.POST, 'auth/login', data, (res) => {
             if ( res ) {
                 this.userService.login(res.userResponse, res.token, this.isRememberCheck);
-                this.router.navigateByUrl('pages/admin/menu');
+                this.router.navigateByUrl('pages/admin/menu', {replaceUrl: true});
             } else {
               Swal.fire('Uyarı!', 'Kullanıcı adı veya şifre hatalı.', 'warning');
             }
