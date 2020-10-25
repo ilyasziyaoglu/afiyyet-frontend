@@ -3,7 +3,7 @@
     <div class="row" style="display: flex; align-items: center; justify-content: center">
         <div style="cursor: pointer" class="abd col-7 col-md-6 col-lg-4 mb-2 mb-md-2 no-gutters">
             <div class="img-container">
-                <img [src]="category.imgUrl">
+                <img [src]="category.imgUrl" [src]="category.imgUrl ? category.imgUrl : '../../assets/no-image.jpg'">
                 <img class="attach" src="../../../../assets/cloud.jpg">
             </div>
             <p *ngIf="!category.imgUrl" class="addimage">Ekle</p>
