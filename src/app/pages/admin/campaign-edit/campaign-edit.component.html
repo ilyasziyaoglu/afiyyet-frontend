@@ -1,7 +1,7 @@
 <div class="row my-2 mx-1 item px-2 py-3 justify-content-center align-items-center">
 
-    <div style="cursor: pointer" class="col-8 col-md-6 col-lg-3 mb-3 mb-md-3 no-gutters">
-        <img class="col-12" [src]="campaign.imgUrl ? campaign.imgUrl : '../../assets/no-image.jpg'" alt="{{campaign.name}}">
+    <div style="cursor: pointer" class="mb-3 mb-md-3 no-gutters">
+        <img class="image" [src]="campaign.imgUrl ? campaign.imgUrl : '../../assets/no-image.jpg'" alt="{{campaign.name}}">
         <p *ngIf="!campaign.imgUrl" class="addimage">Resim Ekle</p>
         <input type="file" class="file_upload_input" (change)="imageUpdateClick($event)" />
     </div>

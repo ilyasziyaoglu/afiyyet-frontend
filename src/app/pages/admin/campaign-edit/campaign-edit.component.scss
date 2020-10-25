@@ -6,6 +6,13 @@
   justify-content: center;
 }
 
+.image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .addimage {
   position: absolute;
   top: 50%;

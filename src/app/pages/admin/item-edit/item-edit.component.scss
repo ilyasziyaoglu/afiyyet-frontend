@@ -16,6 +16,13 @@
   font-size: 20px;
 }
 
+.image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .file_upload_input {
   cursor: pointer;
   opacity: 0.0;
