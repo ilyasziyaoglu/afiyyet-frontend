@@ -2,6 +2,7 @@
 
     <div class="image-input-container mb-3 mb-md-3 no-gutters">
         <img class="image" [src]="item.imgUrl ? item.imgUrl : '../../assets/no-image.jpg'" alt="{{item.name}}">
+        <img class="attach" src="../../../../assets/cloud.jpg">
         <p *ngIf="!item.imgUrl" class="addimage">Resim Ekle</p>
         <input type="file" class="file_upload_input" (change)="imageUpdateClick($event)" />
     </div>
