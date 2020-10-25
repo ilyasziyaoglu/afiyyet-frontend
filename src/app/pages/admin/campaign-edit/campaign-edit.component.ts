@@ -106,10 +106,16 @@ export class CampaignEditComponent implements OnInit {
         }
     }
 
-    imageUpdateClick(image) {
-        console.log('image', image.files[0]);
-        this.formData = new FormData();
-        this.formData.append('file0', image.files[0]);
+    imageUpdateClick(event) {
+        if ( event.target.files && event.target.files[0] ) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = e => this.campaign.imgUrl = reader.result.toString();
+            reader.readAsDataURL(file);
+
+            this.formData = new FormData();
+            this.formData.append('file0', file);
+        }
     }
 
     dateToISOString(str) {
