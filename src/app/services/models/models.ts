@@ -24,6 +24,7 @@ export class Category {
 export class Brand {
     id: number;
     name: string;
+    uniqueName: string;
     logoImgUrl: string;
     status: string;
 }
