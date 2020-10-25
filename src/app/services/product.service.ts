@@ -45,4 +45,8 @@ export class ProductService extends BaseService {
   getProductsByCategory(categoryId: any, cb?) {
     this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-products-by-category/${categoryId}`, '', cb);
   }
+
+  bulkPriceUpdate(bulkPriceUpdateRequest: any, cb?) {
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/bulk-price-update`, bulkPriceUpdateRequest, cb);
+  }
 }

@@ -3,14 +3,13 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Category} from '../../../services/models/models';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
-import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-dialog-category-edit',
-    templateUrl: './dialog-category-edit.component.html',
-    styleUrls: ['./dialog-category-edit.component.scss'],
+    templateUrl: './category-edit.component.html',
+    styleUrls: ['./category-edit.component.scss'],
 })
-export class DialogCategoryEditComponent implements OnInit {
+export class CategoryEditComponent implements OnInit {
 
     category: Category;
     isInsert = true;
@@ -18,8 +17,7 @@ export class DialogCategoryEditComponent implements OnInit {
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: any,
-        public location: Location,
-        private dialog: MatDialogRef<DialogCategoryEditComponent>,
+        private dialog: MatDialogRef<CategoryEditComponent>,
         private fileService: FileService
     ) {
         this.category = data || new Category();

@@ -7,9 +7,10 @@ import {MatDialog} from '@angular/material/dialog';
 import {AdminSessionService} from '../../../base/services/admin-session.service';
 import {CategoryService} from '../../../services/category.service';
 import {ProductService} from '../../../services/product.service';
-import {DialogCategoryEditComponent} from '../dialog-category-edit/dialog-category-edit.component';
+import {CategoryEditComponent} from '../category-edit/category-edit.component';
 import Swal from 'sweetalert2';
 import {UserService} from '../../../base/services/user.service';
+import {BulkPriceUpdateComponent} from '../bulk-price-update/bulk-price-update.component';
 
 @Component({
     selector: 'app-admin',
@@ -26,10 +27,14 @@ export class MenuComponent implements OnInit {
     categoryProductCount = 0;
 
     constructor(
-        private menuService: MenuService, private storageService: AdminSessionService,
-        private router: Router, private dialog: MatDialog,
-        public categoryService: CategoryService, private productService: ProductService,
-        private adminSessionService: AdminSessionService, public userService: UserService
+        private router: Router,
+        private dialog: MatDialog,
+        public userService: UserService,
+        private menuService: MenuService,
+        private productService: ProductService,
+        public categoryService: CategoryService,
+        private storageService: AdminSessionService,
+        private adminSessionService: AdminSessionService,
     ) {
         categoryService.getCategoriesByBrand(data => {
             this.categoryService.categories = data;
@@ -125,7 +130,7 @@ export class MenuComponent implements OnInit {
     }
 
     addCategoryClick() {
-        const dialogRef = this.dialog.open(DialogCategoryEditComponent, {panelClass: 'category-edit-dialog'});
+        const dialogRef = this.dialog.open(CategoryEditComponent, {panelClass: 'category-edit-dialog'});
 
         dialogRef.afterClosed().subscribe(res => {
             res.category.status = 'ACTIVE';
@@ -137,7 +142,7 @@ export class MenuComponent implements OnInit {
 
 
     editCategoryClick(category, index) {
-        const dialogRef = this.dialog.open(DialogCategoryEditComponent,
+        const dialogRef = this.dialog.open(CategoryEditComponent,
             {panelClass: 'category-edit-dialog', data: {...category}});
 
         dialogRef.afterClosed().subscribe(res => {
@@ -174,4 +179,7 @@ export class MenuComponent implements OnInit {
     }
 
 
+    onClickBulkPriceUpdate() {
+        this.dialog.open(BulkPriceUpdateComponent);
+    }
 }

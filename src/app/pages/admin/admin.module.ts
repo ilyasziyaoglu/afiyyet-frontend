@@ -9,13 +9,17 @@ import {CommentsComponent} from './comments/comments.component';
 import {ReservationsComponent} from './reservations/reservations.component';
 import {ItemEditComponent} from './item-edit/item-edit.component';
 import {DialogCommentComponent} from '../../menu/dialog-comment/dialog-comment.component';
-import {DialogCategoryEditComponent} from './dialog-category-edit/dialog-category-edit.component';
+import {CategoryEditComponent} from './category-edit/category-edit.component';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReportsComponent } from './reports/reports.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import {BulkPriceUpdateComponent} from './bulk-price-update/bulk-price-update.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import {MatBadgeModule} from '@angular/material/badge';
         ReservationsComponent,
         ItemEditComponent,
         DialogCommentComponent,
-        DialogCategoryEditComponent,
+        CategoryEditComponent,
+        BulkPriceUpdateComponent,
         ReportsComponent
     ],
     imports: [
@@ -38,6 +43,9 @@ import {MatBadgeModule} from '@angular/material/badge';
         CommonModule,
         MatIconModule,
         MatBadgeModule,
+        MatSlideToggleModule,
+        MatFormFieldModule,
+        MatInputModule,
     ],
 })
 export class AdminModule {

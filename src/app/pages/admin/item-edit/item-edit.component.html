@@ -21,9 +21,9 @@
             <label for="price" class="col-2 col-form-label bg-dark input_label">Fiyat</label>
             <input id="price" [(ngModel)]="item.price" value="{{item.price}}" class="item-price form-control col-10">
         </div>
-        <div class="form-group m-0 p-2 w-100 row d-flex justify-content-between">
+        <div class="form-group m-0 p-2 w-100 row d-flex justify-content-end">
             <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
-            <button (click)="location.back()" class="btn btn-danger form-button">İptal</button>
+            <button (click)="location.back()" class="btn btn-danger ml-3 form-button">İptal</button>
         </div>
     </div>
 </div>

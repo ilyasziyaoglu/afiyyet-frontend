@@ -29,9 +29,9 @@
             <label for="price" class="col-form-label bg-dark input_label col-4">Fiyat</label>
             <input id="price" class="item-price form-control col-8" [(ngModel)]="campaign.price" value="{{campaign.price}}">
         </div>
-        <div class="form-group m-0 p-2 w-100 row d-flex justify-content-between">
+        <div class="form-group m-0 p-2 w-100 row d-flex justify-content-end">
             <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
-            <button (click)="location.back()" class="btn btn-danger form-button">İptal</button>
+            <button (click)="location.back()" class="btn btn-danger ml-3 form-button">İptal</button>
         </div>
     </div>
 </div>
