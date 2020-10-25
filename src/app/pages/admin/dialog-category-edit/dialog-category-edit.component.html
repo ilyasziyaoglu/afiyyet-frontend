@@ -3,8 +3,8 @@
     <div class="row" style="display: flex; align-items: center; justify-content: center">
         <div style="cursor: pointer" class="abd col-7 col-md-6 col-lg-4 mb-2 mb-md-2 no-gutters">
             <div class="img-container">
-                <img class="item-img" [src]="category.imgUrl">
-                <img class="attach" src="../../../../assets/upload.jpg">
+                <img [src]="category.imgUrl">
+                <img class="attach" src="../../../../assets/cloud.jpg">
             </div>
             <p *ngIf="!category.imgUrl" class="addimage">Ekle</p>
             <input type="file" accept="image/*" class="file_upload_input" (change)="imageUpdateClick($event)" />
