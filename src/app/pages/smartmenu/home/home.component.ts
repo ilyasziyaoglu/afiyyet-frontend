@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         {
             icon: 'money_off',
             title: 'Maliyetinizi Azaltın',
-            decription: 'Fiyat veya içerik güncellemeleriniz de menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi istediğiniz zaman güncelleyerek sürekli güncel kalın',
+            decription: 'Fiyat veya içerik güncellemelerinizde menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi istediğiniz zaman güncelleyerek sürekli güncel kalın',
         },
         {
             icon: 'speed',
@@ -32,43 +32,42 @@ export class HomeComponent implements OnInit {
         {
             icon: 'nature_people',
             title: 'Çevre Dostu Olun',
-            decription: 'Akıllı Menü kullanarak sizde doğayı koruyun',
+            decription: 'Akıllı Menü kullanarak siz de doğayı koruyun',
         },
         {
             icon: 'sync',
             title: 'Sürekli Güncel Kalın',
-            decription: 'Akıllı Menü size sınırsız içerik güncelleme hakkı sağlar. Menü de yaptığınız tüm değişiklikler anında müşterilerinize yansır',
+            decription: 'Akıllı Menü size sınırsız içerik güncelleme hakkı sağlar. Menüde yaptığınız tüm değişiklikler anında müşterilerinize yansır',
         },
         {
             icon: 'app_blocking',
             title: 'Uygulama İndirmeden',
-            decription: 'Akıllı Menü\'nün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulama indirilmesine gerek yoktur',
+            decription: 'Akıllı Menünün sağladığı özellikleri müşterilerinize sunabilmek için herhangi bir uygulama indirilmesine gerek yoktur',
         },
         {
             icon: 'share',
             title: 'Akıllı Menü İle Her Yerdesiniz',
-            decription: 'Akıllı Menü\'nün linkini veya kare kodunu sosyal medya üzerinden paylaşarak restoranınıza gelmeden uzaktan erişim ile Menü\'nüzü müşterilerinize tanıtabilirsiniz ve yeni müşteriler kazanabilirsiniz',
+            decription: 'Akıllı Menünün linkini veya kare kodunu sosyal medya üzerinden paylaşarak, restoranınıza gelmeden uzaktan erişim ile menünüzü müşterilerinize tanıtabilir ve yeni müşteriler kazanabilirsiniz',
         },
     ];
 
     features = [
-        {icon: 'qr_code_2', title: 'QR okutarak menüyü açma'},
+        {icon: 'qr_code_2', title: 'QR MENÜ'},
         {icon: 'tap_and_play', title: 'QR WIFI'},
-        {icon: 'settings_applications', title: 'Ürün ekleme çıkarma'},
-        {icon: 'low_priority', title: 'Ürün ve kategorileri sıralama'},
-        {icon: 'school', title: 'Yönetim paneli eğitimi'},
-        {icon: 'access_time', title: '7 / 24 Kesintisiz Destek'},
-        {icon: 'sync', title: 'Güncellemeler'},
-        {icon: 'thumb_up', title: 'Ürün beğenme'},
-        {icon: 'favorite', title: 'Favorilere ekleme'},
-        {icon: 'loyalty', title: 'Kampanya oluşturma'},
-        {icon: 'assignment_turned_in', title: 'Rezervasyon Alma'},
-        {icon: 'grading', title: 'Kolay geri bildirim'},
+        {icon: 'settings_applications', title: 'Ürün Ekleme ve Çıkarma'},
+        {icon: 'low_priority', title: 'Ürün ve Kategorileri Sıralama'},
+        {icon: 'loyalty', title: 'Kampanya Oluşturma'},
+        {icon: 'assignment_turned_in', title: 'Rezervasyon Sistemi'},
+        {icon: 'shopping_basket', title: 'Online Sipariş Sistemi'},
+        {icon: 'favorite', title: 'Favorilere Ekleme'},
+        {icon: 'thumb_up', title: 'Ürün Beğenme'},
+        {icon: 'grading', title: 'Geri Bildirim Sistemi'},
         {icon: 'local_offer_features', title: 'İndirim Kuponu Oluşturma'},
-        {icon: 'share', title: 'Sosyal medya paylaşımı'},
+        {icon: 'share', title: 'Sosyal Medya Paylaşımı'},
         {icon: 'analytics', title: 'Raporlar ve Müşteri Analizleri'},
-        {icon: 'emoji_emotions', title: 'Mutluluk seviyesi'},
-        {icon: 'shopping_basket', title: 'Online sipariş alma'},
+        {icon: 'sync', title: 'Güncellemeler'},
+        {icon: 'school', title: 'Yönetim Paneli Eğitimi'},
+        {icon: 'access_time', title: '7 / 24 Kesintisiz Destek'},
     ];
 
     colors = ['blue', 'red', 'green', 'orange'/*, 'yellow', 'purple', 'pink', 'orange', 'brown'*/];
