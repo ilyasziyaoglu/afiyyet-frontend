@@ -1,4 +1,5 @@
-<h3 *ngIf="menuService.isCampEnabled" class="my-1 text-center">Kampanyalar</h3>
+<div class="bg">
+<h3 *ngIf="menuService.isCampEnabled" class="mb-1 text-center text-white">Kampanyalar</h3>
 <div *ngIf="menuService.isCampEnabled" class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
          *ngFor="let item of menuService.menu?.campaigns">
@@ -31,7 +32,7 @@
 </div>
 <hr *ngIf="menuService.isCampEnabled" class="m-0 p-0">
 
-<h3 *ngIf="menuService.isLikeEnabled" class="my-1" style="text-align: center">En Çok Beğenilenler</h3>
+<h3 *ngIf="menuService.isLikeEnabled" class="my-1 text-white" style="text-align: center">En Çok Beğenilenler</h3>
 <div *ngIf="menuService.isLikeEnabled" class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of menuService.getMostPopulars()">
@@ -52,7 +53,7 @@
 </div>
 <hr *ngIf="menuService.isLikeEnabled" class="m-0 p-0">
 
-<h3 *ngIf="menuService.isCampEnabled || menuService.isFavEnabled" class="my-2" style="text-align: center">Menü</h3>
+<h3 *ngIf="menuService.isCampEnabled || menuService.isFavEnabled" class="my-2 text-white" style="text-align: center">Menü</h3>
 <div class="row m-1 justify-content-center">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"
@@ -62,4 +63,5 @@
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
         <p class="category-name">{{category.name}}</p>
     </div>
+</div>
 </div>
