@@ -12,12 +12,6 @@ import {UserService} from '../../../base/services/user.service';
 })
 export class HomeComponent implements OnInit {
 
-    scroll(id) {
-        let el = document.getElementById(id);
-        console.log("el", el)
-        el.scrollIntoView({behavior:"smooth"});
-    }
-
     advantages = [
         {
             icon: 'money_off',
@@ -80,22 +74,11 @@ export class HomeComponent implements OnInit {
         message: new FormControl(''),
     });
 
-    isLogged = false;
     constructor(
         private contactFormService: ContactFormService,
-        public router: Router,
-        private userService: UserService
-    ) {
-        if (userService.getUser()) { this.isLogged = true; }
-    }
+    ) {}
 
     ngOnInit(): void {
-    }
-
-    logout() {
-        this.userService.logOut();
-        this.isLogged = false;
-        this.router.navigateByUrl('/pages/smartmenu/home');
     }
 
     onSubmit() {
