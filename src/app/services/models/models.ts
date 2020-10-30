@@ -9,6 +9,7 @@ export class Product {
     status: string;
     category: any;
     categoryName: string;
+    type: string;
 }
 
 export class Category {

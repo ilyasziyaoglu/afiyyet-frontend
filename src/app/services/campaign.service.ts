@@ -8,7 +8,7 @@ import {Campaign} from './models/models';
 })
 export class CampaignService extends BaseService {
 
-    basePath = 'campaign';
+    basePath = 'category';
     activeCampaigns: Campaign[] = [];
     passiveCampaigns: Campaign[] = [];
 

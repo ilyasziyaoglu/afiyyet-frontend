@@ -31,6 +31,7 @@ export class ProductService extends BaseService {
 
   insetProduct(category: any, item: Product, cb?) {
     item.category = category;
+    item.type = 'PRODUCT';
     this.post(item, cb);
   }
 

@@ -77,23 +77,23 @@ export class MenuService extends BaseService {
         }
     }
 
-    like(item: any, isCampaign?) {
-        const postfix = isCampaign ? 'campaign-like' : 'product-like';
-        if ( this.menuLocalService.getLikes(isCampaign).includes(item.id) ) {
-            this.menuLocalService.removeLike(item.id, isCampaign);
+    like(item: any) {
+        const postfix = 'product-like';
+        if ( this.menuLocalService.getLikes().includes(item.id) ) {
+            this.menuLocalService.removeLike(item.id);
             item.likes --;
             this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: false}, result => {
                 if ( !result ) {
-                    this.menuLocalService.addLike(item.id, isCampaign);
+                    this.menuLocalService.addLike(item.id);
                     item.likes ++;
                 }
             });
         } else {
-            this.menuLocalService.addLike(item.id, isCampaign);
+            this.menuLocalService.addLike(item.id);
             item.likes ++;
             this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/${postfix}`, {itemId: item.id, like: true}, result => {
                 if ( !result ) {
-                    this.menuLocalService.removeLike(item.id, isCampaign);
+                    this.menuLocalService.removeLike(item.id);
                     item.likes --;
                 }
             });
