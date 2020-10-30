@@ -21,25 +21,25 @@ export class ProductService extends BaseService {
     return this.basePath;
   }
 
-  getProduct(itemId: any, cb) {
+  get(itemId: any, cb) {
     this.get(itemId, cb);
   }
 
-  deleteProduct(itemId: any, cb?) {
+  delete(itemId: any, cb?) {
     this.delete(itemId, cb);
   }
 
-  insetProduct(category: any, item: Product, cb?) {
+  insert(category: any, item: Product, cb?) {
     item.category = category;
     item.type = 'PRODUCT';
     this.post(item, cb);
   }
 
-  updateProduct(item: Product, cb?) {
+  update(item: Product, cb?) {
     this.put(item, cb);
   }
 
-  arrangeProducts(idOrderPairs: any, cb?) {
+  arrange(idOrderPairs: any, cb?) {
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-products`, idOrderPairs, cb);
   }
 
