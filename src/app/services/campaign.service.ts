@@ -21,7 +21,8 @@ export class CampaignService extends BaseService {
     }
 
     insertCampaign(campaign, cb?) {
-        this.post(campaign, cb);
+        campaign.type = "CAMPAIGN";
+        this.getHttpService().doRequest(HttpMethod.POST, 'product', campaign, cb);
     }
 
     deleteCampaign(campaignId, cb?) {
@@ -33,7 +34,8 @@ export class CampaignService extends BaseService {
     }
 
     updateCampaign(campaign, cb?) {
-        this.put(campaign, cb);
+        campaign.type = "CAMPAIGN";
+        this.getHttpService().doRequest(HttpMethod.PUT, 'product', campaign, cb);
     }
 
     getAllCampaigns(cb?) {
