@@ -1,16 +1,16 @@
 import {Injectable} from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
-import {Campaign} from './models/models';
+import {Product} from './models/models';
 
 @Injectable({
     providedIn: 'root',
 })
 export class CampaignService extends BaseService {
 
-    basePath = 'category';
-    activeCampaigns: Campaign[] = [];
-    passiveCampaigns: Campaign[] = [];
+    basePath = 'product';
+    activeCampaigns: Product[] = [];
+    passiveCampaigns: Product[] = [];
 
     constructor(httpService: HttpService) {
         super(httpService);
@@ -20,26 +20,25 @@ export class CampaignService extends BaseService {
         return this.basePath;
     }
 
-    insertCampaign(campaign, cb?) {
-        campaign.type = "CAMPAIGN";
-        this.getHttpService().doRequest(HttpMethod.POST, 'product', campaign, cb);
+    insert(campaign, cb?) {
+        campaign.type = 'CAMPAIGN';
+        this.post(campaign, cb);
     }
 
-    deleteCampaign(campaignId, cb?) {
-        this.delete(campaignId, cb);
+    delete(campaignId, cb?) {
+        super.delete(campaignId, cb);
     }
 
-    arrangeCampaigns(idOrderPairs: any, cb?) {
-        this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-campaigns`, idOrderPairs, cb);
+    arrange(idOrderPairs: any, cb?) {
+        this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-products`, idOrderPairs, cb);
     }
 
-    updateCampaign(campaign, cb?) {
-        campaign.type = "CAMPAIGN";
-        this.getHttpService().doRequest(HttpMethod.PUT, 'product', campaign, cb);
+    update(campaign, cb?) {
+        super.put(campaign, cb);
     }
 
-    getAllCampaigns(cb?) {
-        this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-campaigns-by-brand`, '', cb);
+    getAllByBrand(cb?) {
+        this.getHttpService().doRequest(HttpMethod.GET, 'category/get-campaigns-by-brand', '', cb);
     }
 
 

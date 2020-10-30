@@ -30,19 +30,6 @@ export class Brand {
     status: string;
 }
 
-export class Campaign {
-    id: number;
-    name: string;
-    imgUrl: string;
-    price: number
-    description: string;
-    likes: number;
-    order: number;
-    startDate: string;
-    expireDate: string;
-    status: string;
-}
-
 export class Reservation {
     adultCount: number;
     brand: any;
