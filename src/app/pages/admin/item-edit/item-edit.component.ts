@@ -72,7 +72,7 @@ export class ItemEditComponent implements OnInit {
       this.fileService.uploadFile(this.formData, res => {
         if (res.fileName) {
           this.item.imgUrl = res.fileName;
-          this.productService.insetProduct(this.categoryService.currentCategory, this.item, response => {
+          this.productService.insetProduct({id: this.adminSessionService.getCurrentCategoryId()}, this.item, response => {
             if (response) { this.router.navigateByUrl('/pages/admin'); }
           });
         } else {

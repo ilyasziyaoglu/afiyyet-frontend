@@ -90,6 +90,7 @@ export class MenuComponent implements OnInit {
 
     categoryClick(category) {
         this.categoryService.currentCategory = category;
+        this.adminSessionService.setCurrentCategoryId(category.id);
         this.productService.getProductsByCategory(category.id, result => {
             category.products = result;
             this.categoryProductCount = result.length;
