@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
 import {Category} from './models/models';
+import {AdminSessionService} from '../base/services/admin-session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class CategoryService extends BaseService {
 
   constructor(
       httpService: HttpService,
+      private adminSessionService: AdminSessionService
   ) {
     super(httpService);
   }
@@ -40,5 +42,9 @@ export class CategoryService extends BaseService {
 
   getCategoriesByBrand(cb?) {
     this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-categories-by-brand`, '', cb);
+  }
+
+  getCurrentCatId() {
+    return this.adminSessionService.getCurrentCategoryId();
   }
 }
