@@ -56,7 +56,7 @@ export class ItemEditComponent implements OnInit {
         this.fileService.uploadFile(this.formData, res => {
           if (res.fileName) {
             this.item.imgUrl = res.fileName;
-            this.productService.updateProduct(this.item, res => {
+            this.productService.update(this.item, res => {
               if (res) this.router.navigateByUrl('/pages/admin').then();
             });
           } else {
@@ -64,7 +64,7 @@ export class ItemEditComponent implements OnInit {
           }
         });
       } else {
-        this.productService.updateProduct(this.item, res => {
+        this.productService.update(this.item, res => {
           if (res) this.router.navigateByUrl('/pages/admin').then();
         });
       }
@@ -72,7 +72,7 @@ export class ItemEditComponent implements OnInit {
       this.fileService.uploadFile(this.formData, res => {
         if (res.fileName) {
           this.item.imgUrl = res.fileName;
-          this.productService.insetProduct(this.categoryService.currentCategory, this.item, response => {
+          this.productService.insert({id: this.categoryService.getCurrentCatId()}, this.item, response => {
             if (response) { this.router.navigateByUrl('/pages/admin'); }
           });
         } else {

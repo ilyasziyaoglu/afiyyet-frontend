@@ -74,7 +74,7 @@ export class CampaignEditComponent implements OnInit {
                 this.fileService.uploadFile(this.formData, res => {
                     if ( res.fileName ) {
                         this.campaign.imgUrl = res.fileName;
-                        this.campaignService.updateCampaign(this.campaign, res2 => {
+                        this.campaignService.update(this.campaign, res2 => {
                             if ( res2 ) {
                                 this.router.navigateByUrl('/pages/admin/campaigns').then();
                             }
@@ -84,7 +84,7 @@ export class CampaignEditComponent implements OnInit {
                     }
                 });
             } else {
-                this.campaignService.updateCampaign(this.campaign, res => {
+                this.campaignService.update(this.campaign, res => {
                     if ( res ) {
                         this.router.navigateByUrl('/pages/admin/campaigns').then();
                     }
@@ -94,7 +94,7 @@ export class CampaignEditComponent implements OnInit {
             this.fileService.uploadFile(this.formData, res => {
                 if ( res.fileName ) {
                     this.campaign.imgUrl = res.fileName;
-                    this.campaignService.insertCampaign(this.campaign, response => {
+                    this.campaignService.insert(this.campaign, response => {
                         if ( response ) {
                             this.router.navigateByUrl('/pages/admin/campaigns');
                         }

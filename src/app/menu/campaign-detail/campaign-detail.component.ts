@@ -22,7 +22,7 @@ export class CampaignDetailComponent implements OnInit {
   }
 
   onLike(item: any) {
-    this.menuService.like(item, true);
+    this.menuService.like(item);
   }
 
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
 import {Product} from './models/models';
-import {AdminSessionService} from '../base/services/admin-session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,24 +20,25 @@ export class ProductService extends BaseService {
     return this.basePath;
   }
 
-  getProduct(itemId: any, cb) {
-    this.get(itemId, cb);
+  get(itemId: any, cb) {
+    super.get(itemId, cb);
   }
 
-  deleteProduct(itemId: any, cb?) {
-    this.delete(itemId, cb);
+  delete(itemId: any, cb?) {
+    super.delete(itemId, cb);
   }
 
-  insetProduct(category: any, item: Product, cb?) {
+  insert(category: any, item: Product, cb?) {
     item.category = category;
+    item.type = 'PRODUCT';
     this.post(item, cb);
   }
 
-  updateProduct(item: Product, cb?) {
+  update(item: Product, cb?) {
     this.put(item, cb);
   }
 
-  arrangeProducts(idOrderPairs: any, cb?) {
+  arrange(idOrderPairs: any, cb?) {
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/arrange-products`, idOrderPairs, cb);
   }
 

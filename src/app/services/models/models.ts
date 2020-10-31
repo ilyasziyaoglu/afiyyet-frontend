@@ -9,6 +9,11 @@ export class Product {
     status: string;
     category: any;
     categoryName: string;
+    type: string;
+    startDate: string;
+    expireDate: string;
+    hasPortionOption: boolean;
+    fakePrice: number;
 }
 
 export class Category {
@@ -26,19 +31,6 @@ export class Brand {
     name: string;
     uniqueName: string;
     logoImgUrl: string;
-    status: string;
-}
-
-export class Campaign {
-    id: number;
-    name: string;
-    imgUrl: string;
-    price: number
-    description: string;
-    likes: number;
-    order: number;
-    startDate: string;
-    expireDate: string;
     status: string;
 }
 

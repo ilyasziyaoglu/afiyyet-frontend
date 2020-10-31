@@ -22,7 +22,7 @@ export class FavouritesComponent implements OnInit {
     }
 
     onLike(item: any, isCampaign?) {
-        this.menuService.like(item, isCampaign);
+        this.menuService.like(item);
     }
 
     productClick(product) {

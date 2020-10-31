@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CampaignService} from '../../../services/campaign.service';
-import {Campaign} from '../../../services/models/models';
+import {Product} from '../../../services/models/models';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
@@ -21,7 +21,7 @@ export class CampaignsComponent implements OnInit {
               private router: Router,
               private adminSessionService: AdminSessionService,
               public userService: UserService) {
-    campaignService.getAllCampaigns(res => {
+    campaignService.getAllByBrand(res => {
       // push isleminde duplicate gorunmemesi icin boş array'e atandi.
       campaignService.activeCampaigns = [];
       campaignService.passiveCampaigns = [];
@@ -60,7 +60,7 @@ export class CampaignsComponent implements OnInit {
       cancelButtonText: 'İptal',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.campaignService.deleteCampaign(item.id, res => {
+        this.campaignService.delete(item.id, res => {
           if ( res ) {
             if (isActive) { this.campaignService.activeCampaigns.splice(index, 1); }
             else { this.campaignService.passiveCampaigns.splice(index, 1); }
@@ -75,7 +75,7 @@ export class CampaignsComponent implements OnInit {
     return new Date(strDate).toLocaleString('en-GB').slice(0, -3);
   }
 
-  arrangeCampaign(event: CdkDragDrop<Campaign>) {
+  arrangeCampaign(event: CdkDragDrop<Product>) {
     this.campaignsArranged = true;
     this.campaignService.activeCampaigns = this.moveItemOrderInArray(
         this.campaignService.activeCampaigns, event.previousIndex, event.currentIndex);
@@ -86,7 +86,7 @@ export class CampaignsComponent implements OnInit {
     this.campaignService.activeCampaigns.forEach(campaign => {
       pairs[campaign.id] = campaign.order;
     });
-    this.campaignService.arrangeCampaigns(pairs, res => {
+    this.campaignService.arrange(pairs, res => {
       if (res) { this.campaignsArranged = false; }
     });
   }

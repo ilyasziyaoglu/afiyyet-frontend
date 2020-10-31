@@ -18,8 +18,8 @@ export class CategoriesComponent {
         public menuLocalService: MenuLocalService
     ) {}
 
-    onLike(item: any, isCampaign?) {
-        this.menuService.like(item, isCampaign);
+    onLike(item: any) {
+        this.menuService.like(item);
     }
 
     productClick(product) {

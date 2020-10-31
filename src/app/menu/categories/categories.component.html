@@ -20,8 +20,8 @@
                     {{item.price}}&nbsp;<sub>TL</sub>
                 </div>
                 <div *ngIf="menuService.isLikeEnabled" class="col d-flex border-left border-white justify-content-center align-items-center"
-                     (click)="onLike(item, true)">{{item.likes}}&nbsp;
-                    <mat-icon [ngClass]="{'active': menuLocalService.getLikes(true).includes(item.id)}"
+                     (click)="onLike(item)">{{item.likes}}&nbsp;
+                    <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
                               style="vertical-align: middle;margin-bottom: 3px">thumb_up_alt
                     </mat-icon>
                 </div>

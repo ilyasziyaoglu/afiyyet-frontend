@@ -69,7 +69,7 @@ export class MenuComponent implements OnInit {
         this.categoryService.currentCategory.products.forEach(item => {
             pairs[item.id] = item.order;
         });
-        this.productService.arrangeProducts(pairs, res => {
+        this.productService.arrange(pairs, res => {
             if ( res ) {
                 this.productsArranged = false;
             }
@@ -90,6 +90,7 @@ export class MenuComponent implements OnInit {
 
     categoryClick(category) {
         this.categoryService.currentCategory = category;
+        this.adminSessionService.setCurrentCategoryId(category.id);
         this.productService.getProductsByCategory(category.id, result => {
             category.products = result;
             this.categoryProductCount = result.length;
@@ -114,7 +115,7 @@ export class MenuComponent implements OnInit {
             cancelButtonText: 'İptal',
         }).then((result) => {
             if ( result.isConfirmed ) {
-                this.productService.deleteProduct(item.id, res => {
+                this.productService.delete(item.id, res => {
                     if ( res ) {
                         this.categoryService.currentCategory.products.splice(index, 1);
                         Swal.fire('Silindi!', 'Ürün silindi!.', 'success');

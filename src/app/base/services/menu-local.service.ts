@@ -6,8 +6,7 @@ import { Injectable } from '@angular/core';
 export class MenuLocalService {
 
   FAVS_KEY = '@favIds';
-  PROD_LIKE_KEY = '@prodLikeIds';
-  CAMP_LIKE_KEY = '@campLikeIds';
+  LIKED_ITEMS_KEY = '@LikeIds';
 
   constructor() { }
 
@@ -30,35 +29,29 @@ export class MenuLocalService {
 
   getFavourites() {
     const favs = localStorage.getItem(this.FAVS_KEY);
-    if (favs) { return JSON.parse(favs); }
-    return [];
+    return favs ? JSON.parse(favs) : [];
   }
 
 
-  addLike(likeId, isCampaign?) {
-    const likes = this.getLikes(isCampaign);
+  addLike(likeId) {
+    const likes = this.getLikes();
     likes.push(likeId);
-    this.setLikes(likes, isCampaign);
+    this.setLikes(likes);
   }
 
-  removeLike(likeId, isCampaign?) {
-    const likes = this.getLikes(isCampaign);
+  removeLike(likeId) {
+    const likes = this.getLikes();
     const index = likes.indexOf(likeId);
     if (index > -1) { likes.splice(index, 1); }
-    this.setLikes(likes, isCampaign);
+    this.setLikes(likes);
   }
 
-  setLikes(likeIds, isCampaign?) {
-    let key = this.PROD_LIKE_KEY;
-    if (isCampaign) { key = this.CAMP_LIKE_KEY; }
-    localStorage.setItem(key, JSON.stringify(likeIds));
+  setLikes(likeIds) {
+    localStorage.setItem(this.LIKED_ITEMS_KEY, JSON.stringify(likeIds));
   }
 
-  getLikes(isCampaign?) {
-    let key = this.PROD_LIKE_KEY;
-    if (isCampaign) { key = this.CAMP_LIKE_KEY; }
-    const likes = localStorage.getItem(key);
-    if (likes) { return JSON.parse(likes); }
-    return [];
+  getLikes() {
+    const likes = localStorage.getItem(this.LIKED_ITEMS_KEY);
+    return likes ? JSON.parse(likes) : [];
   }
 }
