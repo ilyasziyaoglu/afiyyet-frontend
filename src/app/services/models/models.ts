@@ -10,6 +10,10 @@ export class Product {
     category: any;
     categoryName: string;
     type: string;
+    startDate: string;
+    expireDate: string;
+    hasPortionOption: boolean;
+    fakePrice: number;
 }
 
 export class Category {

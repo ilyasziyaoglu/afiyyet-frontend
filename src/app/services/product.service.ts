@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
 import {Product} from './models/models';
-import {AdminSessionService} from '../base/services/admin-session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +21,11 @@ export class ProductService extends BaseService {
   }
 
   get(itemId: any, cb) {
-    this.get(itemId, cb);
+    super.get(itemId, cb);
   }
 
   delete(itemId: any, cb?) {
-    this.delete(itemId, cb);
+    super.delete(itemId, cb);
   }
 
   insert(category: any, item: Product, cb?) {

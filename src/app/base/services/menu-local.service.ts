@@ -29,8 +29,7 @@ export class MenuLocalService {
 
   getFavourites() {
     const favs = localStorage.getItem(this.FAVS_KEY);
-    if (favs) { return JSON.parse(favs); }
-    return [];
+    return favs ? JSON.parse(favs) : [];
   }
 
 
@@ -48,14 +47,11 @@ export class MenuLocalService {
   }
 
   setLikes(likeIds) {
-    let key = this.LIKED_ITEMS_KEY;
-    localStorage.setItem(key, JSON.stringify(likeIds));
+    localStorage.setItem(this.LIKED_ITEMS_KEY, JSON.stringify(likeIds));
   }
 
   getLikes() {
-    let key = this.LIKED_ITEMS_KEY;
-    const likes = localStorage.getItem(key);
-    if (likes) { return JSON.parse(likes); }
-    return [];
+    const likes = localStorage.getItem(this.LIKED_ITEMS_KEY);
+    return likes ? JSON.parse(likes) : [];
   }
 }
