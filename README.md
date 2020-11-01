@@ -15,6 +15,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 #### File Transfer 
-`scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/`
 
+##### ILYAS
+    PROD:
+    scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/
+    TEST:
+    scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.55.12:/smartmenu/smartmenu-frontend/
+
+##### EMIL
 `scp -r ~/Desktop/smartmenu/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/`
