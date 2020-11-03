@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ContactFormService} from '../../../services/contactform.service';
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import {Router} from '@angular/router';
+import {UserService} from '../../../base/services/user.service';
 
 @Component({
     selector: 'app-home',
@@ -12,19 +14,19 @@ export class HomeComponent implements OnInit {
 
     advantages = [
         {
-            icon: 'masks',
-            title: 'Müşterilerinizi Koruyun',
-            decription: 'Müşterileriniz için menüler en çok temas noktası. Akıllı menü kullanarak salgın döneminde müşterilerinizi COVID-19\'a karşı koruyun',
-        },
-        {
             icon: 'money_off',
             title: 'Maliyetinizi Azaltın',
-            decription: 'Fiyat veya içerik güncellemelerinizde menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun',
+            decription: 'Fiyat veya içerik güncellemelerinizde menü değiştirmekten veya yanına ekstra menü yaptırmaktan kurtulun. İçeriklerinizi istediğiniz zaman güncelleyerek sürekli güncel kalın',
         },
         {
             icon: 'speed',
             title: 'İş Yükünüzü Azaltın Zamandan Kazanın',
             decription: 'Akıllı Menü ile iş yükünüzü azaltabilecek ve müşterilerinize daha hızlı bir hizmet sunacaksınız',
+        },
+        {
+            icon: 'nature_people',
+            title: 'Çevre Dostu Olun',
+            decription: 'Akıllı Menü kullanarak siz de doğayı koruyun',
         },
         {
             icon: 'sync',
@@ -39,7 +41,7 @@ export class HomeComponent implements OnInit {
         {
             icon: 'share',
             title: 'Akıllı Menü İle Her Yerdesiniz',
-            decription: 'Akıllı Menünün linkini sosyal medya üzerinden paylaşarak, menünüzü müşterilerinize tanıtabilir ve yeni müşteriler kazanabilirsiniz',
+            decription: 'Akıllı Menünün linkini veya kare kodunu sosyal medya üzerinden paylaşarak, restoranınıza gelmeden uzaktan erişim ile menünüzü müşterilerinize tanıtabilir ve yeni müşteriler kazanabilirsiniz',
         },
     ];
 
@@ -56,7 +58,6 @@ export class HomeComponent implements OnInit {
         {icon: 'loyalty', title: 'Kampanya Oluşturma'},
         {icon: 'assignment_turned_in', title: 'Rezervasyon Alma'},
         {icon: 'grading', title: 'Geri Bildirim Sistemi'},
-        {icon: 'notifications_active', title: 'Garson Çağırma'},
         {icon: 'local_offer_features', title: 'İndirim Kuponu Oluşturma'},
         {icon: 'share', title: 'Sosyal Medya Paylaşımı'},
         {icon: 'analytics', title: 'Raporlar ve Müşteri Analizleri'},
