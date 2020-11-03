@@ -1,5 +1,5 @@
 export let menu = {
-    currency: 'TL',
+    currency: '₺',
     campaigns: [],
     categories: [
         {
