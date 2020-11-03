@@ -16,7 +16,9 @@
             <div class="row w-100 m-0 p-1 text-white">
                 <div class="col d-flex justify-content-center align-items-center"
                      (click)="campaignClick(item)"
-                     [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">{{item.price}}&nbsp;₺</div>
+                     [routerLink]="['kampanyalar/' + item.name.toLowerCase().replaceAll(' ', '-')]">
+                    {{item.price}}&nbsp;<sub>TL</sub>
+                </div>
                 <div *ngIf="menuService.isLikeEnabled" class="col d-flex border-left border-white justify-content-center align-items-center"
                      (click)="onLike(item)">{{item.likes}}&nbsp;
                     <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(item.id)}"
