@@ -29,7 +29,7 @@
     <h1>Özellikler</h1>
 </div>
 <div class="row w-100 m-0 px-0 py-3 d-flex justify-content-center">
-    <div class="col-sm-3 col-md-5 col-lg-3 m-3 p-3 feature text-center border rounded-lg"
+    <div class="col-sm-3 col-md-5 col-lg-3 m-3 p-3 feature text-center shadow"
          *ngFor="let feature of features; let i = index;">
         <mat-icon style="font-size: 40px;" [style.color]="colors[i%colors.length]">{{feature.icon}}</mat-icon>
         <h3>{{feature.title}}</h3>
@@ -43,25 +43,25 @@
 </div>
 <div class="row w-100 m-0 mb-5 features d-flex justify-content-center">
     <div class="col-sm-3 col-md-5 col-lg-3 m-3 shadow package rounded-lg">
-<!--        <h1 class="discount-text">-->
-<!--            <del>14,90$</del>-->
-<!--            33% İndirim-->
-<!--        </h1>-->
-<!--        <hr>-->
+        <h1 class="discount-text">
+            <del>22$</del>
+            30% İndirim
+        </h1>
+        <hr>
         <h1 class="package-name">STD</h1>
         <p class="package-description">Menünüzü dijitalleştirin</p>
         <br>
-<!--        <div class="row w-100 m-0 offer text-white">-->
-<!--            <div class="col">-->
-<!--                <p class="currency">$</p>-->
-<!--            </div>-->
-<!--            <div class="col text-center d-flex align-items-center">-->
-<!--                <p class="price">9,90</p>-->
-<!--            </div>-->
-<!--            <div class="col d-flex align-content-end">-->
-<!--                <p class="unit">/ ay</p>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="row w-100 m-0 offer text-white">
+            <div class="col">
+                <p class="currency">$</p>
+            </div>
+            <div class="col text-center d-flex align-items-center">
+                <p class="price">15</p>
+            </div>
+            <div class="col d-flex align-content-end">
+                <p class="unit">/ ay</p>
+            </div>
+        </div>
         <!--        <button type="button" class="btn btn-outline-light btn-lg">Hemen Al</button>-->
         <hr class="bottom-hr">
         <div class="offer-features">
@@ -84,25 +84,27 @@
         </div>
     </div>
     <div class="col-sm-3 col-md-5 col-lg-3 m-3 shadow package rounded-lg">
-<!--        <h1 class="discount-text">-->
-<!--            <del>21,90$</del>-->
-<!--            30% İndirim-->
-<!--        </h1>-->
-<!--        <hr>-->
-        <h1 class="package-name">PRO</h1>
-        <p class="package-description">Vizyoner işletme imajınızla fark yaratın</p>
+        <h1 class="discount-text">
+            <del>36$</del>
+            30% İndirim
+        </h1>
+        <hr>
+        <h1 class="package-name">PRO
+            <mat-icon color="warn">local_fire_department</mat-icon>
+        </h1>
+        <p class="package-description">İşletmenizi geliştirin</p>
         <br>
-<!--        <div class="row w-100 m-0 offer text-white">-->
-<!--            <div class="col">-->
-<!--                <p class="currency">$</p>-->
-<!--            </div>-->
-<!--            <div class="col text-center d-flex align-items-center">-->
-<!--                <p class="price">14,90</p>-->
-<!--            </div>-->
-<!--            <div class="col d-flex align-content-end">-->
-<!--                <p class="unit">/ ay</p>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="row w-100 m-0 offer text-white">
+            <div class="col">
+                <p class="currency">$</p>
+            </div>
+            <div class="col text-center d-flex align-items-center">
+                <p class="price">25</p>
+            </div>
+            <div class="col d-flex align-content-end">
+                <p class="unit">/ ay</p>
+            </div>
+        </div>
         <!--        <button type="button" class="btn bg-light btn-lg">Hemen Al</button>-->
         <hr class="bottom-hr">
         <div class="offer-features">
@@ -125,25 +127,25 @@
         </div>
     </div>
     <div class="col-sm-3 col-md-10 m-3 col-lg-3 shadow package rounded-lg">
-<!--        <h1 class="discount-text">-->
-<!--            <del>28,90$</del>-->
-<!--            30% İndirim-->
-<!--        </h1>-->
-<!--        <hr>-->
+        <h1 class="discount-text">
+            <del>50$</del>
+            30% İndirim
+        </h1>
+        <hr>
         <h1 class="package-name">VIP</h1>
-        <p class="package-description">Kontrol tamamen sizde</p>
+        <p class="package-description">İşletme imajınızla fark yaratın</p>
         <br>
-<!--        <div class="row w-100 m-0 offer text-white">-->
-<!--            <div class="col">-->
-<!--                <p class="currency">$</p>-->
-<!--            </div>-->
-<!--            <div class="col text-center d-flex align-items-center">-->
-<!--                <p class="price">19,90</p>-->
-<!--            </div>-->
-<!--            <div class="col d-flex align-content-end">-->
-<!--                <p class="unit">/ ay</p>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="row w-100 m-0 offer text-white">
+            <div class="col">
+                <p class="currency">$</p>
+            </div>
+            <div class="col text-center d-flex align-items-center">
+                <p class="price">35</p>
+            </div>
+            <div class="col d-flex align-content-end">
+                <p class="unit">/ ay</p>
+            </div>
+        </div>
         <!--        <button type="button" class="btn btn-outline-light btn-lg">Hemen Al</button>-->
         <hr class="bottom-hr">
         <div class="offer-features">

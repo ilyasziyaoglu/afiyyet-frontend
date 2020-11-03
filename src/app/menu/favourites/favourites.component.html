@@ -21,7 +21,9 @@
         <div class="row w-100 m-0">
             <div class="col d-flex justify-content-center align-items-center"
                  [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-                 (click)="productClick(item)">{{item.price}}&nbsp;₺</div>
+                 (click)="productClick(item)">
+                {{item.price}}&nbsp;<sub>TL</sub>
+            </div>
             <div *ngIf="menuService.isFavEnabled" class="col d-flex border-left border-white justify-content-center align-items-center">
                 <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
                 <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>

@@ -22,25 +22,25 @@ h1, p {
 }
 
 .advantage {
-  //background: radial-gradient(circle, #FF6D00, #DD2C00);
+  background: radial-gradient(circle, #FF6D00, #DD2C00);
   border-radius: 15px;
 }
 
 .advantage h1 {
   text-align: center;
-  //color: white;
-  font-size: 1.2em;
+  color: white;
+  font-size: 1.5em;
 }
 
 .advantage p {
   text-align: center;
-  //color: white;
-  font-size: 0.9em;
+  color: white;
+  font-size: 1.2em;
 }
 
 .advantage mat-icon {
   margin-top: 20px;
-  color: #f75e01;
+  color: white;
   width: 100%;
   text-align: center;
   font-size: 7em;
@@ -86,8 +86,7 @@ h1, p {
 
 .package {
   border-radius: 20px !important;
-  //background: radial-gradient(circle,  #FF6D00, #DD2C00);
-  background-color: #f75e01;
+  background: radial-gradient(circle,  #FF6D00, #DD2C00);
   padding: 20px;
 }
 
@@ -140,7 +139,7 @@ h1, p {
 }
 
 .offer .price {
-  font-size: 6em !important;
+  font-size: 8em !important;
 }
 
 .offer .unit {
