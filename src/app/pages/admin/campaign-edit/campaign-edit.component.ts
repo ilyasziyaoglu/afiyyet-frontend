@@ -29,8 +29,10 @@ export class CampaignEditComponent implements OnInit {
         this.sessionData = this.adminSessionService.getCurrentCampaign() || {};
         this.campaign = this.sessionData.campaign || {};
         if ( this.sessionData.campaign ) {
-            this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
-            this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+            this.campaign.startDate = new Date(this.campaign.startDate);
+            this.campaign.expireDate = new Date(this.campaign.expireDate);
+            this.startTime = this.campaign.startDate.getHours() +':'+ this.campaign.startDate.getMinutes();
+            this.endTime = this.campaign.expireDate.getHours() +':'+ this.campaign.expireDate.getMinutes();
         }
     }
 
@@ -40,14 +42,11 @@ export class CampaignEditComponent implements OnInit {
     saveClick() {
         if (!this.isInputsOk()) {return;}
 
-        this.startTime = this.startTime.split(':');
-        this.campaign.startDate.setHours(this.startTime[0], this.startTime[1]);
+        let start = this.startTime.split(':');
+        this.campaign.startDate.setHours(start[0], start[1]);
 
-        this.endTime = this.endTime.split(':');
-        this.campaign.expireDate.setHours(this.endTime[0], this.endTime[1]);
-
-        this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
-        this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
+        let end = this.endTime.split(':');
+        this.campaign.expireDate.setHours(end[0], end[1]);
 
         if ( this.sessionData.isEdit ) {
             if ( this.formData ) {
@@ -96,12 +95,6 @@ export class CampaignEditComponent implements OnInit {
             this.formData = new FormData();
             this.formData.append('file0', file);
         }
-    }
-
-    dateToISOString(str) {
-        const date = new Date(str);
-        return new Date(date.getTime() - (date.getTimezoneOffset() * 60000))
-            .toISOString().slice(0, - 1);
     }
 
     isInputsOk() {
