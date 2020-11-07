@@ -20,6 +20,7 @@ import {BulkPriceUpdateComponent} from './bulk-price-update/bulk-price-update.co
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {ComponentsModule} from '../../base/components/components.module';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {MatInputModule} from '@angular/material/input';
         MatSlideToggleModule,
         MatFormFieldModule,
         MatInputModule,
+        ComponentsModule,
     ],
 })
 export class AdminModule {
