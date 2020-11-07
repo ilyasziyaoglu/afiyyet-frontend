@@ -10,7 +10,7 @@
     <div class="m-3 flex-container d-flex justify-content-center">
         <div class="border rounded-lg pl-1 pr-1">
             <p>{{menuService.currentCampaign.price}}</p>
-            <p>TL</p>
+            <p>₺</p>
         </div>
         <div *ngIf="menuService.isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentCampaign)">
             <p>{{menuService.currentCampaign.likes}}</p>
