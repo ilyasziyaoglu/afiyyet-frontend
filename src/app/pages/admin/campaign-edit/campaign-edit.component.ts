@@ -16,6 +16,8 @@ export class CampaignEditComponent implements OnInit {
     sessionData: any;
     campaign: any;
     formData: FormData;
+    startTime;
+    endTime;
 
     constructor(
         private router: Router,
@@ -27,8 +29,10 @@ export class CampaignEditComponent implements OnInit {
         this.sessionData = this.adminSessionService.getCurrentCampaign() || {};
         this.campaign = this.sessionData.campaign || {};
         if ( this.sessionData.campaign ) {
-            this.campaign.startDate = this.dateToISOString(this.campaign.startDate);
-            this.campaign.expireDate = this.dateToISOString(this.campaign.expireDate);
+            this.campaign.startDate = new Date(this.campaign.startDate);
+            this.campaign.expireDate = new Date(this.campaign.expireDate);
+            this.startTime = this.campaign.startDate.getHours() +':'+ this.campaign.startDate.getMinutes();
+            this.endTime = this.campaign.expireDate.getHours() +':'+ this.campaign.expireDate.getMinutes();
         }
     }
 
@@ -36,38 +40,18 @@ export class CampaignEditComponent implements OnInit {
     }
 
     saveClick() {
-        if ( !this.campaign.name ) {
-            Swal.fire('Uyarı', 'Kampanya ismi boş bırakılamaz!', 'warning');
+        if (!this.isInputsOk()) {return;}
+
+        let start = this.startTime.split(':');
+        this.campaign.startDate.setHours(start[0], start[1]);
+
+        let end = this.endTime.split(':');
+        this.campaign.expireDate.setHours(end[0], end[1]);
+
+        if (this.campaign.expireDate < new Date()) {
+            Swal.fire('Uyarı', 'Önceki tarih için Kampanya oluşturulamaz', 'warning');
             return;
         }
-
-        if ( !this.campaign.price ) {
-            Swal.fire('Uyarı', 'Kampanya fiyatı boş bırakılamaz!', 'warning');
-            return;
-        }
-
-        if ( isNaN(this.campaign.price) ) {
-            Swal.fire('Uyarı', 'Kampanya fiyatı rakam olmak zorundadır!', 'warning');
-            return;
-        }
-
-        if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
-            Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
-            return;
-        }
-
-        if ( !this.campaign.startDate ) {
-            Swal.fire('Uyarı', 'Kampanyanın başlama tarihi boş bırakılamaz!', 'warning');
-            return;
-        }
-
-        if ( !this.campaign.expireDate ) {
-            Swal.fire('Uyarı', 'Kampanyanın bitiş tarihi boş bırakılamaz!', 'warning');
-            return;
-        }
-
-        this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
-        this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
 
         if ( this.sessionData.isEdit ) {
             if ( this.formData ) {
@@ -118,9 +102,47 @@ export class CampaignEditComponent implements OnInit {
         }
     }
 
-    dateToISOString(str) {
-        const date = new Date(str);
-        return new Date(date.getTime() - (date.getTimezoneOffset() * 60000))
-            .toISOString().slice(0, - 1);
+    isInputsOk() {
+        if ( !this.campaign.name ) {
+            Swal.fire('Uyarı', 'Kampanya ismi boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.campaign.price ) {
+            Swal.fire('Uyarı', 'Kampanya fiyatı boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( isNaN(this.campaign.price) ) {
+            Swal.fire('Uyarı', 'Kampanya fiyatı rakam olmak zorundadır!', 'warning');
+            return false;
+        }
+
+        if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
+            Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.campaign.startDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın başlama tarihi boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.startTime ) {
+            Swal.fire('Uyarı', 'Kampanyanın başlama saati boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.campaign.expireDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın bitiş tarihi boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.endTime ) {
+            Swal.fire('Uyarı', 'Kampanyanın bitiş saati boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        return true;
     }
 }

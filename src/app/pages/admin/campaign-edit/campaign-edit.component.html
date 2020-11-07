@@ -3,32 +3,53 @@
     <div class="image-input-container mb-3 mb-md-3 no-gutters">
         <img class="image" [src]="campaign.imgUrl ? campaign.imgUrl : '../../assets/no-image.jpg'" alt="{{campaign.name}}">
         <img class="attach" src="../../../../assets/cloud.jpg">
-        <p *ngIf="!campaign.imgUrl" class="addimage">Resim Ekle</p>
         <input type="file" class="file_upload_input" (change)="imageUpdateClick($event)" />
     </div>
     <div class="col-12 col-lg-6">
-        <div class="form-group m-0 p-2 w-100 row">
-            <label for="name" class="col-2 col-form-label bg-dark input_label">Başlık</label>
-            <input id="name" [(ngModel)]="campaign.name"
-                   class="form-control col-10" value="{{campaign.name}}" />
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Başlık</mat-label>
+            <input [(ngModel)]="campaign.name" matInput/>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>İçerik</mat-label>
+            <textarea [(ngModel)]="campaign.description" rows="3" matInput>{{campaign.description}}</textarea>
+        </mat-form-field>
+
+        <div>
+            <mat-form-field appearance="outline" class="mr-3">
+                <mat-label>Başlama tarihi</mat-label>
+                <input [(ngModel)]="campaign.startDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker1" required readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 color="primary"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="timePriceContainer">
+                <mat-label>Saat</mat-label>
+                <input [(ngModel)]="startTime" [ngModelOptions]="{standalone: true}" matInput [ngxTimepicker]="toggleTimepicker1" [format]="24" required readonly>
+                <ngx-material-timepicker #toggleTimepicker1></ngx-material-timepicker>
+            </mat-form-field>
         </div>
-        <div class="form-group m-0 p-2 w-100 row">
-            <label for="description" class="col-2 col-form-label bg-dark input_label">İçerik</label>
-            <textarea id="description" [(ngModel)]="campaign.description" rows="4"
-                      class="description form-control col-10">{{campaign.description}}</textarea>
+
+        <div>
+            <mat-form-field appearance="outline" class="mr-3">
+                <mat-label>Bitiş tarihi</mat-label>
+                <input [(ngModel)]="campaign.expireDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker2" required readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="timePriceContainer">
+                <mat-label>Saat</mat-label>
+                <input [(ngModel)]="endTime" [ngModelOptions]="{standalone: true}" matInput [ngxTimepicker]="toggleTimepicker2" [format]="24" required readonly>
+                <ngx-material-timepicker #toggleTimepicker2></ngx-material-timepicker>
+            </mat-form-field>
         </div>
-        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
-            <label for="startDate" class="col-form-label bg-dark input_label col-4">Başlangıç</label>
-            <input id="startDate" class="form-control col-8" [(ngModel)]="campaign.startDate" value="{{campaign.startDate}}" type="datetime-local"/>
-        </div>
-        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
-            <label for="expireDate" class="col-form-label bg-dark input_label col-4">Bitiş</label>
-            <input id="expireDate" class="form-control col-8" [(ngModel)]="campaign.expireDate" value="{{campaign.expireDate}}" type="datetime-local"/>
-        </div>
-        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
-            <label for="price" class="col-form-label bg-dark input_label col-4">Fiyat</label>
-            <input id="price" class="item-price form-control col-8" [(ngModel)]="campaign.price" value="{{campaign.price}}">
-        </div>
+
+        <mat-form-field appearance="outline" class="timePriceContainer">
+            <mat-label>Fiyat</mat-label>
+            <input matInput [(ngModel)]="campaign.price">
+        </mat-form-field>
+
         <div class="form-group m-0 p-2 w-100 row d-flex justify-content-end">
             <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
             <button (click)="location.back()" class="btn btn-danger ml-3 form-button">İptal</button>
