@@ -3,7 +3,6 @@
     <div class="image-input-container mb-3 mb-md-3 no-gutters">
         <img class="image" [src]="campaign.imgUrl ? campaign.imgUrl : '../../assets/no-image.jpg'" alt="{{campaign.name}}">
         <img class="attach" src="../../../../assets/cloud.jpg">
-        <p *ngIf="!campaign.imgUrl" class="addimage">Resim Ekle</p>
         <input type="file" class="file_upload_input" (change)="imageUpdateClick($event)" />
     </div>
     <div class="col-12 col-lg-6">

@@ -48,6 +48,11 @@ export class CampaignEditComponent implements OnInit {
         let end = this.endTime.split(':');
         this.campaign.expireDate.setHours(end[0], end[1]);
 
+        if (this.campaign.expireDate < new Date()) {
+            Swal.fire('Uyarı', 'Önceki tarih için Kampanya oluşturulamaz', 'warning');
+            return;
+        }
+
         if ( this.sessionData.isEdit ) {
             if ( this.formData ) {
                 this.fileService.uploadFile(this.formData, res => {
