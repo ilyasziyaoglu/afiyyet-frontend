@@ -31,7 +31,11 @@ export class AdminProductCardComponent {
 
     editItem() {
         this.adminSessionService.setCurrentProduct(this.product, true);
-        this.router.navigateByUrl('/pages/admin/item-edit');
+        if (this.product.type === 'CAMPAIGN') {
+            this.router.navigateByUrl('/pages/admin/campaign-edit');
+        } else {
+            this.router.navigateByUrl('/pages/admin/item-edit');
+        }
     }
 
     deleteItem() {
