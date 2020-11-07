@@ -13,20 +13,20 @@
         </mat-form-field>
         <mat-form-field appearance="outline" class="w-100">
             <mat-label>İçerik</mat-label>
-            <textarea [(ngModel)]="campaign.description" rows="4" matInput>{{campaign.description}}</textarea>
+            <textarea [(ngModel)]="campaign.description" rows="3" matInput>{{campaign.description}}</textarea>
         </mat-form-field>
 
         <div>
             <mat-form-field appearance="outline" class="mr-3">
                 <mat-label>Başlama tarihi</mat-label>
-                <input [min]="" [(ngModel)]="campaign.startDate" [ngModelOptions]="{standalone: true}" name="reservationDate" matInput [matDatepicker]="picker1" required readonly>
+                <input [(ngModel)]="campaign.startDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker1" required readonly>
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1 color="primary"></mat-datepicker>
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="timePriceContainer">
                 <mat-label>Saat</mat-label>
-                <input matInput [(ngModel)]="startTime" [ngModelOptions]="{standalone: true}" [ngxTimepicker]="toggleTimepicker1" [format]="24" required readonly>
+                <input [(ngModel)]="startTime" [ngModelOptions]="{standalone: true}" matInput [ngxTimepicker]="toggleTimepicker1" [format]="24" required readonly>
                 <ngx-material-timepicker #toggleTimepicker1></ngx-material-timepicker>
             </mat-form-field>
         </div>
@@ -34,22 +34,23 @@
         <div>
             <mat-form-field appearance="outline" class="mr-3">
                 <mat-label>Bitiş tarihi</mat-label>
-                <input [min]="" [(ngModel)]="campaign.expireDate" [ngModelOptions]="{standalone: true}" name="reservationDate" matInput [matDatepicker]="picker2" required readonly>
+                <input [(ngModel)]="campaign.expireDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker2" required readonly>
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 color="primary"></mat-datepicker>
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" class="timePriceContainer">
                 <mat-label>Saat</mat-label>
-                <input matInput [(ngModel)]="endTime" [ngModelOptions]="{standalone: true}" [ngxTimepicker]="toggleTimepicker2" [format]="24" required readonly>
+                <input [(ngModel)]="endTime" [ngModelOptions]="{standalone: true}" matInput [ngxTimepicker]="toggleTimepicker2" [format]="24" required readonly>
                 <ngx-material-timepicker #toggleTimepicker2></ngx-material-timepicker>
             </mat-form-field>
         </div>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="timePriceContainer">
             <mat-label>Fiyat</mat-label>
             <input matInput [(ngModel)]="campaign.price">
         </mat-form-field>
+
         <div class="form-group m-0 p-2 w-100 row d-flex justify-content-end">
             <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
             <button (click)="location.back()" class="btn btn-danger ml-3 form-button">İptal</button>
