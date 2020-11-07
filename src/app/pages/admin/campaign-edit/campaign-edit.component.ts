@@ -16,6 +16,8 @@ export class CampaignEditComponent implements OnInit {
     sessionData: any;
     campaign: any;
     formData: FormData;
+    startTime;
+    endTime;
 
     constructor(
         private router: Router,
@@ -36,35 +38,13 @@ export class CampaignEditComponent implements OnInit {
     }
 
     saveClick() {
-        if ( !this.campaign.name ) {
-            Swal.fire('Uyarı', 'Kampanya ismi boş bırakılamaz!', 'warning');
-            return;
-        }
+        if (!this.isInputsOk()) {return;}
 
-        if ( !this.campaign.price ) {
-            Swal.fire('Uyarı', 'Kampanya fiyatı boş bırakılamaz!', 'warning');
-            return;
-        }
+        this.startTime = this.startTime.split(':');
+        this.campaign.startDate.setHours(this.startTime[0], this.startTime[1]);
 
-        if ( isNaN(this.campaign.price) ) {
-            Swal.fire('Uyarı', 'Kampanya fiyatı rakam olmak zorundadır!', 'warning');
-            return;
-        }
-
-        if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
-            Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
-            return;
-        }
-
-        if ( !this.campaign.startDate ) {
-            Swal.fire('Uyarı', 'Kampanyanın başlama tarihi boş bırakılamaz!', 'warning');
-            return;
-        }
-
-        if ( !this.campaign.expireDate ) {
-            Swal.fire('Uyarı', 'Kampanyanın bitiş tarihi boş bırakılamaz!', 'warning');
-            return;
-        }
+        this.endTime = this.endTime.split(':');
+        this.campaign.expireDate.setHours(this.endTime[0], this.endTime[1]);
 
         this.campaign.startDate = new Date(this.campaign.startDate).toISOString();
         this.campaign.expireDate = new Date(this.campaign.expireDate).toISOString();
@@ -122,5 +102,49 @@ export class CampaignEditComponent implements OnInit {
         const date = new Date(str);
         return new Date(date.getTime() - (date.getTimezoneOffset() * 60000))
             .toISOString().slice(0, - 1);
+    }
+
+    isInputsOk() {
+        if ( !this.campaign.name ) {
+            Swal.fire('Uyarı', 'Kampanya ismi boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.campaign.price ) {
+            Swal.fire('Uyarı', 'Kampanya fiyatı boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( isNaN(this.campaign.price) ) {
+            Swal.fire('Uyarı', 'Kampanya fiyatı rakam olmak zorundadır!', 'warning');
+            return false;
+        }
+
+        if ( (!this.formData || !this.formData.has('file0')) && !this.campaign.imgUrl ) {
+            Swal.fire('Uyarı', 'Kampanya fotoğrafı boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.campaign.startDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın başlama tarihi boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.startTime ) {
+            Swal.fire('Uyarı', 'Kampanyanın başlama saati boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.campaign.expireDate ) {
+            Swal.fire('Uyarı', 'Kampanyanın bitiş tarihi boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        if ( !this.endTime ) {
+            Swal.fire('Uyarı', 'Kampanyanın bitiş saati boş bırakılamaz!', 'warning');
+            return false;
+        }
+
+        return true;
     }
 }

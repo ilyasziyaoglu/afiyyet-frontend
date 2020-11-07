@@ -17,14 +17,37 @@
             <textarea id="description" [(ngModel)]="campaign.description" rows="4"
                       class="description form-control col-10">{{campaign.description}}</textarea>
         </div>
-        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
-            <label for="startDate" class="col-form-label bg-dark input_label col-4">Başlangıç</label>
-            <input id="startDate" class="form-control col-8" [(ngModel)]="campaign.startDate" value="{{campaign.startDate}}" type="datetime-local"/>
+
+        <div>
+            <mat-form-field appearance="outline" class="mr-3">
+                <mat-label>Başlama tarihi</mat-label>
+                <input [min]="" [(ngModel)]="campaign.startDate" [ngModelOptions]="{standalone: true}" name="reservationDate" matInput [matDatepicker]="picker1" required readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 color="primary"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Saat</mat-label>
+                <input matInput [(ngModel)]="startTime" [ngModelOptions]="{standalone: true}" [ngxTimepicker]="toggleTimepicker1" [format]="24" required readonly>
+                <ngx-material-timepicker #toggleTimepicker1></ngx-material-timepicker>
+            </mat-form-field>
         </div>
-        <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
-            <label for="expireDate" class="col-form-label bg-dark input_label col-4">Bitiş</label>
-            <input id="expireDate" class="form-control col-8" [(ngModel)]="campaign.expireDate" value="{{campaign.expireDate}}" type="datetime-local"/>
+
+        <div>
+            <mat-form-field appearance="outline" class="mr-3">
+                <mat-label>Bitiş tarihi</mat-label>
+                <input [min]="" [(ngModel)]="campaign.expireDate" [ngModelOptions]="{standalone: true}" name="reservationDate" matInput [matDatepicker]="picker2" required readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Saat</mat-label>
+                <input matInput [(ngModel)]="endTime" [ngModelOptions]="{standalone: true}" [ngxTimepicker]="toggleTimepicker2" [format]="24" required readonly>
+                <ngx-material-timepicker #toggleTimepicker2></ngx-material-timepicker>
+            </mat-form-field>
         </div>
+
         <div class="form-group m-0 p-2 w-100 row col-12 col-sm-8 col-md-7 col-lg-6">
             <label for="price" class="col-form-label bg-dark input_label col-4">Fiyat</label>
             <input id="price" class="item-price form-control col-8" [(ngModel)]="campaign.price" value="{{campaign.price}}">
