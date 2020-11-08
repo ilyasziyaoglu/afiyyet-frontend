@@ -19,6 +19,7 @@ import {CampaignDetailComponent} from './campaign-detail/campaign-detail.compone
 import {BaseModule} from '../base/base.module';
 import { FavouritesComponent } from './favourites/favourites.component';
 import {MatButtonModule} from '@angular/material/button';
+import {BasketComponent} from './basket/basket.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {MatButtonModule} from '@angular/material/button';
         ProductDetailComponent,
         ReservationComponent,
         CampaignDetailComponent,
-        FavouritesComponent
+        FavouritesComponent,
+        BasketComponent
     ],
     imports: [
         CommonModule,
