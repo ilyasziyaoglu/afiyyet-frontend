@@ -18,6 +18,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
 import {BaseModule} from '../base/base.module';
 import { FavouritesComponent } from './favourites/favourites.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
         NgxMaterialTimepickerModule,
         MatBadgeModule,
         BaseModule,
+        MatButtonModule,
     ],
 })
 export class MenuModule {
