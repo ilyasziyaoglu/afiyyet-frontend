@@ -1,0 +1,36 @@
+<div class="desktop-container">
+    <div class="image">
+        <app-image class="image" [src]="product.imgUrl"></app-image>
+    </div>
+    <div class="desktop info">
+        <h4 class="name">{{product.name}}</h4>
+        <p class="description">{{product.description}}</p>
+        <h3 class="price">{{product.price}}&nbsp;₺</h3>
+        <div class="date-container" *ngIf="product.type === 'CAMPAIGN'">
+            <p>{{dateUtilsService.convertDateString(product.startDate)}}</p>
+            <p>{{dateUtilsService.convertDateString(product.expireDate)}}</p>
+        </div>
+    </div>
+    <div class="mobile info text-center">
+        <h4 class="name">{{product.name}}</h4>
+        <h3 class="price">{{product.price}}&nbsp;₺</h3>
+    </div>
+    <div class="desktop actions">
+        <mat-icon class="swipe-button" *ngIf="userService.isOrderEnabled">sync_alt</mat-icon>
+        <mat-icon (click)="editItem()">edit</mat-icon>
+        <mat-icon class="text-danger" (click)="deleteItem()">delete</mat-icon>
+    </div>
+</div>
+<div class="mobile mobile-container">
+    <p class="description">{{product.description}}</p>
+    <div class="date-container" *ngIf="product.type === 'CAMPAIGN'">
+        <p>{{dateUtilsService.convertDateString(product.startDate)}}</p>
+        <p>{{dateUtilsService.convertDateString(product.expireDate)}}</p>
+    </div>
+    <div class="w-100 actions d-flex justify-content-between">
+        <mat-icon class="text-danger" (click)="deleteItem()">delete</mat-icon>
+        <mat-icon (click)="editItem()">edit</mat-icon>
+        <mat-icon class="swipe-button" *ngIf="userService.isOrderEnabled">sync_alt</mat-icon>
+    </div>
+</div>
+

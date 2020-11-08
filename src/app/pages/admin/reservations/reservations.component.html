@@ -1,7 +1,7 @@
 <h1 class="header">REZERVASYONLAR</h1>
-<div class="row px-2 px-md-4 px-lg-4 justify-content-center">
+<div class="row d-flex justify-content-center">
     <div *ngFor="let reservation of reservations"
-         class="reservation mx-3 my-3 px-3 py-2 bg-dark rounded col-10 col-md-4 col-lg-3">
+         class="reservation my-3 mx-2 p-2 bg-dark rounded col-10 col-md-5 col-lg-3">
         <p class="reservation-name">{{reservation.fullName}}</p>
         <div class="phone-date-container">
             <mat-icon class="reservation-icon">phone</mat-icon>
