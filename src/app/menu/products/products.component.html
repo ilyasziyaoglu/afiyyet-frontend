@@ -4,15 +4,18 @@
     <div class="col p-2 item align-content-end"
          *ngFor="let item of menuService.currentCategory?.products">
 
-        <img class="item-img"
+        <img class="item-img p-0 m-0"
              [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
              (click)="productClick(item)"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
              src="{{item.imgUrl}}" alt="{{item.name}}">
-        <div class="item-name"
-             [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-             (click)="productClick(item)">
-            <h3>{{item.name}}</h3>
+        <div class="d-flex flex-row justify-content-between">
+            <div class="item-name"
+                 [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
+                 (click)="productClick(item)">
+                <h3>{{item.name}}</h3>
+            </div>
+            <mat-icon (click)="addBasket(item)">shopping_cart</mat-icon>
         </div>
         <hr class="item-line">
         <p class="description"

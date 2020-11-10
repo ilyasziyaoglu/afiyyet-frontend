@@ -1,0 +1,41 @@
+.arrowIcon {
+  transform: scale(4);
+  margin: 0 15px;
+  color: #343A40;
+}
+
+.name {
+  font-size: 20px;
+  text-align: center;
+}
+
+.count {
+  font-size: 24px;
+  color: #343A40;
+}
+
+.portion {
+  display: flex;
+  background-color: #95a5a6;
+  width: 70px;
+  border-radius: 10px;
+  padding: 7px 0;
+  margin: 0 10px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.portion-active {
+  display: flex;
+  background-color: #2c3e50;
+  width: 70px;
+  border-radius: 10px;
+  padding: 7px 0;
+  margin: 0 10px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

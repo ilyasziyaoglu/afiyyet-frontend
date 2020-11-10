@@ -1,0 +1,17 @@
+<div class="d-flex flex-column align-items-center">
+    <span class="mb-3 name">{{basketService.currentBasketItem.name}}</span>
+    <div class="d-flex my-2 align-items-center justify-content-center">
+        <mat-icon class="arrowIcon" (click)="arrowClick(false)">arrow_left</mat-icon>
+        <span class="count">{{count}}</span>
+        <mat-icon class="arrowIcon" (click)="arrowClick(true)">arrow_right</mat-icon>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+        <span class="my-3">Porsiyon</span>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div [ngClass]="(portion === 1)?'portion-active':'portion'" (click)="portion = 1">1</div>
+            <div [ngClass]="(portion === 1.5)?'portion-active':'portion'" (click)="portion = 1.5">1,5</div>
+            <div [ngClass]="(portion === 2)?'portion-active':'portion'" (click)="portion = 2">2</div>
+        </div>
+    </div>
+    <button class="btn btn-outline-dark py-2 w-50 mt-4">Ekle</button>
+</div>
