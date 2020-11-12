@@ -2,6 +2,16 @@
   cursor: pointer;
 }
 
+.circle-container {
+  width: 57px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #000 1px;
+  border-radius: 50%;
+}
+
 .image-container {
   position: relative;
 }
@@ -24,7 +34,7 @@
 }
 
 .active {
-  color: dodgerblue;
+  color: #4267B2;
 }
 
 .flex-container * {
