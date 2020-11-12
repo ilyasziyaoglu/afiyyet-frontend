@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ContentChildren, OnInit, QueryList} from '@angular/core';
 import {MenuService} from '../../../services/menu.service';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Category, Product} from '../../../services/models/models';
@@ -10,6 +10,7 @@ import {ProductService} from '../../../services/product.service';
 import {CategoryEditComponent} from '../category-edit/category-edit.component';
 import {UserService} from '../../../base/services/user.service';
 import {BulkPriceUpdateComponent} from '../bulk-price-update/bulk-price-update.component';
+import {AdminProductCardComponent} from '../../../base/components/admin-product-card/admin-product-card.component';
 
 @Component({
     selector: 'app-admin',
@@ -18,6 +19,7 @@ import {BulkPriceUpdateComponent} from '../bulk-price-update/bulk-price-update.c
 })
 
 export class MenuComponent implements OnInit {
+    @ContentChildren( AdminProductCardComponent, { descendants: true } ) dragHandles: QueryList<AdminProductCardComponent>;
 
     productsArranged = false;
     categoriesArranged = false;
@@ -146,7 +148,9 @@ export class MenuComponent implements OnInit {
 
     getTotalProducts(categories) {
         let count = 0;
-        categories.forEach(cat => count += cat.products.length);
+        if ( categories ) {
+            categories.forEach(cat => count += cat.products.length);
+        }
         return count;
     }
 

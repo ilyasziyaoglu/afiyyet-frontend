@@ -7,17 +7,14 @@
     </button>
 </div>
 
+<hr>
 <div class="d-flex flex-column" cdkDropList (cdkDropListDropped)="arrangeCampaign($event)">
-    <app-admin-product-card [product]="item" [index]="i" cdkDrag
-                             *ngFor="let item of campaignService.activeCampaigns; let i = index">
-    </app-admin-product-card>
+    <h2 class="w-100 text-center">Aptif Kampanyalar</h2>
+    <app-admin-product-card [products]="campaignService.activeCampaigns"></app-admin-product-card>
 </div>
 
 <hr>
-
 <div class="d-flex flex-column">
     <h2 class="w-100 text-center">Geçmiş Kampanyalar</h2>
-    <app-admin-product-card [product]="item" [index]="i"
-                            *ngFor="let item of campaignService.passiveCampaigns; let i = index">
-    </app-admin-product-card>
+    <app-admin-product-card [products]="campaignService.passiveCampaigns"></app-admin-product-card>
 </div>

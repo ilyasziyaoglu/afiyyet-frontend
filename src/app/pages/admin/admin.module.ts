@@ -7,7 +7,6 @@ import {CampaignsComponent} from './campaigns/campaigns.component';
 import {MenuComponent} from './menu/menu.component';
 import {CommentsComponent} from './comments/comments.component';
 import {ReservationsComponent} from './reservations/reservations.component';
-import {ItemEditComponent} from './item-edit/item-edit.component';
 import {DialogCommentComponent} from '../../menu/dialog-comment/dialog-comment.component';
 import {CategoryEditComponent} from './category-edit/category-edit.component';
 import {FormsModule} from '@angular/forms';
@@ -30,7 +29,6 @@ import {ComponentsModule} from '../../base/components/components.module';
         MenuComponent,
         CommentsComponent,
         ReservationsComponent,
-        ItemEditComponent,
         DialogCommentComponent,
         CategoryEditComponent,
         BulkPriceUpdateComponent,

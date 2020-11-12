@@ -15,7 +15,7 @@ import {DateUtilsService} from '../../utils/date-utils.service';
     styleUrls: ['./admin-product-card.component.scss'],
 })
 export class AdminProductCardComponent {
-    @Input() product: Product;
+    @Input() products: Product[];
     @Input() index: number;
 
     constructor(
@@ -29,16 +29,16 @@ export class AdminProductCardComponent {
     ) {
     }
 
-    editItem() {
-        this.adminSessionService.setCurrentProduct(this.product, true);
-        if (this.product.type === 'CAMPAIGN') {
+    editItem(product: Product) {
+        this.adminSessionService.setCurrentProduct(product, true);
+        if (product.type === 'CAMPAIGN') {
             this.router.navigateByUrl('/pages/admin/campaign-edit');
         } else {
             this.router.navigateByUrl('/pages/admin/item-edit');
         }
     }
 
-    deleteItem() {
+    deleteItem(product: Product) {
         Swal.fire({
             title: 'Dikkat!',
             text: 'Ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz!',
@@ -50,7 +50,7 @@ export class AdminProductCardComponent {
             cancelButtonText: 'İptal',
         }).then((result) => {
             if ( result.isConfirmed ) {
-                this.productService.delete(this.product.id, res => {
+                this.productService.delete(product.id, res => {
                     if ( res ) {
                         this.categoryService.currentCategory.products.splice(this.index, 1);
                         Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
