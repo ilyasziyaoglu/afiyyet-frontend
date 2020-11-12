@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BasketService} from '../../services/basket.service';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-basket',
@@ -8,16 +9,27 @@ import {BasketService} from '../../services/basket.service';
 })
 export class DialogBasketComponent implements OnInit {
 
-  count = 1;
+  amount = 1;
   portion = 1;
 
-  constructor(public basketService: BasketService) { }
+  constructor(public basketService: BasketService,
+              private dialog: MatDialogRef<DialogBasketComponent>) { }
 
   ngOnInit(): void {
   }
 
   arrowClick(isIncrease: boolean) {
-    if (isIncrease) this.count++;
-    else if (!isIncrease && this.count > 1) this.count--;
+    if (isIncrease) this.amount++;
+    else if (!isIncrease && this.amount > 1) this.amount--;
+  }
+
+  addClick() {
+    this.basketService.addItemBasket({
+      ...this.basketService.currentBasketItem,
+      portion: this.portion,
+      amount: this.amount
+    });
+    this.dialog.close();
+
   }
 }
