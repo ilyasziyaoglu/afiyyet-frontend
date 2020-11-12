@@ -5,7 +5,7 @@
         <span class="count">{{amount}}</span>
         <mat-icon class="arrowIcon" (click)="arrowClick(true)">add_circle</mat-icon>
     </div>
-    <div *ngIf="!basketService.currentBasketItem.hasPortionOption" class="d-flex flex-column align-items-center mb-3">
+    <div *ngIf="basketService.currentBasketItem.hasPortionOption" class="d-flex flex-column align-items-center mb-3">
         <span class="my-3 portion-title">Porsiyon</span>
         <div class="d-flex flex-row justify-content-center align-items-center">
             <div [ngClass]="(portion === 1)?'portion-active':'portion'" (click)="portion = 1">1</div>
