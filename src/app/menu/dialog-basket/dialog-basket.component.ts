@@ -11,6 +11,7 @@ export class DialogBasketComponent implements OnInit {
 
   amount = 1;
   portion = 1;
+  comment = '';
 
   constructor(public basketService: BasketService,
               private dialog: MatDialogRef<DialogBasketComponent>) { }
@@ -27,7 +28,8 @@ export class DialogBasketComponent implements OnInit {
     this.basketService.addItemBasket({
       ...this.basketService.currentBasketItem,
       portion: this.portion,
-      amount: this.amount
+      amount: this.amount,
+      comment: this.comment
     });
     this.dialog.close();
 
