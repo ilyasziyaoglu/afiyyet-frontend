@@ -26,5 +26,22 @@
                 <mat-icon class="rightArrow" (click)="arrowClick(i, true)">add_circle</mat-icon>
             </div>
         </div>
+        <div>
+            <span class="item-price"><b>Birim/Toplam:</b> {{item.unitPrice}}<b>/</b>{{item.totalPrice}} ₺</span>
+        </div>
     </div>
+</div>
+
+<div class="bottom-container">
+    <span class="bottom-title">Sipariş Özeti</span>
+    <span class="bottom-price"><b>Genel Toplam:</b> {{totalPrice}}₺</span>
+    <div class="d-flex">
+        <mat-checkbox class="bottom-check" [(ngModel)]="isWaitTable">Masayı Bekle</mat-checkbox>
+        <div class="popup" (click)="togglePopup()">
+            <mat-icon style="margin: -1px 0 0 6px">help_outline</mat-icon>
+            <span class="popuptext" id="myPopup">Masayı beklemeyi seçtiğinizde, siparişleriniz 3 dakikalığına
+                masadaki diğer siparişleri bekler</span>
+        </div>
+    </div>
+    <button class="btn btn-dark">Siparişi Tamamla</button>
 </div>

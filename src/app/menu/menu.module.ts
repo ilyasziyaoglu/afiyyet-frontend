@@ -20,6 +20,7 @@ import {BaseModule} from '../base/base.module';
 import { FavouritesComponent } from './favourites/favourites.component';
 import {MatButtonModule} from '@angular/material/button';
 import {BasketComponent} from './basket/basket.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {BasketComponent} from './basket/basket.component';
         MatBadgeModule,
         BaseModule,
         MatButtonModule,
+        MatCheckboxModule,
     ],
 })
 export class MenuModule {

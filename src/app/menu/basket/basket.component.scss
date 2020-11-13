@@ -66,10 +66,93 @@
   font-size: 16px;
 }
 
+.item-price {
+  font-size: 16px;
+}
+
 .btn-comment {
   padding: 4px 7px;
   background-color: #2c3e50;
   color: white;
   border-radius: 4px;
   border-width: 0;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 8px 0 8px;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75);
+  color: #525252;
+}
+
+.bottom-title {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 12px;
+}
+
+.bottom-price {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.bottom-check {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+/* AŞAĞISI INFO DIALOG KISMI İÇİN */
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -125px;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 500ms;
+  animation: fadeIn 500ms
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 0.8;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
