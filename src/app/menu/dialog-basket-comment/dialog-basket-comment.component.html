@@ -1,0 +1,11 @@
+<div style="display: flex; flex-direction: column; justify-content: center;">
+    <label>
+        <textarea [(ngModel)]="comment" rows="3" class="form-control mb-1"
+                  placeholder="Notunuzu Ekleyiniz..."></textarea>
+    </label>
+    <div class="d-flex">
+        <button (click)="saveClick()"
+                style="flex: 1;background-color: #2c3e50; color: white" class="btn mr-2">Kaydet</button>
+        <button (click)="cancelClick()" style="flex: 1;" class="btn btn-outline-dark">İptal</button>
+    </div>
+</div>

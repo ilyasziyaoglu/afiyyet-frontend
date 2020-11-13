@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BasketService} from '../../services/basket.service';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogBasketCommentComponent} from '../dialog-basket-comment/dialog-basket-comment.component';
 
 @Component({
   selector: 'app-basket',
@@ -12,7 +14,7 @@ export class BasketComponent implements OnInit {
   totalPrice;
   isWaitTable;
 
-  constructor(private basketService: BasketService) {
+  constructor(private basketService: BasketService, private dialog: MatDialog) {
     this.basketItems = basketService.getItemsBasket();
     this.totalPrice = this.basketItems.reduce((a, b) => a + b.totalPrice, 0);
   }
@@ -52,5 +54,17 @@ export class BasketComponent implements OnInit {
     this.basketItems.splice(i, 1);
     this.totalPrice = this.basketItems.reduce((a, b) => a + b.totalPrice, 0);
     this.basketService.setItemsBasket(this.basketItems);
+  }
+
+  updateComment(i) {
+    this.basketService.currentBasketItem = this.basketItems[i];
+    let dialogRef = this.dialog.open(DialogBasketCommentComponent, {width: '85%'});
+
+    dialogRef.afterClosed().subscribe(isSaved => {
+      if (isSaved) {
+        this.basketItems[i].comment = this.basketService.currentBasketItem.comment;
+        this.basketService.setItemsBasket(this.basketItems);
+      }
+    })
   }
 }

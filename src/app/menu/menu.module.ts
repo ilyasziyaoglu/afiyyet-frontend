@@ -21,6 +21,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import {MatButtonModule} from '@angular/material/button';
 import {BasketComponent} from './basket/basket.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {DialogBasketCommentComponent} from './dialog-basket-comment/dialog-basket-comment.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
         ReservationComponent,
         CampaignDetailComponent,
         FavouritesComponent,
-        BasketComponent
+        BasketComponent,
+        DialogBasketCommentComponent
     ],
     imports: [
         CommonModule,
