@@ -6,14 +6,14 @@
     <div class="ml-2 m-1 d-flex flex-column w-100">
         <div class="d-flex mb-1 justify-content-between">
             <h3 class="item-name">{{item.name}}</h3>
-            <mat-icon>close</mat-icon>
+            <mat-icon (click)="removeItem(i)">close</mat-icon>
         </div>
 
         <div class="d-flex align-items-center"> <!--buraya hasPortion gelecek-->
             <span class="my-1">Porsiyon</span>
-            <div [ngClass]="(item.portion === 1)?'portion-active':'portion'" (click)="item.portion = 1">1</div>
-            <div [ngClass]="(item.portion === 1.5)?'portion-active':'portion'" (click)="item.portion = 1.5">1,5</div>
-            <div [ngClass]="(item.portion === 2)?'portion-active':'portion'" (click)="item.portion = 2">2</div>
+            <div [ngClass]="(item.portion === 1)?'portion-active':'portion'" (click)="changePortion(i, 1)">1</div>
+            <div [ngClass]="(item.portion === 1.5)?'portion-active':'portion'" (click)="changePortion(i, 1.5)">1,5</div>
+            <div [ngClass]="(item.portion === 2)?'portion-active':'portion'" (click)="changePortion(i, 2)">2</div>
 
         </div>
 
@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<div class="bottom-container">
+<div class="bottom-container" *ngIf="basketItems.length > 0">
     <span class="bottom-title">Sipariş Özeti</span>
     <span class="bottom-price"><b>Genel Toplam:</b> {{totalPrice}}₺</span>
     <div class="d-flex">
@@ -44,4 +44,8 @@
         </div>
     </div>
     <button class="btn btn-dark">Siparişi Tamamla</button>
+</div>
+
+<div class="h-100 d-flex align-items-center justify-content-center" *ngIf="basketItems.length === 0">
+    <span class="empty-basket-title">Siparişiniz Bulunmuyor :)</span>
 </div>
