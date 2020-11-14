@@ -1,4 +1,4 @@
-<h3 *ngIf="menuService.isCampEnabled" class="my-1 text-center">Kampanyalar</h3>
+<h3 *ngIf="menuService.isCampEnabled && menuService.menu?.campaigns" class="my-1 text-center">Kampanyalar</h3>
 <div *ngIf="menuService.isCampEnabled" class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
          *ngFor="let item of menuService.menu?.campaigns">
