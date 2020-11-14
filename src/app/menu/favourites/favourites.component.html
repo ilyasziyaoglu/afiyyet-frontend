@@ -1,6 +1,5 @@
-<h1 class="mt-2" style="text-align: center">Favorilerim</h1>
-<p class="m-3 text-center" *ngIf="!menuLocalService.getFavourites().length">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</p>
-<div class="row m-1 justify-content-center" *ngIf="menuService.isFavEnabled" >
+<div class="row m-1 justify-content-center" *ngIf="favoriteService.getFavorites().length > 0">
+    <h1 class="mt-2" style="text-align: center">Favorilerim</h1>
     <div class="col p-2 item align-content-end"
          *ngFor="let item of favoriteService.getFavorites()">
 
@@ -25,9 +24,8 @@
             <div class="col d-flex justify-content-center align-items-center"
                  [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
                  (click)="productClick(item)">{{item.price}}&nbsp;₺</div>
-            <div *ngIf="menuService.isFavEnabled" class="col d-flex border-left border-white justify-content-center align-items-center">
-                <mat-icon class="favorite" *ngIf="favoriteService.isFavorite(item.id)" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
-                <mat-icon class="favorite" *ngIf="!favoriteService.isFavorite(item.id)" (click)="favoriteService.addFavorite(item.id)">favorite_border</mat-icon>
+            <div class="col d-flex border-left border-white justify-content-center align-items-center">
+                <mat-icon class="favorite" (click)="favoriteService.removeFavorite(item.id)">favorite</mat-icon>
             </div>
             <div *ngIf="menuService.isLikeEnabled" class="col border-left border-white d-flex justify-content-center align-items-center"
                  (click)="onLike(item)">{{item.likes}}&nbsp;
@@ -36,4 +34,8 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="h-100 d-flex align-items-center justify-content-center mx-4 text-center" *ngIf="favoriteService.getFavorites().length === 0">
+    <span class="empty-basket-title">Favori ürünlerinizi buraya eklemek için ürün üzerindeki kalbe dokunun :)</span>
 </div>
