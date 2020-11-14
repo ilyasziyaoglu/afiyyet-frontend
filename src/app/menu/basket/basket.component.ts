@@ -43,8 +43,8 @@ export class BasketComponent implements OnInit {
 
   changePortion(i, portion) {
     this.basketItems[i].portion = portion;
-    this.basketItems[i].unitPrice = this.basketItems[i].price * portion;
-    this.basketItems[i].totalPrice = this.basketItems[i].unitPrice * this.basketItems[i].amount;
+    this.basketItems[i].unitPrice = this.basketItems[i].product.price * portion;
+    this.basketItems[i].totalPrice = this.basketItems[i].unitPrice * this.basketItems[i].product.amount;
 
     this.totalPrice = this.basketItems.reduce((a, b) => a + b.totalPrice, 0);
     this.basketService.setItemsBasket(this.basketItems);
@@ -66,5 +66,9 @@ export class BasketComponent implements OnInit {
         this.basketService.setItemsBasket(this.basketItems);
       }
     })
+  }
+
+  sendClick() {
+    this.basketService.sendBasket({orderitems: this.basketItems, table: {id: 1}});
   }
 }

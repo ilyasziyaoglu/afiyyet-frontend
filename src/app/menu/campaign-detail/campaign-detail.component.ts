@@ -30,8 +30,8 @@ export class CampaignDetailComponent implements OnInit {
     this.menuService.like(item);
   }
 
-  addBasket(item) {
-    this.basketService.currentBasketItem = item;
+  addBasket(product) {
+    this.basketService.currentBasketItem = {product};
     this.dialog.open(DialogBasketComponent);
   }
 

@@ -25,14 +25,14 @@ export class DialogBasketComponent implements OnInit {
   }
 
   addClick() {
-    let currentItem = this.basketService.currentBasketItem;
+    let product = this.basketService.currentBasketItem.product;
     this.basketService.addItemBasket({
-      ...currentItem,
+      product,
       portion: this.portion,
       amount: this.amount,
       comment: this.comment,
-      unitPrice: currentItem.price*this.portion,
-      totalPrice: currentItem.price*this.portion*this.amount
+      unitPrice: product.price*this.portion,
+      totalPrice: product.price*this.portion*this.amount
     });
     this.dialog.close();
 
