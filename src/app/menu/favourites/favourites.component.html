@@ -9,10 +9,13 @@
              (click)="productClick(item)"
              #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';"
              src="{{item.imgUrl}}" alt="{{item.name}}">
-        <div class="item-name"
-             [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
-             (click)="productClick(item)">
-            <h3>{{item.name}}</h3>
+        <div class="d-flex flex-row justify-content-between">
+            <div class="item-name"
+                 [routerLink]="[item.name.toLowerCase().replaceAll(' ','-')]"
+                 (click)="productClick(item)">
+                <h3>{{item.name}}</h3>
+            </div>
+            <mat-icon *ngIf="menuService.isBasketEnabled" (click)="addBasket(item)">shopping_cart</mat-icon>
         </div>
         <hr class="item-line">
         <p class="description"
