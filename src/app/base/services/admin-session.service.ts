@@ -6,10 +6,9 @@ import {Injectable} from '@angular/core';
 export class AdminSessionService {
 
     category: any;
-    USER = "@user";
-    CURRENT_PROD = "@currProdAdmin";
-    CURRENT_CAMP = "@currCampAdmin";
-    CURRENT_CAT = "@currCatAdmin";
+    USER = '@user';
+    CURRENT_PROD = '@currProdAdmin';
+    CURRENT_CAT = '@currCatAdmin';
 
     constructor() {}
 
@@ -18,8 +17,8 @@ export class AdminSessionService {
     }
 
     getUser() {
-        let user = sessionStorage.getItem(this.USER);
-        if (user) return JSON.parse(user);
+        const user = sessionStorage.getItem(this.USER);
+        if (user) { return JSON.parse(user); }
         return null;
     }
 
@@ -32,18 +31,8 @@ export class AdminSessionService {
     }
 
     getCurrentProduct() {
-        let product = sessionStorage.getItem(this.CURRENT_PROD);
-        if (product) return JSON.parse(product);
-        return null;
-    }
-
-    setCurrentCampaign(campaign, isEdit) {
-        sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify({campaign, isEdit}));
-    }
-
-    getCurrentCampaign() {
-        let campaign = sessionStorage.getItem(this.CURRENT_CAMP);
-        if (campaign) return JSON.parse(campaign);
+        const product = sessionStorage.getItem(this.CURRENT_PROD);
+        if (product) { return JSON.parse(product); }
         return null;
     }
 

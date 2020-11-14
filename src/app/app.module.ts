@@ -10,7 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BaseModule} from './base/base.module';
 import {MenuModule} from './menu/menu.module';
 import {PagesModule} from './pages/pages.module';
-import { CampaignEditComponent } from './pages/admin/campaign-edit/campaign-edit.component';
+import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import {FormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -20,7 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 @NgModule({
     declarations: [
         AppComponent,
-        CampaignEditComponent,
+        ProductEditComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,7 +1,5 @@
 <div class="row my-3 mx-0 justify-content-center">
 
-<!--    <div style="background-color: lightgrey" class="col-11 px-0 py-2 rounded row"> &lt;!&ndash; DashBoard Alanı &ndash;&gt;-->
-
         <div class="col-sm-4 col-md-5 col-lg-4 mt-2 categories" cdkDropList (cdkDropListDropped)="arrangeCategory($event)">
 
             <button *ngIf="userService.isOrderEnabled" [ngClass]="{'btn-success': categoriesArranged, 'btn-secondary': !categoriesArranged}"
@@ -13,6 +11,7 @@
 
             <div style="background-color: #F4511E" class="d-flex justify-content-around py-1 rounded">
                 <span class="cat-prod-count-span">{{categoryCount}} Kategori</span>
+                <span class="cat-prod-count-span">{{getTotalProducts(categoryService.categories)}} Product</span>
             </div>
 
             <div cdkDrag [cdkDragDisabled]="!userService.isOrderEnabled" *ngFor="let category of categoryService.categories; let i = index">
@@ -31,7 +30,7 @@
             </div>
         </div>
 
-        <div id="category-name" class="col-sm-8 col-md-7 col-lg-8" cdkDropList (cdkDropListDropped)="arrangeProduct($event)" *ngIf="categoryService.currentCategory">
+        <div id="category-name" class="col-sm-8 col-md-7 col-lg-8" *ngIf="categoryService.currentCategory">
 
             <div class="bg-dark p-3 mt-3 rounded category-name">
                 {{categoryService.currentCategory?.name}}
@@ -44,13 +43,9 @@
                 <button (click)="addItem()" class="btn add-product btn-outline-dark">Ürün Ekle</button>
             </div>
 
-            <div class="d-flex flex-column">
-                <app-admin-product-card [product]="item" [index]="i" cdkDrag
-                        *ngFor="let item of categoryService.currentCategory?.products; let i = index">
-                </app-admin-product-card>
+            <div class="d-flex flex-column" cdkDropList (cdkDropListDropped)="arrangeProduct($event)">
+                <app-admin-product-card [products]="categoryService.currentCategory?.products"></app-admin-product-card>
             </div>
 
         </div>
-
-<!--    </div>-->
 </div>

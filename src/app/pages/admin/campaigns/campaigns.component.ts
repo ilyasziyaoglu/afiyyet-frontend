@@ -37,42 +37,9 @@ export class CampaignsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  editCampaign(campaign: any) {
-    this.adminSessionService.setCurrentCampaign(campaign, true);
-    this.router.navigateByUrl('/pages/admin/campaign-edit');
-  }
-
   insertCampaign() {
-    this.adminSessionService.setCurrentCampaign(null, false);
+    this.adminSessionService.setCurrentProduct(null, false);
     this.router.navigateByUrl('/pages/admin/campaign-edit');
-  }
-
-  deleteItem(item: any, index, isActive: boolean) {
-    Swal.fire({
-      title: 'Dikkat!',
-      text: 'Ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz!',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Evet, silinsin!',
-      cancelButtonText: 'İptal',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.campaignService.delete(item.id, res => {
-          if ( res ) {
-            if (isActive) { this.campaignService.activeCampaigns.splice(index, 1); }
-            else { this.campaignService.passiveCampaigns.splice(index, 1); }
-            Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
-          }
-        });
-      }
-    });
-  }
-
-  convertDateString(strDate) {
-    return new Date(strDate).toLocaleString('en-GB').slice(0, -3);
   }
 
   arrangeCampaign(event: CdkDragDrop<Product>) {

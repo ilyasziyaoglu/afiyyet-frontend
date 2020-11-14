@@ -1,24 +1,24 @@
 <div class="row my-2 item py-3 justify-content-center align-items-center">
 
     <div class="image-input-container mb-3 mb-md-3 no-gutters">
-        <img class="image" [src]="campaign.imgUrl ? campaign.imgUrl : '../../assets/no-image.jpg'" alt="{{campaign.name}}">
+        <img class="image" [src]="product.imgUrl ? product.imgUrl : '../../assets/no-image.jpg'" alt="{{product.name}}">
         <img class="attach" src="../../../../assets/cloud.jpg">
         <input type="file" class="file_upload_input" (change)="imageUpdateClick($event)" />
     </div>
     <div class="col-12 col-lg-6">
         <mat-form-field appearance="outline" class="w-100">
             <mat-label>Başlık</mat-label>
-            <input [(ngModel)]="campaign.name" matInput/>
+            <input [(ngModel)]="product.name" matInput/>
         </mat-form-field>
         <mat-form-field appearance="outline" class="w-100">
             <mat-label>İçerik</mat-label>
-            <textarea [(ngModel)]="campaign.description" rows="3" matInput>{{campaign.description}}</textarea>
+            <textarea [(ngModel)]="product.description" rows="3" matInput>{{product.description}}</textarea>
         </mat-form-field>
 
-        <div>
+        <div *ngIf="isCampaign">
             <mat-form-field appearance="outline" class="mr-3">
                 <mat-label>Başlama tarihi</mat-label>
-                <input [(ngModel)]="campaign.startDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker1" required readonly>
+                <input [(ngModel)]="product.startDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker1" required readonly>
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1 color="primary"></mat-datepicker>
             </mat-form-field>
@@ -30,10 +30,10 @@
             </mat-form-field>
         </div>
 
-        <div>
+        <div *ngIf="isCampaign">
             <mat-form-field appearance="outline" class="mr-3">
                 <mat-label>Bitiş tarihi</mat-label>
-                <input [(ngModel)]="campaign.expireDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker2" required readonly>
+                <input [(ngModel)]="product.expireDate" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker2" required readonly>
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 color="primary"></mat-datepicker>
             </mat-form-field>
@@ -47,12 +47,12 @@
 
         <mat-form-field appearance="outline" class="timePriceContainer">
             <mat-label>Fiyat</mat-label>
-            <input matInput [(ngModel)]="campaign.price">
+            <input matInput [(ngModel)]="product.price">
         </mat-form-field>
 
         <div class="form-group m-0 p-2 w-100 row d-flex justify-content-end">
             <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
-            <button (click)="location.back()" class="btn btn-danger ml-3 form-button">İptal</button>
+            <button (click)="back()" class="btn btn-danger ml-3 form-button">İptal</button>
         </div>
     </div>
 </div>
