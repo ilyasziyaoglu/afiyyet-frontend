@@ -1,5 +1,5 @@
 <br>
-<div *ngIf="menuService.currentProduct">
+<div *ngIf="menuService.currentProduct" class="mx-2">
     <h1 class="item-name">{{menuService.currentProduct.name}}</h1>
     <div class="row W-100 no-gutters justify-content-center align-items-center">
         <div class="image-container">
@@ -30,7 +30,7 @@
                       (click)="favoriteService.addFavorite(menuService.currentProduct.id)">favorite_border
             </mat-icon>
         </div>
-        <div class="circle-container" (click)="addBasket(menuService.currentProduct)">
+        <div *ngIf="menuService.isBasketEnabled" class="circle-container" (click)="addBasket(menuService.currentProduct)">
             <mat-icon>shopping_cart</mat-icon>
         </div>
     </div>
