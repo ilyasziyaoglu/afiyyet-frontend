@@ -9,7 +9,7 @@
             <mat-icon (click)="removeItem(i)">close</mat-icon>
         </div>
 
-        <div class="d-flex align-items-center"> <!--buraya hasPortion gelecek-->
+        <div *ngIf="item.hasPortionOption" class="d-flex align-items-center">
             <span class="my-1">Porsiyon</span>
             <div [ngClass]="(item.portion === 1)?'portion-active':'portion'" (click)="changePortion(i, 1)">1</div>
             <div [ngClass]="(item.portion === 1.5)?'portion-active':'portion'" (click)="changePortion(i, 1.5)">1,5</div>
