@@ -7,7 +7,6 @@ import {MenuComponent} from './menu/menu.component';
 import {AdminComponent} from './admin.component';
 import {ReportsComponent} from './reports/reports.component';
 import {ProductEditComponent} from './product-edit/product-edit.component';
-import {TablesComponent} from './tables/tables.component';
 
 const routes: Routes = [
     {
