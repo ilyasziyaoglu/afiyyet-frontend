@@ -8,7 +8,9 @@ export class AdminSessionService {
     category: any;
     USER = '@user';
     CURRENT_PROD = '@currProdAdmin';
+    CURRENT_CAMP = '@currCampAdmin';
     CURRENT_CAT = '@currCatAdmin';
+    CURRENT_TABLE = '@currentTableAdmin';
 
     constructor() {}
 
@@ -42,5 +44,15 @@ export class AdminSessionService {
 
     getCurrentCategoryId() {
         return sessionStorage.getItem(this.CURRENT_CAT);
+    }
+
+    setCurrentTable(table) {
+        sessionStorage.setItem(this.CURRENT_TABLE, JSON.stringify(table));
+    }
+
+    getCurrentTable() {
+        const table = sessionStorage.getItem(this.CURRENT_TABLE);
+        if (table) { return JSON.parse(table); }
+        return null;
     }
 }

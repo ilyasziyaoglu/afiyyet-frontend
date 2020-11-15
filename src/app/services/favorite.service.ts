@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {MenuService} from './menu.service';
-import {AdminSessionService} from '../base/services/admin-session.service';
 import {MenuLocalService} from '../base/services/menu-local.service';
 
 @Injectable({

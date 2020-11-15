@@ -3,7 +3,6 @@ import {CampaignService} from '../../../services/campaign.service';
 import {Product} from '../../../services/models/models';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Router} from '@angular/router';
-import Swal from 'sweetalert2';
 import {AdminSessionService} from '../../../base/services/admin-session.service';
 import {UserService} from '../../../base/services/user.service';
 

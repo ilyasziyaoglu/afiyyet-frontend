@@ -1,5 +1,5 @@
 <br>
-<div *ngIf="menuService.currentCampaign">
+<div *ngIf="menuService.currentCampaign" class="mx-2">
     <h1 class="item-name">{{menuService.currentCampaign.name}}</h1>
     <div class="row W-100 no-gutters justify-content-center align-items-center">
         <div class="image-container">
@@ -8,15 +8,20 @@
         </div>
     </div>
     <div class="m-3 flex-container d-flex justify-content-center">
-        <div class="border rounded-lg pl-1 pr-1">
-            <p>{{menuService.currentCampaign.price}}</p>
-            <p>₺</p>
+        <div class="circle-container">
+            <div>
+                <p>{{menuService.currentCampaign.price}}</p>
+                <p>₺</p>
+            </div>
         </div>
-        <div *ngIf="menuService.isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentCampaign)">
-            <p>{{menuService.currentCampaign.likes}}</p>
-            <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(menuService.currentCampaign.id)}" class="like-icon">
-                thumb_up
-            </mat-icon>
+        <div *ngIf="menuService.isLikeEnabled" class="circle-container" (click)="onLike(menuService.currentCampaign)">
+            <div [ngClass]="{'active': menuLocalService.getLikes().includes(menuService.currentCampaign.id)}">
+                <p>{{menuService.currentCampaign.likes}}</p>
+                <mat-icon class="like-icon">thumb_up</mat-icon>
+            </div>
+        </div>
+        <div class="circle-container" *ngIf="menuService.isBasketEnabled" (click)="addBasket(menuService.currentCampaign)">
+            <mat-icon>shopping_cart</mat-icon>
         </div>
     </div>
     <p class="item-description">{{menuService.currentCampaign.description}}</p>

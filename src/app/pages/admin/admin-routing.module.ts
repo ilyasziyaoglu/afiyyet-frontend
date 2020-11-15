@@ -6,6 +6,9 @@ import {CampaignsComponent} from './campaigns/campaigns.component';
 import {MenuComponent} from './menu/menu.component';
 import {AdminComponent} from './admin.component';
 import {ReportsComponent} from './reports/reports.component';
+import {TablesComponent} from './tables/tables.component';
+import {EditTableComponent} from './edit-table/edit-table.component';
+import {TableDetailComponent} from './table-detail/table-detail.component';
 import {ProductEditComponent} from './product-edit/product-edit.component';
 
 const routes: Routes = [
@@ -15,8 +18,20 @@ const routes: Routes = [
         children: [
             {path: '', redirectTo: 'menu', pathMatch: 'full'},
             {
+                path: 'tables',
+                component: TablesComponent,
+            },
+            {
                 path: 'menu',
                 component: MenuComponent,
+            },
+            {
+                path: 'edit-table',
+                component: EditTableComponent,
+            },
+            {
+                path: 'table-detail',
+                component: TableDetailComponent,
             },
             {
                 path: 'item-edit',

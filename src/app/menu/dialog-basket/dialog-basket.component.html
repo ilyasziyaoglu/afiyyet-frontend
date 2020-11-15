@@ -1,0 +1,18 @@
+<div class="d-flex flex-column align-items-center">
+    <span class="mb-3 name">{{basketService.currentBasketItem.product.name}}</span>
+    <div class="d-flex my-2 p-0 align-items-center justify-content-center">
+        <mat-icon class="arrowIcon" (click)="arrowClick(false)">remove_circle</mat-icon>
+        <span class="count">{{amount}}</span>
+        <mat-icon class="arrowIcon" (click)="arrowClick(true)">add_circle</mat-icon>
+    </div>
+    <div *ngIf="basketService.currentBasketItem.product.hasPortionOption" class="d-flex flex-column align-items-center mb-3">
+        <span class="my-3 portion-title">Porsiyon</span>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <div [ngClass]="(portion === 1)?'portion-active':'portion'" (click)="portion = 1">1</div>
+            <div [ngClass]="(portion === 1.5)?'portion-active':'portion'" (click)="portion = 1.5">1,5</div>
+            <div [ngClass]="(portion === 2)?'portion-active':'portion'" (click)="portion = 2">2</div>
+        </div>
+    </div>
+    <textarea [(ngModel)]="comment" rows="2" class="form-control my-2" placeholder="Not Ekleyin..."></textarea>
+    <button (click)="addClick()" class="btn btn-outline-dark py-2 w-50 mt-4">Ekle</button>
+</div>

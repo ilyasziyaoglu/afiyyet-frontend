@@ -1,0 +1,164 @@
+.item {
+  position: relative;
+  display: flex;
+  color: #424242;
+  margin: 25px 8px 0 8px;
+  cursor: pointer;
+  border-radius: 7px;
+  min-width: 300px;
+  z-index: 99;
+  -webkit-box-shadow: 0 0 30px -10px rgba(171,171,171,1);
+  -moz-box-shadow: 0 0 30px -10px rgba(171,171,171,1);
+  box-shadow: 0 0 30px -10px rgba(171,171,171,1);
+}
+
+.item-img {
+  float: left;
+  border-radius: 7px 0 0 7px;
+  width: 100px;
+  min-height: 100%;
+  object-fit: cover;
+  bottom: 0;
+}
+
+.item-name {
+  margin: 0;
+  font-weight: bolder;
+}
+
+.portion {
+  display: flex;
+  width: 45px;
+  border-radius: 6px;
+  border: solid #2c3e50 1px;
+  padding: 2px 0;
+  margin: 0 5px;
+  color: #2c3e50;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.portion-active {
+  display: flex;
+  background-color: #2c3e50;
+  width: 45px;
+  border-radius: 6px;
+  border: solid #2c3e50 1px;
+  padding: 2px 0;
+  margin: 0 5px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.leftArrow {
+  transform: scale(1.1);
+  margin: 0 6px 0 0;
+}
+
+.rightArrow {
+  transform: scale(1.1);
+  margin: 0 0 0 6px;
+}
+
+.count {
+  font-size: 1.2em;
+}
+
+.item-price {
+  font-size: 16px;
+}
+
+.btn-comment {
+  padding: 4px 7px;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 4px;
+  border-width: 0;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 8px 0 8px;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 30px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0 0 30px -10px rgba(0,0,0,0.75);
+  box-shadow: 0 0 30px -10px rgba(0,0,0,0.75);
+  color: #525252;
+}
+
+.bottom-title {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-bottom: 12px;
+}
+
+.bottom-price {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.bottom-check {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.empty-basket-title {
+  font-size: 22px;
+  color: #999
+}
+
+
+
+
+
+
+
+/* AŞAĞISI INFO DIALOG KISMI İÇİN */
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -125px;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 500ms;
+  animation: fadeIn 500ms
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 0.8;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}

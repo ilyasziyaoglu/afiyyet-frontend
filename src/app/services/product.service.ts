@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
 import {Product} from './models/models';
@@ -9,6 +9,7 @@ import {Product} from './models/models';
 export class ProductService extends BaseService {
 
   basePath = 'product';
+  productList: Product[];
 
   constructor(
       httpService: HttpService
@@ -48,5 +49,12 @@ export class ProductService extends BaseService {
 
   bulkPriceUpdate(bulkPriceUpdateRequest: any, cb?) {
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/bulk-price-update`, bulkPriceUpdateRequest, cb);
+  }
+
+  getProductList() {
+    if ( this.productList ) {
+      return this.productList;
+    }
+    this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/list`, '', res => this.productList = res);
   }
 }

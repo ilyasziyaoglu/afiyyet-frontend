@@ -1,36 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../../base/services/user.service';
 import {featureType} from '../../services/models/FeatureTypes';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+    selector: 'app-admin',
+    templateUrl: './admin.component.html',
+    styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
 
-  isLogged = false;
-  constructor(public userService: UserService, public router: Router) {
-    if (userService.getUser()) { this.isLogged = true; }
+    isLogged = false;
 
-    let user = userService.getUser().user;
-    if (!user) router.navigateByUrl('login');
+    constructor(
+        public userService: UserService,
+        public router: Router,
+    ) {
+        if ( userService.getUser() ) {
+            this.isLogged = true;
+        }
 
-    userService.isCampEnabled = user.brand.features.includes(featureType.CAMPAIGN);
-    userService.isReportsEnabled = user.brand.features.includes(featureType.REPORTS);
-    userService.isReservEnabled = user.brand.features.includes(featureType.RESERVATIONS);
-    userService.isFeedBackEnabled = user.brand.features.includes(featureType.FEEDBACKS);
-    userService.isOrderEnabled = user.brand.features.includes(featureType.ORDERING);
-  }
+        const user = userService.getUser().user;
+        if ( !user ) {
+            router.navigateByUrl('login');
+        }
 
-  ngOnInit(): void {
-  }
+        userService.isCampEnabled = user.brand.features.includes(featureType.CAMPAIGN);
+        userService.isReportsEnabled = user.brand.features.includes(featureType.REPORTS);
+        userService.isReservEnabled = user.brand.features.includes(featureType.RESERVATIONS);
+        userService.isFeedBackEnabled = user.brand.features.includes(featureType.FEEDBACKS);
+        userService.isOrderEnabled = user.brand.features.includes(featureType.ORDERING);
+    }
 
-  logout() {
-    this.userService.logOut();
-    this.isLogged = false;
-    this.router.navigateByUrl('/pages/smartmenu/home');
-  }
+    ngOnInit(): void {
+    }
+
+    logout() {
+        this.userService.logOut();
+        this.isLogged = false;
+        this.router.navigateByUrl('/pages/smartmenu/home');
+    }
 
 }

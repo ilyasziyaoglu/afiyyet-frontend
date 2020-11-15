@@ -10,6 +10,14 @@
   color: white;
 }
 
+.fab {
+  position: sticky;
+  bottom: 40px;
+  align-self: flex-end;
+  right: 10px;
+  z-index: 999;
+}
+
 .back-button {
   cursor: pointer;
   outline: none;

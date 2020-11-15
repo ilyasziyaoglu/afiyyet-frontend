@@ -1,0 +1,22 @@
+<div class="row m-3">
+    <div class="col">
+        <div class="btn btn-lg btn-secondary w-100">Sıralamayı Kaydet</div>
+    </div>
+    <div class="col">
+        <div class="btn btn-lg btn-outline-secondary w-100" [routerLink]="['/pages/admin/edit-table']">Yeni Masa Ekle</div>
+    </div>
+</div>
+<br><br><br>
+<div class="m-3" *ngFor="let tableGroup of tableGroups">
+    <h3 class="text-center">{{tableGroup.name}}</h3>
+    <hr>
+    <div class="row">
+        <div class="table border rounded-lg p-3 m-3" *ngFor="let table of tableGroup.tables"
+             [ngClass]="{'table-open': table.isOpen}"
+             (click)="tableService.setCurrentTable(table)"
+             [routerLink]="['/pages/admin/table-detail']">
+            <img class="table-img" src="http://localhost:5000/6937136871538117460-512.png" [alt]="table.name">
+            <p class="text-center mt-3 mb-0">{{table.name}}</p>
+        </div>
+    </div>
+</div>
