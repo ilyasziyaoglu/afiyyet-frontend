@@ -4,13 +4,14 @@ import {ReservationsComponent} from './reservations/reservations.component';
 import {CommentsComponent} from './comments/comments.component';
 import {CampaignsComponent} from './campaigns/campaigns.component';
 import {MenuComponent} from './menu/menu.component';
-import {ItemEditComponent} from './item-edit/item-edit.component';
 import {AdminComponent} from './admin.component';
 import {ReportsComponent} from './reports/reports.component';
 import {CampaignEditComponent} from './campaign-edit/campaign-edit.component';
 import {TablesComponent} from './tables/tables.component';
 import {EditTableComponent} from './edit-table/edit-table.component';
 import {TableDetailComponent} from './table-detail/table-detail.component';
+import {ProductEditComponent} from './product-edit/product-edit.component';
+import {TablesComponent} from './tables/tables.component';
 
 const routes: Routes = [
     {
@@ -36,11 +37,11 @@ const routes: Routes = [
             },
             {
                 path: 'item-edit',
-                component: ItemEditComponent,
+                component: ProductEditComponent,
             },
             {
                 path: 'campaign-edit',
-                component: CampaignEditComponent
+                component: ProductEditComponent
             },
             {
                 path: 'reservations',

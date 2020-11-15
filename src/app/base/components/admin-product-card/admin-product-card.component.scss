@@ -1,0 +1,103 @@
+:host {
+  display: block;
+}
+
+.item {
+  color: white;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #343A40;
+}
+
+.desktop-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+* {
+  padding: 0;
+}
+
+.image {
+  width: 90px;
+  height: 90px;
+}
+
+.info {
+  width: 100%;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+.info * {
+  margin-bottom: 0;
+}
+
+.description {
+  font-weight: lighter;
+  font-size: 0.8em;
+}
+
+.date-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-container * {
+  padding: 3px 8px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #292E34;
+}
+
+.actions {
+  width: 24px;
+}
+
+.actions * {
+  cursor: pointer;
+}
+
+.swipe-button {
+  transform: rotate(90deg);
+  cursor: ns-resize;
+}
+
+.mobile {
+  margin-top: 10px;
+}
+
+.desktop {
+  display: none !important;
+}
+
+@media only screen and (min-width: 760px) {
+  .mobile {
+    display: none !important;
+  }
+
+  .desktop {
+    display: initial !important;
+  }
+
+  .actions {
+    margin-left: 20px;
+  }
+
+  .date-container {
+    display: block;
+  }
+
+  .date-container * {
+    float: left;
+    margin-right: 8px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  .image {
+    width: 115px;
+    height: 115px;
+  }
+}

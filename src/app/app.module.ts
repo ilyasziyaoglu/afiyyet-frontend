@@ -10,20 +10,20 @@ import {HttpClientModule} from '@angular/common/http';
 import {BaseModule} from './base/base.module';
 import {MenuModule} from './menu/menu.module';
 import {PagesModule} from './pages/pages.module';
-import { CampaignEditComponent } from './pages/admin/campaign-edit/campaign-edit.component';
+import {ProductEditComponent} from './pages/admin/product-edit/product-edit.component';
 import {FormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatInputModule} from '@angular/material/input';
-import { DialogBasketComponent } from './menu/dialog-basket/dialog-basket.component';
+import {DialogBasketComponent} from './menu/dialog-basket/dialog-basket.component';
 import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [
         AppComponent,
-        CampaignEditComponent,
         DialogBasketComponent,
+        ProductEditComponent,
     ],
     imports: [
         BrowserModule,

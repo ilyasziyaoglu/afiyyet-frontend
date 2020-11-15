@@ -38,16 +38,6 @@ export class AdminSessionService {
         return null;
     }
 
-    setCurrentCampaign(campaign, isEdit) {
-        sessionStorage.setItem(this.CURRENT_CAMP, JSON.stringify({campaign, isEdit}));
-    }
-
-    getCurrentCampaign() {
-        const campaign = sessionStorage.getItem(this.CURRENT_CAMP);
-        if (campaign) { return JSON.parse(campaign); }
-        return null;
-    }
-
     setCurrentCategoryId(categoryId) {
         sessionStorage.setItem(this.CURRENT_CAT, categoryId);
     }

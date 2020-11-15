@@ -1,26 +1,12 @@
-.input_label {
-  color: white;
-  border-radius: 6px 0 0 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.addimage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #666666;
-  font-weight: bolder;
-  font-size: 20px;
-}
-
 .image {
   height: 250px;
   width: 250px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.timePriceContainer {
+  width: 235px;
 }
 
 .image-input-container:hover .attach {
@@ -40,9 +26,20 @@
   opacity: 0;
 }
 
+.addimage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666666;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
 .image-input-container {
   cursor: pointer;
-  position: relative
+  position: relative;
+  align-self: flex-start;
 }
 
 .file_upload_input {
@@ -68,5 +65,5 @@
 }
 
 .form-button {
-  width: 140px;
+  width: 100px;
 }

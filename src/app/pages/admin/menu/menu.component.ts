@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ContentChildren, OnInit, QueryList} from '@angular/core';
 import {MenuService} from '../../../services/menu.service';
 import {CdkDragDrop} from '@angular/cdk/drag-drop';
 import {Category, Product} from '../../../services/models/models';
@@ -8,9 +8,9 @@ import {AdminSessionService} from '../../../base/services/admin-session.service'
 import {CategoryService} from '../../../services/category.service';
 import {ProductService} from '../../../services/product.service';
 import {CategoryEditComponent} from '../category-edit/category-edit.component';
-import Swal from 'sweetalert2';
 import {UserService} from '../../../base/services/user.service';
 import {BulkPriceUpdateComponent} from '../bulk-price-update/bulk-price-update.component';
+import {AdminProductCardComponent} from '../../../base/components/admin-product-card/admin-product-card.component';
 
 @Component({
     selector: 'app-admin',
@@ -19,11 +19,11 @@ import {BulkPriceUpdateComponent} from '../bulk-price-update/bulk-price-update.c
 })
 
 export class MenuComponent implements OnInit {
+    @ContentChildren( AdminProductCardComponent, { descendants: true } ) dragHandles: QueryList<AdminProductCardComponent>;
 
     productsArranged = false;
     categoriesArranged = false;
     categoryCount = 0;
-    totalProductCount = 253;
     categoryProductCount = 0;
 
     constructor(
@@ -95,38 +95,11 @@ export class MenuComponent implements OnInit {
             category.products = result;
             this.categoryProductCount = result.length;
         });
-        document.getElementById("category-name").scrollIntoView();
+        document.getElementById('category-name').scrollIntoView();
     }
 
     addItem() {
         this.adminSessionService.setCurrentProduct(null, false);
-        this.router.navigateByUrl('/pages/admin/item-edit');
-    }
-
-    deleteItem(item, index) {
-        Swal.fire({
-            title: 'Dikkat!',
-            text: 'Ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Evet, silinsin!',
-            cancelButtonText: 'İptal',
-        }).then((result) => {
-            if ( result.isConfirmed ) {
-                this.productService.delete(item.id, res => {
-                    if ( res ) {
-                        this.categoryService.currentCategory.products.splice(index, 1);
-                        Swal.fire('Silindi!', 'Ürün silindi!.', 'success');
-                    }
-                });
-            }
-        });
-    }
-
-    editItem(item) {
-        this.adminSessionService.setCurrentProduct(item, true);
         this.router.navigateByUrl('/pages/admin/item-edit');
     }
 
@@ -175,7 +148,9 @@ export class MenuComponent implements OnInit {
 
     getTotalProducts(categories) {
         let count = 0;
-        categories.forEach(cat => count += cat.products.length);
+        if ( categories ) {
+            categories.forEach(cat => count += cat.products.length);
+        }
         return count;
     }
 

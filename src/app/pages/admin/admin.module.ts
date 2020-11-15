@@ -7,7 +7,6 @@ import {CampaignsComponent} from './campaigns/campaigns.component';
 import {MenuComponent} from './menu/menu.component';
 import {CommentsComponent} from './comments/comments.component';
 import {ReservationsComponent} from './reservations/reservations.component';
-import {ItemEditComponent} from './item-edit/item-edit.component';
 import {DialogCommentComponent} from '../../menu/dialog-comment/dialog-comment.component';
 import {CategoryEditComponent} from './category-edit/category-edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -26,6 +25,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { TableDetailComponent } from './table-detail/table-detail.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatTableModule} from '@angular/material/table';
+import {ComponentsModule} from '../../base/components/components.module';
 
 
 @NgModule({
@@ -35,7 +35,6 @@ import {MatTableModule} from '@angular/material/table';
         MenuComponent,
         CommentsComponent,
         ReservationsComponent,
-        ItemEditComponent,
         DialogCommentComponent,
         CategoryEditComponent,
         BulkPriceUpdateComponent,
@@ -59,6 +58,7 @@ import {MatTableModule} from '@angular/material/table';
         MatSelectModule,
         MatAutocompleteModule,
         MatTableModule,
+        ComponentsModule,
     ],
 })
 export class AdminModule {
