@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BasketService} from '../../services/basket.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogBasketCommentComponent} from '../dialog-basket-comment/dialog-basket-comment.component';
+import {OrderService} from '../../services/order.service';
 
 @Component({
   selector: 'app-basket',
@@ -14,7 +15,9 @@ export class BasketComponent implements OnInit {
   totalPrice;
   isWaitTable;
 
-  constructor(private basketService: BasketService, private dialog: MatDialog) {
+  constructor(private basketService: BasketService,
+              private dialog: MatDialog,
+              private orderService: OrderService) {
     this.basketItems = basketService.getItemsBasket();
     this.totalPrice = this.basketItems.reduce((a, b) => a + b.totalPrice, 0);
   }
@@ -69,6 +72,6 @@ export class BasketComponent implements OnInit {
   }
 
   sendClick() {
-    this.basketService.sendBasket({orderitems: this.basketItems, table: {id: 1}});
+    this.orderService.sendBasket({orderitems: this.basketItems, table: {id: 1}});
   }
 }
