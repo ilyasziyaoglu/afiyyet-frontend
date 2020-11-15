@@ -44,7 +44,7 @@ export class BasketComponent implements OnInit {
   changePortion(i, portion) {
     this.basketItems[i].portion = portion;
     this.basketItems[i].unitPrice = this.basketItems[i].product.price * portion;
-    this.basketItems[i].totalPrice = this.basketItems[i].unitPrice * this.basketItems[i].product.amount;
+    this.basketItems[i].totalPrice = this.basketItems[i].unitPrice * this.basketItems[i].amount;
 
     this.totalPrice = this.basketItems.reduce((a, b) => a + b.totalPrice, 0);
     this.basketService.setItemsBasket(this.basketItems);
