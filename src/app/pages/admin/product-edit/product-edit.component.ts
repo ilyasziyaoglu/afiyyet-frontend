@@ -29,7 +29,7 @@ export class ProductEditComponent implements OnInit {
         public location: Location,
         private productService: ProductService,
         private campaignService: CampaignService,
-        private adminSessionService: AdminSessionService
+        private adminSessionService: AdminSessionService,
     ) {
         this.isCampaign = router.url.includes('campaign');
         this.sessionData = this.adminSessionService.getCurrentProduct() || {};
@@ -46,17 +46,21 @@ export class ProductEditComponent implements OnInit {
     }
 
     saveClick() {
-        if (!this.isInputsOk()) {return; }
-
-        const start = this.startTime.split(':');
-        this.product.startDate.setHours(start[0], start[1]);
-
-        const end = this.endTime.split(':');
-        this.product.expireDate.setHours(end[0], end[1]);
-
-        if (this.product.expireDate < new Date() && this.isCampaign) {
-            Swal.fire('Uyarı', 'Önceki tarih için Kampanya oluşturulamaz', 'warning');
+        if ( !this.isInputsOk() ) {
             return;
+        }
+
+        if ( this.isCampaign ) {
+            const start = this.startTime.split(':');
+            this.product.startDate.setHours(start[0], start[1]);
+
+            const end = this.endTime.split(':');
+            this.product.expireDate.setHours(end[0], end[1]);
+
+            if ( this.product.expireDate < new Date() && this.isCampaign ) {
+                Swal.fire('Uyarı', 'Önceki tarih için Kampanya oluşturulamaz', 'warning');
+                return;
+            }
         }
 
         this.product.type = this.isCampaign ? 'CAMPAIGN' : 'PRODUCT';
