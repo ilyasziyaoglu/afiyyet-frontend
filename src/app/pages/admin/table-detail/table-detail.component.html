@@ -4,12 +4,11 @@
             <div class="row m-3 d-flex justify-content-between">
                 <h1 class="text-center my-auto">{{tableService.getCurrentTable()?.groupName}} / {{tableService.getCurrentTable()?.name}}</h1>
             <div class="row">
-                <div><button class="btn btn-lg btn-primary m-1" (click)="onAddOrder()">Sipariş Ekle</button></div>
                 <div><button class="btn btn-lg btn-danger m-1">Kapat</button></div>
             </div>
             </div>
             <hr class="my-3">
-            <h1 class="text-center mt-3">Siparişler</h1>
+<!--            <h1 class="text-center mt-3">Siparişler</h1>-->
             <div class="row w-100">
                 <form class="w-100" [formGroup]="addOrderForm">
                     <mat-form-field appearance="outline" class="w-25">
@@ -45,11 +44,8 @@
                     <button type="submit" class="ml-3 my-0 btn btn-lg btn-primary" (click)="onAddOrder()">Ekle</button>
                 </form>
             </div>
-            <div class="row w-100 border rounded">
-                <table mat-table [dataSource]="orderItems" class="w-100">
-
-                    <!--- Note that these columns can be defined in any order.
-                          The actual rendered columns are set as a property on the row definition" -->
+            <div class="row w-100 border rounded" *ngIf="tableService.getCurrentTable().order?.orderItems">
+                <table mat-table [dataSource]="tableService.getCurrentTable().order?.orderItems || []" class="w-100">
 
                     <ng-container matColumnDef="position">
                         <th mat-header-cell *matHeaderCellDef> No. </th>

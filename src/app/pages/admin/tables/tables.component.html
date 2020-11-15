@@ -13,9 +13,8 @@
     <div class="row">
         <div class="table border rounded-lg p-3 m-3" *ngFor="let table of tableGroup.tables"
              [ngClass]="{'table-open': table.isOpen}"
-             (click)="tableService.setCurrentTable(table)"
-             [routerLink]="['/pages/admin/table-detail']">
-            <img class="table-img" src="http://localhost:5000/6937136871538117460-512.png" [alt]="table.name">
+             (click)="onSelectTable(table)">
+            <img class="table-img" src="../../../../assets/table.png" [alt]="table.name">
             <p class="text-center mt-3 mb-0">{{table.name}}</p>
         </div>
     </div>

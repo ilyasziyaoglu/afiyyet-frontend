@@ -18,6 +18,6 @@ export class OrderService extends BaseService{
   }
 
   sendBasket(order, cb?) {
-    this.getHttpService().doRequest(HttpMethod.POST, this.getBasePath(), order, cb);
+    this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/create`, order, cb);
   }
 }

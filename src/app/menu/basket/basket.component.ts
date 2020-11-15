@@ -40,8 +40,8 @@ export class BasketComponent implements OnInit {
   }
 
   togglePopup() {
-    let popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
+    const popup = document.getElementById('myPopup');
+    popup.classList.toggle('show');
   }
 
   changePortion(i, portion) {
@@ -61,17 +61,17 @@ export class BasketComponent implements OnInit {
 
   updateComment(i) {
     this.basketService.currentBasketItem = this.basketItems[i];
-    let dialogRef = this.dialog.open(DialogBasketCommentComponent, {width: '85%'});
+    const dialogRef = this.dialog.open(DialogBasketCommentComponent, {width: '85%'});
 
     dialogRef.afterClosed().subscribe(isSaved => {
       if (isSaved) {
         this.basketItems[i].comment = this.basketService.currentBasketItem.comment;
         this.basketService.setItemsBasket(this.basketItems);
       }
-    })
+    });
   }
 
   sendClick() {
-    this.orderService.sendBasket({orderitems: this.basketItems, table: {id: 1}});
+    this.orderService.sendBasket({orderitems: this.basketItems, tableId: 3});
   }
 }
