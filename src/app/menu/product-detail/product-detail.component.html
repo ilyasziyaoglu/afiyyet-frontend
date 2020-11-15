@@ -1,30 +1,37 @@
 <br>
-<div *ngIf="menuService.currentProduct">
+<div *ngIf="menuService.currentProduct" class="mx-2">
     <h1 class="item-name">{{menuService.currentProduct.name}}</h1>
     <div class="row W-100 no-gutters justify-content-center align-items-center">
         <div class="image-container">
             <img class="item-img" src="{{menuService.currentProduct.imgUrl}}" alt="{{menuService.currentProduct.name}}"
                  #image (error)="image.onerror=null; image.src = 'assets/no-image.jpg';">
-            <div *ngIf="menuService.isFavEnabled" class="favorite">
-                <mat-icon *ngIf="favoriteService.isFavorite(menuService.currentProduct.id)"
-                          (click)="favoriteService.removeFavorite(menuService.currentProduct.id)">favorite
-                </mat-icon>
-                <mat-icon *ngIf="!favoriteService.isFavorite(menuService.currentProduct.id)"
-                          (click)="favoriteService.addFavorite(menuService.currentProduct.id)">favorite_border
-                </mat-icon>
-            </div>
         </div>
     </div>
     <div class="m-3 flex-container d-flex justify-content-center">
-        <div class="border rounded-lg pl-1 pr-1">
-            <p>{{menuService.currentProduct.price}}</p>
-            <p>₺</p>
+        <div class="circle-container">
+            <div>
+                <p>{{menuService.currentProduct.price}}</p>
+                <p>₺</p>
+            </div>
         </div>
-        <div *ngIf="menuService.isLikeEnabled" class="border rounded-lg" (click)="onLike(menuService.currentProduct)">
-            <p>{{menuService.currentProduct.likes}}</p>
-            <mat-icon [ngClass]="{'active': menuLocalService.getLikes().includes(menuService.currentProduct.id)}" class="like-icon">
-                thumb_up
+        <div *ngIf="menuService.isLikeEnabled" class="circle-container" (click)="onLike(menuService.currentProduct)">
+            <div [ngClass]="{'active': menuLocalService.getLikes().includes(menuService.currentProduct.id)}">
+                <p>{{menuService.currentProduct.likes}}</p>
+                <mat-icon class="like-icon">
+                    thumb_up
+                </mat-icon>
+            </div>
+        </div>
+        <div *ngIf="menuService.isFavEnabled" class="circle-container">
+            <mat-icon *ngIf="favoriteService.isFavorite(menuService.currentProduct.id)"
+                      (click)="favoriteService.removeFavorite(menuService.currentProduct.id)">favorite
             </mat-icon>
+            <mat-icon *ngIf="!favoriteService.isFavorite(menuService.currentProduct.id)"
+                      (click)="favoriteService.addFavorite(menuService.currentProduct.id)">favorite_border
+            </mat-icon>
+        </div>
+        <div *ngIf="menuService.isBasketEnabled" class="circle-container" (click)="addBasket(menuService.currentProduct)">
+            <mat-icon>shopping_cart</mat-icon>
         </div>
     </div>
     <p class="item-description">{{menuService.currentProduct.description}}</p>

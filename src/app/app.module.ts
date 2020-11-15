@@ -16,11 +16,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatInputModule} from '@angular/material/input';
+import { DialogBasketComponent } from './menu/dialog-basket/dialog-basket.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     declarations: [
         AppComponent,
         CampaignEditComponent,
+        DialogBasketComponent,
     ],
     imports: [
         BrowserModule,
@@ -36,6 +39,7 @@ import {MatInputModule} from '@angular/material/input';
         MatFormFieldModule,
         NgxMaterialTimepickerModule,
         MatInputModule,
+        MatButtonModule,
     ],
     providers: [
         {provide : LocationStrategy , useClass: HashLocationStrategy}

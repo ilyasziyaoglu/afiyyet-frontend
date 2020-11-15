@@ -25,6 +25,7 @@ export class MenuService extends BaseService {
     isCampEnabled = false;
     isFeedBackEnabled = false;
     isReservEnabled = false;
+    isBasketEnabled = true;
 
     constructor(
         httpService: HttpService,

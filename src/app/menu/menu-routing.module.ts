@@ -7,6 +7,7 @@ import {ReservationComponent} from './reservation/reservation.component';
 import {MenuComponent} from './menu.component';
 import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
 import {FavouritesComponent} from './favourites/favourites.component';
+import {BasketComponent} from './basket/basket.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
             {
                 path: '',
                 component: CategoriesComponent,
+            },
+            {
+                path: 'basket',
+                component: BasketComponent
             },
             {
                 path: 'reservation',
