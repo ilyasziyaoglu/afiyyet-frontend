@@ -97,12 +97,12 @@ export class HttpService {
         }
         request.subscribe(res => {
             console.info(path, req, res);
-            if (res) {
+            if (res.httpStatus === 'OK' && res.success) {
                 if (cb) {
-                    cb(res);
+                    cb(res.value);
                 }
             } else {
-                console.warn('Empty response!');
+                console.error(res);
                 if (cb) {
                     cb(false);
                 }
@@ -110,9 +110,6 @@ export class HttpService {
         }, err => {
             if (cb) {
                 cb(false);
-            }
-            if (err.status && err.status === 403) {
-                this.router.navigateByUrl('/login');
             } else {
                 console.error(err);
             }
