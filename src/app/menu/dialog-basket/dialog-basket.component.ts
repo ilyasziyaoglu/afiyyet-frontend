@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BasketService} from '../../services/basket.service';
 import {MatDialogRef} from '@angular/material/dialog';
 

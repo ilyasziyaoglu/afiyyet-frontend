@@ -1,9 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BaseService} from '../base/services/base-service';
 import {HttpMethod, HttpService} from '../base/services/http.service';
-import {CategoryService} from './category.service';
-import {ProductService} from './product.service';
-import {menu} from './models/egekahvecisi_data';
 import {MenuLocalService} from '../base/services/menu-local.service';
 
 @Injectable({

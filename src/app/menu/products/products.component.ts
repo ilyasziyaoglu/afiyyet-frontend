@@ -3,7 +3,6 @@ import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';
 import {MenuLocalService} from '../../base/services/menu-local.service';
-import {DialogCommentComponent} from '../dialog-comment/dialog-comment.component';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogBasketComponent} from '../dialog-basket/dialog-basket.component';
 import {BasketService} from '../../services/basket.service';

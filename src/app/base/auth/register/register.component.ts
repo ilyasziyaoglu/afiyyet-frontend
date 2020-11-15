@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpMethod, HttpService} from '../../services/http.service';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';

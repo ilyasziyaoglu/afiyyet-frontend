@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FavoriteService} from '../../services/favorite.service';
 import {MenuService} from '../../services/menu.service';
 import {MenuSessionService} from '../../base/services/menu-session.service';

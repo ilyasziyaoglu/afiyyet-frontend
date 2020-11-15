@@ -17,7 +17,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatBadgeModule} from '@angular/material/badge';
 import {CampaignDetailComponent} from './campaign-detail/campaign-detail.component';
 import {BaseModule} from '../base/base.module';
-import { FavouritesComponent } from './favourites/favourites.component';
+import {FavouritesComponent} from './favourites/favourites.component';
 import {MatButtonModule} from '@angular/material/button';
 import {BasketComponent} from './basket/basket.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
