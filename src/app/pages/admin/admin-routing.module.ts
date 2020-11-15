@@ -8,6 +8,9 @@ import {ItemEditComponent} from './item-edit/item-edit.component';
 import {AdminComponent} from './admin.component';
 import {ReportsComponent} from './reports/reports.component';
 import {CampaignEditComponent} from './campaign-edit/campaign-edit.component';
+import {TablesComponent} from './tables/tables.component';
+import {EditTableComponent} from './edit-table/edit-table.component';
+import {TableDetailComponent} from './table-detail/table-detail.component';
 
 const routes: Routes = [
     {
@@ -16,8 +19,20 @@ const routes: Routes = [
         children: [
             {path: '', redirectTo: 'menu', pathMatch: 'full'},
             {
+                path: 'tables',
+                component: TablesComponent,
+            },
+            {
                 path: 'menu',
                 component: MenuComponent,
+            },
+            {
+                path: 'edit-table',
+                component: EditTableComponent,
+            },
+            {
+                path: 'table-detail',
+                component: TableDetailComponent,
             },
             {
                 path: 'item-edit',
