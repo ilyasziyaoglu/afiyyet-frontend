@@ -7,7 +7,8 @@
     <p *ngIf="!category.imgUrl" class="addimage">Ekle</p>
     <input type="file" accept="image/*" class="file_upload_input" (change)="imageUpdateClick($event)"/>
 </div>
-    <input id="name" class="form-control mt-3 col-sm-12 col-md-10 col-lg-8" style="display: block; margin: auto;" [(ngModel)]="category.name" value="{{category.name}}"/>
+<input id="name" class="form-control mt-3 col-sm-12 col-md-10 col-lg-8" style="display: block; margin: auto;" [(ngModel)]="category.name"
+       value="{{category.name}}"/>
 <div class="form-group m-0 p-2 row d-flex justify-content-center">
     <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
     <button (click)="cancelClick()" class="btn btn-danger ml-3 form-button">İptal</button>

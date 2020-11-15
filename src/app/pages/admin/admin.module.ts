@@ -10,7 +10,7 @@ import {ReservationsComponent} from './reservations/reservations.component';
 import {ItemEditComponent} from './item-edit/item-edit.component';
 import {DialogCommentComponent} from '../../menu/dialog-comment/dialog-comment.component';
 import {CategoryEditComponent} from './category-edit/category-edit.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -20,6 +20,12 @@ import {BulkPriceUpdateComponent} from './bulk-price-update/bulk-price-update.co
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { TablesComponent } from './tables/tables.component';
+import { EditTableComponent } from './edit-table/edit-table.component';
+import {MatSelectModule} from '@angular/material/select';
+import { TableDetailComponent } from './table-detail/table-detail.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -33,7 +39,10 @@ import {MatInputModule} from '@angular/material/input';
         DialogCommentComponent,
         CategoryEditComponent,
         BulkPriceUpdateComponent,
-        ReportsComponent
+        ReportsComponent,
+        TablesComponent,
+        EditTableComponent,
+        TableDetailComponent
     ],
     imports: [
         DragDropModule,
@@ -46,6 +55,10 @@ import {MatInputModule} from '@angular/material/input';
         MatSlideToggleModule,
         MatFormFieldModule,
         MatInputModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        MatAutocompleteModule,
+        MatTableModule,
     ],
 })
 export class AdminModule {
