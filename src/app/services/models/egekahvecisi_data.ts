@@ -13,7 +13,7 @@ export let menu = {
                 name: 'SİNİDE SERPME EGE KÖY KAHVALTISI',
                 price: 65.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B409.jpg',
-                likes: 137,
+                likes: 0,
                 description: 'Ezine Beyaz Peynir, Taze Kaşar, İzmir Tulum Peyniri, Eski Kaşar, Burgu Veya Top Peynir, Izgara Hellim Peyniri, Tereyağı, Bal, Kaymak, Siyah Zeytin, Taze Baharatlı Izgara Kalamata Zeytini, Acuka, Izgara Sucuk, Sosis, Sigara Böreği, Domates, Salatalık, Söğüş, Sahanda Köy Yumurtası, Reçel Çeşitleri, Süt Reçeli, Nutella, Kuru Kayısı, Pişi, Sınırsız Çay.',
             },
                 {
@@ -21,7 +21,7 @@ export let menu = {
                     name: 'EGEM KAHVALTI',
                     price: 24.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A7954.jpg',
-                    likes: 244,
+                    likes: 0,
                     description: 'Ezine Beyaz Peyniri, İzmir Tulum Peyniri, Burgu Veya Top Peyniri, Taze Kaşar, Bal-Kaymak-Tereyağı, Reçel, Siyah Zeytin, Kalamata Zeytini, Dana Sosis, Sigara Böreği, Yumurtalı Ekmek, Kuru Kayısı, Domates, Salatalık, Söğüş, Haşlanmış Yumurta, İki Bardak Çay.',
                 },
                 {
@@ -29,7 +29,7 @@ export let menu = {
                     name: 'HIZLI KAHVALTI',
                     price: 19.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C4352.jpg',
-                    likes: 256,
+                    likes: 0,
                     description: 'Ezine Beyaz Peyniri, Taze Kaşar, Burgu Veya Top Peyniri, Karışık Zeytinler, Bal, Tereyağı, Haşlanmış Yumurta,\xa0',
                 },
                 {
@@ -37,7 +37,7 @@ export let menu = {
                     name: 'YUMURTALI EKMEK',
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A1578.jpg',
-                    likes: 232,
+                    likes: 0,
                     description: 'Kızarmış Yumurtalı Ekmekler, Ezine Beyaz Peynir,\xa0',
                 },
                 {
@@ -45,7 +45,7 @@ export let menu = {
                     name: 'PİŞİ TABAĞI',
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F7519.jpg',
-                    likes: 93,
+                    likes: 0,
                     description: 'Kızarmış 3 Adet Geleneksel Pişi, Ezine Beyaz Peynir,',
                 },
                 {
@@ -53,7 +53,7 @@ export let menu = {
                     name: 'YUMURTALI PATATES',
                     price: 13.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C216.jpg',
-                    likes: 116,
+                    likes: 0,
                     description: 'Kavrulmuş Patates Dilimlerinin Yumurta İle Buluşması',
                 }],
         },
@@ -68,7 +68,7 @@ export let menu = {
                 name: 'SADE OMLET',
                 price: 12.5,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B8467.jpg',
-                likes: 80,
+                likes: 0,
                 description: 'Köy Tereyağında Pişirilen Çırpılmış İki Adet Yumurta,\xa0',
             },
                 {
@@ -76,7 +76,7 @@ export let menu = {
                     name: 'KAŞARLI OMLET',
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F2543.jpg',
-                    likes: 67,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilen Çırpılmış İki Adet Yumurta, Taze Kaşar Peyniri, Dana Sucuğu, Renkli Biberler Ve Domates Parçacıkları,\xa0',
                 },
                 {
@@ -84,7 +84,7 @@ export let menu = {
                     name: 'SUCUKLU OMLET',
                     price: 15.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D6340.jpg',
-                    likes: 232,
+                    likes: 0,
                     description: 'Dana Sucuğu, Domates, Salatalık Ve Akdeniz Yeşilliği Eşliğinde',
                 },
                 {
@@ -92,7 +92,7 @@ export let menu = {
                     name: 'KARIŞIK OMLET',
                     price: 17.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C2324.jpg',
-                    likes: 73,
+                    likes: 0,
                     description: '\xa0Köy Tereyağında Pişirilen Çırpılmış İki Adet Yumurta, Taze Kaşar Peyniri, Dana Sucuğu, Renkli Biberler Ve Domates Parçacıkları,\xa0',
                 },
                 {
@@ -100,7 +100,7 @@ export let menu = {
                     name: 'SEBZELİ OMLET ',
                     price: 15.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4967.jpg',
-                    likes: 60,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilen Çırpılmış İki Adet Yumurta, Taze Kaşar Peyniri, Mantar, Renkli Biberler, Domates, Salatalık Ve Akdeniz Yeşilliği Eşliğinde',
                 }],
         },
@@ -115,7 +115,7 @@ export let menu = {
                 name: 'SAHANDA KÖY YUMURTASI ',
                 price: 10.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C6537.jpg',
-                likes: 81,
+                likes: 0,
                 description: 'Köy Tereyağında Pişirilmiş İki Adet Köy Yumurtası.',
             },
                 {
@@ -123,7 +123,7 @@ export let menu = {
                     name: 'SAHANDA SUCUKLU YUMURTASI ',
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C1105.jpg',
-                    likes: 128,
+                    likes: 0,
                     description: 'Köy Tereyağından Pişirilmiş İki Adet Yumurta Ve Dana Sucuğu',
                 },
                 {
@@ -131,7 +131,7 @@ export let menu = {
                     name: 'SAHANDA KAVURMALI YUMURTA ',
                     price: 17.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D9668.jpg',
-                    likes: 49,
+                    likes: 0,
                     description: 'Köy Tereyağından Pişirilmiş İki Adet Köy Yumurtası Ve Dana Kavurma',
                 },
                 {
@@ -139,7 +139,7 @@ export let menu = {
                     name: 'SAHANDA PEYNİRLİ YUMURTA ',
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C2890.jpg',
-                    likes: 123,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilmiş İki Adet Köy Yumurtası Ve Beyaz Peynir',
                 },
                 {
@@ -147,7 +147,7 @@ export let menu = {
                     name: 'MENEMEN',
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D2927.jpg',
-                    likes: 202,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilmiş Domates, Biber Ve İki Adet Yumurta',
                 },
                 {
@@ -155,7 +155,7 @@ export let menu = {
                     name: 'PEYNİRLİ MENEMEN',
                     price: 15.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A4622.jpg',
-                    likes: 147,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilmiş Domates, Biber Ve İki Adet Yumurta,\xa0',
                 },
                 {
@@ -163,7 +163,7 @@ export let menu = {
                     name: 'SUCUKLU MENEMEN',
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C4891.jpg',
-                    likes: 60,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilmiş Domates,\xa0',
                 },
                 {
@@ -173,7 +173,7 @@ export let menu = {
                     price: 17.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B350.png',
 
-                    likes: 189,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilmiş Domates, Biber Ve İki Adet Yumurta,\xa0',
                 },
                 {
@@ -183,7 +183,7 @@ export let menu = {
                     price: 19.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C6383.jpg',
 
-                    likes: 92,
+                    likes: 0,
                     description: 'Köy Tereyağında Pişirilmiş Domates,\xa0',
                 }],
         },
@@ -200,7 +200,7 @@ export let menu = {
                 price: 18.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C364.jpg',
 
-                likes: 85,
+                likes: 0,
                 description: 'Ege Otları İle Beyaz Peynirin Buluşması,\xa0',
             },
                 {
@@ -210,7 +210,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F8413.jpg',
 
-                    likes: 44,
+                    likes: 0,
                     description: 'Roka, Zeytin Çeşitleri Ve Özel Soslu Patates Kızartması Eşliğinde',
                 },
                 {
@@ -220,7 +220,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F7087.jpg',
 
-                    likes: 291,
+                    likes: 0,
                     description: 'Roka, Zeytin Çeşitleri Ve Özel Soslu Patates Kızartması Eşliğinde',
                 },
                 {
@@ -230,7 +230,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C4341.jpg',
 
-                    likes: 231,
+                    likes: 0,
                     description: 'Roka, Zeytin Çeşitleri Ve Özel Soslu Patates Kızartması Eşliğinde',
                 }],
         },
@@ -247,7 +247,7 @@ export let menu = {
                 price: 14.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B7468.jpg',
 
-                likes: 72,
+                likes: 0,
                 description: 'Özel Çapata Ekmeğinde Taze Kaşarlı Tost, Domates,\xa0',
             },
                 {
@@ -257,7 +257,7 @@ export let menu = {
                     price: 14.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A4161.png',
 
-                    likes: 84,
+                    likes: 0,
                     description: 'Özel Çapata Ekmeğinde Dana Sucuklu Tost, Domates,\xa0',
                 },
                 {
@@ -267,7 +267,7 @@ export let menu = {
                     price: 16.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A444.png',
 
-                    likes: 170,
+                    likes: 0,
                     description: 'Özel Çapata Ekmeğinde Taze Kaşarlı ve Dana Sucuklu Tost, Domates, Patates Kızartması, Salatalık ve Akdeniz Yeşilliği Eşliğinde',
                 },
                 {
@@ -277,7 +277,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A5785.png',
 
-                    likes: 213,
+                    likes: 0,
                     description: 'Özel Çapata Ekmeğinde Taze Kaşarlı ve Dana Sucuklu Tost,\xa0',
                 },
                 {
@@ -287,7 +287,7 @@ export let menu = {
                     price: 19.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C1667.jpg',
 
-                    likes: 130,
+                    likes: 0,
                     description: 'Acuka Soslu Özel Çapata Ekmeğinde Deve ve Dana Sucuğu,\xa0',
                 },
                 {
@@ -297,7 +297,7 @@ export let menu = {
                     price: 16.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4922.jpg',
 
-                    likes: 268,
+                    likes: 0,
                     description: 'Özel Bazlama Ekmeğinde, Patates Kızartması,\xa0',
                 },
                 {
@@ -307,7 +307,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D6116.jpg',
 
-                    likes: 271,
+                    likes: 0,
                     description: 'Özel Bazlama Ekmeğinde Taze Kaşar Peyniri ve Dana Sucuk,\xa0',
                 },
                 {
@@ -317,7 +317,7 @@ export let menu = {
                     price: 17.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B5190.jpg',
 
-                    likes: 278,
+                    likes: 0,
                     description: 'Özel Bazlama Ekmeğinde Beyaz Peynir, Domates, \xa0Yeşil Biber, Patates Kızartması, Çeri Domates, Salatalık ve Akdeniz Yeşilliği Eşliğinde',
                 },
                 {
@@ -327,7 +327,7 @@ export let menu = {
                     price: 21.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A4182.jpg',
 
-                    likes: 146,
+                    likes: 0,
                     description: 'Özel Bazlama Ekmeğinde, Patates Kızartması ve Roka Yaprakları ile Kornişon Turşu Eşliğinde, Taze Kaşar Peyniri, Kızarmış Yumurta, Dana Sucuk, Domates, Köy Biberi ve Acuka Sos ile Hazırlanmış Tost',
                 }],
         },
@@ -344,7 +344,7 @@ export let menu = {
                 price: 9.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D5970.jpg',
 
-                likes: 244,
+                likes: 0,
                 description: '',
             },
                 {
@@ -354,7 +354,7 @@ export let menu = {
                     price: 19.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4339.jpg',
 
-                    likes: 155,
+                    likes: 0,
                     description: 'Sigara Böreği, Çiçek Dana Sosis, Soğan Halkası, Kajun,\xa0',
                 },
                 {
@@ -364,7 +364,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A2663.jpg',
 
-                    likes: 3,
+                    likes: 0,
                     description: 'Kajun Baharatı ile Panelenmiş Tavuk Parçacıkları, \xa0Patates Kızartması, Kokteyl Sos ve Honey Mustard Sos Eşliğinde',
                 },
                 {
@@ -374,7 +374,7 @@ export let menu = {
                     price: 17.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4007.png',
 
-                    likes: 150,
+                    likes: 0,
                     description: 'Peynirli Börekler, Paçanga Böreği, Patates Kızartması,\xa0',
                 },
                 {
@@ -384,7 +384,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A9145.png',
 
-                    likes: 200,
+                    likes: 0,
                     description: 'Özel Soslu Patates Kızartması, Soğan Halkaları ve İki Çeşit Sos Eşliğinde',
                 },
                 {
@@ -394,7 +394,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D1965.jpg',
 
-                    likes: 104,
+                    likes: 0,
                     description: 'Çiçek Dana Sosisler, Kajun Baharatlı Patates Kızartması,\xa0',
                 },
                 {
@@ -404,7 +404,7 @@ export let menu = {
                     price: 14.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F6374.jpg',
 
-                    likes: 78,
+                    likes: 0,
                     description: 'Özel Baharatlar ile Hazırlanmış Kızartılmış Parmak Patates',
                 }],
         },
@@ -421,7 +421,7 @@ export let menu = {
                 price: 24.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D6035.png',
 
-                likes: 188,
+                likes: 0,
                 description: 'Dana Burger Köftesi, Domates, Kıvırcık, Kornişon Turşu,\xa0',
             },
                 {
@@ -431,7 +431,7 @@ export let menu = {
                     price: 25.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A4678.jpg',
 
-                    likes: 21,
+                    likes: 0,
                     description: 'Dana Hamburger Köftesi, Cheddar Peyniri, Domates, Kıvırcık, Kornişon Turşu, Kajun Baharatlı Parmak Patates ve Kokteyl Sos Eşliğinde',
                 },
                 {
@@ -441,7 +441,7 @@ export let menu = {
                     price: 25.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A8831.jpg',
 
-                    likes: 130,
+                    likes: 0,
                     description: 'Dana Hamburger Köftesi, Cheddar Peyniri, Jalapeno Mexican Biberi,\xa0',
                 },
                 {
@@ -451,7 +451,7 @@ export let menu = {
                     price: 28.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D767.jpg',
 
-                    likes: 167,
+                    likes: 0,
                     description: 'Köy Tereyağı Soslu Hamburger Ekmeği, 150 gr Dana Hamburger Köftesi, Domates, Marul, Karamelize Soğan, Kornişon Turşu, Parmak Patates, Soğan Halkaları, Biberli ve Kekikli Zeytinyağı ve Dip Soslar Eşliğinde',
                 },
                 {
@@ -461,7 +461,7 @@ export let menu = {
                     price: 26.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D5702.jpg',
 
-                    likes: 88,
+                    likes: 0,
                     description: 'Dana Hamburger Köftesi, Kremalı Mantar Sos,\xa0',
                 },
                 {
@@ -471,7 +471,7 @@ export let menu = {
                     price: 21.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4328.jpg',
 
-                    likes: 163,
+                    likes: 0,
                     description: 'Izgara Piliç Bonfile, Domates, Kıvırcık, Kornişon Turşu, Kajun Baharatlı Parmak Patates ve Kokteyl Sos Eşliğinde',
                 }],
         },
@@ -488,7 +488,7 @@ export let menu = {
                 price: 18.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B6591.jpg',
 
-                likes: 55,
+                likes: 0,
                 description: 'Penne Makarnası, Domates Sos, Siyah Zeytin Dilimleri,\xa0',
             },
                 {
@@ -498,7 +498,7 @@ export let menu = {
                     price: 20.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B2512.png',
 
-                    likes: 77,
+                    likes: 0,
                     description: 'Fettuccine Makarnası, Mantar Kremalı Fesleğenli\xa0',
                 },
                 {
@@ -508,7 +508,7 @@ export let menu = {
                     price: 22.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F4577.png',
 
-                    likes: 95,
+                    likes: 0,
                     description: 'Alfredo Makarna, Julyen Tavuk Parçaları, Mantar,\xa0',
                 },
                 {
@@ -518,7 +518,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C1738.jpg',
 
-                    likes: 41,
+                    likes: 0,
                     description: 'Spagetti Makarnası, Napolitan Sos ve Parmesan Eşliğinde',
                 },
                 {
@@ -528,7 +528,7 @@ export let menu = {
                     price: 22.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B6516.jpg',
 
-                    likes: 229,
+                    likes: 0,
                     description: 'Penne Makarna, Krema, Kapari Çiçeği, Ton Balığı ve Parmesan Eşliğinde',
                 },
                 {
@@ -538,7 +538,7 @@ export let menu = {
                     price: 21.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B6946.jpg',
 
-                    likes: 79,
+                    likes: 0,
                     description: 'Spagetti Makarna, Bolognese Sos, Domates Sos ve Parmesan Eşliğinde',
                 },
                 {
@@ -548,7 +548,7 @@ export let menu = {
                     price: 19.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B8077.png',
 
-                    likes: 143,
+                    likes: 0,
                     description: 'Penne Makarnası, Kremalı Fesleğen Sos ve Parmesan Eşliğinde',
                 },
                 {
@@ -558,7 +558,7 @@ export let menu = {
                     price: 20.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B9553.png',
 
-                    likes: 292,
+                    likes: 0,
                     description: 'Yoğurt ve Tereyağlı Sos Eşliğinde Dana Kıymalı Ev Yapımı Mantı',
                 },
                 {
@@ -568,7 +568,7 @@ export let menu = {
                     price: 22.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F2146.jpg',
 
-                    likes: 5,
+                    likes: 0,
                     description: 'Kızarmış Mantı, Yoğurt ve Tereyağlı Sos Eşliğinde',
                 }],
         },
@@ -585,7 +585,7 @@ export let menu = {
                 price: 29.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B4342.jpg',
 
-                likes: 66,
+                likes: 0,
                 description: 'Tavuk Bonfile Dilimleri, Kibrit Patates, İskender Sos ve Yoğurt Eşliğinde',
             },
                 {
@@ -595,7 +595,7 @@ export let menu = {
                     price: 27.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B6981.png',
 
-                    likes: 71,
+                    likes: 0,
                     description: 'Izgara Piliç Bonfile Üzerine Kremalı Mantar Sos ve Kaşar Peyniri, Patates Kızartması, Pilav ve Akdeniz Salatası Eşliğinde',
                 },
                 {
@@ -605,7 +605,7 @@ export let menu = {
                     price: 26.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F8476.jpg',
 
-                    likes: 289,
+                    likes: 0,
                     description: 'Kekikli Kemiksiz But Parçaları, Soğan, Renkli Biberler,\xa0',
                 },
                 {
@@ -615,7 +615,7 @@ export let menu = {
                     price: 26.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A9396.jpg',
 
-                    likes: 87,
+                    likes: 0,
                     description: 'Köri Soslu Piliç Bonfile Dilimleri, Renkli Biberler, Mantar,\xa0',
                 },
                 {
@@ -625,7 +625,7 @@ export let menu = {
                     price: 25.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B4853.jpg',
 
-                    likes: 187,
+                    likes: 0,
                     description: 'Izgara Piliç Bonfile, Pilav, Patates Kızartması\xa0',
                 },
                 {
@@ -635,7 +635,7 @@ export let menu = {
                     price: 24.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A2104.jpg',
 
-                    likes: 229,
+                    likes: 0,
                     description: 'BBQ Soslu Julyen Piliç Bonfile Dilimleri, Renkli Biberler, Cheddar Peyniri, Pilav, Patates Kızartması ve Akdeniz Salatası Eşliğinde',
                 },
                 {
@@ -645,7 +645,7 @@ export let menu = {
                     price: 23.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C4986.jpg',
 
-                    likes: 260,
+                    likes: 0,
                     description: 'Pane Harcı ile Panelenmiş Piliç Bonfile,\xa0',
                 }],
         },
@@ -662,7 +662,7 @@ export let menu = {
                 price: 29.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C6146.jpg',
 
-                likes: 8,
+                likes: 0,
                 description: 'Izgara Kasap Köfte, Izgara Domates ve Biber,\xa0',
             },
                 {
@@ -672,7 +672,7 @@ export let menu = {
                     price: 38.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F958.jpg',
 
-                    likes: 266,
+                    likes: 0,
                     description: '180 gr Dana Antrikot, Izgara Sebze, Patates Kızartması,\xa0',
                 },
                 {
@@ -682,7 +682,7 @@ export let menu = {
                     price: 40.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C3035.png',
 
-                    likes: 165,
+                    likes: 0,
                     description: 'Patates Kızartması, Pilav ve Akdeniz Salatası Eşliğinde',
                 },
                 {
@@ -692,7 +692,7 @@ export let menu = {
                     price: 36.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C118.jpg',
 
-                    likes: 82,
+                    likes: 0,
                     description: 'Julyen Dilimlenmiş Bonfile Parçaları, Soğan, Renkli Biberler,\xa0',
                 },
                 {
@@ -702,7 +702,7 @@ export let menu = {
                     price: 40.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D6629.jpg',
 
-                    likes: 159,
+                    likes: 0,
                     description: 'Dana Bonfile Dilimleri, Kibrit Patates, İskender Sos ve Yoğurt Eşliğinde',
                 }],
         },
@@ -719,7 +719,7 @@ export let menu = {
                 price: 17.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F7885.jpg',
 
-                likes: 101,
+                likes: 0,
                 description: 'Akdeniz Yeşillikleri, Domates, Salatalık, Ceviz,\xa0',
             },
                 {
@@ -729,7 +729,7 @@ export let menu = {
                     price: 19.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D9306.jpg',
 
-                    likes: 81,
+                    likes: 0,
                     description: 'Akdeniz Yeşillikleri, Roka Yaprakları, Tane Mısır,\xa0',
                 },
                 {
@@ -739,7 +739,7 @@ export let menu = {
                     price: 20.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C7054.jpg',
 
-                    likes: 136,
+                    likes: 0,
                     description: '\xa0Salatalık, Parmesan Peyniri ve Şefin Sosu ile',
                 },
                 {
@@ -749,7 +749,7 @@ export let menu = {
                     price: 20.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C5807.png',
 
-                    likes: 34,
+                    likes: 0,
                     description: 'Akdeniz Yeşilliği, Kapari, Mısır Taneleri, Çeri Domates,\xa0',
                 },
                 {
@@ -759,7 +759,7 @@ export let menu = {
                     price: 21.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D6540.jpg',
 
-                    likes: 116,
+                    likes: 0,
                     description: 'Kajun Baharatı ile Panelenmiş Tavuk Parçaları, Salata Mix,\xa0',
                 },
                 {
@@ -769,7 +769,7 @@ export let menu = {
                     price: 25.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C7813.png',
 
-                    likes: 168,
+                    likes: 0,
                     description: 'Akdeniz Yeşilliği, Çeri Domates, Salatalık, Mısır, Izgara Hellim Peyniri, Dilim Zeytin, Ceviz Taneleri, Roka ve Özel Sos ile',
                 },
                 {
@@ -779,7 +779,7 @@ export let menu = {
                     price: 25.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B7816.png',
 
-                    likes: 235,
+                    likes: 0,
                     description: 'Mantar ve Soğan ile Sotelenmiş Bonfile Dilimleri,\xa0',
                 },
                 {
@@ -789,7 +789,7 @@ export let menu = {
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A5673.jpg',
 
-                    likes: 67,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -806,7 +806,7 @@ export let menu = {
                 price: 15.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D796.png',
 
-                likes: 125,
+                likes: 0,
                 description: '',
             },
                 {
@@ -816,7 +816,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4574.jpg',
 
-                    likes: 26,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -826,7 +826,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A8165.png',
 
-                    likes: 53,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -836,7 +836,7 @@ export let menu = {
                     price: 18.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F2975.jpg',
 
-                    likes: 222,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -853,7 +853,7 @@ export let menu = {
                 price: 16.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A261.png',
 
-                likes: 106,
+                likes: 0,
                 description: '',
             },
                 {
@@ -863,7 +863,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B4973.jpg',
 
-                    likes: 155,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -873,7 +873,7 @@ export let menu = {
                     price: 15.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D7580.png',
 
-                    likes: 137,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -883,7 +883,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D7427.jpg',
 
-                    likes: 85,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -893,7 +893,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F3651.png',
 
-                    likes: 248,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -903,7 +903,7 @@ export let menu = {
                     price: 19.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C6801.jpg',
 
-                    likes: 284,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -913,7 +913,7 @@ export let menu = {
                     price: 20.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C4052.jpg',
 
-                    likes: 235,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -923,7 +923,7 @@ export let menu = {
                     price: 10.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D267.png',
 
-                    likes: 194,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -933,7 +933,7 @@ export let menu = {
                     price: 20.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 285,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -943,7 +943,7 @@ export let menu = {
                     price: 19.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 130,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -953,7 +953,7 @@ export let menu = {
                     price: 17.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 87,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -963,7 +963,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 106,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -973,7 +973,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 274,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -990,7 +990,7 @@ export let menu = {
                 price: 22.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D5216.jpg',
 
-                likes: 186,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1000,7 +1000,7 @@ export let menu = {
                     price: 35.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F5042.jpg',
 
-                    likes: 6,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1017,7 +1017,7 @@ export let menu = {
                 price: 3.5,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C3752.jpg',
 
-                likes: 243,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1027,7 +1027,7 @@ export let menu = {
                     price: 6.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F2808.jpg',
 
-                    likes: 190,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1037,7 +1037,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D8756.png',
 
-                    likes: 80,
+                    likes: 0,
                     description: 'Kış Çayı<br/>-<br/>Kuşburnu<br/>-<br/>Ihlamur<br/>-<br/>Elma Çayı<br/>-<br/>Ada Çayı<br/>',
                 },
                 {
@@ -1047,7 +1047,7 @@ export let menu = {
                     price: 15.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C6560.jpg',
 
-                    likes: 122,
+                    likes: 0,
                     description: '3. Nesil Demleme Sistemi ile Servis Edilmektedir.',
                 },
                 {
@@ -1057,7 +1057,7 @@ export let menu = {
                     price: 11.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C9663.png',
 
-                    likes: 275,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1067,7 +1067,7 @@ export let menu = {
                     price: 11.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F5137.jpg',
 
-                    likes: 3,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1077,7 +1077,7 @@ export let menu = {
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B1622.png',
 
-                    likes: 18,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1087,7 +1087,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F4672.png',
 
-                    likes: 298,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1104,7 +1104,7 @@ export let menu = {
                 price: 7.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B363.png',
 
-                likes: 211,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1114,7 +1114,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A1755.png',
 
-                    likes: 212,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1124,7 +1124,7 @@ export let menu = {
                     price: 10.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C341.png',
 
-                    likes: 60,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1134,7 +1134,7 @@ export let menu = {
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B5324.jpg',
 
-                    likes: 68,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1144,7 +1144,7 @@ export let menu = {
                     price: 10.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D12.jpg',
 
-                    likes: 163,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1154,7 +1154,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F5817.jpg',
 
-                    likes: 1,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1164,7 +1164,7 @@ export let menu = {
                     price: 11.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D8278.jpg',
 
-                    likes: 179,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1174,7 +1174,7 @@ export let menu = {
                     price: 11.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D3298.jpg',
 
-                    likes: 23,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1184,7 +1184,7 @@ export let menu = {
                     price: 10.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C691.jpg',
 
-                    likes: 34,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1194,7 +1194,7 @@ export let menu = {
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C2186.jpg',
 
-                    likes: 293,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1204,7 +1204,7 @@ export let menu = {
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C9875.png',
 
-                    likes: 292,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1214,7 +1214,7 @@ export let menu = {
                     price: 11.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 205,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1231,7 +1231,7 @@ export let menu = {
                 price: 20.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F2506.jpg',
 
-                likes: 239,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1241,7 +1241,7 @@ export let menu = {
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A4046.jpg',
 
-                    likes: 64,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1251,7 +1251,7 @@ export let menu = {
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F5738.png',
 
-                    likes: 152,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1261,7 +1261,7 @@ export let menu = {
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A3829.png',
 
-                    likes: 171,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1278,7 +1278,7 @@ export let menu = {
                 price: 8.5,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B8621.jpg',
 
-                likes: 122,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1288,7 +1288,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A2186.jpg',
 
-                    likes: 1,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1298,7 +1298,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D6445.jpg',
 
-                    likes: 180,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1308,7 +1308,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F6537.jpg',
 
-                    likes: 228,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1318,7 +1318,7 @@ export let menu = {
                     price: 9.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A9390.jpg',
 
-                    likes: 18,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1335,7 +1335,7 @@ export let menu = {
                 price: 11.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D1048.png',
 
-                likes: 89,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1345,7 +1345,7 @@ export let menu = {
                     price: 12.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C4253.jpg',
 
-                    likes: 169,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1355,7 +1355,7 @@ export let menu = {
                     price: 13.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D4634.jpg',
 
-                    likes: 156,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1365,7 +1365,7 @@ export let menu = {
                     price: 13.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D7025.jpg',
 
-                    likes: 30,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1375,7 +1375,7 @@ export let menu = {
                     price: 13.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 28,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1385,7 +1385,7 @@ export let menu = {
                     price: 13.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 103,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1395,7 +1395,7 @@ export let menu = {
                     price: 13.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 9,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1412,7 +1412,7 @@ export let menu = {
                 price: 3.5,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F4180.jpg',
 
-                likes: 250,
+                likes: 0,
                 description: '',
             },
                 {
@@ -1422,7 +1422,7 @@ export let menu = {
                     price: 5.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F4815.png',
 
-                    likes: 118,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1432,7 +1432,7 @@ export let menu = {
                     price: 5.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D8198.png',
 
-                    likes: 229,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1442,7 +1442,7 @@ export let menu = {
                     price: 6.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F430.png',
 
-                    likes: 100,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1452,7 +1452,7 @@ export let menu = {
                     price: 6.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_F4341.jpg',
 
-                    likes: 225,
+                    likes: 0,
                     description: '<strong>Cola</strong>',
                 },
                 {
@@ -1462,7 +1462,7 @@ export let menu = {
                     price: 6.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B3786.jpg',
 
-                    likes: 39,
+                    likes: 0,
                     description: 'Şeftali',
                 },
                 {
@@ -1472,7 +1472,7 @@ export let menu = {
                     price: 6.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_C8086.jpg',
 
-                    likes: 239,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1482,7 +1482,7 @@ export let menu = {
                     price: 6.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B6144.jpg',
 
-                    likes: 16,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1492,7 +1492,7 @@ export let menu = {
                     price: 11.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B7948.jpg',
 
-                    likes: 159,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1502,7 +1502,7 @@ export let menu = {
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A3533.png',
 
-                    likes: 24,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1512,7 +1512,7 @@ export let menu = {
                     price: 13.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/view/images/noimage.png?>',
 
-                    likes: 279,
+                    likes: 0,
                     description: '',
                 }],
         },
@@ -1529,7 +1529,7 @@ export let menu = {
                 price: 5.5,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B4131.png',
 
-                likes: 193,
+                likes: 0,
                 description: 'Klasik',
             },
                 {
@@ -1539,7 +1539,7 @@ export let menu = {
                     price: 5.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D200.jpg',
 
-                    likes: 21,
+                    likes: 0,
                     description: '<label for="s1730">Elma-Erik</label><br/>-<br/>Ananas-Limon',
                 },
                 {
@@ -1549,7 +1549,7 @@ export let menu = {
                     price: 5.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D7324.png',
 
-                    likes: 203,
+                    likes: 0,
                     description: '',
                 },
                 {
@@ -1559,7 +1559,7 @@ export let menu = {
                     price: 5.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_D9640.jpg',
 
-                    likes: 110,
+                    likes: 0,
                     description: 'Klasik<br/>-<br/>Zencefil<br/>-<br/>Frambuaz',
                 },
                 {
@@ -1569,7 +1569,7 @@ export let menu = {
                     price: 5.5,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_A3810.jpg',
 
-                    likes: 209,
+                    likes: 0,
                     description: 'Klasik<br/>-<br/>Limon<br/>-<br/>Safran',
                 }],
         },
@@ -1586,7 +1586,7 @@ export let menu = {
                 price: 14.0,
                 imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/Array',
 
-                likes: 255,
+                likes: 0,
                 description: 'Limon Suyu, Portakal Suyu, Ananas, Granadin, Buz',
             },
                 {
@@ -1596,7 +1596,7 @@ export let menu = {
                     price: 14.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/Array',
 
-                    likes: 17,
+                    likes: 0,
                     description: 'Soda, Limon Suyu, Ananas Suyu, Nar Şurubu, Buz',
                 },
                 {
@@ -1606,7 +1606,7 @@ export let menu = {
                     price: 16.0,
                     imgUrl: 'https://egekahvecisi.qrmenue.com/firma_images/products/kucuk/egekahvecisi.qrmenue.com_B9170.jpg',
 
-                    likes: 100,
+                    likes: 0,
                     description: 'Bir Adet Muz, Portakal Suyu, Süt, Buz',
                 }],
         },
