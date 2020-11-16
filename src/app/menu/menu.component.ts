@@ -6,6 +6,7 @@ import {MenuService} from '../services/menu.service';
 import {FavoriteService} from '../services/favorite.service';
 import {MenuSessionService} from '../base/services/menu-session.service';
 import {featureType} from '../services/models/FeatureTypes';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-menus',
@@ -20,7 +21,8 @@ export class MenuComponent implements OnInit {
         private dialog: MatDialog,
         public menuService: MenuService,
         public favoriteService: FavoriteService,
-        private menuSessionService: MenuSessionService
+        private menuSessionService: MenuSessionService,
+        public router: Router
     ) {
         const currProdId = menuSessionService.getCurrentProduct();
         const currCatId = menuSessionService.getCurrentCategory();
