@@ -72,6 +72,6 @@ export class BasketComponent implements OnInit {
   }
 
   sendClick() {
-    this.orderService.createOrder({orderitems: this.basketItems, tableId: 3});
+    this.orderService.createOrder({orderItems: this.basketItems, tableId: 3});
   }
 }
