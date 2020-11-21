@@ -17,7 +17,8 @@ export class OrderService extends BaseService{
     return this.basePath;
   }
 
-  sendBasket(order, cb?) {
+  createOrder(order, cb?) {
+    order.orderItems.forEach(oi => delete oi.product.category);
     this.getHttpService().doRequest(HttpMethod.POST, `${this.getBasePath()}/create`, order, cb);
   }
 }
