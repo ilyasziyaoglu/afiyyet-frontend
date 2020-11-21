@@ -97,7 +97,7 @@ export class HttpService {
         }
         request.subscribe(res => {
             console.info(path, req, res);
-            if (res.httpStatus === 'OK' && res.success) {
+            if (this.isSuccess(res)) {
                 if (cb) {
                     cb(res.value);
                 }
@@ -114,6 +114,10 @@ export class HttpService {
                 console.error(err);
             }
         });
+    }
+
+    isSuccess(res) {
+        return (res.httpStatus === 'OK' || res.httpStatus === 'CREATED' || res.httpStatus === '') && res.success;
     }
 }
 
