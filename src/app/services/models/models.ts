@@ -44,3 +44,15 @@ export class Reservation {
     reservationDate: string;
     specifications: string;
 }
+
+export class OrderItem {
+    id: number;
+    orderId: number;
+    product: Product;
+    totalPrice: number;
+    amount: number;
+    portion: number;
+    comment: string;
+    state: string;
+    cancelReason: string;
+}

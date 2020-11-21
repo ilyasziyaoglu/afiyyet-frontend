@@ -33,12 +33,22 @@ export class TableService extends BaseService {
                 tableGroups[table.groupName] = tableGroups[table.groupName] || {name: table.groupName, tables: []};
                 tableGroups[table.groupName].tables.push(table);
             });
-            const tableGroupList = [];
+            let tableGroupList = [];
             for (const groupName of Object.keys(tableGroups)) {
+                tableGroups[groupName].tables = tableGroups[groupName].tables.sort(this.compareString);
                 tableGroupList.push(tableGroups[groupName]);
             }
+            tableGroupList = tableGroupList.sort(this.compareString);
             cb(tableGroupList);
         });
+    }
+
+    compareString(a, b){
+        const x = a.name.toLowerCase();
+        const y = b.name.toLowerCase();
+        if (x < y) {return -1; }
+        if (x > y) {return 1; }
+        return 0;
     }
 
     getGroupNames(cb?) {
