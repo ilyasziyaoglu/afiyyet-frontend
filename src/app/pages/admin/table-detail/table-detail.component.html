@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <div class="row m-3 d-flex justify-content-between">
-                <h1 class="text-center my-auto">{{tableService.getCurrentTable()?.groupName}} / {{tableService.getCurrentTable()?.name}}</h1>
+                <h1 class="text-center my-auto">{{tableService.currentTable?.groupName}} / {{tableService.currentTable?.name}}</h1>
             <div class="row">
                 <div><button class="btn btn-lg btn-danger m-1">Kapat</button></div>
             </div>
@@ -17,17 +17,17 @@
                                placeholder="Bir ürün seçiniz"
                                aria-label="Ürün"
                                matInput
-                               formControlName="product"
+                               formControlName="productSearch"
                                [matAutocomplete]="auto">
                         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                            <mat-option *ngFor="let product of filteredProducts | async" [value]="product">
+                            <mat-option *ngFor="let product of filteredProducts | async" [value]="product.name" (onSelectionChange)="onProductSelect(product)">
                                 {{product.name}}
                             </mat-option>
                         </mat-autocomplete>
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="ml-3">
                         <mat-label>Miktar</mat-label>
-                        <input matInput type="number" min="0" formControlName="product" placeholder="Miktar">
+                        <input matInput type="number" min="0" formControlName="amount" placeholder="Miktar">
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="ml-3">
                         <mat-label>Porsiyon</mat-label>
@@ -44,8 +44,8 @@
                     <button type="submit" class="ml-3 my-0 btn btn-lg btn-primary" (click)="onAddOrder()">Ekle</button>
                 </form>
             </div>
-            <div class="row w-100 border rounded" *ngIf="tableService.getCurrentTable().order?.orderItems">
-                <table mat-table [dataSource]="tableService.getCurrentTable().order?.orderItems || []" class="w-100">
+            <div class="row w-100 border rounded" *ngIf="tableService.currentTable?.order">
+                <table mat-table [dataSource]="tableService.currentTable.order.orderItems" class="w-100">
 
                     <ng-container matColumnDef="position">
                         <th mat-header-cell *matHeaderCellDef> No. </th>

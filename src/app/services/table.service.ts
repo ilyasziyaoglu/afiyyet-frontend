@@ -55,14 +55,11 @@ export class TableService extends BaseService {
 
     setCurrentTable(table: any) {
         this.currentTable = table;
-        this.adminSessionService.setCurrentTable(table);
+        this.adminSessionService.setCurrentTable(table.id);
     }
 
-    getCurrentTable() {
-        if ( this.currentTable ) {
-            return this.currentTable;
-        }
-        return this.adminSessionService.getCurrentTable();
+    updateCurrentTable() {
+        this.get(this.adminSessionService.getCurrentTable(), res => this.currentTable = res);
     }
 
     getProducts(): Product[] {
