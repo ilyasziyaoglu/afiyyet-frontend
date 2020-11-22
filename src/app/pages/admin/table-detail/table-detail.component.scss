@@ -1,6 +1,14 @@
+.send-order-icon {
+  cursor: pointer;
+  transform: scale(2);
+}
+
 .delete-order-item-icon {
   cursor: pointer;
-  color: red;
+}
+
+.edit-order-item-icon {
+  cursor: pointer;
 }
 
 .cancelled {
