@@ -19,7 +19,7 @@ export class LoginComponent {
         private router: Router,
         private userService: UserService
     ) {
-        if (userService.getUser()) router.navigateByUrl('pages/admin/menu');
+        if (userService.getUser()) router.navigateByUrl('pages/admin/tables');
     }
 
 
@@ -31,7 +31,7 @@ export class LoginComponent {
         this.httpService.doRequest(HttpMethod.POST, 'auth/login', data, (res) => {
             if ( res ) {
                 this.userService.login(res.userResponse, res.token, this.isRememberCheck);
-                this.router.navigateByUrl('pages/admin/menu', {replaceUrl: true});
+                this.router.navigateByUrl('pages/admin/tables', {replaceUrl: true});
             } else {
               Swal.fire('Uyarı!', 'Kullanıcı adı veya şifre hatalı.', 'warning');
             }

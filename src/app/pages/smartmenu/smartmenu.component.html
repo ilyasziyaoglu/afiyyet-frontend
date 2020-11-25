@@ -17,7 +17,7 @@
              (click)="sidenav.toggle(); scroll('contact')">
             <span class="nav-item-text">İletişim</span>
         </div>
-        <div class="sidenav-item" *ngIf="isLogged" [routerLink]="['/pages/admin/menu']">
+        <div class="sidenav-item" *ngIf="isLogged" [routerLink]="['/pages/admin/tables']">
             <span class="nav-item-text">YÖNETİM PANELİ</span>
         </div>
         <div class="col-sm-12 sidenav-item" *ngIf="isLogged" (click)="logout()">
@@ -51,7 +51,7 @@
                     <div class="btn-nav" (click)="scroll('contact')">
                         <span class="nav-item-text">İLETİŞİM</span>
                     </div>
-                    <div class="btn-nav" *ngIf="isLogged" [routerLink]="['/pages/admin/menu']">
+                    <div class="btn-nav" *ngIf="isLogged" [routerLink]="['/pages/admin/tables']">
                         <span class="nav-item-text">YÖNETİM PANELİ</span>
                     </div>
                     <div class="btn-nav" *ngIf="isLogged" (click)="logout()">

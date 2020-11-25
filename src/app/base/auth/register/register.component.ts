@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
       this.httpService.doRequest(HttpMethod.POST, 'auth/register', data, (res) => {
         if ( res ) {
           this.userService.register(res.userResponse, res.token);
-          this.router.navigateByUrl('pages/admin/menu');
+          this.router.navigateByUrl('pages/admin/tables');
         } else {
           Swal.fire('Uyarı!', 'Kayıt başarısız. Lütfen bilgilerinizi kontrol ediniz.', 'warning');
         }
