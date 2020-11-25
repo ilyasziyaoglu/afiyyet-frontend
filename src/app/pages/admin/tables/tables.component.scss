@@ -1,4 +1,5 @@
 .table {
+  position: relative;
   width: 150px;
   cursor: pointer;
 }
@@ -10,4 +11,19 @@
 
 .table-img {
   width: 100%;
+}
+
+.table-more-options {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  float: right;
+}
+
+.table-more-options {
+  outline: none;
+}
+
+.table-more-options-button {
+  outline: none;
 }

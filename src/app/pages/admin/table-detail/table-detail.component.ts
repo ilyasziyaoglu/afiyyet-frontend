@@ -157,7 +157,7 @@ export class TableDetailComponent implements OnInit {
                     Swal.fire('Sonuç', 'Masa başarı ile kapatıldı.', 'success')
                         .then(() => this.router.navigateByUrl('/pages/admin/tables'));
                 } else {
-                    Swal.fire('Hata', 'Masayi kapatırken bir hata oluştu!', 'error');
+                    Swal.fire('Hata', 'Masayı kapatırken bir hata oluştu!', 'error');
                 }
             });
         }

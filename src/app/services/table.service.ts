@@ -38,7 +38,7 @@ export class TableService extends BaseService {
                 tableGroups[groupName].tables = tableGroups[groupName].tables.sort(this.compareString);
                 tableGroupList.push(tableGroups[groupName]);
             }
-            tableGroupList = tableGroupList.sort(this.compareString);
+            // tableGroupList = tableGroupList.sort(this.compareString);
             cb(tableGroupList);
         });
     }

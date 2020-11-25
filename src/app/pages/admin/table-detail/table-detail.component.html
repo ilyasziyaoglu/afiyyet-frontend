@@ -19,7 +19,6 @@
                                aria-label="Ürün"
                                matInput
                                formControlName="productSearch"
-                               [disabled]="editMode"
                                [matAutocomplete]="auto">
                         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
                             <mat-option *ngFor="let product of filteredProducts | async" [value]="product.name" (onSelectionChange)="onProductSelect(product)">
