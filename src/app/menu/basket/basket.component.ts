@@ -23,7 +23,7 @@ export class BasketComponent implements OnInit {
         private dialog: MatDialog,
         private menuService: MenuService,
         private orderService: OrderService,
-        public basketService: BasketService,
+        private basketService: BasketService,
     ) {
         this.basketItems = basketService.getItemsBasket();
         this.totalPrice = this.basketItems.reduce((a, b) => a + b.totalPrice, 0);

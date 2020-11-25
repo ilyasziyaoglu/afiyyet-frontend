@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
         public location: Location,
         private dialog: MatDialog,
         public menuService: MenuService,
-        private basketService: BasketService,
+        public basketService: BasketService,
         public favoriteService: FavoriteService,
         private menuSessionService: MenuSessionService,
         public router: Router
