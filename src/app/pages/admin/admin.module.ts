@@ -26,6 +26,9 @@ import {TableDetailComponent} from './table-detail/table-detail.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatTableModule} from '@angular/material/table';
 import {ComponentsModule} from '../../base/components/components.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -59,6 +62,9 @@ import {ComponentsModule} from '../../base/components/components.module';
         MatAutocompleteModule,
         MatTableModule,
         ComponentsModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        MatButtonModule,
     ],
 })
 export class AdminModule {
