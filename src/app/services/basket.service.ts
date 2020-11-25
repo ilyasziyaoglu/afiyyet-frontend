@@ -9,17 +9,17 @@ export class BasketService{
   currentBasketItem;
 
   addItemBasket(item) {
-    let items = this.getItemsBasket();
+    const items = this.getItemsBasket();
     items.push(item);
     this.setItemsBasket(items);
   }
 
   setItemsBasket(items) {
-    localStorage.setItem(this.BASKET_KEY, JSON.stringify(items))
+    localStorage.setItem(this.BASKET_KEY, JSON.stringify(items));
   }
 
   getItemsBasket() {
-    let items = localStorage.getItem(this.BASKET_KEY);
-    return items ? JSON.parse(items): [];
+    const items = localStorage.getItem(this.BASKET_KEY);
+    return items ? JSON.parse(items) : [];
   }
 }
