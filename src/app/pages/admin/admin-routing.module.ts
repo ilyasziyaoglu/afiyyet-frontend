@@ -16,7 +16,7 @@ const routes: Routes = [
         path: '',
         component: AdminComponent,
         children: [
-            {path: '', redirectTo: 'menu', pathMatch: 'full'},
+            {path: '', redirectTo: 'tables', pathMatch: 'full'},
             {
                 path: 'tables',
                 component: TablesComponent,
