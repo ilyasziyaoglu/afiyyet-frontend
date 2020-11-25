@@ -7,7 +7,7 @@
             <img class="logo-img" [src]="menuService.menu?.brand.logoImgUrl">
         </div>
         <div *ngIf="menuService.isFavEnabled">
-            <mat-icon class="m-3 back-button" matBadge="{{favoriteService.getFavorites().length}}"
+            <mat-icon class="m-3 back-button" [matBadge]="favoriteService.getFavorites().length"
                       [routerLink]="['favourites']" matBadgeSize="small">favorite
             </mat-icon>
         </div>
@@ -18,7 +18,7 @@
         <router-outlet></router-outlet>
     </div>
     <button *ngIf="menuService.isBasketEnabled && !router.url.includes('basket')" mat-fab color="warn" class="fab" [routerLink]="['basket']">
-        <mat-icon>shopping_basket</mat-icon>
+        <mat-icon [matBadge]="basketService.getItemsBasket().length || 0" matBadgeSize="small">shopping_basket</mat-icon>
     </button>
     <div class="row w-100 m-0 p-0 top-menu">
         <div *ngIf="menuService.isReservEnabled"
