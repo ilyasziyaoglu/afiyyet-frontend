@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 
-import {SmartmenuRoutingModule} from './smartmenu-routing.module';
-import {SmartmenuComponent} from './smartmenu.component';
+import {AfiyyetRoutingModule} from './afiyyet-routing.module';
+import {AfiyyetComponent} from './afiyyet.component';
 import {HomeComponent} from './home/home.component';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
@@ -14,11 +14,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
     declarations: [
-        SmartmenuComponent,
+        AfiyyetComponent,
         HomeComponent
     ],
     imports: [
-        SmartmenuRoutingModule,
+        AfiyyetRoutingModule,
         MatListModule,
         MatIconModule,
         CommonModule,
@@ -29,5 +29,5 @@ import {MatSidenavModule} from '@angular/material/sidenav';
         MatSidenavModule,
     ],
 })
-export class SmartmenuModule {
+export class AfiyyetModule {
 }

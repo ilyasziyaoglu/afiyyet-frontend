@@ -24,6 +24,6 @@ export class PagesComponent implements OnInit {
     logout() {
         this.userService.logOut();
         this.isLogged = false;
-        this.router.navigateByUrl('/pages/smartmenu/home');
+        this.router.navigateByUrl('/pages/afiyyet/home');
     }
 }

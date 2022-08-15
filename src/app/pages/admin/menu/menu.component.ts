@@ -99,19 +99,13 @@ export class MenuComponent implements OnInit {
     }
 
     addItem() {
+        this.adminSessionService.category = this.categoryService.currentCategory;
         this.adminSessionService.setCurrentProduct(null, false);
         this.router.navigateByUrl('/pages/admin/item-edit');
     }
 
     addCategoryClick() {
-        const dialogRef = this.dialog.open(CategoryEditComponent, {panelClass: 'category-edit-dialog'});
-
-        dialogRef.afterClosed().subscribe(res => {
-            res.category.status = 'ACTIVE';
-            this.categoryService.insertCategory(res.category, result => {
-                this.categoryService.categories.push(result);
-            });
-        });
+        this.dialog.open(CategoryEditComponent, {panelClass: 'category-edit-dialog'});
     }
 
 
@@ -149,7 +143,7 @@ export class MenuComponent implements OnInit {
     getTotalProducts(categories) {
         let count = 0;
         if ( categories ) {
-            categories.forEach(cat => count += cat.products.length);
+            categories.forEach(cat => count += cat.products ? cat.products.length : 0);
         }
         return count;
     }

@@ -1,4 +1,4 @@
-# Smartmenu
+# Afiyyet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.2.
 
@@ -18,9 +18,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ##### ILYAS
     PROD:
-    scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/
+    scp -r ~/Desktop/projects/afiyyet/afiyyet-frontend/dist/afiyyet/ root@31.220.53.64:/home/afiyyet/afiyyet/afiyyet-frontend/
     TEST:
-    scp -r ~/Desktop/projects/smartmenu/smartmenu-frontend/dist/smartmenu/ root@31.220.55.12:/smartmenu/smartmenu-frontend/
+    scp -r ~/Desktop/projects/afiyyet/afiyyet-frontend/dist/afiyyet/ root@31.220.55.12:/afiyyet/afiyyet-frontend/
 
 ##### EMIL
-`scp -r ~/Desktop/smartmenu/dist/smartmenu/ root@31.220.53.64:/home/afiyyet/smartmenu/smartmenu-frontend/`
+`scp -r ~/Desktop/afiyyet/dist/afiyyet/ root@31.220.53.64:/home/afiyyet/afiyyet/afiyyet-frontend/`

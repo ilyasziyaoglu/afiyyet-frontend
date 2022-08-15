@@ -8,7 +8,7 @@
     "dumpEventTime": "2020-09-19T15:38:53Z",
     "dumpEventTimeStamp": "1600519133377",
     "processId": 67186,
-    "cwd": "/Users/ilyas/Desktop/projects/smartmenu/smartmenu-frontend",
+    "cwd": "/Users/ilyas/Desktop/projects/afiyyet/afiyyet-frontend",
     "commandLine": [
       "/usr/local/bin/node",
       "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/js-language-service.js",
@@ -343,7 +343,7 @@
     "Apple_PubSub_Socket_Render": "/private/tmp/com.apple.launchd.xzbrbqAKWm/Render",
     "LOGNAME": "ilyas",
     "XPC_SERVICE_NAME": "com.jetbrains.WebStorm.14068",
-    "PWD": "/Users/ilyas/Desktop/projects/smartmenu/smartmenu-frontend",
+    "PWD": "/Users/ilyas/Desktop/projects/afiyyet/afiyyet-frontend",
     "HOME": "/Users/ilyas"
   },
   "userLimits": {

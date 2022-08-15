@@ -3,6 +3,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Category} from '../../../services/models/models';
 import {FileService} from '../../../base/services/file.service';
 import Swal from 'sweetalert2';
+import {CategoryService} from '../../../services/category.service';
 
 @Component({
     selector: 'app-dialog-category-edit',
@@ -10,23 +11,23 @@ import Swal from 'sweetalert2';
     styleUrls: ['./category-edit.component.scss'],
 })
 export class CategoryEditComponent implements OnInit {
+    @Inject(MAT_DIALOG_DATA) public data: any;
 
     category: Category;
     isInsert = true;
     formData: FormData;
 
     constructor(
-        @Inject(MAT_DIALOG_DATA) public data: any,
         private dialog: MatDialogRef<CategoryEditComponent>,
+        private categoryService: CategoryService,
         private fileService: FileService
-    ) {
-        this.category = data || new Category();
-        if ( data ) {
-            this.isInsert = false;
-        }
-    }
+    ) {}
 
     ngOnInit(): void {
+        this.category = this.data || new Category();
+        if ( this.data ) {
+            this.isInsert = false;
+        }
     }
 
     saveClick() {
@@ -44,7 +45,11 @@ export class CategoryEditComponent implements OnInit {
             this.fileService.uploadFile(this.formData, res => {
                 if ( res.fileName ) {
                     this.category.imgUrl = res.fileName;
-                    this.dialog.close({category: this.category});
+                    this.category.status = 'ACTIVE';
+                    this.categoryService.insertCategory(this.category, result => {
+                        this.categoryService.categories.push(result);
+                    });
+                    this.dialog.close();
                 } else {
                     Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
                 }
