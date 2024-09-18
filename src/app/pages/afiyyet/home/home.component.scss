@@ -44,6 +44,7 @@ h1, p {
   width: 100%;
   text-align: center;
   font-size: 7em;
+  height: fit-content;
 }
 
 .title {
@@ -155,17 +156,12 @@ h1, p {
   width: 100%;
 }
 
-.offer-features .mat-list-base .mat-list-item {
+.offer-features * {
   color: white !important;
 }
 
-.not-offer-features .mat-list-base .mat-list-item mat-icon {
+.not-offer-features * {
   color: darkgray !important;
-}
-
-.not-offer-features .mat-list-base .mat-list-item p {
-  color: darkgray !important;
-  text-decoration: line-through;
 }
 
 .offer-features p {

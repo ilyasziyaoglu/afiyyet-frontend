@@ -3,11 +3,11 @@ import {Router} from '@angular/router';
 import {UserService} from '../../base/services/user.service';
 
 @Component({
-  selector: 'app-smartmenu',
-  templateUrl: './smartmenu.component.html',
-  styleUrls: ['./smartmenu.component.scss']
+  selector: 'app-afiyyet',
+  templateUrl: './afiyyet.component.html',
+  styleUrls: ['./afiyyet.component.scss']
 })
-export class SmartmenuComponent implements OnInit {
+export class AfiyyetComponent implements OnInit {
 
   isLogged = false;
 
@@ -29,7 +29,7 @@ export class SmartmenuComponent implements OnInit {
   logout() {
     this.userService.logOut();
     this.isLogged = false;
-    this.router.navigateByUrl('/pages/smartmenu/home');
+    this.router.navigateByUrl('/pages/afiyyet/home');
   }
 
 }

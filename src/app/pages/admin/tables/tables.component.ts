@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TableService} from '../../../services/table.service';
 import {Router} from '@angular/router';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import Swal from 'sweetalert2';
 
 @Component({

@@ -7,8 +7,8 @@ const routes: Routes = [
         path: '',
         component: PagesComponent,
         children: [
-            {path: '', redirectTo: 'smartmenu', pathMatch: 'full'},
-            {path: 'smartmenu', loadChildren: () => import('./smartmenu/smartmenu.module').then(m => m.SmartmenuModule)},
+            {path: '', redirectTo: 'afiyyet', pathMatch: 'full'},
+            {path: 'afiyyet', loadChildren: () => import('./afiyyet/afiyyet.module').then(m => m.AfiyyetModule)},
             {path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)},
         ],
     },

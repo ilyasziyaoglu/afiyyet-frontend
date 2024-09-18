@@ -3,14 +3,14 @@
 
 html, body { height: 100%; }
 
-h1 { font-family: Optima, serif !important; }
-h2 { font-family: Optima, serif !important; }
-h3 { font-family: Optima, serif !important; }
-h4 { font-family: Optima, serif !important; }
-h5 { font-family: Optima, serif !important; }
-h6 { font-family: Optima, serif !important; }
-span { font-family: Optima, serif !important; }
-p { font-family: Optima, serif !important; }
+h1 { font-family: Verdana, serif !important; }
+h2 { font-family: Verdana, serif !important; }
+h3 { font-family: Verdana, serif !important; }
+h4 { font-family: Verdana, serif !important; }
+h5 { font-family: Verdana, serif !important; }
+h6 { font-family: Verdana, serif !important; }
+span { font-family: Verdana, serif !important; }
+p { font-family: Verdana, serif !important; }
 
 * {
   margin: 0;
@@ -25,11 +25,6 @@ p { font-family: Optima, serif !important; }
   .category-edit-dialog .mat-dialog-container {
     width: 50vw !important;
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
 }
 
 mat-icon, p, h1, h3 {

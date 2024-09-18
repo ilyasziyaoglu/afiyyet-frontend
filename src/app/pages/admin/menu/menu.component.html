@@ -11,7 +11,7 @@
 
             <div style="background-color: #F4511E" class="d-flex justify-content-around py-1 rounded">
                 <span class="cat-prod-count-span">{{categoryCount}} Kategori</span>
-                <span class="cat-prod-count-span">{{getTotalProducts(categoryService.categories)}} Product</span>
+                <span class="cat-prod-count-span">{{getTotalProducts(categoryService.categories)}} Ürün</span>
             </div>
 
             <div cdkDrag [cdkDragDisabled]="!userService.isOrderEnabled" *ngFor="let category of categoryService.categories; let i = index">

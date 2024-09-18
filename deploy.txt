@@ -1,0 +1,21 @@
+
+ng build --prod
+docker build --platform=linux/amd64 -t frontend:latest-amd64 .
+docker save -o dist/frontend.tar frontend
+rsync -azP -C dist/frontend.tar root@afiyyet.com:/home/hpserver1/afiyyet
+
+ssh root@afiyyet.com
+cd /home/hpserver1/afiyyet/
+docker stop afiyyet_frontend_1
+docker rm afiyyet_frontend_1
+docker rmi frontend
+docker rmi frontend:latest-amd64
+docker rmi frontend:latest-arm64
+docker load -i frontend.tar
+docker-compose -f app.yml up -d
+docker logs -f afiyyet_frontend_1
+
+
+
+
+python2 -m SimpleHTTPServer 8001
