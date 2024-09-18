@@ -1,48 +1,48 @@
 <div *ngIf="userService.isCampEnabled || userService.isReportsEnabled || userService.isReservEnabled || userService.isFeedBackEnabled"
-     class="row w-100 flex-container d-flex justify-content-center no-gutters">
-    <button class="pt-3 pb-1 flex-fill menu-button" (click)="router.navigateByUrl('pages/afiyyet/home')">
+     class="row w-100 d-flex justify-content-start">
+    <button class="pt-3 pb-1 menu-button col" (click)="router.navigateByUrl('pages/afiyyet/home')">
         <div>
             <mat-icon>home</mat-icon>
             <span class="button-text">Ana Sayfa</span>
         </div>
     </button>
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['tables']">
+    <button class="pt-3 pb-1 menu-button col" [routerLink]="['tables']">
         <div>
             <mat-icon>view_module</mat-icon>
             <span class="button-text">Masalar</span>
         </div>
     </button>
-    <button class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['menu']">
+    <button class="pt-3 pb-1 menu-button col" [routerLink]="['menu']">
         <div>
             <mat-icon>view_list</mat-icon>
             <span class="button-text">Menü Düzenle</span>
         </div>
     </button>
-    <button *ngIf="userService.isCampEnabled" class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['campaigns']">
+    <button *ngIf="userService.isCampEnabled" class="pt-3 pb-1 menu-button col" [routerLink]="['campaigns']">
         <div>
             <mat-icon>loyalty</mat-icon>
             <span class="button-text">Kampanyalar</span>
         </div>
     </button>
-    <button *ngIf="userService.isReportsEnabled" class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['reports']">
+    <button *ngIf="userService.isReportsEnabled" class="pt-3 pb-1 menu-button col" [routerLink]="['reports']">
         <div>
             <mat-icon>analytics</mat-icon>
             <span class="button-text">Raporlar</span>
         </div>
     </button>
-    <button *ngIf="userService.isReservEnabled" class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['reservations']">
+    <button *ngIf="userService.isReservEnabled" class="pt-3 pb-1 menu-button col" [routerLink]="['reservations']">
         <div>
             <mat-icon>assignment_turned_in</mat-icon>
             <span class="button-text">Rezervasyonlar</span>
         </div>
     </button>
-    <button *ngIf="userService.isFeedBackEnabled" class="pt-3 pb-1 flex-fill menu-button" [routerLink]="['comments']">
+    <button *ngIf="userService.isFeedBackEnabled" class="pt-3 pb-1 menu-button col" [routerLink]="['comments']">
         <div>
             <mat-icon>grading</mat-icon>
             <span class="button-text">Yorumlar</span>
         </div>
     </button>
-    <button *ngIf="isLogged" class="pt-3 pb-1 flex-fill menu-button" (click)="logout()">
+    <button *ngIf="isLogged" class="pt-3 pb-1 menu-button col" (click)="logout()">
         <div>
             <mat-icon>exit_to_app</mat-icon>
             <span class="button-text">Çıkış</span>

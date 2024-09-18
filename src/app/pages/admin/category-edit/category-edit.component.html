@@ -1,15 +1,24 @@
-<h2 style="text-align: center">{{isInsert ? 'Yeni Kategori' : 'Kategori Düzenleme'}}</h2>
-<div style="cursor: pointer; margin: auto;" class="col-sm-12 col-md-10 col-lg-8 mb-2 mb-md-2 no-gutters">
-    <div class="img-container">
-        <img [src]="category.imgUrl ? category.imgUrl : '../../assets/no-image.jpg'">
-        <img class="attach" src="../../../../assets/cloud.jpg">
-    </div>
-    <p *ngIf="!category.imgUrl" class="addimage">Ekle</p>
-    <input type="file" accept="image/*" class="file_upload_input" (change)="imageUpdateClick($event)"/>
-</div>
-<input id="name" class="form-control mt-3 col-sm-12 col-md-10 col-lg-8" style="display: block; margin: auto;" [(ngModel)]="category.name"
-       value="{{category.name}}"/>
-<div class="form-group m-0 p-2 row d-flex justify-content-center">
-    <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
-    <button (click)="cancelClick()" class="btn btn-danger ml-3 form-button">İptal</button>
+<div class="container">
+	<h2 style="text-align: center">{{ isInsert ? 'Yeni Kategori' : 'Kategori Düzenleme' }}</h2>
+	<div style="cursor: pointer; margin: auto;" class="col-sm-12 col-md-10 col-lg-8 mb-2 mb-md-2 no-gutters">
+		<div class="img-container">
+			<img [src]="category.imgUrl ? category.imgUrl : '../../assets/no-image.jpg'"> <img class="attach"
+			src="../../../../assets/cloud.jpg">
+			<p *ngIf="!category.imgUrl" class="addimage">Ekle</p>
+			<input style="display: block"
+				type="file"
+				accept="image/*"
+				class="file_upload_input"
+				(change)="imageUpdateClick($event)"/>
+		</div>
+	</div>
+	<input id="name"
+		class="form-control mt-3 col-sm-12 col-md-10 col-lg-8"
+		style="display: block; margin: auto;"
+		[(ngModel)]="category.name"
+		value="{{category.name}}"/>
+	<div class="form-group m-0 p-2 row d-flex justify-content-between">
+		<button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
+		<button (click)="cancelClick()" class="btn btn-danger ml-3 form-button">İptal</button>
+	</div>
 </div>
