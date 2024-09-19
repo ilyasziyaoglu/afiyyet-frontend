@@ -40,7 +40,7 @@ export class TablesComponent implements OnInit {
             Swal.fire({
                 title: 'Uyarı',
                 icon: 'info',
-                html: 'Bu işlem geri alınamaz! Decam etmek istediğinizden emin misiniz?',
+                html: 'Bu işlem geri alınamaz! Devam etmek istediğinizden emin misiniz?',
                 showCloseButton: true,
                 showCancelButton: true,
                 focusConfirm: false,

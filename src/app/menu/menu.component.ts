@@ -33,8 +33,6 @@ export class MenuComponent implements OnInit {
         const brand = window.location.href.split('/')[5];
         if ( brand ) {
             this.menuService.getMenu(brand, () => {
-                console.log(menuService.menu);
-
                 menuService.currentCampaign = menuService.menu.campaigns
                     .find(camp => camp.id === currCampId);
 
