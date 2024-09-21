@@ -48,7 +48,6 @@ export class MenuComponent implements OnInit {
                 menuService.isCampEnabled = menuService.menu.brand.features.includes(featureType.CAMPAIGN);
                 menuService.isFeedBackEnabled = menuService.menu.brand.features.includes(featureType.FEEDBACKS);
                 menuService.isReservEnabled = menuService.menu.brand.features.includes(featureType.RESERVATIONS);
-                //menuService.isBasketEnabled = menuService.menu.brand.features.includes(featureType.BASKET);
                 this.isLoading = false;
             });
         }

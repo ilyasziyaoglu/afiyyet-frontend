@@ -5,38 +5,38 @@
             <mat-label>Masa Adı</mat-label>
             <input matInput formControlName="name"/>
         </mat-form-field>
-        <div class="row w-100" *ngIf="!addGroupName">
-            <mat-form-field appearance="outline" class="w-100 col-10">
-                <mat-label>Masa Grubu Seç</mat-label>
-                <mat-select formControlName="groupName">
-                    <mat-option *ngFor="let groupName of groupNames" [value]="groupName">{{groupName}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <div class="col-2 p-2">
-                <mat-icon (click)="addGroupName = true">add</mat-icon>
-            </div>
-        </div>
+		<div class="row">
+			<mat-form-field class="col-10" appearance="outline">
+				<mat-label>Masa Grubu Seç</mat-label>
+				<mat-select formControlName="groupName">
+					<mat-option *ngFor="let groupName of groupNames" [value]="groupName">{{groupName}}</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<div class="col-2">
+				<mat-icon class="mt-2" (click)="addGroupName = true">add</mat-icon>
+			</div>
+		</div>
         <div class="row w-100" *ngIf="addGroupName">
-            <mat-form-field appearance="outline" class="w-100 col-9">
+            <mat-form-field class="col-9" appearance="outline">
                 <mat-label>Masa Grubu</mat-label>
                 <input matInput [(ngModel)]="groupName" [ngModelOptions]="{standalone: true}">
-                <div *ngIf="!groupName || isDuplicate(groupNames, groupName)" class="mt-2 text-danger">
-                    <div *ngIf="!groupName">
-                        Bu alan zorunludur!
-                    </div>
-                    <div *ngIf="isDuplicate(groupNames, groupName)">
-                        Tekrar eden masa grubu girdiniz!
-                    </div>
-                </div>
             </mat-form-field>
-            <div class="col-3 p-2">
-                <mat-icon class="text-success" (click)="onAddGroupName()">done</mat-icon>
-                <mat-icon class="ml-3 text-danger" (click)="addGroupName = false">clear</mat-icon>
-            </div>
+			<mat-icon class="text-success" (click)="onAddGroupName()">done</mat-icon>
+			<mat-icon class="text-danger" (click)="addGroupName = false">clear</mat-icon>
+
+			<div *ngIf="!groupName || isDuplicate(groupNames, groupName)" class="mt-2 text-danger">
+				<div *ngIf="!groupName">
+					Bu alan zorunludur!
+				</div>
+				<div *ngIf="isDuplicate(groupNames, groupName)">
+					Tekrar eden masa grubu girdiniz!
+				</div>
+			</div>
         </div>
-        <div class="form-group m-0 p-2 row float-right">
-            <button (click)="saveClick()" class="btn btn-success form-button">Kaydet</button>
-            <button (click)="location.back()" class="btn btn-danger ml-3 form-button">İptal</button>
+
+        <div class="form-group m-0 p-2 row d-flex justify-content-between">
+            <button (click)="saveClick()" class="col btn btn-success form-button">Kaydet</button>
+            <button (click)="location.back()" class="col btn btn-danger ml-3 form-button">İptal</button>
         </div>
     </form>
 </div>

@@ -27,33 +27,8 @@ export class MenuService extends BaseService {
     constructor(
         httpService: HttpService,
         private menuLocalService: MenuLocalService,
-        // private categoryService: CategoryService,
-        // private productService: ProductService,
     ) {
         super(httpService);
-        //
-        // // GET MOCK DATA
-        // this.menu = menu;
-        //
-        // // IMPORT MOCK DATA TO DB
-        // this.menu.categories.forEach(c => {
-        //     categoryService.insertCategory(c, result => {
-        //         if ( result ) {
-        //             console.info('Kategori basari ile eklendi.');
-        //             c.products.forEach(i => {
-        //                 productService.insert(result, i, result2 => {
-        //                     if ( result2 ) {
-        //                         console.info('Urun basari ile eklendi.');
-        //                     } else {
-        //                         console.error('Urun eklenemedi!');
-        //                     }
-        //                 });
-        //             });
-        //         } else {
-        //             console.error('Category eklenemedi!');
-        //         }
-        //     });
-        // });
     }
 
     getBasePath(): string {
@@ -105,6 +80,6 @@ export class MenuService extends BaseService {
                 likeMap.push({id: p.id, likes: p.likes, product: p});
             });
         });
-        return likeMap.sort((a, b) => b.likes - a.likes).slice(0, 5).map(i => {return i.product});
+        return likeMap.sort((a, b) => b.likes - a.likes).map(i => {return i.product});
     }
 }

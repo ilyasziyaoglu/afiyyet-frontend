@@ -16,7 +16,7 @@ export class ReservationComponent implements OnInit {
 
     reservation = {
         adultCount: 2,
-        brand: {},
+        brand: {features: []},
         childCount: 0,
         fullName: '',
         phoneNumber: '',
@@ -66,7 +66,8 @@ export class ReservationComponent implements OnInit {
             return;
         }
 
-        this.reservation.brand = this.menuService.menu.brand;
+        this.reservation.brand = {...this.menuService.menu.brand};
+        delete this.reservation.brand.features;
         const hour = this.time.split(':');
         this.reservation.reservationDate.setHours(hour[0], hour[1]);
         if ( this.today > this.reservation.reservationDate) {

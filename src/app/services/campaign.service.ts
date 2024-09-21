@@ -20,9 +20,10 @@ export class CampaignService extends BaseService {
         return this.basePath;
     }
 
-    insert(campaign, cb?) {
-        campaign.type = 'CAMPAIGN';
-        this.post(campaign, cb);
+    insert(category: any, item: Product, cb?) {
+        item.category = category;
+        item.type = 'CAMPAIGN';
+        this.post(item, cb);
     }
 
     delete(campaignId, cb?) {

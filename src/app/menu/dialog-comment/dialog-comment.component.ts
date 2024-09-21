@@ -21,8 +21,10 @@ export class DialogCommentComponent implements OnInit {
   }
 
   saveClick() {
+    let brand = {...this.menuService.menu.brand};
+    delete brand.features;
     this.commentService.insertComment(
-        {comment: this.comment, brand: this.menuService.menu.brand}, res => {
+        {comment: this.comment, brand}, res => {
           if (res) { this.dialog.close(); }
     });
   }

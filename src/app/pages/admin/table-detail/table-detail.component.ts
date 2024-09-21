@@ -121,6 +121,7 @@ export class TableDetailComponent implements OnInit {
                 if ( res ) {
                     orderItem.state = 'CANCELLED';
                     Swal.fire('Sonuç', 'Sipariş başarı ile iptal edildi.', 'success');
+                    location.reload();
                 } else {
                     Swal.fire('Hata', 'Siparişi iptal ederken bir hata oluştu!', 'error');
                 }

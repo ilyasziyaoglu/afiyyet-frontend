@@ -51,7 +51,7 @@
 <hr *ngIf="menuService.isLikeEnabled" class="m-0 p-0">
 
 <h3 *ngIf="menuService.isCampEnabled || menuService.isFavEnabled" class="my-2" style="text-align: center">Menü</h3>
-<div class="row m-1 justify-content-center">
+<div class="row m-1">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"
          (click)="categoryClick(category)"

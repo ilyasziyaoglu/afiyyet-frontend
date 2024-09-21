@@ -94,7 +94,9 @@ export class ProductEditComponent implements OnInit {
             this.fileService.uploadFile(this.formData, res => {
                 if ( res.fileName ) {
                     this.product.imgUrl = res.fileName;
+                    console.log(this.product);
                     this.service.insert(this.adminSessionService.category, this.product, response => {
+                        console.log(response);
                         if ( response ) {
                             this.resetForm();
                             this.router.navigateByUrl(this.returnUrl);

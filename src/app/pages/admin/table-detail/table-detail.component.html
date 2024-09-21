@@ -1,114 +1,129 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="row m-3 d-flex justify-content-between">
-                <h1 class="text-center my-auto">{{tableService.currentTable?.groupName}} / {{tableService.currentTable?.name}}</h1>
-            <div class="row">
-                <div><button (click)="closeTable()" class="btn btn-lg btn-outline-primary m-1">Hesabı Kapat</button></div>
-                <div><button (click)="location.back()" class="btn btn-lg btn-danger m-1">Çık</button></div>
-            </div>
-            </div>
-            <hr class="my-3">
-<!--            <h1 class="text-center mt-3">Siparişler</h1>-->
-            <div class="row w-100">
-                <form class="w-100" [formGroup]="addOrderForm">
-                    <mat-form-field appearance="outline" class="w-25">
-                        <mat-label>Ürün</mat-label>
-                        <input type="text"
-                               placeholder="Bir ürün seçiniz"
-                               aria-label="Ürün"
-                               matInput
-                               formControlName="productSearch"
-                               [matAutocomplete]="auto">
-                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                            <mat-option *ngFor="let product of filteredProducts | async" [value]="product.name" (onSelectionChange)="onProductSelect(product)">
-                                {{product.name}}
-                            </mat-option>
-                        </mat-autocomplete>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="ml-3">
-                        <mat-label>Miktar</mat-label>
-                        <input matInput type="number" min="0" formControlName="amount" placeholder="Miktar">
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="ml-3">
-                        <mat-label>Porsiyon</mat-label>
-                        <mat-select formControlName="portion">
-                            <mat-option value="1">1</mat-option>
-                            <mat-option value="1.5">1,5</mat-option>
-                            <mat-option value="2">2</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="ml-3">
-                        <mat-label>Not</mat-label>
-                        <input matInput type="text" formControlName="comment" placeholder="Not">
-                    </mat-form-field>
-                    <mat-icon class="ml-4 text-primary send-order-icon" (click)="onAddOrder()">send</mat-icon>
-                </form>
-            </div>
-            <div class="row w-100 border rounded" *ngIf="tableService.currentTable?.order">
-                <table mat-table [dataSource]="tableService.currentTable.order.orderItems" class="w-100">
+	<div class="row">
+		<div class="col-12">
+			<div class="row m-3 d-flex justify-content-between">
+				<h1 class="text-center my-auto">{{ tableService.currentTable?.groupName }} / {{ tableService.currentTable?.name }}</h1>
+				<div class="row my-3 p-0 d-flex justify-content-between">
+					<button (click)="closeTable()" class="col btn btn-lg btn-outline-primary">Hesabı Kapat</button>
+					<div class="col"></div>
+					<button (click)="location.back()" class="col btn btn-lg btn-danger">Çık</button>
+				</div>
+			</div>
+			<hr class=" ">
+			<!--            <h1 class="text-center mt-3">Siparişler</h1>-->
+			<div class="row w-100">
+				<form class="w-100 d-flex justify-content-between" [formGroup]="addOrderForm">
+					<mat-form-field appearance="outline" class="w-25">
+						<mat-label>Ürün</mat-label>
+						<input type="text"
+							placeholder="Bir ürün seçiniz"
+							aria-label="Ürün"
+							matInput
+							formControlName="productSearch"
+							[matAutocomplete]="auto">
+						<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+							<mat-option *ngFor="let product of filteredProducts | async"
+								[value]="product.name"
+								(onSelectionChange)="onProductSelect(product)">
+								{{ product.name }}
+							</mat-option>
+						</mat-autocomplete>
+					</mat-form-field>
+					<mat-form-field appearance="outline" class="ml-3">
+						<mat-label>Miktar</mat-label>
+						<input matInput type="number" min="0" formControlName="amount" placeholder="Miktar">
+					</mat-form-field>
+					<mat-form-field appearance="outline" class="ml-3">
+						<mat-label>Porsiyon</mat-label>
+						<mat-select formControlName="portion">
+							<mat-option value="1">1</mat-option>
+							<mat-option value="1.5">1,5</mat-option>
+							<mat-option value="2">2</mat-option>
+						</mat-select>
+					</mat-form-field>
+					<mat-form-field appearance="outline" class="ml-3">
+						<mat-label>Not</mat-label>
+						<input matInput type="text" formControlName="comment" placeholder="Not">
+					</mat-form-field>
+					<mat-icon class="ml-4 mt-3 text-primary send-order-icon" (click)="onAddOrder()">send</mat-icon>
+				</form>
+			</div>
+			<div class="row w-100 border rounded" *ngIf="tableService.currentTable?.order">
+				<table mat-table [dataSource]="tableService.currentTable.order.orderItems" class="w-100">
 
-                    <ng-container matColumnDef="position">
-                        <th mat-header-cell *matHeaderCellDef> No. </th>
-                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="position">
+						<th mat-header-cell *matHeaderCellDef> No.</th>
+						<td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="name">
-                        <th mat-header-cell *matHeaderCellDef> Name </th>
-                        <td mat-cell *matCellDef="let element"> {{element.product.name}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="name">
+						<th mat-header-cell *matHeaderCellDef> Name</th>
+						<td mat-cell *matCellDef="let element"> {{ element.product.name }}</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="amount">
-                        <th mat-header-cell *matHeaderCellDef class="text-center"> Miktar </th>
-                        <td mat-cell *matCellDef="let element" class="text-center"> {{element.amount}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="amount">
+						<th mat-header-cell *matHeaderCellDef class="text-center"> Miktar</th>
+						<td mat-cell *matCellDef="let element" class="text-center"> {{ element.amount }}</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="portion">
-                        <th mat-header-cell *matHeaderCellDef class="text-center"> Porsiyon </th>
-                        <td mat-cell *matCellDef="let element" class="text-center"> {{element.portion}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="portion">
+						<th mat-header-cell *matHeaderCellDef class="text-center"> Porsiyon</th>
+						<td mat-cell *matCellDef="let element" class="text-center"> {{ element.portion }}</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="price">
-                        <th mat-header-cell *matHeaderCellDef class="text-center"> Birim Fiyat </th>
-                        <td mat-cell *matCellDef="let element" class="text-center"> {{element.product.price}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="price">
+						<th mat-header-cell *matHeaderCellDef class="text-center"> Birim Fiyat</th>
+						<td mat-cell *matCellDef="let element" class="text-center"> {{ element.product.price }}</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="totalPrice">
-                        <th mat-header-cell *matHeaderCellDef class="text-center"> Toplam Fiyat </th>
-                        <td mat-cell *matCellDef="let element" class="text-center"> {{element.product.price * element.amount * element.portion}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="totalPrice">
+						<th mat-header-cell *matHeaderCellDef class="text-center"> Toplam Fiyat</th>
+						<td mat-cell
+							*matCellDef="let element"
+							class="text-center"> {{ element.product.price * element.amount * element.portion }}
+						</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="state">
-                        <th mat-header-cell *matHeaderCellDef> Durum </th>
-                        <td mat-cell *matCellDef="let element" [ngClass]="{'cancelled': element.state === 'CANCELLED'}"> {{element.state}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="state">
+						<th mat-header-cell *matHeaderCellDef> Durum</th>
+						<td mat-cell
+							*matCellDef="let element"
+							[ngClass]="{'cancelled': element.state === 'CANCELLED'}"> {{ element.state }}
+						</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="comment">
-                        <th mat-header-cell *matHeaderCellDef> Not </th>
-                        <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
-                    </ng-container>
+					<ng-container matColumnDef="comment">
+						<th mat-header-cell *matHeaderCellDef> Not</th>
+						<td mat-cell *matCellDef="let element"> {{ element.comment }}</td>
+					</ng-container>
 
-                    <ng-container matColumnDef="actions">
-                        <th mat-header-cell *matHeaderCellDef class="text-center"> Aksiyonlar </th>
-                        <td mat-cell *matCellDef="let element" class="text-center">
-                            <mat-icon *ngIf="element.state !== 'CANCELLED'" class="text-primary edit-order-item-icon" (click)="onEditOrder(element)">edit</mat-icon>
-                            <mat-icon *ngIf="element.state !== 'CANCELLED'" class="text-danger delete-order-item-icon" (click)="onRemoveOrder(element)">delete</mat-icon>
-                        </td>
-                    </ng-container>
+					<ng-container matColumnDef="actions">
+						<th mat-header-cell *matHeaderCellDef class="text-center"> Aksiyonlar</th>
+						<td mat-cell *matCellDef="let element" class="text-center">
+							<mat-icon *ngIf="element.state !== 'CANCELLED'"
+								class="text-primary edit-order-item-icon"
+								(click)="onEditOrder(element)">edit
+							</mat-icon>
+							<mat-icon *ngIf="element.state !== 'CANCELLED'"
+								class="text-danger delete-order-item-icon"
+								(click)="onRemoveOrder(element)">delete
+							</mat-icon>
+						</td>
+					</ng-container>
 
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
-            </div>
-            <hr class="my-3">
-            <div class="row">
-                <div class="col-sm-6 m-0">
-                    <div class="row">
-                        <div class="col"><h2>Toplam : </h2></div>
-                        <div class="col"><h2>{{tableService.currentTable?.order?.totalPrice}} TL</h2></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+				</table>
+			</div>
+			<hr class="my-3">
+			<div class="row">
+				<div class="col-sm-6 m-0">
+					<div class="row">
+						<div class="col"><h2>Toplam : </h2></div>
+						<div class="col"><h2>{{ tableService.currentTable?.order?.totalPrice }} TL</h2></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
