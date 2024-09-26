@@ -97,7 +97,7 @@ export class OrdersComponent implements OnInit, AfterViewInit {
         'tableId',
         // 'actions'
     ];
-    private page: PageEvent = {length: 0, previousPageIndex: 0, pageIndex: 0, pageSize: 2};
+    private page: PageEvent = {length: 0, previousPageIndex: 0, pageIndex: 0, pageSize: 20};
     private sortForApi = "createdDate,desc";
     clickedRows = new Set<Order>();
 
