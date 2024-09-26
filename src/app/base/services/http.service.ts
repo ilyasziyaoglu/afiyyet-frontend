@@ -96,7 +96,7 @@ export class HttpService {
                 break;
         }
         request.subscribe(res => {
-            console.info(path, req, res, cb);
+            // console.info(path, req, res, cb);
             if (this.isSuccess(res)) {
                 if (cb) {
                     cb(res.value);
