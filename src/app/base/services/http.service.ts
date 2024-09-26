@@ -70,7 +70,6 @@ export class HttpService {
                 .append('Authorization', token)
                 .append('Accept', '*/*');
         } else if (!path.startsWith('auth/') && token) {
-            console.log("auth request", token);
             headers = new HttpHeaders()
                 .append('Authorization', token)
                 .append('Content-Type', 'application/json; charset=utf-8')
@@ -97,7 +96,7 @@ export class HttpService {
                 break;
         }
         request.subscribe(res => {
-            // console.info(path, req, res);
+            console.info(path, req, res, cb);
             if (this.isSuccess(res)) {
                 if (cb) {
                     cb(res.value);
@@ -109,10 +108,9 @@ export class HttpService {
                 }
             }
         }, err => {
+            console.error(err);
             if (cb) {
                 cb(false);
-            } else {
-                console.error(err);
             }
         });
     }

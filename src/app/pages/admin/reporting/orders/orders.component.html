@@ -77,40 +77,47 @@
 		</div>
 	</form>
 </div>
-<div class="row">
-	<!--<table mat-table [dataSource]="orders" class="w-100">-->
+<div class="row mt-3 mat-elevation-z8" *ngIf="orders">
+	<table mat-table [dataSource]="orders" matSort (matSortChange)="announceSortChange($event)" class="w-100">
 
-	<!--	<ng-container matColumnDef="id">-->
-	<!--		<th mat-header-cell *matHeaderCellDef> No.</th>-->
-	<!--		<td mat-cell *matCellDef="let element"> {{ element.id }}</td>-->
-	<!--	</ng-container>-->
+	<ng-container matColumnDef="position">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header> No</th>
+			<td mat-cell *matCellDef="let element"> {{ element.id }}</td>
+		</ng-container>
 
-	<!--	<ng-container matColumnDef="date">-->
-	<!--		<th mat-header-cell *matHeaderCellDef> Tarih</th>-->
-	<!--		<td mat-cell *matCellDef="let element"> {{ element.createdDate }}</td>-->
-	<!--	</ng-container>-->
+		<ng-container matColumnDef="createdDate">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header> Tarih</th>
+			<td mat-cell *matCellDef="let element"> {{ element.createdDate.slice(0, 19).replace("T", " ") }}</td>
+		</ng-container>
 
-	<!--	<ng-container matColumnDef="totalPrice">-->
-	<!--		<th mat-header-cell *matHeaderCellDef class="text-center"> Tutar</th>-->
-	<!--		<td mat-cell *matCellDef="let element" class="text-center"> {{ element.tatalPrice }}</td>-->
-	<!--	</ng-container>-->
+		<ng-container matColumnDef="totalPrice">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Tutar</th>
+			<td mat-cell *matCellDef="let element" class="text-center"> {{ element.totalPrice }}&nbsp;₺</td>
+		</ng-container>
 
-	<!--	<ng-container matColumnDef="table">-->
-	<!--		<th mat-header-cell *matHeaderCellDef class="text-center"> Masa</th>-->
-	<!--		<td mat-cell *matCellDef="let element" class="text-center"> {{ element.table.name }}</td>-->
-	<!--	</ng-container>-->
+		<ng-container matColumnDef="tableId">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Masa</th>
+			<td mat-cell *matCellDef="let element" class="text-center"> {{ getTableNameById(element.tableId) }}</td>
+		</ng-container>
 
-	<!--	<ng-container matColumnDef="actions">-->
-	<!--		<th mat-header-cell *matHeaderCellDef class="text-center"> Aksiyonlar</th>-->
-	<!--		<td mat-cell *matCellDef="let element" class="text-center">-->
-	<!--			<mat-icon *ngIf="element.state !== 'CANCELLED'" class="text-primary edit-order-item-icon">edit-->
-	<!--			</mat-icon>-->
-	<!--			<mat-icon *ngIf="element.state !== 'CANCELLED'" class="text-danger delete-order-item-icon">delete-->
-	<!--			</mat-icon>-->
-	<!--		</td>-->
-	<!--	</ng-container>-->
+		<!--<ng-container matColumnDef="actions">-->
+		<!--	<th mat-header-cell *matHeaderCellDef class="text-center"> Aksiyonlar</th>-->
+		<!--	<td mat-cell *matCellDef="let element" class="text-center">-->
+		<!--		<mat-icon *ngIf="element.state !== 'CANCELLED'" class="text-primary edit-order-item-icon">edit</mat-icon>-->
+		<!--		<mat-icon *ngIf="element.state !== 'CANCELLED'" class="text-danger delete-order-item-icon">delete</mat-icon>-->
+		<!--	</td>-->
+		<!--</ng-container>-->
 
-	<!--	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
-	<!--	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
-	<!--</table>-->
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row
+			(click)="clickedRows.has(row) ? clickedRows.delete(row) : clickedRows.add(row)"
+			[class.demo-row-is-clicked]="clickedRows.has(row)"
+			*matRowDef="let row; columns: displayedColumns;"></tr>
+
+	</table>
+	<mat-paginator [pageSizeOptions]="[2, 3, 5]"
+		showFirstLastButtons
+		(page)="onPageChange($event)"
+		aria-label="Select page of periodic elements">
+	</mat-paginator>
 </div>

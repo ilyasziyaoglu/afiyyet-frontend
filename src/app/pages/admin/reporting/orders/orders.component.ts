@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, inject, OnInit, ViewChild} from '@angular/core';
 import {AsyncPipe, Location, NgClass, NgForOf, NgIf} from "@angular/common";
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from "@angular/material/autocomplete";
 import {MatFormField, MatLabel, MatSuffix} from "@angular/material/form-field";
@@ -19,14 +19,27 @@ import {
     MatCellDef,
     MatColumnDef,
     MatHeaderCell,
+    MatHeaderCellDef,
     MatHeaderRow,
     MatHeaderRowDef,
     MatRow,
     MatRowDef,
-    MatTable
+    MatTable,
+    MatTableDataSource,
+    MatTableModule
 } from "@angular/material/table";
 import {MatDatepicker, MatDatepickerInput, MatDatepickerToggle} from "@angular/material/datepicker";
 import {NgxMaterialTimepickerModule} from "ngx-material-timepicker";
+import {MatPaginator, MatPaginatorModule, PageEvent} from "@angular/material/paginator";
+import {MatSort, MatSortModule, Sort} from "@angular/material/sort";
+import {LiveAnnouncer} from "@angular/cdk/a11y";
+
+export interface Order {
+    position: number;
+    date: Date;
+    totalPrice: number;
+    table: number;
+}
 
 @Component({
     selector: 'app-orders',
@@ -58,23 +71,35 @@ import {NgxMaterialTimepickerModule} from "ngx-material-timepicker";
         MatDatepickerInput,
         MatDatepickerToggle,
         MatSuffix,
-        NgxMaterialTimepickerModule
+        NgxMaterialTimepickerModule,
+        MatHeaderCellDef,
+        // MatPaginator,
+        MatTableModule,
+        MatPaginatorModule,
+        // MatSort,
+        MatSortModule,
     ],
     templateUrl: './orders.component.html',
     styleUrl: './orders.component.scss'
 })
-export class OrdersComponent implements OnInit {
+export class OrdersComponent implements OnInit, AfterViewInit {
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+    private _liveAnnouncer = inject(LiveAnnouncer);
     filterOrderForm: FormGroup;
     filteredProducts: Observable<Product[]>;
     tables: any[] = [];
-    orders: any[] = [];
+    orders = new MatTableDataSource<Order>();
     displayedColumns: string[] = [
-        'id',
-        'date',
+        'position',
+        'createdDate',
         'totalPrice',
-        'table',
-        'actions'
+        'tableId',
+        // 'actions'
     ];
+    private page: PageEvent = {length: 0, previousPageIndex: 0, pageIndex: 0, pageSize: 2};
+    private sortForApi = "createdDate,desc";
+    clickedRows = new Set<Order>();
 
     constructor(
         private router: Router,
@@ -89,6 +114,7 @@ export class OrdersComponent implements OnInit {
     ngOnInit() {
         let oneMonthBefore = new Date();
         oneMonthBefore.setMonth(new Date().getMonth() - 1);
+        let tomorrow = new Date(new Date().getTime() + 86400000);
         this.filterOrderForm = this.fb.group({
             id: null,
             productSearch: null,
@@ -99,7 +125,7 @@ export class OrdersComponent implements OnInit {
             maxPrice: null,
             startDate: oneMonthBefore,
             startTime: "04:00",
-            endDate: new Date() ,
+            endDate: tomorrow ,
             endTime: "04:00",
         });
 
@@ -111,6 +137,24 @@ export class OrdersComponent implements OnInit {
         this.tableService.getTablesByBrand((res) => {
             this.tables = res;
         });
+
+        this.orders.paginator = this.paginator;
+        this.orders.sort = this.sort;
+
+        this.onFilterOrder();
+    }
+
+    ngAfterViewInit() {
+    }
+
+    /** Announce the change in sort state for assistive technology. */
+    announceSortChange(sortState: Sort) {
+        this.sortForApi = sortState.direction ? sortState.active + "," + sortState.direction : "createdDate,desc";
+        if (sortState.direction) {
+            this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+        } else {
+            this._liveAnnouncer.announce('Sorting cleared');
+        }
     }
 
     private _filter(value: string): Product[] {
@@ -124,13 +168,31 @@ export class OrdersComponent implements OnInit {
     }
 
     onFilterOrder() {
-        this.orderService.filter(this.filterOrderForm.value, res => {
+        let filterReq = {...this.filterOrderForm.value};
+        let startHour = filterReq.startTime.split(":")[0];
+        let startMinutes = filterReq.startTime.split(":")[1];
+        let endHour = filterReq.endTime.split(":")[0];
+        let endMinutes = filterReq.endTime.split(":")[1];
+        filterReq.startDate.setHours(startHour, startMinutes);
+        filterReq.endDate.setHours(endHour, endMinutes);
+        filterReq.page = this.page;
+        filterReq.sort = this.sortForApi;
+        this.orderService.filter(filterReq, res => {
             if (res) {
-                this.filterOrderForm.reset();
-                this.orders = res;
+                this.orders.data = res.content;
+                this.paginator.length = res.totalElements;
             } else {
-                Swal.fire('Hata', 'Sipariş güncellenirken bir hata oluştu!', 'error');
+                Swal.fire('Hata', 'Siparişler listelenirken bir hata oluştu!', 'error');
             }
         });
+    }
+
+    getTableNameById(id: any) {
+        return this.tables.filter(table => table.id === id)[0]?.name || id;
+    }
+
+    onPageChange(event: PageEvent) {
+        this.page = event;
+        this.onFilterOrder();
     }
 }
