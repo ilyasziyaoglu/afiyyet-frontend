@@ -70,6 +70,7 @@ export class HttpService {
                 .append('Authorization', token)
                 .append('Accept', '*/*');
         } else if (!path.startsWith('auth/') && token) {
+            console.log("auth request", token);
             headers = new HttpHeaders()
                 .append('Authorization', token)
                 .append('Content-Type', 'application/json; charset=utf-8')

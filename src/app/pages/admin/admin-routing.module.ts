@@ -5,7 +5,6 @@ import {CommentsComponent} from './comments/comments.component';
 import {CampaignsComponent} from './campaigns/campaigns.component';
 import {MenuComponent} from './menu/menu.component';
 import {AdminComponent} from './admin.component';
-import {ReportsComponent} from './reports/reports.component';
 import {TablesComponent} from './tables/tables.component';
 import {EditTableComponent} from './edit-table/edit-table.component';
 import {TableDetailComponent} from './table-detail/table-detail.component';
@@ -53,10 +52,7 @@ const routes: Routes = [
                 path: 'campaigns',
                 component: CampaignsComponent,
             },
-            {
-                path: 'reports',
-                component: ReportsComponent,
-            },
+            {path: 'reports', loadChildren: () => import('./reporting/reporting.module').then(m => m.ReportingModule)},
         ],
     },
 ];

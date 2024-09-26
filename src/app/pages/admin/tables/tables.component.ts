@@ -21,7 +21,7 @@ export class TablesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.tableService.getTables(res => this.tableGroups = res);
+        this.tableService.getTableGroupsbByBrand(res => this.tableGroups = res);
     }
 
     onSelectTable(table: any) {

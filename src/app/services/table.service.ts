@@ -26,7 +26,13 @@ export class TableService extends BaseService {
         return this.basePath;
     }
 
-    getTables(cb?) {
+    getTablesByBrand(cb?) {
+        this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-tables-by-brand`, '', res => {
+            cb(res);
+        });
+    }
+
+    getTableGroupsbByBrand(cb?) {
         this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-tables-by-brand`, '', res => {
             const tableGroups = {};
             res.forEach(table => {

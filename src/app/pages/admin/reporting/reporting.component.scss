@@ -1,0 +1,22 @@
+.menu-button {
+  background-color: #232323;
+  width: 100%;
+  border: none;
+  color: white;
+  border-radius: 0;
+  outline: none;
+}
+
+.menu-button :focus {
+  outline: none;
+  border: none;
+}
+
+.menu-button :active {
+  outline: none;
+  border: none;
+}
+
+.menu-button :hover {
+  color: #666666;
+}

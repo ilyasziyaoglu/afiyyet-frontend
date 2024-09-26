@@ -13,7 +13,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-import {ReportsComponent} from './reports/reports.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {BulkPriceUpdateComponent} from './bulk-price-update/bulk-price-update.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -29,6 +28,7 @@ import {ComponentsModule} from '../../base/components/components.module';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {ReportingModule} from "./reporting/reporting.module";
 
 
 @NgModule({
@@ -41,7 +41,6 @@ import {MatButtonModule} from '@angular/material/button';
         DialogCommentComponent,
         CategoryEditComponent,
         BulkPriceUpdateComponent,
-        ReportsComponent,
         TablesComponent,
         EditTableComponent,
         TableDetailComponent
@@ -65,6 +64,7 @@ import {MatButtonModule} from '@angular/material/button';
         MatCheckboxModule,
         MatMenuModule,
         MatButtonModule,
+        ReportingModule
     ],
 })
 export class AdminModule {
