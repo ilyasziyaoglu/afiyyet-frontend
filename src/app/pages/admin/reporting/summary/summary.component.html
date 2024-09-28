@@ -1,0 +1,59 @@
+<div class="row my-3 d-flex justify-content-between">
+	<div class="col">
+		<h1>Özet</h1>
+	</div>
+	<mat-form-field appearance="outline" class="col-3">
+		<mat-select placeholder="Zaman aralığı" [(ngModel)]="period" (ngModelChange)="onPeriodChange()">
+			<mat-option value="today">Bugün</mat-option>
+			<mat-option value="this-week">Bu hafta</mat-option>
+			<mat-option value="this-month">Bu ay</mat-option>
+			<mat-option value="this-year">Bu yıl</mat-option>
+		</mat-select>
+	</mat-form-field>
+</div>
+<div class="row mb-5 d-flex justify-content-between text-white">
+	<div class="col">
+		<div class="w-100 h-100 m-3 p-3 rounded-3 bg-warning">
+			<p style="font-size: 35px">{{ orderSummary?.count }}</p>
+			<P>Sipariş Sayı</P>
+		</div>
+	</div>
+	<div class="col">
+		<div class="w-100 h-100 m-3 p-3 rounded-3 bg-success">
+			<p style="font-size: 35px">{{orderSummary?.total}}&nbsp;₺</p>
+			<P>Toplam Sipariş Tutarı</P>
+		</div>
+	</div>
+	<div class="col">
+		<div class="w-100 h-100 m-3 p-3 rounded-3 bg-info">
+			<p><span style="font-size: 35px">{{roundPerTablePerHourValue}}</span> müşteri/masa/saat</p>
+			<p>Ortalama Masa Dönüş Süresi</p>
+		</div>
+	</div>
+	<div class="col">
+		<div class="w-100 h-100 m-3 p-3 rounded-3 bg-danger">
+			<p style="font-size: 35px">{{restaurantOccupation}} %</p>
+			<p>Restoran Doluluğu</p>
+		</div>
+	</div>
+</div>
+<div class="row my-5 d-flex justify-content-between">
+	<div class="col m-3 py-3 border border-1 rounded-3">
+		<h2>Sipariş Tutarı</h2>
+		<canvas id="orderStatisticsChart"></canvas>
+	</div>
+	<div class="col m-3 py-3 border border-1 rounded-3">
+		<h2>Toplam Sipariş Sayısı</h2>
+		<canvas id="bestSellersChart"></canvas>
+	</div>
+</div>
+<div class="row my-5 d-flex justify-content-between">
+	<div class="col m-3 py-3 border border-1 rounded-3">
+		<h2>Toplam Satış Tutarı</h2>
+		<canvas id="topEarnersChart"></canvas>
+	</div>
+	<div class="col m-3 py-3 border border-1 rounded-3">
+		<h2>Toplam Satış Tutarı</h2>
+		<canvas id="hourlyDistribution"></canvas>
+	</div>
+</div>

@@ -7,10 +7,8 @@ import {MatInput} from "@angular/material/input";
 import {MatSelect} from "@angular/material/select";
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import Swal from "sweetalert2";
-import {Router} from "@angular/router";
 import {TableService} from "../../../../services/table.service";
 import {OrderService} from "../../../../services/order.service";
-import {OrderItemService} from "../../../../services/order-item.service";
 import {map, startWith} from "rxjs/operators";
 import {Product} from "../../../../services/models/models";
 import {Observable} from "rxjs";
@@ -102,12 +100,10 @@ export class OrdersComponent implements OnInit, AfterViewInit {
     clickedRows = new Set<Order>();
 
     constructor(
-        private router: Router,
         private fb: FormBuilder,
         public location: Location,
         public tableService: TableService,
         private orderService: OrderService,
-        private orderItemService: OrderItemService,
     ) {
     }
 

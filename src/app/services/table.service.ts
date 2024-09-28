@@ -32,6 +32,12 @@ export class TableService extends BaseService {
         });
     }
 
+    restaurantOcupation(cb?) {
+        this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/restaurant-occupation`, '', res => {
+            cb(res);
+        });
+    }
+
     getTableGroupsbByBrand(cb?) {
         this.getHttpService().doRequest(HttpMethod.GET, `${this.getBasePath()}/get-tables-by-brand`, '', res => {
             const tableGroups = {};

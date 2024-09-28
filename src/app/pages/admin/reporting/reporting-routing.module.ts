@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {OrdersComponent} from "./orders/orders.component";
 import {ReportingComponent} from "./reporting.component";
 import {OrderDetailComponent} from "./order-detail/order-detail.component";
+import {SummaryComponent} from "./summary/summary.component";
 
 
 const routes: Routes = [
@@ -10,7 +11,11 @@ const routes: Routes = [
     path: '',
     component: ReportingComponent,
     children: [
-      {path: '', redirectTo: 'orders', pathMatch: 'full'},
+      {path: '', redirectTo: 'summary', pathMatch: 'full'},
+      {
+        path: 'summary',
+        component: SummaryComponent,
+      },
       {
         path: 'orders',
         component: OrdersComponent,

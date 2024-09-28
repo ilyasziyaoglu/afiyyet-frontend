@@ -19,7 +19,7 @@ import {AdminProductCardComponent} from '../../../base/components/admin-product-
 })
 
 export class MenuComponent implements OnInit {
-    @ContentChildren( AdminProductCardComponent, { descendants: true } ) dragHandles: QueryList<AdminProductCardComponent>;
+    @ContentChildren(AdminProductCardComponent, {descendants: true}) dragHandles: QueryList<AdminProductCardComponent>;
 
     productsArranged = false;
     categoriesArranged = false;
@@ -110,8 +110,9 @@ export class MenuComponent implements OnInit {
 
 
     editCategoryClick(category, index) {
+        console.log(category);
         const dialogRef = this.dialog.open(CategoryEditComponent,
-            {panelClass: 'category-edit-dialog', data: {...category}});
+            {panelClass: 'category-edit-dialog', data: category});
 
         dialogRef.afterClosed().subscribe(res => {
             if ( res.category ) {

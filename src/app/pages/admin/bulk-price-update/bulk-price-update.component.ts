@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import {ProductService} from '../../../services/product.service';
 
 @Component({
-    selector: 'app-dialog-category-edit',
+    selector: 'app-dialog-bulk-price-update',
     templateUrl: './bulk-price-update.component.html',
     styleUrls: ['./bulk-price-update.component.scss'],
 })

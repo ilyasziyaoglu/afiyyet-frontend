@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Category} from '../../../services/models/models';
 import {FileService} from '../../../base/services/file.service';
@@ -11,9 +11,8 @@ import {CategoryService} from '../../../services/category.service';
     styleUrls: ['./category-edit.component.scss'],
 })
 export class CategoryEditComponent implements OnInit {
-    @Inject(MAT_DIALOG_DATA) public data: any;
+    category = inject<Category>(MAT_DIALOG_DATA);
 
-    category: Category;
     isInsert = true;
     formData: FormData;
 
@@ -24,10 +23,11 @@ export class CategoryEditComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.category = this.data || new Category();
-        if ( this.data ) {
+        console.log("ON İNİT", this.category);
+        if ( this.category ) {
             this.isInsert = false;
         }
+        this.category = this.category || new Category();
     }
 
     saveClick() {
@@ -45,10 +45,14 @@ export class CategoryEditComponent implements OnInit {
             this.fileService.uploadFile(this.formData, res => {
                 if ( res.fileName ) {
                     this.category.imgUrl = res.fileName;
-                    this.category.status = 'ACTIVE';
-                    this.categoryService.insertCategory(this.category, result => {
-                        this.categoryService.categories.push(result);
-                    });
+                    if (this.isInsert) {
+                        this.category.status = 'ACTIVE';
+                        this.categoryService.insertCategory(this.category, result => {
+                            this.categoryService.categories.push(result);
+                        });
+                    } else {
+                        this.categoryService.updateCategory(this.category, () => {});
+                    }
                     this.dialog.close();
                 } else {
                     Swal.fire('Uyarı', 'Resim yüklenirken hata oluştu', 'warning');
