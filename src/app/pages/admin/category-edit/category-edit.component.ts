@@ -23,7 +23,6 @@ export class CategoryEditComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        console.log("ON İNİT", this.category);
         if ( this.category ) {
             this.isInsert = false;
         }

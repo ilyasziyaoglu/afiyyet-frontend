@@ -1,4 +1,4 @@
-<h3 *ngIf="menuService.isCampEnabled && menuService.menu?.campaigns && menuService.menu?.campaigns?.length > 0" class="my-1 text-center">Kampanyalar</h3>
+<h3 *ngIf="menuService.isCampEnabled && menuService.menu?.campaigns && menuService.menu?.campaigns?.length > 0" class="my-1 mx-3">Kampanyalar</h3>
 <div *ngIf="menuService.isCampEnabled && menuService.menu?.campaigns && menuService.menu?.campaigns?.length > 0" class="m-1 p-0 camp_items justify-content-center">
     <div class="camp_item m-1 p-0"
          *ngFor="let item of menuService.menu?.campaigns">
@@ -27,9 +27,9 @@
         </div>
     </div>
 </div>
-<hr *ngIf="menuService.isCampEnabled" class="m-0 p-0">
+<!--<hr *ngIf="menuService.isCampEnabled" class="m-0 p-0">-->
 
-<h3 *ngIf="menuService.isLikeEnabled" class="my-1" style="text-align: center">En Çok Beğenilenler</h3>
+<h3 *ngIf="menuService.isLikeEnabled" class="my-1 mx-3">En Çok Beğenilenler</h3>
 <div *ngIf="menuService.isLikeEnabled" class="m-1 p-0 myfavorites justify-content-center">
     <div class="item m-1 p-0 overflow-hidden"
          *ngFor="let item of menuService.getMostPopulars()">
@@ -48,9 +48,9 @@
         </div>
     </div>
 </div>
-<hr *ngIf="menuService.isLikeEnabled" class="m-0 p-0">
+<!--<hr *ngIf="menuService.isLikeEnabled" class="m-0 p-0">-->
 
-<h3 *ngIf="menuService.isCampEnabled || menuService.isFavEnabled" class="my-2" style="text-align: center">Menü</h3>
+<h3 *ngIf="menuService.isCampEnabled || menuService.isFavEnabled" class="my-2 mx-3">Menü</h3>
 <div class="row m-1">
     <div class="m-1 p-0 category"
          *ngFor="let category of menuService.menu?.categories"

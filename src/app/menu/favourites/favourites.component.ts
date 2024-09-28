@@ -35,8 +35,8 @@ export class FavouritesComponent implements OnInit {
         this.menuSessionService.setCurrentProduct(product.id);
     }
 
-    addBasket(item) {
-        this.basketService.currentBasketItem = item;
+    addBasket(product) {
+        this.basketService.currentBasketItem = {product};
         this.dialog.open(DialogBasketComponent);
     }
 
